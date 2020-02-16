@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.Tests", "Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.Tests\Oeuvre.Modules.IdentityAccess.Tests.csproj", "{D73ADD1B-776B-495E-9028-DF83EBCDA866}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domainia", "Domainia\Domainia\Domainia.csproj", "{05BC45ED-A089-45D4-9D63-6A328020B8C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FF89577D-76E9-4FF1-9B42-68CE6099D967} = {1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}
@@ -77,5 +83,6 @@ Global
 		{4828E2EA-CC88-4EDA-9639-08422EF04A4D} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{427DCFA8-F127-488D-A3B5-B8F8255A07A7} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{D73ADD1B-776B-495E-9028-DF83EBCDA866} = {BA6C7F7F-A3C0-48DD-9641-FEEB5C604652}
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 	EndGlobalSection
 EndGlobal
