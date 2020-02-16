@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domania
+namespace Domainia
 {
     public class Class1
     {
