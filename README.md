@@ -18,6 +18,4 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ## Progress Tracker
 
-1. Requirements for Phase One published
-
-https://github.com/codefinity/oeuvre/wiki/Phase-One:-Requirements
+1. Requirements for Phase One published - https://github.com/codefinity/oeuvre/wiki/Phase-One:-Requirements
