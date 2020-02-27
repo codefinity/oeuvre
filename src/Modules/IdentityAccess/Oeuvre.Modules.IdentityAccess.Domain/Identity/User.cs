@@ -23,7 +23,6 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Identity
             // Only for EF.
         }
 
-
         internal User(UserId id, Name name, string loginEmail, string password)
         {
             this.id = id;
