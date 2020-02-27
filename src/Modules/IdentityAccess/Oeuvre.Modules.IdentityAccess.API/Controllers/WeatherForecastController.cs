@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Oeuvre.Modules.IdentityAccess.API.Controllers
+namespace Oeuvre.Modules.IdentityAccess.API
 {
     [ApiController]
     [Route("[controller]")]

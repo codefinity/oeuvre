@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oeuvre.Modules.IdentityAccess.Infrastructure
+namespace Domaina.Application
 {
     public class Class1
     {

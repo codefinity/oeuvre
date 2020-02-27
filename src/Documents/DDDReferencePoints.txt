@@ -1,0 +1,16 @@
+﻿Whole domain model should be testable without involving any infrastructure. In the domain model tests you should not use any test harness or
+mocks.
+
+--Loc 1377, DDD in .Net Core
+
+Value Objects allow us to declare entity properties with explicit type that use ubiquitous language.
+
+--Loc 1377, DDD in .Net Core
+
+Factories are used to create instances of Domain objects which by definition are valid. Factory functions can execute some logic to construct valid instances.
+Value object shoukd be instantiated using a protected constructor.
+Logic is in the protected constructor.
+
+--Loc 1915, DDD in .Net Core
+
+
