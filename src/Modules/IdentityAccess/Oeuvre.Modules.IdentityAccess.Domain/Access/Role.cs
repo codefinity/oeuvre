@@ -8,6 +8,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Access
         private string name;
         private string code;
 
+        public Role()
+        {
+
+        }
+
         public Role(string name, string code)
         {
             this.name = name;

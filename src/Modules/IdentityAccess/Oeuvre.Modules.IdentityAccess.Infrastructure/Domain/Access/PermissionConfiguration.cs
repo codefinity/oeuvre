@@ -8,9 +8,6 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Access
 {
     public class PermissionConfiguration : IEntityTypeConfiguration<Permission>
     {
-        public PermissionConfiguration()
-        {
-        }
 
         public void Configure(EntityTypeBuilder<Permission> builder)
         {
