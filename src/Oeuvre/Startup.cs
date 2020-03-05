@@ -18,12 +18,20 @@ namespace Oeuvre
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IConfiguration configuration;
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            //Configuration = configuration;
+
+            this.configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json")
+                //.AddUserSecrets<Startup>()
+                .Build();
         }
 
-        public IConfiguration Configuration { get; }
+        //public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -36,21 +44,9 @@ namespace Oeuvre
                 configuration.RootPath = "ClientApp/build";
             });
 
+            services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
 
-            services.Configure<KestrelServerOptions>(
-            Configuration.GetSection("Kestrel"));
-
-            // other service configurations go here
-            // replace "YourDbContext" with the class name of your DbContext
-            //services.AddDbContextPool<IdentityAccessContext>(options => options
-            // replace with your connection string
-            //    .UseNpgsql("Server=localhost;Database=oeuvre;User=root;Password=root;")
-            //);
-
-
-            const string connectionString =
-                "Host = localhost; Database = oeuvre; Username = postgres; Password = root";
-                //"Server=localhost;Database=oeuvre;User=root;Password=root;";
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddEntityFrameworkNpgsql();
             services.AddPostgresDbContext<IdentityAccessDBContext>(connectionString);
             services.AddScoped<DbConnection>(c => new NpgsqlConnection(connectionString));
