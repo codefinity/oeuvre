@@ -10,14 +10,20 @@ namespace Oeuvre.Modules.IdentityAccess.API
 {
     [ApiController]
     [Route("user")]
-    public class WeatherForecastController : ControllerBase
+    public class UserController : ControllerBase
     {
+        private readonly ILogger<UserController> logger;
+
+        public UserController(ILogger<UserController> logger)
+        {
+            this.logger = logger;
+        }
 
         [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
         {
-
+            logger.LogInformation("This is the first log");
 
             //await _userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(request.Login, request.Password,
             //    request.Email, request.FirstName, request.LastName));
@@ -32,12 +38,7 @@ namespace Oeuvre.Modules.IdentityAccess.API
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()

@@ -13,25 +13,21 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Npgsql;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
+using Serilog;
+using Serilog.Formatting.Compact;
 
 namespace Oeuvre
 {
     public class Startup
     {
-        private readonly IConfiguration configuration;
 
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            //Configuration = configuration;
+            Configuration = configuration;
 
-            this.configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json")
-                //.AddUserSecrets<Startup>()
-                .Build();
         }
 
-        //public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -44,9 +40,9 @@ namespace Oeuvre
                 configuration.RootPath = "ClientApp/build";
             });
 
-            services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
+            services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
 
-            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddEntityFrameworkNpgsql();
             services.AddPostgresDbContext<IdentityAccessDBContext>(connectionString);
             services.AddScoped<DbConnection>(c => new NpgsqlConnection(connectionString));
@@ -93,15 +89,15 @@ namespace Oeuvre
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            //app.UseSpa(spa =>
-            //{
-            //    spa.Options.SourcePath = "ClientApp";
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
 
-            //    if (env.IsDevelopment())
-            //    {
-            //        spa.UseReactDevelopmentServer(npmScript: "start");
-            //    }
-            //});
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
+            });
 
             //------Swagger
             app.UseSwagger();
@@ -114,5 +110,6 @@ namespace Oeuvre
             });
             //------
         }
+
     }
 }
