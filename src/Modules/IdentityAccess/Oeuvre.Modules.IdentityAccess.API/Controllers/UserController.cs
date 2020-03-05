@@ -2,15 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Oeuvre.Modules.IdentityAccess.API
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("user")]
     public class WeatherForecastController : ControllerBase
     {
+
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
+        {
+
+
+            //await _userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(request.Login, request.Password,
+            //    request.Email, request.FirstName, request.LastName));
+
+            return Ok();
+        }
+
+
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
