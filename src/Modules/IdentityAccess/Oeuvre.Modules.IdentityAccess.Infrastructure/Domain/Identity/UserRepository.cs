@@ -7,9 +7,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Identity
 
         public class UserRepository : IUserRepository
         {
-            private readonly IdentityAccessContext identityAccessContext;
+            private readonly IdentityAccessDBContext identityAccessContext;
 
-            public UserRepository(IdentityAccessContext identityAccessContext)
+            public UserRepository(IdentityAccessDBContext identityAccessContext)
             {
                 this.identityAccessContext = identityAccessContext;
             }

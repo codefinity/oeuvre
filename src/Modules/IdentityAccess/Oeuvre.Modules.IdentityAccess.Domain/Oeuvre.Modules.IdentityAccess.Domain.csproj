@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Identity\" />
+    <Folder Include="Access\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domania.Domain\Domania.Domain.csproj" />

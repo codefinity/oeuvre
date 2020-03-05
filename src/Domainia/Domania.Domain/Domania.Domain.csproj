@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="IAggregateRoot.cs" />
+    <Compile Remove="TypedIdValueBase.cs" />
+  </ItemGroup>
 </Project>

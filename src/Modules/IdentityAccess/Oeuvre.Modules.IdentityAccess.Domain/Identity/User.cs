@@ -4,11 +4,12 @@ using Domania.Domain;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Identity
 {
-    public class User: IAggregateRoot
+    public class User: AggregateRoot
     {
-        public UserId id { get; private set; }
+        // Properties to handle the persistence
+        public UserId UserId { get; private set; }
 
-        private Name name;
+        //private Name name;
 
         private string loginEmail;
 
@@ -16,22 +17,33 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Identity
 
         private bool isActive = true;
 
-        private List<Role> roles;
+        private List<UserRole> userroles;
 
         private User()
         {
             // Only for EF.
         }
 
-        internal User(UserId id, Name name, string loginEmail, string password)
+        internal User(UserId id,
+            //Name name,
+            string loginEmail, string password)
         {
-            this.id = id;
+            this.Id = id;
             this.loginEmail = loginEmail;
 
             this.password = password;
 
-            this.name = name;
+            //this.name = name;
         }
 
+        protected override void When(object @event)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void EnsureValidState()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

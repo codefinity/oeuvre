@@ -1,18 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Data.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Npgsql;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Storage;
 
 namespace Oeuvre
 {
@@ -28,23 +27,34 @@ namespace Oeuvre
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews();
+
+            // In production, the React files will be served from this directory
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/build";
+            });
+
 
             services.Configure<KestrelServerOptions>(
             Configuration.GetSection("Kestrel"));
 
-
-
             // other service configurations go here
             // replace "YourDbContext" with the class name of your DbContext
-            services.AddDbContextPool<IdentityAccessContext>(options => options
-                // replace with your connection string
-                .UseMySql("Server=localhost;Database=oeuvre;User=root;Password=root@123;", mySqlOptions => mySqlOptions
-                    // replace with your Server Version and Type
-                    .ServerVersion(new ServerVersion(new Version(8, 0, 19), ServerType.MySql))
-            ));
+            //services.AddDbContextPool<IdentityAccessContext>(options => options
+            // replace with your connection string
+            //    .UseNpgsql("Server=localhost;Database=oeuvre;User=root;Password=root;")
+            //);
 
-            
+
+            const string connectionString =
+                "Host = localhost; Database = oeuvre; Username = postgres; Password = root";
+                //"Server=localhost;Database=oeuvre;User=root;Password=root;";
+            services.AddEntityFrameworkNpgsql();
+            services.AddPostgresDbContext<IdentityAccessDBContext>(connectionString);
+            services.AddScoped<DbConnection>(c => new NpgsqlConnection(connectionString));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +62,7 @@ namespace Oeuvre
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<IdentityAccessContext>();
+                var context = serviceScope.ServiceProvider.GetRequiredService<IdentityAccessDBContext>();
                 context.Database.EnsureCreated();
             }
 
@@ -60,18 +70,35 @@ namespace Oeuvre
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
+            });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
-
     }
 }
