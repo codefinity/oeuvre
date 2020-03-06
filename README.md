@@ -18,14 +18,13 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ### Instructions for Running
 
-1. Install [.Net Core 3.0 or above](https://dotnet.microsoft.com/download/dotnet-core/3.1https://dotnet.microsoft.com/download/dotnet-core/3.1)
+1. Install [.Net Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.1https://dotnet.microsoft.com/download/dotnet-core/3.1) or above
 
-2. Install Postgres Database Server
+2. Install [Postgres] (https://www.postgresql.org/download/) Database Server
 
-3. Clone Git Repository
+3. Clone Git Repository 
 
 4. To Run - Use console command 'dotnet run'
-
 
 
 ## Progress Tracker
