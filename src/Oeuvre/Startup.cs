@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Npgsql;
+using Oeuvre.Modules.IdentityAccess.Application.CQRS;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Serilog;
 using Serilog.Formatting.Compact;
@@ -53,6 +54,10 @@ namespace Oeuvre
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
             //-------
+
+            //------Dependency Injection
+            services.AddScoped<IUserAccessModule, UserAccessModule>();
+            //------
 
         }
 

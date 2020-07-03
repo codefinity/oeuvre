@@ -8,4 +8,7 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <Folder Include="Controllers\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj" />
+  </ItemGroup>
 </Project>

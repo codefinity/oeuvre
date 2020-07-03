@@ -9,7 +9,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Identity
         // Properties to handle the persistence
         public UserId UserId { get; private set; }
 
-        //private Name name;
+        private Name name;
 
         private string loginEmail;
 
@@ -25,15 +25,28 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Identity
         }
 
         internal User(UserId id,
-            //Name name,
-            string loginEmail, string password)
+                        Name name,
+                        string loginEmail,
+                        string password)
         {
             this.Id = id;
             this.loginEmail = loginEmail;
-
             this.password = password;
+            this.name = name;
+        }
 
-            //this.name = name;
+        public static User RegisterNewUser(string firstName,
+                                    string lastName,
+                                    string email,
+                                    string password)
+                                             
+                                             
+        {
+
+           return new User(new UserId(Guid.NewGuid()),
+                            new Name(firstName, lastName),
+                            email,
+                            password);
         }
 
         protected override void When(object @event)

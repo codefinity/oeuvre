@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Oeuvre.Modules.IdentityAccess.Application.UserRegistration.RegisterNewUser;
+using Oeuvre.Modules.IdentityAccess.Application.CQRS;
 
 namespace Oeuvre.Modules.IdentityAccess.API
 {
@@ -13,20 +15,25 @@ namespace Oeuvre.Modules.IdentityAccess.API
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> logger;
+        private readonly IUserAccessModule userAccessModule;
 
-        public UserController(ILogger<UserController> logger)
+        public UserController(IUserAccessModule userAccessModule, ILogger<UserController> logger)
         {
+            this.userAccessModule = userAccessModule;
             this.logger = logger;
         }
 
         [AllowAnonymous]
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
+        public IActionResult RegisterNewUser(RegisterNewUserRequest request)
         {
             logger.LogInformation("This is the first log");
 
-            //await _userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(request.Login, request.Password,
-            //    request.Email, request.FirstName, request.LastName));
+
+            Task result = userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(request.FirstName,
+                                                                                   request.LastName,
+                                                                                   request.Email,
+                                                                                   request.Password));
 
             return Ok();
         }
