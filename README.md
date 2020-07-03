@@ -16,6 +16,17 @@ At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. 
 
 The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
 
+### Instructions for Running
+
+1. Install [.Net Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.1https://dotnet.microsoft.com/download/dotnet-core/3.1) or above
+
+2. Install [Postgres](https://www.postgresql.org/download/) Database Server
+
+3. Clone Git Repository - git clone https://github.com/codefinity/oeuvre.git
+
+4. To Run - Use console command 'dotnet run'
+
+
 ## Progress Tracker
 
 ### Evolution - 1
