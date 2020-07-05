@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Npgsql;
+using Oeuvre.Configuration;
 using Oeuvre.Modules.IdentityAccess.Application.CQRS;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Serilog;
@@ -21,11 +22,9 @@ namespace Oeuvre
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -43,20 +42,22 @@ namespace Oeuvre
 
             services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
 
-            string connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddEntityFrameworkNpgsql();
-            services.AddPostgresDbContext<IdentityAccessDBContext>(connectionString);
-            services.AddScoped<DbConnection>(c => new NpgsqlConnection(connectionString));
+            services.AddIdentityAcessDatabase(Configuration);
 
-            //-------Swagger
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-            });
-            //-------
+            //Delete once DB operations are running
+            ////--Database
+            //string connectionString = Configuration.GetConnectionString("DefaultConnection");
+            //services.AddEntityFrameworkNpgsql();
+            //services.AddPostgresDbContext<IdentityAccessDBContext>(connectionString);
+            //services.AddScoped<DbConnection>(c => new NpgsqlConnection(connectionString));
+            ////--
+
+            services.AddSwaggerDocumentation();
+
+            //services.AddMediatR(typeof(Startup));
 
             //------Dependency Injection
-            services.AddScoped<IUserAccessModule, UserAccessModule>();
+            //services.AddScoped<IUserAccessModule, UserAccessModule>();
             //------
 
         }
@@ -64,11 +65,16 @@ namespace Oeuvre
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetRequiredService<IdentityAccessDBContext>();
-                context.Database.EnsureCreated();
-            }
+            app.UseIdentityAcessDatabase();
+
+            //Delete once DB operations are running
+            ////--Database
+            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetRequiredService<IdentityAccessDBContext>();
+            //    context.Database.EnsureCreated();
+            //}
+            ////--
 
             if (env.IsDevelopment())
             {
@@ -94,26 +100,18 @@ namespace Oeuvre
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
+            //Remove this to see swagger UI
+            //app.UseSpa(spa =>
+            //{
+            //    spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
-            });
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseReactDevelopmentServer(npmScript: "start");
+            //    }
+            //});
 
-            //------Swagger
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
-            //------
+            app.UseSwaggerDocumentation();
         }
 
     }

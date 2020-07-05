@@ -24,7 +24,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
             ICommandHandler ch = serviceProvider.GetService<ICommandHandler>();
 
-            ch.
+            //ch.
 
             //logger.Send(command);
 
