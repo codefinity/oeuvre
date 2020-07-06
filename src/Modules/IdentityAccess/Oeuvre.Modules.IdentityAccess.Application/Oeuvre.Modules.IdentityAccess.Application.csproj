@@ -9,23 +9,18 @@
     <EmbeddedResource Remove="UserRegistration\**" />
     <None Remove="UserRegistration\**" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UserRegistrations\GetUserRegistration\" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
-    <Compile Remove="UserRegistrations\GetUserRegistration\GetUserRegistrationQuery.cs" />
-    <Compile Remove="UserRegistrations\GetUserRegistration\GetUserRegistrationQueryHandler.cs" />
-    <Compile Remove="UserRegistrations\GetUserRegistration\UserRegistrationDto.cs" />
     <Compile Remove="UserRegistrations\UsersCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FluentValidation" Version="8.6.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domaina.CQRS\Domaina.CQRS.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />

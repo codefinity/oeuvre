@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CompanyName.MyMeetings.Modules.UserAccess.Application.UserRegistrations.GetUserRegistration
+namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration
 {
     public class UserRegistrationDto
     {

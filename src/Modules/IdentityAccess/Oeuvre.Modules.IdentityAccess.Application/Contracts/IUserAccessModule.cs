@@ -12,6 +12,6 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Contracts
 
         Task ExecuteCommandAsync(ICommand command);
 
-        //Task<TResult> ExecuteQueryAsync<TResult>(IQuery<TResult> query);
+        Task<TResult> ExecuteQueryAsync<TResult>(IQuery<TResult> query);
     }
 }

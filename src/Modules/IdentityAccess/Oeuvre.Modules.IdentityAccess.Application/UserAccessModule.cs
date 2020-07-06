@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Domaina.CQRS;
+using MediatR;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,14 @@ namespace Oeuvre.Modules.IdentityAccess.Application
             await CommandsExecutor.Execute(command);
         }
 
-        //public async Task<TResult> ExecuteQueryAsync<TResult>(IQuery<TResult> query)
-        //{
-        //    using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
-        //    {
-        //        var mediator = scope.Resolve<IMediator>();
+        public async Task<TResult> ExecuteQueryAsync<TResult>(IQuery<TResult> query)
+        {
+            using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
+            {
+                var mediator = scope.Resolve<IMediator>();
 
-        //        return await mediator.Send(query);
-        //    }
-        //}
+                return await mediator.Send(query);
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
-using CompanyName.MyMeetings.Modules.UserAccess.Application.Contracts;
+using Domaina.CQRS;
 
-namespace CompanyName.MyMeetings.Modules.UserAccess.Application.UserRegistrations.GetUserRegistration
+namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration
 {
     public class GetUserRegistrationQuery : QueryBase<UserRegistrationDto>
     {

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Domaina.Application.Data;
 using Domaina.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
@@ -8,7 +9,6 @@ using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Application
@@ -18,7 +18,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application
         private readonly string _databaseConnectionString;
         private readonly ILoggerFactory _loggerFactory;
 
-        internal DataAccessModule(string databaseConnectionString 
+        internal DataAccessModule(string databaseConnectionString
             //, ILoggerFactory loggerFactory
             )
         {
@@ -28,10 +28,10 @@ namespace Oeuvre.Modules.IdentityAccess.Application
 
         protected override void Load(ContainerBuilder builder)
         {
-            //builder.RegisterType<SqlConnectionFactory>()
-            //    .As<ISqlConnectionFactory>()
-            //    .WithParameter("connectionString", _databaseConnectionString)
-            //    .InstancePerLifetimeScope();
+            builder.RegisterType<SqlConnectionFactory>()
+                .As<ISqlConnectionFactory>()
+                .WithParameter("connectionString", _databaseConnectionString)
+                .InstancePerLifetimeScope();
 
             builder
                 .Register(c =>

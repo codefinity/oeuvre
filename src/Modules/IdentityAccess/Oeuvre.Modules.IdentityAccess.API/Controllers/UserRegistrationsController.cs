@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
+using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
 
 namespace Oeuvre.Modules.IdentityAccess.API.Controller
@@ -19,7 +21,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         }
 
         [AllowAnonymous]
-        [HttpPost("")]
+        [HttpPost("/identityaccess/register")]
         public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
         {
             await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
@@ -32,13 +34,24 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             return Ok();
         }
 
-        //[AllowAnonymous]
-        //[HttpPatch("{userRegistrationId}/confirm")]
-        //public async Task<IActionResult> ConfirmRegistration(Guid userRegistrationId)
-        //{
-        //    await _userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
+        [HttpGet("/identityaccess/registrant/{userRegistrationId}")]
+        //[HasPermission(MeetingsPermissions.GetAllMeetingGroups)]
+        public async Task<IActionResult> GetAllMeetingGroups(Guid userRegistrationId)
+        {
+            var registrant = await userAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(
+                                                                        userRegistrationId));
 
-        //    return Ok();
-        //}
+            return Ok(registrant);
+
+        }
+
+        [AllowAnonymous]
+        [HttpPatch("{userRegistrationId}/confirm")]
+        public async Task<IActionResult> ConfirmRegistration(Guid userRegistrationId)
+        {
+            await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
+
+            return Ok();
+        }
     }
 }
