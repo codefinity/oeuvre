@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{631E02E8-D39B-4720-86A8-DE293FDF8571}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArchTests", "ArchTests", "{1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}"
@@ -9,43 +10,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{AD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domainia", "Domainia", "{9C138D2E-38CF-4DE9-B26D-0000F99E6771}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.ArchTests", "ArchTests\Oeuvre.ArchTests\Oeuvre.ArchTests.csproj", "{FF89577D-76E9-4FF1-9B42-68CE6099D967}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.ArchTests", "ArchTests\Oeuvre.ArchTests\Oeuvre.ArchTests.csproj", "{FF89577D-76E9-4FF1-9B42-68CE6099D967}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityAccess", "IdentityAccess", "{AB4FB382-2934-4D1B-A712-5F27C72D08ED}"
 	ProjectSection(SolutionItems) = preProject
 		Modules\IdentityAccess\ubiquitous-language.txt = Modules\IdentityAccess\ubiquitous-language.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publishing", "Publishing", "{0782FE19-CA5E-4006-9DD1-1C98DC645FAD}"
-	ProjectSection(SolutionItems) = preProject
-		Modules\Publishing\ubiquitous-language.txt = Modules\Publishing\ubiquitous-language.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA6C7F7F-A3C0-48DD-9641-FEEB5C604652}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AB8CF68E-6C75-4C98-AF7E-5731D6183207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Domain", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj", "{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.Domain", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj", "{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Application", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj", "{C0231846-D0A7-45A4-89CD-D803E22BF083}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.Application", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj", "{C0231846-D0A7-45A4-89CD-D803E22BF083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Infrastructure", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj", "{427DCFA8-F127-488D-A3B5-B8F8255A07A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.Infrastructure", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj", "{427DCFA8-F127-488D-A3B5-B8F8255A07A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Tests", "Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.Tests\Oeuvre.Modules.IdentityAccess.Tests.csproj", "{D73ADD1B-776B-495E-9028-DF83EBCDA866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.Tests", "Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.Tests\Oeuvre.Modules.IdentityAccess.Tests.csproj", "{D73ADD1B-776B-495E-9028-DF83EBCDA866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domainia", "Domainia\Domainia\Domainia.csproj", "{05BC45ED-A089-45D4-9D63-6A328020B8C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domainia", "Domainia\Domainia\Domainia.csproj", "{05BC45ED-A089-45D4-9D63-6A328020B8C7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Publishing.Tests", "Modules\Publishing\Tests\Oeuvre.Modules.Publishing.Tests\Oeuvre.Modules.Publishing.Tests.csproj", "{80C96D96-52F0-4B53-9F66-E84E270FB746}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Publishing.API", "Modules\Publishing\Oeuvre.Modules.Publishing.API\Oeuvre.Modules.Publishing.API.csproj", "{B3677121-3280-4472-96B8-FF3D35417483}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Publishing.Application", "Modules\Publishing\Oeuvre.Modules.Publishing.Application\Oeuvre.Modules.Publishing.Application.csproj", "{3179080B-B999-4FC4-8AE5-E37B05B5A238}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Publishing.Domain", "Modules\Publishing\Oeuvre.Modules.Publishing.Domain\Oeuvre.Modules.Publishing.Domain.csproj", "{D214D267-FDCF-495C-9C82-8D6692ABCEB1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Publishing.Infrastructure", "Modules\Publishing\Oeuvre.Modules.Publishing.Infrastructure\Oeuvre.Modules.Publishing.Infrastructure.csproj", "{C27E4E19-E4E3-4EAB-9DA2-03E99AEBFF9A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.API", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Oeuvre.Modules.IdentityAccess.API.csproj", "{2C7C1E1B-214B-417B-B15A-F199988790CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.API", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Oeuvre.Modules.IdentityAccess.API.csproj", "{2C7C1E1B-214B-417B-B15A-F199988790CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0474CA24-AE1D-4732-B65C-A334A1154219}"
 	ProjectSection(SolutionItems) = preProject
@@ -53,13 +37,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		Documents\DDDReferencePoints.txt = Documents\DDDReferencePoints.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domania.Domain", "Domainia\Domania.Domain\Domania.Domain.csproj", "{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domania.Domain", "Domainia\Domania.Domain\Domania.Domain.csproj", "{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domaina.Infrastructure", "Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj", "{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Infrastructure", "Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj", "{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domaina.Application", "Domainia\Domaina.Application\Domaina.Application.csproj", "{7DF31C62-35E5-410A-95DA-021DB974B57A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Application", "Domainia\Domaina.Application\Domaina.Application.csproj", "{7DF31C62-35E5-410A-95DA-021DB974B57A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre", "Oeuvre\Oeuvre.csproj", "{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre", "Oeuvre\Oeuvre.csproj", "{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,26 +75,6 @@ Global
 		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80C96D96-52F0-4B53-9F66-E84E270FB746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80C96D96-52F0-4B53-9F66-E84E270FB746}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80C96D96-52F0-4B53-9F66-E84E270FB746}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80C96D96-52F0-4B53-9F66-E84E270FB746}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3677121-3280-4472-96B8-FF3D35417483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3677121-3280-4472-96B8-FF3D35417483}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3677121-3280-4472-96B8-FF3D35417483}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3677121-3280-4472-96B8-FF3D35417483}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3179080B-B999-4FC4-8AE5-E37B05B5A238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3179080B-B999-4FC4-8AE5-E37B05B5A238}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3179080B-B999-4FC4-8AE5-E37B05B5A238}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3179080B-B999-4FC4-8AE5-E37B05B5A238}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D214D267-FDCF-495C-9C82-8D6692ABCEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D214D267-FDCF-495C-9C82-8D6692ABCEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D214D267-FDCF-495C-9C82-8D6692ABCEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D214D267-FDCF-495C-9C82-8D6692ABCEB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C27E4E19-E4E3-4EAB-9DA2-03E99AEBFF9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C27E4E19-E4E3-4EAB-9DA2-03E99AEBFF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C27E4E19-E4E3-4EAB-9DA2-03E99AEBFF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C27E4E19-E4E3-4EAB-9DA2-03E99AEBFF9A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -132,25 +96,24 @@ Global
 		{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FF89577D-76E9-4FF1-9B42-68CE6099D967} = {1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}
 		{AB4FB382-2934-4D1B-A712-5F27C72D08ED} = {631E02E8-D39B-4720-86A8-DE293FDF8571}
-		{0782FE19-CA5E-4006-9DD1-1C98DC645FAD} = {631E02E8-D39B-4720-86A8-DE293FDF8571}
 		{BA6C7F7F-A3C0-48DD-9641-FEEB5C604652} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
-		{AB8CF68E-6C75-4C98-AF7E-5731D6183207} = {0782FE19-CA5E-4006-9DD1-1C98DC645FAD}
 		{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{C0231846-D0A7-45A4-89CD-D803E22BF083} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{427DCFA8-F127-488D-A3B5-B8F8255A07A7} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{D73ADD1B-776B-495E-9028-DF83EBCDA866} = {BA6C7F7F-A3C0-48DD-9641-FEEB5C604652}
 		{05BC45ED-A089-45D4-9D63-6A328020B8C7} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
-		{80C96D96-52F0-4B53-9F66-E84E270FB746} = {AB8CF68E-6C75-4C98-AF7E-5731D6183207}
-		{B3677121-3280-4472-96B8-FF3D35417483} = {0782FE19-CA5E-4006-9DD1-1C98DC645FAD}
-		{3179080B-B999-4FC4-8AE5-E37B05B5A238} = {0782FE19-CA5E-4006-9DD1-1C98DC645FAD}
-		{D214D267-FDCF-495C-9C82-8D6692ABCEB1} = {0782FE19-CA5E-4006-9DD1-1C98DC645FAD}
-		{C27E4E19-E4E3-4EAB-9DA2-03E99AEBFF9A} = {0782FE19-CA5E-4006-9DD1-1C98DC645FAD}
 		{2C7C1E1B-214B-417B-B15A-F199988790CF} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{7DF31C62-35E5-410A-95DA-021DB974B57A} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B54B5131-7792-4BE2-A981-EB1CCA99473E}
 	EndGlobalSection
 EndGlobal
