@@ -1,0 +1,44 @@
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
+
+namespace Oeuvre.Modules.IdentityAccess.API.Controller
+{
+    [Route("userAccess/[controller]")]
+    [ApiController]
+    public class UserRegistrationsController : ControllerBase
+    {
+        private readonly IUserAccessModule userAccessModule;
+
+        public UserRegistrationsController(IUserAccessModule userAccessModule)
+        {
+            this.userAccessModule = userAccessModule;
+        }
+
+        [AllowAnonymous]
+        [HttpPost("")]
+        public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
+        {
+            await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
+                                                            request.Login, 
+                                                            request.Password,
+                                                            request.Email, 
+                                                            request.FirstName, 
+                                                            request.LastName));
+
+            return Ok();
+        }
+
+        //[AllowAnonymous]
+        //[HttpPatch("{userRegistrationId}/confirm")]
+        //public async Task<IActionResult> ConfirmRegistration(Guid userRegistrationId)
+        //{
+        //    await _userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
+
+        //    return Ok();
+        //}
+    }
+}

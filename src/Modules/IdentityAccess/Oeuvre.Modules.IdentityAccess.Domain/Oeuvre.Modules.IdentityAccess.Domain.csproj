@@ -1,12 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Identity\" />
-    <Folder Include="Access\" />
+    <Compile Remove="Access\**" />
+    <Compile Remove="Identity\**" />
+    <EmbeddedResource Remove="Access\**" />
+    <EmbeddedResource Remove="Identity\**" />
+    <None Remove="Access\**" />
+    <None Remove="Identity\**" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domania.Domain\Domania.Domain.csproj" />

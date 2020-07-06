@@ -5,13 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Domain\Access\**" />
+    <Compile Remove="Domain\Identity\**" />
+    <EmbeddedResource Remove="Domain\Access\**" />
+    <EmbeddedResource Remove="Domain\Identity\**" />
+    <None Remove="Domain\Access\**" />
+    <None Remove="Domain\Identity\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Domain\" />
-    <Folder Include="Domain\Identity\" />
-    <Folder Include="Domain\Access\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
-    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.2" />

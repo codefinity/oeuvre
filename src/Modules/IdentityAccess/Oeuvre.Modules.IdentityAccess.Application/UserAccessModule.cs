@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Autofac;
+using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
-using Oeuvre.Modules.IdentityAccess.Application.CQRS;
 
-namespace Oeuvre.Modules.IdentityAccess.Infrastructure
+namespace Oeuvre.Modules.IdentityAccess.Application
 {
     public class UserAccessModule : IUserAccessModule
     {
-        //public async Task<TResult> ExecuteCommandAsync<TResult>(ICommand<TResult> command)
-        //{
-         //   return await CommandsExecutor.Execute(command);
-        //}
+        public async Task<TResult> ExecuteCommandAsync<TResult>(ICommand<TResult> command)
+        {
+            return await CommandsExecutor.Execute(command);
+        }
 
         public async Task ExecuteCommandAsync(ICommand command)
         {

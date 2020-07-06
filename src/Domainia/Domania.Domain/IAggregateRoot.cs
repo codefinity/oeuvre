@@ -6,7 +6,7 @@ namespace Domania.Domain
     {
 
 
-        
+
     }
 
 }

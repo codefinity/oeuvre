@@ -11,7 +11,7 @@ namespace Oeuvre
     {
         public static IApplicationBuilder EnsureDatabase(this IApplicationBuilder builder)
         {
-            EnsureContextIsMigrated(builder.ApplicationServices.GetService<IdentityAccessDBContext>());
+            EnsureContextIsMigrated(builder.ApplicationServices.GetService<UserAccessContext>());
             //            EnsureContextIsMigrated(builder.ApplicationServices.GetService<UserProfileDbContext>());
             return builder;
         }

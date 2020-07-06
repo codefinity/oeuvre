@@ -1,26 +1,37 @@
 ﻿using System;
 namespace Domania.Domain
 {
-    public abstract class Entity : IInternalEventHandler
-        
+    public abstract class Entity
     {
-        private readonly Action<object> _applier;
+        //private List<IDomainEvent> _domainEvents;
 
-        public Guid Id { get; protected set; }
+        ///// <summary>
+        ///// Domain events occurred.
+        ///// </summary>
+        //public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();
 
-        protected Entity(Action<object> applier) => _applier = applier;
+        ///// <summary>
+        ///// Add domain event.
+        ///// </summary>
+        ///// <param name="domainEvent"></param>
+        //protected void AddDomainEvent(IDomainEvent domainEvent)
+        //{
+        //    _domainEvents = _domainEvents ?? new List<IDomainEvent>();
+        //    this._domainEvents.Add(domainEvent);
+        //}
 
-        protected Entity() { }
+        //public void ClearDomainEvents()
+        //{
+        //    _domainEvents?.Clear();
+        //}
 
-        protected abstract void When(object @event);
-
-        protected void Apply(object @event)
-        {
-            When(@event);
-            _applier(@event);
-        }
-
-        void IInternalEventHandler.Handle(object @event) => When(@event);
+        //protected void CheckRule(IBusinessRule rule)
+        //{
+        //    if (rule.IsBroken())
+        //    {
+        //        throw new BusinessRuleValidationException(rule);
+        //    }
+        //}
     }
 
 }

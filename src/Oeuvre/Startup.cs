@@ -1,5 +1,8 @@
 using System;
 using System.Data.Common;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,7 +16,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Npgsql;
 using Oeuvre.Configuration;
-using Oeuvre.Modules.IdentityAccess.Application.CQRS;
+using Oeuvre.Modules.IdentityAccess.API.Controller;
+using Oeuvre.Modules.IdentityAccess.Application;
+using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Serilog;
 using Serilog.Formatting.Compact;
@@ -42,7 +47,7 @@ namespace Oeuvre
 
             services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
 
-            services.AddIdentityAcessDatabase(Configuration);
+            //services.AddIdentityAcessDatabase(Configuration);
 
             //Delete once DB operations are running
             ////--Database
@@ -60,12 +65,51 @@ namespace Oeuvre
             //services.AddScoped<IUserAccessModule, UserAccessModule>();
             //------
 
+            //var containerBuilder = new ContainerBuilder();
+            //containerBuilder.Populate(services);
+            //containerBuilder.RegisterModule(new UserAccessAutofacModule());
+
+            //var container = containerBuilder.Build();
+
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            // Add any Autofac modules or registrations.
+            // This is called AFTER ConfigureServices so things you
+            // register here OVERRIDE things registered in ConfigureServices.
+            //
+            // You must have the call to AddAutofac in the Program.Main
+            // method or this won't be called.
+            builder.RegisterModule(new UserAccessAutofacModule());
+
+            builder.RegisterType<Mediator>()
+                        .As<IMediator>()
+                        .InstancePerLifetimeScope();
+
+            builder.Register<ServiceFactory>(context =>
+            {
+                var c = context.Resolve<IComponentContext>();
+                return t => c.Resolve(t);
+            });
+
+            //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
+            builder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
+
+            UserAccessStartup.Initialize(
+                Configuration.GetConnectionString("DefaultConnection")
+                            //,executionContextAccessor,
+                            //_logger,
+                            //emailsConfiguration,
+                            //this._configuration["Security:TextEncryptionKey"],
+                            //null
+                            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseIdentityAcessDatabase();
+            //app.UseIdentityAcessDatabase();
 
             //Delete once DB operations are running
             ////--Database
