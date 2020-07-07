@@ -1,0 +1,8 @@
+Connect to PSQL:
+
+psql -U postgres
+
+List all Databases:
+
+postgres-# \l
+

@@ -5,7 +5,7 @@ using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 {
-    public class UserAccessContext: DbContext
+    public class UserAccessContext : DbContext
     {
         public DbSet<UserRegistration> UserRegistrations { get; set; }
         //public DbSet<User> Users { get; set; }
@@ -14,7 +14,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
         //public DbSet<InternalCommand> InternalCommands { get; set; }
 
-       // private readonly ILoggerFactory _loggerFactory;
+        // private readonly ILoggerFactory _loggerFactory;
 
         public UserAccessContext(DbContextOptions options) : base(options)
         {

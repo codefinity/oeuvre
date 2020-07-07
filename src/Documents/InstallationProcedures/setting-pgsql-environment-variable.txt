@@ -1,0 +1,3 @@
+Add this value to the Environment Variable's "Path" variable.
+
+C:\Program Files\PostgreSQL\12\bin
