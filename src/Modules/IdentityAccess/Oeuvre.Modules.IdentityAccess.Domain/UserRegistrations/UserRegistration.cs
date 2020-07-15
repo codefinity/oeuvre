@@ -24,9 +24,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 
         private DateTime registerDate;
 
-        //private UserRegistrationStatus status;
-
-        private int status;
+        private UserRegistrationStatus status;
 
         private DateTime? confirmedDate;
 
@@ -62,8 +60,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.lastName = lastName;
             name = $"{firstName} {lastName}";
             registerDate = DateTime.UtcNow;
-            this.status = 1;
-            //status = UserRegistrationStatus.WaitingForConfirmation;
+            //this.status = 1;
+            status = UserRegistrationStatus.WaitingForConfirmation;
 
             //this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id, _login, _email, _firstName, _lastName, _name, _registerDate));
         }

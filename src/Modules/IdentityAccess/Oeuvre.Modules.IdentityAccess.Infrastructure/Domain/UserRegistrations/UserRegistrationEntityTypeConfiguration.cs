@@ -28,12 +28,10 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             builder.Property<DateTime>("registerDate").HasColumnName("RegisterDate");
             builder.Property<DateTime?>("confirmedDate").HasColumnName("ConfirmedDate");
 
-            builder.Property<int>("status").HasColumnName("StatusCode");
-
-            //builder.OwnsOne<UserRegistrationStatus>("_status", b =>
-            //    {
-            //        b.Property(x => x.Value).HasColumnName("StatusCode");
-            //    });
+            builder.OwnsOne<UserRegistrationStatus>("status", b =>
+                {
+                    b.Property(x => x.Value).HasColumnName("StatusCode");
+                });
         }
     }
 }
