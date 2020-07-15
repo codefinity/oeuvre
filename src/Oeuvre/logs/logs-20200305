@@ -1,3 +1,0 @@
-2020-03-05 22:59:04.013 +05:30 [Information] Getting the motors running...
-2020-03-05 22:59:06.495 +05:30 [Warning] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Remove the 'AddEntityFramework*' call as in most cases it's not needed and might cause conflicts with other products and services registered in the same service provider.
-2020-03-05 22:59:26.808 +05:30 [Information] This is the first log
