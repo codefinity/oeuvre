@@ -5,8 +5,9 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
     public class UserRegistrationId : TypedIdValueBase
     {
-        public UserRegistrationId(Guid value) : base(value)
+        public UserRegistrationId(long value) : base(value)
         {
+
         }
     }
 }

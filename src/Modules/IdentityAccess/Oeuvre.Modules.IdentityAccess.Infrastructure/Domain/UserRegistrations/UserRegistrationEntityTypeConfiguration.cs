@@ -10,23 +10,30 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
     {
         public void Configure(EntityTypeBuilder<UserRegistration> builder)
         {
-            builder.ToTable("UserRegistrations", "users");
+            builder.ToTable("UserRegistrations");
 
             builder.HasKey(x => x.Id);
 
-            builder.Property<string>("_login").HasColumnName("Login");
-            builder.Property<string>("_email").HasColumnName("Email");
-            builder.Property<string>("_password").HasColumnName("Password");
-            builder.Property<string>("_firstName").HasColumnName("FirstName");
-            builder.Property<string>("_lastName").HasColumnName("LastName");
-            builder.Property<string>("_name").HasColumnName("Name");
-            builder.Property<DateTime>("_registerDate").HasColumnName("RegisterDate");
-            builder.Property<DateTime?>("_confirmedDate").HasColumnName("ConfirmedDate");
+            //builder.OwnsOne<UserRegistrationId>("_status", b =>
+            //{
+            //    b.Property(x => x.Value).HasColumnName("StatusCode");
+            //});
 
-            builder.OwnsOne<UserRegistrationStatus>("_status", b =>
-                {
-                    b.Property(x => x.Value).HasColumnName("StatusCode");
-                });
+            builder.Property<string>("login").HasColumnName("Login");
+            builder.Property<string>("email").HasColumnName("Email");
+            builder.Property<string>("password").HasColumnName("Password");
+            builder.Property<string>("firstName").HasColumnName("FirstName");
+            builder.Property<string>("lastName").HasColumnName("LastName");
+            builder.Property<string>("name").HasColumnName("Name");
+            builder.Property<DateTime>("registerDate").HasColumnName("RegisterDate");
+            builder.Property<DateTime?>("confirmedDate").HasColumnName("ConfirmedDate");
+
+            builder.Property<int>("status").HasColumnName("StatusCode");
+
+            //builder.OwnsOne<UserRegistrationStatus>("_status", b =>
+            //    {
+            //        b.Property(x => x.Value).HasColumnName("StatusCode");
+            //    });
         }
     }
 }

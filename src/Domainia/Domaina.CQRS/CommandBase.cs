@@ -6,14 +6,14 @@ namespace Domaina.CQRS
 {
     public abstract class CommandBase : ICommand
     {
-        public Guid Id { get; }
+        public long Id { get; }
 
         protected CommandBase()
         {
-            this.Id = Guid.NewGuid();
+            //this.Id = Guid.NewGuid();
         }
 
-        protected CommandBase(Guid id)
+        protected CommandBase(long id)
         {
             this.Id = id;
         }
@@ -21,14 +21,14 @@ namespace Domaina.CQRS
 
     public abstract class CommandBase<TResult> : ICommand<TResult>
     {
-        public Guid Id { get; }
+        public long Id { get; }
 
         protected CommandBase()
         {
-            this.Id = Guid.NewGuid();
+            //this.Id = Guid.NewGuid();
         }
 
-        protected CommandBase(Guid id)
+        protected CommandBase(long id)
         {
             this.Id = id;
         }

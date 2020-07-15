@@ -1,0 +1,311 @@
+2020-07-07 20:24:32.508 +05:30 [Information] Getting the motors running...
+2020-07-07 20:29:51.784 +05:30 [Information] Getting the motors running...
+2020-07-07 20:33:30.079 +05:30 [Information] Getting the motors running...
+2020-07-07 20:36:55.369 +05:30 [Information] Getting the motors running...
+2020-07-07 20:40:55.787 +05:30 [Information] Getting the motors running...
+2020-07-07 20:48:49.311 +05:30 [Information] Getting the motors running...
+2020-07-07 20:53:20.956 +05:30 [Information] Getting the motors running...
+2020-07-07 20:53:43.953 +05:30 [Information] Getting the motors running...
+2020-07-07 20:57:35.194 +05:30 [Information] Getting the motors running...
+2020-07-07 21:01:26.254 +05:30 [Information] Getting the motors running...
+2020-07-07 21:05:43.940 +05:30 [Information] Getting the motors running...
+2020-07-07 21:06:11.017 +05:30 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42P01: relation "UserRegistrations.UserRegistrations" does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "UserRegistrations.UserRegistrations" does not exist
+    Position: 13
+    File: d:\pginstaller_12.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 1173
+    Routine: parserOpenTable
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 19
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 21:06:58.185 +05:30 [Information] Getting the motors running...
+2020-07-07 21:07:45.708 +05:30 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 42703: column "Id" of relation "UserRegistrations" does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass160_0.<<DoReadMessage>g__ReadMessageLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column "Id" of relation "UserRegistrations" does not exist
+    Position: 34
+    File: d:\pginstaller_12.auto\postgres.windows-x64\src\backend\parser\parse_target.c
+    Line: 1034
+    Routine: checkInsertTargets
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 19
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 21:08:58.360 +05:30 [Information] Getting the motors running...
+2020-07-07 21:14:59.278 +05:30 [Information] Getting the motors running...
+2020-07-07 21:19:33.933 +05:30 [Information] Getting the motors running...
+2020-07-07 21:25:20.955 +05:30 [Information] Getting the motors running...
+2020-07-07 21:32:29.315 +05:30 [Information] Getting the motors running...
+2020-07-07 21:34:10.824 +05:30 [Information] Getting the motors running...
+2020-07-07 21:34:17.020 +05:30 [Information] Getting the motors running...
+2020-07-07 21:35:56.146 +05:30 [Information] Getting the motors running...
+2020-07-07 21:39:43.474 +05:30 [Information] Getting the motors running...
+2020-07-07 21:54:30.315 +05:30 [Information] Getting the motors running...
+2020-07-07 21:56:18.557 +05:30 [Information] Getting the motors running...
+2020-07-07 21:57:48.754 +05:30 [Information] Getting the motors running...
+2020-07-07 21:58:13.065 +05:30 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to track an entity of type 'UserRegistration' because primary key property 'Id' is null.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityStateAsync(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintActionAsync(EntityEntryGraphNode`1 node, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraphAsync[TState](EntityEntryGraphNode`1 node, Func`3 handleNode, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 18
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 22:12:13.969 +05:30 [Information] Getting the motors running...
+2020-07-07 22:17:10.839 +05:30 [Information] Getting the motors running...
+2020-07-07 22:43:27.780 +05:30 [Information] Getting the motors running...
+2020-07-07 22:44:33.293 +05:30 [Information] Getting the motors running...
+2020-07-07 22:51:47.664 +05:30 [Information] Getting the motors running...
+2020-07-07 22:53:01.732 +05:30 [Information] Getting the motors running...
+2020-07-07 23:05:14.964 +05:30 [Information] Getting the motors running...
+2020-07-07 23:17:18.559 +05:30 [Information] Getting the motors running...
+2020-07-07 23:17:44.478 +05:30 [Error] An unhandled exception has occurred while executing the request.
+System.NotSupportedException: Value generation is not supported for property 'UserRegistration.Id' because it has a 'TypedIdValueConverter<UserRegistrationId>' converter configured. Configure the property to not use value generation using 'ValueGenerated.Never' or 'DatabaseGeneratedOption.None' and specify explicit values instead.
+   at Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector.CreateFromFactory(IProperty property, IEntityType entityType)
+   at Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector.<Select>b__6_0(IProperty p, IEntityType t)
+   at Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache.<>c.<GetOrAdd>b__3_0(CacheKey ck)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorCache.GetOrAdd(IProperty property, IEntityType entityType, Func`3 factory)
+   at Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelector.Select(IProperty property, IEntityType entityType)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.ValueGeneration.Internal.NpgsqlValueGeneratorSelector.Select(IProperty property, IEntityType entityType)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ValueGenerationManager.GenerateAsync(InternalEntityEntry entry, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityStateAsync(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintActionAsync(EntityEntryGraphNode`1 node, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraphAsync[TState](EntityEntryGraphNode`1 node, Func`3 handleNode, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 18
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 23:22:51.641 +05:30 [Information] Getting the motors running...
+2020-07-07 23:25:41.855 +05:30 [Information] Getting the motors running...
+2020-07-07 23:31:15.246 +05:30 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to track an entity of type 'UserRegistration' because primary key property 'Id' is null.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityStateAsync(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintActionAsync(EntityEntryGraphNode`1 node, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraphAsync[TState](EntityEntryGraphNode`1 node, Func`3 handleNode, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 18
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 23:31:31.996 +05:30 [Information] Getting the motors running...
+2020-07-07 23:31:46.443 +05:30 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to track an entity of type 'UserRegistration' because primary key property 'Id' is null.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityStateAsync(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintActionAsync(EntityEntryGraphNode`1 node, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraphAsync[TState](EntityEntryGraphNode`1 node, Func`3 handleNode, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 18
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 23:37:07.214 +05:30 [Information] Getting the motors running...
+2020-07-07 23:37:57.128 +05:30 [Information] Getting the motors running...
+2020-07-07 23:39:26.782 +05:30 [Information] Getting the motors running...
+2020-07-07 23:39:38.837 +05:30 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to track an entity of type 'UserRegistration' because primary key property 'Id' is null.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityStateAsync(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintActionAsync(EntityEntryGraphNode`1 node, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraphAsync[TState](EntityEntryGraphNode`1 node, Func`3 handleNode, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.AddAsync[TEntity](TEntity entity, CancellationToken cancellationToken)
+   at Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations.UserRegistrationRepository.AddAsync(UserRegistration userRegistration) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Domain\UserRegistrations\UserRegistrationRepository.cs:line 18
+   at Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser.RegisterNewUserCommandHandler.Handle(RegisterNewUserCommand request, CancellationToken cancellationToken) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserRegistrations\RegisterNewUser\RegisterNewUserCommandHandler.cs:line 32
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at Oeuvre.Modules.IdentityAccess.Application.CommandsExecutor.Execute[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\CommandsExecutor.cs:line 27
+   at Oeuvre.Modules.IdentityAccess.Application.UserAccessModule.ExecuteCommandAsync[TResult](ICommand`1 command) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\UserAccessModule.cs:line 16
+   at Oeuvre.Modules.IdentityAccess.API.Controller.UserRegistrationsController.RegisterNewUser(RegisterNewUserRequest request) in C:\Users\Nikhil\Documents\coding\oeuvre-project\oeuvre\src\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Controllers\UserRegistrationsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-07-07 23:41:42.707 +05:30 [Information] Getting the motors running...
+2020-07-07 23:44:16.722 +05:30 [Information] Getting the motors running...
+2020-07-07 23:47:21.103 +05:30 [Information] Getting the motors running...

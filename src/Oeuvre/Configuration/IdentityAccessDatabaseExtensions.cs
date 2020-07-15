@@ -29,7 +29,7 @@ namespace Oeuvre.Configuration
 
             services.AddDbContext<UserAccessContext>(options =>
                 options
-                .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>() 
+                //.ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>() 
                 .UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
 
             return services;

@@ -6,9 +6,9 @@ namespace Domaina.CQRS
 {
     public abstract class InternalCommandBase : ICommand
     {
-        public Guid Id { get; }
+        public long Id { get; }
 
-        protected InternalCommandBase(Guid id)
+        protected InternalCommandBase(long id)
         {
             this.Id = id;
         }
@@ -16,14 +16,14 @@ namespace Domaina.CQRS
 
     public abstract class InternalCommandBase<TResult> : ICommand<TResult>
     {
-        public Guid Id { get; }
+        public long Id { get; }
 
         protected InternalCommandBase()
         {
-            this.Id = Guid.NewGuid();
+            //this.Id = Guid.NewGuid();
         }
 
-        protected InternalCommandBase(Guid id)
+        protected InternalCommandBase(long id)
         {
             this.Id = id;
         }

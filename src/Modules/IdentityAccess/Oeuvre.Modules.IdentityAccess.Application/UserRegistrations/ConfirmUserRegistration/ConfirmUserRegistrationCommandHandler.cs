@@ -8,17 +8,17 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUse
 {
     internal class ConfirmUserRegistrationCommandHandler : ICommandHandler<ConfirmUserRegistrationCommand>
     {
-        private readonly IUserRegistrationRepository _userRegistrationRepository;
+        private readonly IUserRegistrationRepository userRegistrationRepository;
 
         public ConfirmUserRegistrationCommandHandler(IUserRegistrationRepository userRegistrationRepository)
         {
-            _userRegistrationRepository = userRegistrationRepository;
+            this.userRegistrationRepository = userRegistrationRepository;
         }
 
         public async Task<Unit> Handle(ConfirmUserRegistrationCommand request, CancellationToken cancellationToken)
         {
             var userRegistration =
-                await _userRegistrationRepository.GetByIdAsync(new UserRegistrationId(request.UserRegistrationId));
+                await userRegistrationRepository.GetByIdAsync(request.UserRegistrationId);
 
             userRegistration.Confirm();
 

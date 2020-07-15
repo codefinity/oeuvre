@@ -39,8 +39,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application
                     var dbContextOptionsBuilder = new DbContextOptionsBuilder<UserAccessContext>();
                     dbContextOptionsBuilder.UseNpgsql(_databaseConnectionString);
 
-                    dbContextOptionsBuilder
-                        .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>();
+                    //dbContextOptionsBuilder
+                    //    .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>();
 
                     return new UserAccessContext(dbContextOptionsBuilder.Options);
                 })

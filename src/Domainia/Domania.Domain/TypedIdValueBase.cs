@@ -6,11 +6,11 @@ namespace Domania.Domain
 {
     public abstract class TypedIdValueBase : IEquatable<TypedIdValueBase>
     {
-        public Guid Value { get; }
+        public long Value { get; }
 
-        protected TypedIdValueBase(Guid value)
+        protected TypedIdValueBase(long value)
         {
-            if (value == Guid.Empty)
+            if (value == 0)
                 throw new InvalidOperationException("Id value cannot be empty!");
             Value = value;
         }

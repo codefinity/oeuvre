@@ -24,12 +24,19 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPost("/identityaccess/register")]
         public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
         {
-            await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
-                                                            request.Login, 
-                                                            request.Password,
-                                                            request.Email, 
-                                                            request.FirstName, 
-                                                            request.LastName));
+            try
+            {
+                await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
+                                                        request.Login,
+                                                        request.Password,
+                                                        request.Email,
+                                                        request.FirstName,
+                                                        request.LastName));
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
 
             return Ok();
         }
@@ -47,7 +54,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
 
         [AllowAnonymous]
         [HttpPatch("{userRegistrationId}/confirm")]
-        public async Task<IActionResult> ConfirmRegistration(Guid userRegistrationId)
+        public async Task<IActionResult> ConfirmRegistration(long userRegistrationId)
         {
             await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
 

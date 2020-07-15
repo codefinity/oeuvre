@@ -7,18 +7,18 @@ using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser
 {
-    public class RegisterNewUserCommandHandler : ICommandHandler<RegisterNewUserCommand, Guid>
+    public class RegisterNewUserCommandHandler : ICommandHandler<RegisterNewUserCommand, long>
     {
-        private readonly IUserRegistrationRepository _userRegistrationRepository;
+        private readonly IUserRegistrationRepository userRegistrationRepository;
 
         public RegisterNewUserCommandHandler(
             IUserRegistrationRepository userRegistrationRepository)
         {
-            _userRegistrationRepository = userRegistrationRepository;
+            this.userRegistrationRepository = userRegistrationRepository;
 
         }
 
-        public async Task<Guid> Handle(RegisterNewUserCommand request, CancellationToken cancellationToken)
+        public async Task<long> Handle(RegisterNewUserCommand request, CancellationToken cancellationToken)
         {
             //var password = PasswordManager.HashPassword(request.Password);
 
@@ -29,9 +29,9 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
                 request.FirstName,
                 request.LastName);
 
-            await _userRegistrationRepository.AddAsync(userRegistration);
+            await userRegistrationRepository.AddAsync(userRegistration);
 
-            return userRegistration.Id.Value;
+            return userRegistration.Id;
         }
     }
 }

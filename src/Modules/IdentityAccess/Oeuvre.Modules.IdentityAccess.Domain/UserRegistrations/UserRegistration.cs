@@ -6,25 +6,29 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
     public class UserRegistration : Entity, IAggregateRoot
     {
-        public UserRegistrationId Id { get; private set; }
+        public long Id { get; private set; }
 
-        private string _login;
+        //public UserRegistrationId userRegistrationId;
 
-        private string _password;
+        private string login;
 
-        private string _email;
+        private string password;
 
-        private string _firstName;
+        private string email;
 
-        private string _lastName;
+        private string firstName;
 
-        private string _name;
+        private string lastName;
 
-        private DateTime _registerDate;
+        private string name;
 
-        private UserRegistrationStatus _status;
+        private DateTime registerDate;
 
-        private DateTime? _confirmedDate;
+        //private UserRegistrationStatus status;
+
+        private int status;
+
+        private DateTime? confirmedDate;
 
         private UserRegistration()
         {
@@ -50,15 +54,16 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         {
             //this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, login));
 
-            this.Id = new UserRegistrationId(Guid.NewGuid());
-            _login = login;
-            _password = password;
-            _email = email;
-            _firstName = firstName;
-            _lastName = lastName;
-            _name = $"{firstName} {lastName}";
-            _registerDate = DateTime.UtcNow;
-            _status = UserRegistrationStatus.WaitingForConfirmation;
+            //this.Id = new UserRegistrationId(Guid.NewGuid());
+            this.login = login;
+            this.password = password;
+            this.email = email;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            name = $"{firstName} {lastName}";
+            registerDate = DateTime.UtcNow;
+            this.status = 1;
+            //status = UserRegistrationStatus.WaitingForConfirmation;
 
             //this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id, _login, _email, _firstName, _lastName, _name, _registerDate));
         }
@@ -76,8 +81,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             //this.CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(_status));
             //this.CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(_status));
 
-            _status = UserRegistrationStatus.Confirmed;
-            _confirmedDate = DateTime.UtcNow;
+            //status = UserRegistrationStatus.Confirmed;
+            confirmedDate = DateTime.UtcNow;
 
             //this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
         }
@@ -86,7 +91,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         {
             //this.CheckRule(new UserRegistrationCannotBeExpiredMoreThanOnceRule(_status));
 
-            _status = UserRegistrationStatus.Expired;
+            //status = UserRegistrationStatus.Expired;
 
             //this.AddDomainEvent(new UserRegistrationExpiredDomainEvent(this.Id));
         }
