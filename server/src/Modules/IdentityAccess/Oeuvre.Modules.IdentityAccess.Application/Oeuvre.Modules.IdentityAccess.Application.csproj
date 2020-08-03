@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UserRegistration\**" />
+    <EmbeddedResource Remove="UserRegistration\**" />
+    <None Remove="UserRegistration\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="UserRegistrations\UsersCounter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domaina.CQRS\Domaina.CQRS.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

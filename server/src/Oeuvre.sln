@@ -1,0 +1,159 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{631E02E8-D39B-4720-86A8-DE293FDF8571}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArchTests", "ArchTests", "{1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domainia", "Domainia", "{9C138D2E-38CF-4DE9-B26D-0000F99E6771}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.ArchTests", "ArchTests\Oeuvre.ArchTests\Oeuvre.ArchTests.csproj", "{FF89577D-76E9-4FF1-9B42-68CE6099D967}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityAccess", "IdentityAccess", "{AB4FB382-2934-4D1B-A712-5F27C72D08ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BA6C7F7F-A3C0-48DD-9641-FEEB5C604652}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Domain", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj", "{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Application", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj", "{C0231846-D0A7-45A4-89CD-D803E22BF083}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Infrastructure", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj", "{427DCFA8-F127-488D-A3B5-B8F8255A07A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.Tests", "Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.Tests\Oeuvre.Modules.IdentityAccess.Tests.csproj", "{D73ADD1B-776B-495E-9028-DF83EBCDA866}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domainia", "Domainia\Domainia\Domainia.csproj", "{05BC45ED-A089-45D4-9D63-6A328020B8C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.API", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Oeuvre.Modules.IdentityAccess.API.csproj", "{2C7C1E1B-214B-417B-B15A-F199988790CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0474CA24-AE1D-4732-B65C-A334A1154219}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domania.Domain", "Domainia\Domania.Domain\Domania.Domain.csproj", "{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Infrastructure", "Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj", "{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Application", "Domainia\Domaina.Application\Domaina.Application.csproj", "{7DF31C62-35E5-410A-95DA-021DB974B57A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre", "Oeuvre\Oeuvre.csproj", "{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.CQRS", "Domainia\Domaina.CQRS\Domaina.CQRS.csproj", "{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{3A71CFB8-B56A-4E13-8738-6E2B8F3245FE}"
+	ProjectSection(SolutionItems) = preProject
+		Modules\IdentityAccess\DBScripts\identityaccess-create-tables.sql = Modules\IdentityAccess\DBScripts\identityaccess-create-tables.sql
+		Modules\IdentityAccess\DBScripts\identityaccess-delete-tables.sql = Modules\IdentityAccess\DBScripts\identityaccess-delete-tables.sql
+		Modules\IdentityAccess\DBScripts\identityaccess-load-test-data.sql = Modules\IdentityAccess\DBScripts\identityaccess-load-test-data.sql
+		Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql = Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{1C100B17-3DBD-4F67-B899-18692C2AE6AC}"
+	ProjectSection(SolutionItems) = preProject
+		Modules\IdentityAccess\Documents\ubiquitous-language.txt = Modules\IdentityAccess\Documents\ubiquitous-language.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KnowledgeBase", "KnowledgeBase", "{D40526E8-91B8-4894-A559-3013AE87C233}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\KnowledgeBase\DDDConceptReferences.txt = Documents\KnowledgeBase\DDDConceptReferences.txt
+		Documents\KnowledgeBase\DDDReferencePoints.txt = Documents\KnowledgeBase\DDDReferencePoints.txt
+		Documents\KnowledgeBase\PostgresConsoleCommads.txt = Documents\KnowledgeBase\PostgresConsoleCommads.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InstallationProcedures", "InstallationProcedures", "{18E3AF91-6D9A-4395-AC8F-A03102098581}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\InstallationProcedures\setting-pgsql-environment-variable.txt = Documents\InstallationProcedures\setting-pgsql-environment-variable.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
+	ProjectSection(SolutionItems) = preProject
+		DBScripts\create-db-with-seed-and-test-data.bat = DBScripts\create-db-with-seed-and-test-data.bat
+		DBScripts\create-db-with-seed-data.bat = DBScripts\create-db-with-seed-data.bat
+		DBScripts\drop-and-create-db.bat = DBScripts\drop-and-create-db.bat
+		DBScripts\drop-db.bat = DBScripts\drop-db.bat
+		DBScripts\oeuvre-add-seed-data.sql = DBScripts\oeuvre-add-seed-data.sql
+		DBScripts\oeuvre-add-test-data.sql = DBScripts\oeuvre-add-test-data.sql
+		DBScripts\oeuvre-create-db-tables.sql = DBScripts\oeuvre-create-db-tables.sql
+		DBScripts\oeuvre-create-db.sql = DBScripts\oeuvre-create-db.sql
+		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF89577D-76E9-4FF1-9B42-68CE6099D967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF89577D-76E9-4FF1-9B42-68CE6099D967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF89577D-76E9-4FF1-9B42-68CE6099D967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF89577D-76E9-4FF1-9B42-68CE6099D967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0231846-D0A7-45A4-89CD-D803E22BF083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0231846-D0A7-45A4-89CD-D803E22BF083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0231846-D0A7-45A4-89CD-D803E22BF083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0231846-D0A7-45A4-89CD-D803E22BF083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427DCFA8-F127-488D-A3B5-B8F8255A07A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427DCFA8-F127-488D-A3B5-B8F8255A07A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427DCFA8-F127-488D-A3B5-B8F8255A07A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427DCFA8-F127-488D-A3B5-B8F8255A07A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D73ADD1B-776B-495E-9028-DF83EBCDA866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7C1E1B-214B-417B-B15A-F199988790CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF31C62-35E5-410A-95DA-021DB974B57A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF31C62-35E5-410A-95DA-021DB974B57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF31C62-35E5-410A-95DA-021DB974B57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF31C62-35E5-410A-95DA-021DB974B57A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA42E3E-3B0B-4396-8DF5-3BB7F216E26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF89577D-76E9-4FF1-9B42-68CE6099D967} = {1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}
+		{AB4FB382-2934-4D1B-A712-5F27C72D08ED} = {631E02E8-D39B-4720-86A8-DE293FDF8571}
+		{BA6C7F7F-A3C0-48DD-9641-FEEB5C604652} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{1F6D74EF-25EF-4275-BFF3-90F7AC92FB84} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{C0231846-D0A7-45A4-89CD-D803E22BF083} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{427DCFA8-F127-488D-A3B5-B8F8255A07A7} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{D73ADD1B-776B-495E-9028-DF83EBCDA866} = {BA6C7F7F-A3C0-48DD-9641-FEEB5C604652}
+		{05BC45ED-A089-45D4-9D63-6A328020B8C7} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+		{2C7C1E1B-214B-417B-B15A-F199988790CF} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+		{7DF31C62-35E5-410A-95DA-021DB974B57A} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+		{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+		{3A71CFB8-B56A-4E13-8738-6E2B8F3245FE} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{1C100B17-3DBD-4F67-B899-18692C2AE6AC} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
+		{D40526E8-91B8-4894-A559-3013AE87C233} = {0474CA24-AE1D-4732-B65C-A334A1154219}
+		{18E3AF91-6D9A-4395-AC8F-A03102098581} = {0474CA24-AE1D-4732-B65C-A334A1154219}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B54B5131-7792-4BE2-A981-EB1CCA99473E}
+	EndGlobalSection
+EndGlobal
