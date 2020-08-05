@@ -26,6 +26,10 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 4. To Run - Use console command 'dotnet run'
 
+### Event Stroming
+
+[Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
+
 
 ## Progress Tracker
 
