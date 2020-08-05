@@ -19,7 +19,7 @@ namespace Oeuvre.Specs.Publishing.Features.Reader
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class WriteCommentsOnArticleFeature : object, Xunit.IClassFixture<WriteCommentsOnArticleFeature.FixtureData>, System.IDisposable
+    public partial class SaveAnArticleFeature : object, Xunit.IClassFixture<SaveAnArticleFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Oeuvre.Specs.Publishing.Features.Reader
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "WriteCommentsOnArticle.feature"
+#line 1 "SaveAnArticle.feature"
 #line hidden
         
-        public WriteCommentsOnArticleFeature(WriteCommentsOnArticleFeature.FixtureData fixtureData, Oeuvre_Specs_Publishing_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public SaveAnArticleFeature(SaveAnArticleFeature.FixtureData fixtureData, Oeuvre_Specs_Publishing_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Oeuvre.Specs.Publishing.Features.Reader
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WriteCommentsOnArticle", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SaveAnArticle", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,15 +80,15 @@ namespace Oeuvre.Specs.Publishing.Features.Reader
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Authenticated Reader can Comment on the Article")]
-        [Xunit.TraitAttribute("FeatureTitle", "WriteCommentsOnArticle")]
-        [Xunit.TraitAttribute("Description", "Authenticated Reader can Comment on the Article")]
-        public virtual void AuthenticatedReaderCanCommentOnTheArticle()
+        [Xunit.SkippableFactAttribute(DisplayName="Reader can save an article for later reading")]
+        [Xunit.TraitAttribute("FeatureTitle", "SaveAnArticle")]
+        [Xunit.TraitAttribute("Description", "Reader can save an article for later reading")]
+        public virtual void ReaderCanSaveAnArticleForLaterReading()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authenticated Reader can Comment on the Article", null, tagsOfScenario, argumentsOfScenario);
-#line 4
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reader can save an article for later reading", null, tagsOfScenario, argumentsOfScenario);
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -108,27 +108,27 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 4
+ testRunner.Given("I am a Authenticated Reader", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 5
- testRunner.Given("Given that I am logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("I try to save an article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 6
- testRunner.When("I comment on an Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 7
- testRunner.Then("My comment should be applied to the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Article should be saved for me", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="UnAuthenticated Reader cannot Comment on the Article")]
-        [Xunit.TraitAttribute("FeatureTitle", "WriteCommentsOnArticle")]
-        [Xunit.TraitAttribute("Description", "UnAuthenticated Reader cannot Comment on the Article")]
-        public virtual void UnAuthenticatedReaderCannotCommentOnTheArticle()
+        [Xunit.SkippableFactAttribute(DisplayName="UnAuthenticated Reader can NOT save an article for later reading")]
+        [Xunit.TraitAttribute("FeatureTitle", "SaveAnArticle")]
+        [Xunit.TraitAttribute("Description", "UnAuthenticated Reader can NOT save an article for later reading")]
+        public virtual void UnAuthenticatedReaderCanNOTSaveAnArticleForLaterReading()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("UnAuthenticated Reader cannot Comment on the Article", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("UnAuthenticated Reader can NOT save an article for later reading", null, tagsOfScenario, argumentsOfScenario);
 #line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -150,13 +150,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 10
- testRunner.Given("Given that I am not logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am a UnAuthenticated Reader", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 11
- testRunner.When("I comment on an Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I try to save an article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("My comment should not be applied to the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Article should NOT be saved for me", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -169,12 +169,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                WriteCommentsOnArticleFeature.FeatureSetup();
+                SaveAnArticleFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                WriteCommentsOnArticleFeature.FeatureTearDown();
+                SaveAnArticleFeature.FeatureTearDown();
             }
         }
     }

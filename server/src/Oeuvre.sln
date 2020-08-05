@@ -94,7 +94,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publishing", "Publishing", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Specs.Publishing", "Oeuvre.Specs.Publishing\Oeuvre.Specs.Publishing.csproj", "{B6386BAE-8D7D-44E8-B020-17254DB81C05}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReaderEngagament", "ReaderEngagament", "{2F43EF5A-2BC4-4FA8-9818-14DACBE6171A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReaderEngagement", "ReaderEngagement", "{2F43EF5A-2BC4-4FA8-9818-14DACBE6171A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Specs.Publishing", "Specifications\Features\Functional\ReaderEngagement\Oeuvre.Specs.Publishing\Oeuvre.Specs.Publishing.csproj", "{26FD672A-DB14-474B-BA5B-7296966DE1A8}"
 EndProject
