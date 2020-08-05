@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Editors can select an article for Editing")]
+        [Xunit.SkippableFactAttribute(DisplayName="Editors can submit Edit comments to the Author")]
         [Xunit.TraitAttribute("FeatureTitle", "SubmitEditCommentsToAuthor")]
-        [Xunit.TraitAttribute("Description", "Editors can select an article for Editing")]
-        public virtual void EditorsCanSelectAnArticleForEditing()
+        [Xunit.TraitAttribute("Description", "Editors can submit Edit comments to the Author")]
+        public virtual void EditorsCanSubmitEditCommentsToTheAuthor()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Editors can select an article for Editing", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Editors can submit Edit comments to the Author", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

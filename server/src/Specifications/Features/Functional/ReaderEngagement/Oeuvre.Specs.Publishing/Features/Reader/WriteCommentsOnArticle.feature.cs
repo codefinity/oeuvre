@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.Publishing.Features.Reader
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Reader can Comment on the Article")]
+        [Xunit.SkippableFactAttribute(DisplayName="Authenticated Reader can Comment on the Article")]
         [Xunit.TraitAttribute("FeatureTitle", "WriteCommentsOnArticle")]
-        [Xunit.TraitAttribute("Description", "Reader can Comment on the Article")]
-        public virtual void ReaderCanCommentOnTheArticle()
+        [Xunit.TraitAttribute("Description", "Authenticated Reader can Comment on the Article")]
+        public virtual void AuthenticatedReaderCanCommentOnTheArticle()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reader can Comment on the Article", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authenticated Reader can Comment on the Article", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -116,6 +116,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 7
  testRunner.Then("My comment should be applied to the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="UnAuthenticated Reader can Comment on the Article")]
+        [Xunit.TraitAttribute("FeatureTitle", "WriteCommentsOnArticle")]
+        [Xunit.TraitAttribute("Description", "UnAuthenticated Reader can Comment on the Article")]
+        public virtual void UnAuthenticatedReaderCanCommentOnTheArticle()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("UnAuthenticated Reader can Comment on the Article", null, tagsOfScenario, argumentsOfScenario);
+#line 9
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 10
+ testRunner.Given("Given that I am not logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 11
+ testRunner.When("I comment on an Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.Then("My comment should not be applied to the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

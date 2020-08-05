@@ -80,16 +80,16 @@ namespace Oeuvre.Specs.ContentCreation.Features.Author
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Archiving an article")]
+        [Xunit.SkippableFactAttribute(DisplayName="Authors can Archive their Published Articles")]
         [Xunit.TraitAttribute("FeatureTitle", "ArchiveAnArticle")]
-        [Xunit.TraitAttribute("Description", "Archiving an article")]
+        [Xunit.TraitAttribute("Description", "Authors can Archive their Published Articles")]
         [Xunit.TraitAttribute("Category", "mytag")]
-        public virtual void ArchivingAnArticle()
+        public virtual void AuthorsCanArchiveTheirPublishedArticles()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Archiving an article", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authors can Archive their Published Articles", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Oeuvre.Specs.ContentCreation.Features.Reviewer
+namespace Oeuvre.Specs.ContentCreation.Features.Author
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Oeuvre.Specs.ContentCreation.Features.Reviewer
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SubmitEditCommentsToAuthorFeature : object, Xunit.IClassFixture<SubmitEditCommentsToAuthorFeature.FixtureData>, System.IDisposable
+    public partial class RequestAnEditorFeature : object, Xunit.IClassFixture<RequestAnEditorFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Oeuvre.Specs.ContentCreation.Features.Reviewer
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "SubmitReviewCommentsToAuthor.feature"
+#line 1 "RequestAnEditor.feature"
 #line hidden
         
-        public SubmitEditCommentsToAuthorFeature(SubmitEditCommentsToAuthorFeature.FixtureData fixtureData, Oeuvre_Specs_ContentCreation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public RequestAnEditorFeature(RequestAnEditorFeature.FixtureData fixtureData, Oeuvre_Specs_ContentCreation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Oeuvre.Specs.ContentCreation.Features.Reviewer
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SubmitEditCommentsToAuthor", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "RequestAnEditor", "\tAuthor can request an Editor for their Article", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Reviewer
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Reviewers can send Review comments to the Author")]
-        [Xunit.TraitAttribute("FeatureTitle", "SubmitEditCommentsToAuthor")]
-        [Xunit.TraitAttribute("Description", "Reviewers can send Review comments to the Author")]
-        public virtual void ReviewersCanSendReviewCommentsToTheAuthor()
+        [Xunit.SkippableFactAttribute(DisplayName="Authors can request Editors to edit their articles")]
+        [Xunit.TraitAttribute("FeatureTitle", "RequestAnEditor")]
+        [Xunit.TraitAttribute("Description", "Authors can request Editors to edit their articles")]
+        public virtual void AuthorsCanRequestEditorsToEditTheirArticles()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reviewers can send Review comments to the Author", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authors can request Editors to edit their articles", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -109,22 +109,22 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("That I have been Assigned as an Reviewer of the Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have written an Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.And("I have written all my Review comments for the Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I want to request an Editor to edit my article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 7
- testRunner.When("I try to Submit my Review coments to the Author of the Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Then I Should be able to select an Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
- testRunner.Then("I the Review comments should be submitted to the Author", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Send an edit request to the Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
- testRunner.And("The Author of the Article should get a notification through an EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The selected Editor should get a notification through an EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
- testRunner.And("The Author of the Article should get a notification on the Web Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The selected Editor should get a notification on the Web Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -137,12 +137,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                SubmitEditCommentsToAuthorFeature.FeatureSetup();
+                RequestAnEditorFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SubmitEditCommentsToAuthorFeature.FeatureTearDown();
+                RequestAnEditorFeature.FeatureTearDown();
             }
         }
     }

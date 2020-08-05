@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Author
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Writers can submit their articles for publishing")]
+        [Xunit.SkippableFactAttribute(DisplayName="Writers can submit their articles for Publishing")]
         [Xunit.TraitAttribute("FeatureTitle", "SubmitToThePublisher")]
-        [Xunit.TraitAttribute("Description", "Writers can submit their articles for publishing")]
+        [Xunit.TraitAttribute("Description", "Writers can submit their articles for Publishing")]
         public virtual void WritersCanSubmitTheirArticlesForPublishing()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers can submit their articles for publishing", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers can submit their articles for Publishing", null, tagsOfScenario, argumentsOfScenario);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Editors can view the articles submitted to them for editing")]
+        [Xunit.SkippableFactAttribute(DisplayName="Editors can view the Articles submitted to them for Editing")]
         [Xunit.TraitAttribute("FeatureTitle", "ViewArticleSubmitedForEditing")]
-        [Xunit.TraitAttribute("Description", "Editors can view the articles submitted to them for editing")]
+        [Xunit.TraitAttribute("Description", "Editors can view the Articles submitted to them for Editing")]
         public virtual void EditorsCanViewTheArticlesSubmittedToThemForEditing()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Editors can view the articles submitted to them for editing", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Editors can view the Articles submitted to them for Editing", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

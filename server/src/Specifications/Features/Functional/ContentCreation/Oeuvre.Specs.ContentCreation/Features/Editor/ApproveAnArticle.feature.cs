@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Approve an Article")]
+        [Xunit.SkippableFactAttribute(DisplayName="Editors Approves an Article")]
         [Xunit.TraitAttribute("FeatureTitle", "ApproveAnArticle")]
-        [Xunit.TraitAttribute("Description", "Approve an Article")]
-        public virtual void ApproveAnArticle()
+        [Xunit.TraitAttribute("Description", "Editors Approves an Article")]
+        public virtual void EditorsApprovesAnArticle()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Approve an Article", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Editors Approves an Article", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("the Article should be marked as Approved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
- testRunner.And("the Author should get a notification through EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Author should get a notification through an EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
  testRunner.And("the Author should get a notification on the Web Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

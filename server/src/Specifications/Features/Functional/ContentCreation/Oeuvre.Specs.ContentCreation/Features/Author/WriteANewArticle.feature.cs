@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Author
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Writer writes a new Article and saves article as draft")]
+        [Xunit.SkippableFactAttribute(DisplayName="Writer can write a new Article and save it as Draft")]
         [Xunit.TraitAttribute("FeatureTitle", "WriteArticle")]
-        [Xunit.TraitAttribute("Description", "Writer writes a new Article and saves article as draft")]
-        public virtual void WriterWritesANewArticleAndSavesArticleAsDraft()
+        [Xunit.TraitAttribute("Description", "Writer can write a new Article and save it as Draft")]
+        public virtual void WriterCanWriteANewArticleAndSaveItAsDraft()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writer writes a new Article and saves article as draft", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writer can write a new Article and save it as Draft", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I wish to save my Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 8
- testRunner.Then("the Article should be saved as Draft.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the Article should be saved as Draft", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

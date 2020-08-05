@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Oeuvre.Specs.ContentCreation.Features.Editor
+namespace Oeuvre.Specs.ContentCreation.Features.Reviewer
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SelectAArticleForEditingFeature : object, Xunit.IClassFixture<SelectAArticleForEditingFeature.FixtureData>, System.IDisposable
+    public partial class AcceptAnArticleForEditingFeature : object, Xunit.IClassFixture<AcceptAnArticleForEditingFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "SelectAArticleForEditing.feature"
+#line 1 "AcceptAnArticleForReviewing.feature"
 #line hidden
         
-        public SelectAArticleForEditingFeature(SelectAArticleForEditingFeature.FixtureData fixtureData, Oeuvre_Specs_ContentCreation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AcceptAnArticleForEditingFeature(AcceptAnArticleForEditingFeature.FixtureData fixtureData, Oeuvre_Specs_ContentCreation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SelectAArticleForEditing", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AcceptAnArticleForEditing", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Editor
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Editors can select an article for Editing")]
-        [Xunit.TraitAttribute("FeatureTitle", "SelectAArticleForEditing")]
-        [Xunit.TraitAttribute("Description", "Editors can select an article for Editing")]
-        public virtual void EditorsCanSelectAnArticleForEditing()
+        [Xunit.SkippableFactAttribute(DisplayName="Reviewers can Accept an Article for Reviewing")]
+        [Xunit.TraitAttribute("FeatureTitle", "AcceptAnArticleForEditing")]
+        [Xunit.TraitAttribute("Description", "Reviewers can Accept an Article for Reviewing")]
+        public virtual void ReviewersCanAcceptAnArticleForReviewing()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Editors can select an article for Editing", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reviewers can Accept an Article for Reviewing", null, tagsOfScenario, argumentsOfScenario);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -109,13 +109,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 4
- testRunner.Given("That I have been Assigned as an Editor of an Article by its Author", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("That I have been Requested to Review an Article by its Author", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
- testRunner.When("I try to Edit a particular Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I try to Accept the Reviewing request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 6
- testRunner.Then("I should be able to edit it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be assigned as a Reviewer of the Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -128,12 +128,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                SelectAArticleForEditingFeature.FeatureSetup();
+                AcceptAnArticleForEditingFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SelectAArticleForEditingFeature.FeatureTearDown();
+                AcceptAnArticleForEditingFeature.FeatureTearDown();
             }
         }
     }

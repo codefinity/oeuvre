@@ -1,6 +1,6 @@
 ﻿Feature: SubmitToThePublisher
 
-Scenario: Writers can submit their articles for publishing
+Scenario: Writers can submit their articles for Publishing
 	Given I have written my Article
 	When I try to submit it to for Publishing
 	Then Then My Article should be submitted for Publishing

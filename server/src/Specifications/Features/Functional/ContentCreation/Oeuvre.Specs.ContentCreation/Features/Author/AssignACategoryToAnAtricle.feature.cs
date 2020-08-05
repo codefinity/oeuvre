@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Author
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Writers Assign A Category To An Atricle")]
+        [Xunit.SkippableFactAttribute(DisplayName="Writers Assign A Category To their Atricle")]
         [Xunit.TraitAttribute("FeatureTitle", "AssignACategoryToAnAtricle")]
-        [Xunit.TraitAttribute("Description", "Writers Assign A Category To An Atricle")]
-        public virtual void WritersAssignACategoryToAnAtricle()
+        [Xunit.TraitAttribute("Description", "Writers Assign A Category To their Atricle")]
+        public virtual void WritersAssignACategoryToTheirAtricle()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers Assign A Category To An Atricle", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers Assign A Category To their Atricle", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,10 +112,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am a Writer of an Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.When("I Select a category for my article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I select a Category for my Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.Then("The selected category should be assigned to my article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The selected Category should be assigned to my Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

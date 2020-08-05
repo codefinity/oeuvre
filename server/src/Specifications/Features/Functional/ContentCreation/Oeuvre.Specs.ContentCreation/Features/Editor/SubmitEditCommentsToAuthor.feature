@@ -1,7 +1,7 @@
 ﻿Feature: SubmitEditCommentsToAuthor
 
 
-Scenario: Editors can select an article for Editing
+Scenario: Editors can submit Edit comments to the Author
 	Given That I have been Assigned as an Editor of an Article by its Author
 	And I have written all my Edit comments for an Article
 	When I try to Submit my Edit coments to the Author of the Article

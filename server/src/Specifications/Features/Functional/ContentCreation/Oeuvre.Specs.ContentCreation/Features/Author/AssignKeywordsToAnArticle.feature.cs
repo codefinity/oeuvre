@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Author
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Writers Assign multiple Keywords To An Atricle")]
+        [Xunit.SkippableFactAttribute(DisplayName="Writers can assign multiple Keywords to an Atricle")]
         [Xunit.TraitAttribute("FeatureTitle", "AssignKeywordsToAnArticle")]
-        [Xunit.TraitAttribute("Description", "Writers Assign multiple Keywords To An Atricle")]
-        public virtual void WritersAssignMultipleKeywordsToAnAtricle()
+        [Xunit.TraitAttribute("Description", "Writers can assign multiple Keywords to an Atricle")]
+        public virtual void WritersCanAssignMultipleKeywordsToAnAtricle()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers Assign multiple Keywords To An Atricle", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers can assign multiple Keywords to an Atricle", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,10 +112,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am a Writer of an Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.When("I Select multiple Keywords for my article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I select multiple Keywords for my Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.Then("The selected Keywords should be assigned to my article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("The selected Keywords should be assigned to my Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -1,7 +1,8 @@
 ﻿Feature: DeleteAnArticle
 
 
-Scenario: Writers can delete their article
+Scenario: Writers can Delete their Article
 	Given I am a Writer of an Article
-	When I choose to delete my Article
-	Then The Article should be deleted
+	And The article is not Published
+	When I choose to Delete my Article
+	Then The Article should be marked as Deleted

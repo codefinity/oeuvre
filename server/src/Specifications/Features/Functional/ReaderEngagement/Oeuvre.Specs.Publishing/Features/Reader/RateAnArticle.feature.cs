@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.Publishing.Features.Reader
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Reader can rate an Article")]
+        [Xunit.SkippableFactAttribute(DisplayName="Authenticated Reader can rate an Article")]
         [Xunit.TraitAttribute("FeatureTitle", "RateAnArticle")]
-        [Xunit.TraitAttribute("Description", "Reader can rate an Article")]
-        public virtual void ReaderCanRateAnArticle()
+        [Xunit.TraitAttribute("Description", "Authenticated Reader can rate an Article")]
+        public virtual void AuthenticatedReaderCanRateAnArticle()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Reader can rate an Article", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authenticated Reader can rate an Article", null, tagsOfScenario, argumentsOfScenario);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -116,6 +116,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 6
  testRunner.Then("My Rating should be applied to the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="UnAuthenticated Reader cannot rate an Article")]
+        [Xunit.TraitAttribute("FeatureTitle", "RateAnArticle")]
+        [Xunit.TraitAttribute("Description", "UnAuthenticated Reader cannot rate an Article")]
+        public virtual void UnAuthenticatedReaderCannotRateAnArticle()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("UnAuthenticated Reader cannot rate an Article", null, tagsOfScenario, argumentsOfScenario);
+#line 8
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 9
+ testRunner.Given("Given that I am not logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 10
+ testRunner.When("I try to rate the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+ testRunner.Then("My Rating should not be applied to the article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
