@@ -11,13 +11,13 @@ Scenario: New user registers using valid credentials
 
 Scenario: New user register using Facebook
 
-	Given I an a new user of the product
+	Given I am a new user of the product 2
 	When I choose to register through my Facebook account
-	Then a new account will be created for me
+	Then a new account will be created for me 2
 
 Scenario: New user register using Google
 
-	Given I an a new user of the product
+	Given I am a new user of the product
 	When I choose to register through my Google account
 	Then a new account will be created for me
 

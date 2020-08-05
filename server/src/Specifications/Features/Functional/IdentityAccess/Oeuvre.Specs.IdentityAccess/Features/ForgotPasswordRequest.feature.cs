@@ -110,10 +110,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("I have forgotten my Oeuvre password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am a regestered User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And("I am asked my EMail Id at the time of registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("For reseting my password I am asked my EMail Id at the time of registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
  testRunner.When("I provide my Correct EMail Id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -154,10 +154,10 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 13
- testRunner.Given("I have forgotten my Oeuvre password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am a regestered User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
- testRunner.And("I am asked my EMail Id at the time of registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("For reseting my password I am asked my EMail Id at the time of registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
  testRunner.When("I provide my InCorrect EMail Id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

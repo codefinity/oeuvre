@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Oeuvre.Specs.ContentCreation.Features
+namespace Oeuvre.Specs.ContentCreation.Features.Author
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Oeuvre.Specs.ContentCreation.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CalculatorFeature : object, Xunit.IClassFixture<CalculatorFeature.FixtureData>, System.IDisposable
+    public partial class SubmitToThePublisherFeature : object, Xunit.IClassFixture<SubmitToThePublisherFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Oeuvre.Specs.ContentCreation.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Calculator.feature"
+#line 1 "SubmitToThePublisher.feature"
 #line hidden
         
-        public CalculatorFeature(CalculatorFeature.FixtureData fixtureData, Oeuvre_Specs_ContentCreation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public SubmitToThePublisherFeature(SubmitToThePublisherFeature.FixtureData fixtureData, Oeuvre_Specs_ContentCreation_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace Oeuvre.Specs.ContentCreation.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Calculator", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SubmitToThePublisher", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,17 +80,15 @@ namespace Oeuvre.Specs.ContentCreation.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers")]
-        [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
-        [Xunit.TraitAttribute("Description", "Add two numbers")]
-        [Xunit.TraitAttribute("Category", "mytag")]
-        public virtual void AddTwoNumbers()
+        [Xunit.SkippableFactAttribute(DisplayName="Writers can submit their articles for publishing")]
+        [Xunit.TraitAttribute("FeatureTitle", "SubmitToThePublisher")]
+        [Xunit.TraitAttribute("Description", "Writers can submit their articles for publishing")]
+        public virtual void WritersCanSubmitTheirArticlesForPublishing()
         {
-            string[] tagsOfScenario = new string[] {
-                    "mytag"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Writers can submit their articles for publishing", null, tagsOfScenario, argumentsOfScenario);
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,17 +108,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 4
+ testRunner.Given("I have written my Article", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+ testRunner.When("I try to submit it to for Publishing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 6
+ testRunner.Then("Then My Article should be submitted for Publishing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 7
+ testRunner.And("The Publisher should get a notification through an EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 8
- testRunner.Given("the first number is 50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 9
- testRunner.And("the second number is 70", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
- testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 11
- testRunner.Then("the result should be 120", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("The Publisher should get a notification on the Web Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -134,12 +134,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CalculatorFeature.FeatureSetup();
+                SubmitToThePublisherFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CalculatorFeature.FeatureTearDown();
+                SubmitToThePublisherFeature.FeatureTearDown();
             }
         }
     }
