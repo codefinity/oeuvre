@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.ContentCreation.Features.Author
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Authors can request Reviewers to Review their Articles")]
+        [Xunit.SkippableFactAttribute(DisplayName="Authors can request any number Reviewers to Review their Articles")]
         [Xunit.TraitAttribute("FeatureTitle", "RequestAReviewer")]
-        [Xunit.TraitAttribute("Description", "Authors can request Reviewers to Review their Articles")]
-        public virtual void AuthorsCanRequestReviewersToReviewTheirArticles()
+        [Xunit.TraitAttribute("Description", "Authors can request any number Reviewers to Review their Articles")]
+        public virtual void AuthorsCanRequestAnyNumberReviewersToReviewTheirArticles()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authors can request Reviewers to Review their Articles", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authors can request any number Reviewers to Review their Articles", null, tagsOfScenario, argumentsOfScenario);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -121,9 +121,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Send an review request to the Reviewer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 9
- testRunner.And("The selected Reviewer should get a notification through an EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("The snapshot of the article will be created from the current Draft for the Review" +
+                        "er to review", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
+ testRunner.And("The selected Reviewer should get a notification through an EMail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
  testRunner.And("The selected Reviewer should get a notification on the Web Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

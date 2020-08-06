@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.IdentityAccess.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="User can update his Settings")]
+        [Xunit.SkippableFactAttribute(DisplayName="Member can update his Settings")]
         [Xunit.TraitAttribute("FeatureTitle", "UserSettings")]
-        [Xunit.TraitAttribute("Description", "User can update his Settings")]
-        public virtual void UserCanUpdateHisSettings()
+        [Xunit.TraitAttribute("Description", "Member can update his Settings")]
+        public virtual void MemberCanUpdateHisSettings()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User can update his Settings", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Member can update his Settings", null, tagsOfScenario, argumentsOfScenario);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 6
- testRunner.Given("I am a Registered User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am a Registered Member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 7
  testRunner.When("I try to update my Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
