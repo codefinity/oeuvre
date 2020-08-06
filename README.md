@@ -30,6 +30,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
+- [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
 ### Event Storming Reference
 
