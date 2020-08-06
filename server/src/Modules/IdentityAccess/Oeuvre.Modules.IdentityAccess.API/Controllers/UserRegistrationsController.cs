@@ -55,7 +55,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
 
         [AllowAnonymous]
         [HttpPatch("{userRegistrationId}/confirm")]
-        public async Task<IActionResult> ConfirmRegistration(long userRegistrationId)
+        public async Task<IActionResult> ConfirmRegistration(Guid userRegistrationId)
         {
             await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
 

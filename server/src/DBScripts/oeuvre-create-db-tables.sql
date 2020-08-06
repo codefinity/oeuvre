@@ -1,6 +1,6 @@
 CREATE TABLE public."Registration"
 (
-    "Id" serial PRIMARY KEY,
+    "Id" uuid NOT NULL,
     "FirstName" VARCHAR (50) NOT NULL,
     "LastName" VARCHAR (50) NOT NULL,
     "CountryCode" Varchar (50) NOT NULL,

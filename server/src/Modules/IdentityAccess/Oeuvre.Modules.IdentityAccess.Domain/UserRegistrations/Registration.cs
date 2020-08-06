@@ -6,9 +6,9 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
     public class Registration : Entity, IAggregateRoot
     {
-        public long Id { get; private set; }
+        //public long Id { get; private set; }
 
-        //public UserRegistrationId userRegistrationId;
+        public UserRegistrationId Id { get; private set; }
 
         private FullName fullName;
 
@@ -36,7 +36,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         {
             //this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, login));
 
-            //this.Id = new UserRegistrationId(Guid.NewGuid());
+            this.Id = new UserRegistrationId(Guid.NewGuid());
 
             this.fullName = fullName;
             this.password = password;

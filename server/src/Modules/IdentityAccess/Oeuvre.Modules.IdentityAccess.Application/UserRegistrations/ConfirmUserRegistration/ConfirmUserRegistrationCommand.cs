@@ -5,11 +5,11 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUse
 {
     public class ConfirmUserRegistrationCommand : CommandBase
     {
-        public ConfirmUserRegistrationCommand(long userRegistrationId)
+        public ConfirmUserRegistrationCommand(Guid userRegistrationId)
         {
             UserRegistrationId = userRegistrationId;
         }
 
-        public long UserRegistrationId { get; }
+        public Guid UserRegistrationId { get; }
     }
 }

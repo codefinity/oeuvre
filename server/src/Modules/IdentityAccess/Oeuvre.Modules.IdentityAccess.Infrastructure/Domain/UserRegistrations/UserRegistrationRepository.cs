@@ -20,11 +20,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             userAccessContext.SaveChanges();
         }
 
-        public async Task<Registration> GetByIdAsync(long userRegistrationId)
+        public async Task<Registration> GetByIdAsync(UserRegistrationId userRegistrationId)
         {
             return await userAccessContext.UserRegistrations.FirstOrDefaultAsync(x => x.Id == userRegistrationId);
-
-            //throw new NotImplementedException();
         }
     }
 }

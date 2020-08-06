@@ -3,7 +3,7 @@ using System;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser
 {
-    public class RegisterNewUserCommand : CommandBase<long>
+    public class RegisterNewUserCommand : CommandBase<Guid>
     {
         public RegisterNewUserCommand(string firstName, 
                                         string lastName, 

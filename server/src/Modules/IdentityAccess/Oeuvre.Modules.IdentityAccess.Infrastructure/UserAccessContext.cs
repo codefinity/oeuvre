@@ -8,6 +8,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
     public class UserAccessContext : DbContext
     {
         public DbSet<Registration> UserRegistrations { get; set; }
+
         //public DbSet<User> Users { get; set; }
 
         //public DbSet<OutboxMessage> OutboxMessages { get; set; }
