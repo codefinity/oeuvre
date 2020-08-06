@@ -46,11 +46,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql = Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{1C100B17-3DBD-4F67-B899-18692C2AE6AC}"
-	ProjectSection(SolutionItems) = preProject
-		Modules\IdentityAccess\Documents\ubiquitous-language.txt = Modules\IdentityAccess\Documents\ubiquitous-language.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KnowledgeBase", "KnowledgeBase", "{D40526E8-91B8-4894-A559-3013AE87C233}"
 	ProjectSection(SolutionItems) = preProject
 		Documents\KnowledgeBase\DDDConceptReferences.txt = Documents\KnowledgeBase\DDDConceptReferences.txt
@@ -211,7 +206,6 @@ Global
 		{7DF31C62-35E5-410A-95DA-021DB974B57A} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{C7EBDDF9-0C2C-4FB6-9F05-FD8036812D85} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{3A71CFB8-B56A-4E13-8738-6E2B8F3245FE} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
-		{1C100B17-3DBD-4F67-B899-18692C2AE6AC} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
 		{D40526E8-91B8-4894-A559-3013AE87C233} = {0474CA24-AE1D-4732-B65C-A334A1154219}
 		{18E3AF91-6D9A-4395-AC8F-A03102098581} = {0474CA24-AE1D-4732-B65C-A334A1154219}
 		{85556D77-70C6-42A8-8A3D-6FB6BA2C79BD} = {DA9CC710-EB6E-40E2-9E71-C235091FAE28}

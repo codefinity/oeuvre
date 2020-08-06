@@ -11,8 +11,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
     {
         private readonly IUserRegistrationRepository userRegistrationRepository;
 
-        public RegisterNewUserCommandHandler(
-            IUserRegistrationRepository userRegistrationRepository)
+        public RegisterNewUserCommandHandler(IUserRegistrationRepository userRegistrationRepository)
         {
             this.userRegistrationRepository = userRegistrationRepository;
 
@@ -22,12 +21,11 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
         {
             //var password = PasswordManager.HashPassword(request.Password);
 
-            var userRegistration = UserRegistration.RegisterNewUser(
-                request.Login,
-                request.Password, 
-                request.Email, 
-                request.FirstName,
-                request.LastName);
+            var userRegistration = Registration.RegisterNewUser(request.FirstName,
+                                                                                request.LastName,
+                                                                                request.Password, 
+                                                                                request.MobileNumber,
+                                                                                request.Email);
 
             await userRegistrationRepository.AddAsync(userRegistration);
 

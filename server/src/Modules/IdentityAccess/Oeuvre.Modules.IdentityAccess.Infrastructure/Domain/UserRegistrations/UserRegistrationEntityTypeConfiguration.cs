@@ -6,11 +6,11 @@ using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 {
-    internal class UserRegistrationEntityTypeConfiguration : IEntityTypeConfiguration<UserRegistration>
+    internal class UserRegistrationEntityTypeConfiguration : IEntityTypeConfiguration<Registration>
     {
-        public void Configure(EntityTypeBuilder<UserRegistration> builder)
+        public void Configure(EntityTypeBuilder<Registration> builder)
         {
-            builder.ToTable("UserRegistrations");
+            builder.ToTable("Registration");
 
             builder.HasKey(x => x.Id);
 
@@ -19,12 +19,19 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             //    b.Property(x => x.Value).HasColumnName("StatusCode");
             //});
 
-            builder.Property<string>("login").HasColumnName("Login");
-            builder.Property<string>("email").HasColumnName("Email");
+            //builder.Property<string>("firstName").HasColumnName("FirstName");
+            //builder.Property<string>("lastName").HasColumnName("LastName");
+
+            builder.OwnsOne<FullName>("fullName", a =>
+            {
+                a.Property("firstName").HasColumnName("FirstName");
+                a.Property("lastName").HasColumnName("LastName");
+            });
+
+
+            builder.Property<string>("mobileNumber").HasColumnName("MobileNo");
+            builder.Property<string>("eMailId").HasColumnName("EMail");
             builder.Property<string>("password").HasColumnName("Password");
-            builder.Property<string>("firstName").HasColumnName("FirstName");
-            builder.Property<string>("lastName").HasColumnName("LastName");
-            builder.Property<string>("name").HasColumnName("Name");
             builder.Property<DateTime>("registerDate").HasColumnName("RegisterDate");
             builder.Property<DateTime?>("confirmedDate").HasColumnName("ConfirmedDate");
 

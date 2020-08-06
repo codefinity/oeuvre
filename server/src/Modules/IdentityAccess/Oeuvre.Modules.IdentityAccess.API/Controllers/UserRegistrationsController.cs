@@ -27,11 +27,11 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             try
             {
                 await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
-                                                        request.Login,
-                                                        request.Password,
-                                                        request.Email,
-                                                        request.FirstName,
-                                                        request.LastName));
+                                                                        request.Password,
+                                                                        request.EMail,
+                                                                        request.FirstName,
+                                                                        request.MobileNumber,
+                                                                        request.LastName));
             }
             catch (Exception ex)
             {

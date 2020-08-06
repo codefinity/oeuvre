@@ -5,23 +5,20 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
 {
     public class RegisterNewUserCommand : CommandBase<long>
     {
-        public RegisterNewUserCommand(string login, string password, string email, string firstName, string lastName)
+        public RegisterNewUserCommand(string firstName, string lastName, string password, string mobileNumber, string email )
         {
-            Login = login;
-            Password = password;
-            Email = email;
             FirstName = firstName;
             LastName = lastName;
+            Password = password;
+            MobileNumber = mobileNumber;
+            Email = email;
         }
 
-        public string Login { get; }
-
+        public string FirstName { get; }
+        public string LastName { get; }
         public string Password { get; }
-
+        public string MobileNumber { get; }
         public string Email { get; }
 
-        public string FirstName { get; }
-
-        public string LastName { get; }
     }
 }

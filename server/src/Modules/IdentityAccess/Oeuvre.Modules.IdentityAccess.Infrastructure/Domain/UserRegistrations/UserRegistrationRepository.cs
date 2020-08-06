@@ -14,13 +14,13 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             this.userAccessContext = userAccessContext;
         }
 
-        public async Task AddAsync(UserRegistration userRegistration)
+        public async Task AddAsync(Registration userRegistration)
         {
             await userAccessContext.AddAsync(userRegistration);
             userAccessContext.SaveChanges();
         }
 
-        public async Task<UserRegistration> GetByIdAsync(long userRegistrationId)
+        public async Task<Registration> GetByIdAsync(long userRegistrationId)
         {
             return await userAccessContext.UserRegistrations.FirstOrDefaultAsync(x => x.Id == userRegistrationId);
 
