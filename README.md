@@ -26,6 +26,15 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 4. To Run - Use console command 'dotnet run'
 
+### Event Stroming Boards
+
+- [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
+- [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
+
+### Event Storming Reference
+
+[mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
+
 
 ## Progress Tracker
 
