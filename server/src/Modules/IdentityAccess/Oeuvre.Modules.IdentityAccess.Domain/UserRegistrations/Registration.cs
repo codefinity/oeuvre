@@ -18,7 +18,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 
         private string eMailId;
 
-        private DateTime registerdDate;
+        private DateTime registrationDate;
 
         private UserRegistrationStatus status;
 

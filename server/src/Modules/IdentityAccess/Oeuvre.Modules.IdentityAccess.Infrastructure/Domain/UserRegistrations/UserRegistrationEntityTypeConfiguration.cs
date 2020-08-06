@@ -39,7 +39,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 
             builder.Property<string>("eMailId").HasColumnName("EMail");
             builder.Property<string>("password").HasColumnName("Password");
-            builder.Property<DateTime>("registerDate").HasColumnName("RegisterDate");
+            builder.Property<DateTime>("registrationDate").HasColumnName("RegistrationDate");
             builder.Property<DateTime?>("confirmedDate").HasColumnName("ConfirmedDate");
 
             builder.OwnsOne<UserRegistrationStatus>("status", b =>
