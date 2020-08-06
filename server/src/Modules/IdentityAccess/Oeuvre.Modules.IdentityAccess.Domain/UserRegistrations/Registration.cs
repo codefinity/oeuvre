@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
     public class Registration : Entity, IAggregateRoot
     {
-        //public long Id { get; private set; }
-
         public UserRegistrationId Id { get; private set; }
+
+        private TenantId userId;
 
         private FullName fullName;
 
