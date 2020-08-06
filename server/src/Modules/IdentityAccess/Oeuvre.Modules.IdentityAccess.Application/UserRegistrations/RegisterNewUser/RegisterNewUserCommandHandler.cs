@@ -24,6 +24,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
             var userRegistration = Registration.RegisterNewUser(request.FirstName,
                                                                                 request.LastName,
                                                                                 request.Password, 
+                                                                                request.MobileNoCountryCode,
                                                                                 request.MobileNumber,
                                                                                 request.Email);
 

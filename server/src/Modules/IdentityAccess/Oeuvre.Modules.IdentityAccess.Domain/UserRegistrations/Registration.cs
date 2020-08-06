@@ -14,7 +14,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 
         private string password;
 
-        private string mobileNumber;
+        private MobileNumber mobileNumber;
 
         private string eMailId;
 
@@ -31,7 +31,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 
         private Registration(FullName fullName,
                                 string password,
-                                string mobileNumber,
+                                MobileNumber mobileNumber,
                                 string eMailId)
         {
             //this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, login));
@@ -52,10 +52,14 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         public static Registration RegisterNewUser(string firstName,
                                                      string lastName,
                                                      string password,
+                                                     string mobileNoCountryCode,
                                                      string mobileNumber,
                                                      string emailId)
         {
-            return new Registration(new FullName(firstName, lastName), password, mobileNumber, emailId);
+            return new Registration(new FullName(firstName, lastName),
+                                        password,
+                                        new MobileNumber(mobileNoCountryCode, mobileNumber),
+                                        emailId);
         }
 
         //public User CreateUser()

@@ -28,8 +28,15 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
                 a.Property("lastName").HasColumnName("LastName");
             });
 
+            builder.OwnsOne<MobileNumber>("mobileNumber", a =>
+            {
+                a.Property("countryCode").HasColumnName("CountryCode");
+                a.Property("mobileNumber").HasColumnName("MobileNo");
+            });
 
-            builder.Property<string>("mobileNumber").HasColumnName("MobileNo");
+            //builder.Property<string>("mobileNumber").HasColumnName("MobileNo");
+
+
             builder.Property<string>("eMailId").HasColumnName("EMail");
             builder.Property<string>("password").HasColumnName("Password");
             builder.Property<DateTime>("registerDate").HasColumnName("RegisterDate");
