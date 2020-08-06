@@ -39,7 +39,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 #### Evolution - One
 
-Branch evolution-one 
+- Branch evolution-one 
 
-Requirements for Phase One published - https://github.com/codefinity/oeuvre/wiki/Phase-One:-Requirements
-Ubiquitous Language - https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features
+- Requirements for Phase One published - https://github.com/codefinity/oeuvre/wiki/Phase-One:-Requirements
+- Ubiquitous Language - https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features
