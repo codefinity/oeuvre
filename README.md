@@ -37,7 +37,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
 
 
-#### Evolution - One
+### Evolution - One
 
 - Branch: evolution-one 
 
