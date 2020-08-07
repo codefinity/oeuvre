@@ -10,5 +10,10 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserSettings
         public UserSettingId Id { get; private set; }
 
         private UserId userId;
+
+        private readonly bool emailPublicVisibility;
+
+        private readonly bool mobileNoPublicVisibility;
+
     }
 }

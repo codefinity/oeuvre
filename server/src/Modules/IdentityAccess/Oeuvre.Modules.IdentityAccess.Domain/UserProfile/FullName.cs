@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Domania.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Domania.Domain;
+using System.Threading;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.Users
+namespace Oeuvre.Modules.IdentityAccess.Domain.UserProfile
 {
-    internal class FullName : ValueObject
+    public class FullName : ValueObject
     {
         private readonly string firstName;
 
@@ -16,5 +17,6 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
             this.firstName = firstName;
             this.lastName = lastName;
         }
+
     }
 }

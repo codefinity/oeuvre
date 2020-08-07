@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Domania.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
-    public class MobileNumber
+    public class MobileNumber : ValueObject
     {
         private readonly string countryCode;
         private readonly string mobileNumber;

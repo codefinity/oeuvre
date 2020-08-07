@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.Users
+namespace Oeuvre.Modules.IdentityAccess.Domain.UserProfile
 {
     public class MobileNumber : ValueObject
     {

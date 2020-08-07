@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Domania.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
-    public class FullName
+    public class FullName : ValueObject
     {
         private readonly string firstName;
 
