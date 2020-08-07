@@ -4,7 +4,16 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 {
-    class MobileNumber
+    public class MobileNumber
     {
+        private readonly string countryCode;
+        private readonly string mobileNumber;
+
+        public MobileNumber(string countryCode, string mobileNumber)
+        {
+            this.countryCode = countryCode;
+            this.mobileNumber = mobileNumber;
+        }
+
     }
 }
