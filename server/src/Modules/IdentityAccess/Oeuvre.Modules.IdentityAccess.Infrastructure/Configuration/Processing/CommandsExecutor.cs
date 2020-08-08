@@ -1,12 +1,13 @@
 ﻿using Autofac;
-using Domaina.CQRS;
 using MediatR;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Processing
 {
     internal static class CommandsExecutor
     {

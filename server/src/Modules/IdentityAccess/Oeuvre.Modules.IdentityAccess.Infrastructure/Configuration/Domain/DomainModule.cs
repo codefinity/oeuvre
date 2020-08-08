@@ -2,7 +2,7 @@
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain
 {
     internal class DomainModule : Module
     {

@@ -1,10 +1,10 @@
-﻿using Domaina.CQRS;
+﻿using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
     internal static class Assemblies
     {

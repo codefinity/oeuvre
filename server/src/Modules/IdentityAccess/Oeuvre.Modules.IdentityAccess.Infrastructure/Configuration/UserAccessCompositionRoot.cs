@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
     internal static class UserAccessCompositionRoot
     {

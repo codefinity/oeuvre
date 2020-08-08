@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
     internal class AllConstructorFinder : IConstructorFinder
     {

@@ -12,14 +12,15 @@
     <None Remove="Domain\Access\**" />
     <None Remove="Domain\Identity\**" />
   </ItemGroup>
-
   <ItemGroup>
-    <Folder Include="Domain\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.2" />
   </ItemGroup>
   <ItemGroup>

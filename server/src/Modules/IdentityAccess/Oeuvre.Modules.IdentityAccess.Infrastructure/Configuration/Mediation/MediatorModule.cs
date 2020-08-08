@@ -8,17 +8,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using FluentValidation;
-using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation
 {
     public class MediatorModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope();
+                                            .AsImplementedInterfaces()
+                                            .InstancePerLifetimeScope();
 
             builder.RegisterSource(new ScopedContravariantRegistrationSource(
                 typeof(IRequestHandler<,>),

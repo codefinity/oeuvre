@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Dapper;
 using Domaina.Application.Data;
-using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Configuration.Queries;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration
 {

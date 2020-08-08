@@ -1,9 +1,10 @@
 ﻿using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
     public class UserAccessStartup
     {

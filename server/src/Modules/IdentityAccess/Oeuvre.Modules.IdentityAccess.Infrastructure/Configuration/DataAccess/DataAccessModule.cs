@@ -6,12 +6,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Logging;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
 {
     internal class DataAccessModule : Autofac.Module
     {

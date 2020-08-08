@@ -20,6 +20,7 @@ using Oeuvre.Modules.IdentityAccess.API.Controller;
 using Oeuvre.Modules.IdentityAccess.Application;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using Serilog;
 using Serilog.Formatting.Compact;
 
