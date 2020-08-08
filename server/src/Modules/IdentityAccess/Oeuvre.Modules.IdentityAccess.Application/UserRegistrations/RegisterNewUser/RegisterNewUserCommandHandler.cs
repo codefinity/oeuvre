@@ -10,10 +10,13 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
     public class RegisterNewUserCommandHandler : ICommandHandler<RegisterNewUserCommand, Guid>
     {
         private readonly IUserRegistrationRepository userRegistrationRepository;
+        private readonly IUsersCounter usersCounter;
 
-        public RegisterNewUserCommandHandler(IUserRegistrationRepository userRegistrationRepository)
+        public RegisterNewUserCommandHandler(IUserRegistrationRepository userRegistrationRepository,
+                                                IUsersCounter usersCounter)
         {
             this.userRegistrationRepository = userRegistrationRepository;
+            this.usersCounter = usersCounter;
 
         }
 
@@ -21,12 +24,14 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
         {
             //var password = PasswordManager.HashPassword(request.Password);
 
-            var userRegistration = Registration.RegisterNewUser(request.FirstName,
-                                                                                request.LastName,
-                                                                                request.Password, 
-                                                                                request.MobileNoCountryCode,
-                                                                                request.MobileNumber,
-                                                                                request.Email);
+            var userRegistration = Registration.RegisterNewUser(new Guid(request.TenantId),
+                                                                    request.FirstName,
+                                                                    request.LastName,
+                                                                    request.Password, 
+                                                                    request.MobileNoCountryCode,
+                                                                    request.MobileNumber,
+                                                                    request.Email,
+                                                                    usersCounter);
 
             await userRegistrationRepository.AddAsync(userRegistration);
 

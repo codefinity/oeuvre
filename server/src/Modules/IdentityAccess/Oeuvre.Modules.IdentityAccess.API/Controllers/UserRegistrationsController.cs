@@ -27,6 +27,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             try
             {
                 await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
+                                                                        request.TenantId,
                                                                         request.Password,
                                                                         request.EMail,
                                                                         request.FirstName,

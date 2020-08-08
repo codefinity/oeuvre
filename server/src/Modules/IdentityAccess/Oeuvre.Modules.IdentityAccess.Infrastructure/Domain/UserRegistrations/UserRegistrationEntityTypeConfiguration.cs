@@ -2,6 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
@@ -14,13 +15,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 
             builder.HasKey(x => x.Id);
 
-            //builder.OwnsOne<UserRegistrationId>("_status", b =>
-            //{
-            //    b.Property(x => x.Value).HasColumnName("StatusCode");
-            //});
-
-            //builder.Property<string>("firstName").HasColumnName("FirstName");
-            //builder.Property<string>("lastName").HasColumnName("LastName");
+            builder.Property<TenantId>("tenantId").HasColumnName("TenantId");
 
             builder.OwnsOne<FullName>("fullName", a =>
             {
@@ -31,10 +26,8 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             builder.OwnsOne<MobileNumber>("mobileNumber", a =>
             {
                 a.Property("countryCode").HasColumnName("CountryCode");
-                a.Property("mobileNumber").HasColumnName("MobileNo");
+                a.Property("number").HasColumnName("MobileNo");
             });
-
-            //builder.Property<string>("mobileNumber").HasColumnName("MobileNo");
 
 
             builder.Property<string>("eMailId").HasColumnName("EMail");

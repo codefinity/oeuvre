@@ -2,6 +2,8 @@
 using System.Runtime.CompilerServices;
 using Domania.Domain;
 using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
+using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
+using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
@@ -9,7 +11,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
     {
         public UserRegistrationId Id { get; private set; }
 
-        private TenantId userId;
+        private TenantId tenantId;
 
         private FullName fullName;
 
@@ -30,37 +32,51 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             // Only EF.
         }
 
-        private Registration(FullName fullName,
+        private Registration(TenantId tenantId, 
+                                FullName fullName,
                                 string password,
                                 MobileNumber mobileNumber,
-                                string eMailId)
+                                string eMailId,
+                                IUsersCounter usersCounter)
         {
-            //this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, login));
+            this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, eMailId));
 
             this.Id = new UserRegistrationId(Guid.NewGuid());
 
+            this.tenantId = tenantId;
             this.fullName = fullName;
             this.password = password;
             this.mobileNumber = mobileNumber;
             this.eMailId = eMailId;
 
+            registrationDate = DateTime.UtcNow;
+
             //this.status = 1;
             status = UserRegistrationStatus.WaitingForConfirmation;
 
-            //this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id, _login, _email, _firstName, _lastName, _name, _registerDate));
+            this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id,
+                                                                    fullName.FirstName,
+                                                                    fullName.LastName,
+                                                                    mobileNumber.Number,
+                                                                    eMailId, 
+                                                                    registrationDate));
         }
 
-        public static Registration RegisterNewUser(string firstName,
+        public static Registration RegisterNewUser(Guid tenantId,
+                                                    string firstName,
                                                      string lastName,
                                                      string password,
                                                      string mobileNoCountryCode,
                                                      string mobileNumber,
-                                                     string emailId)
+                                                     string emailId,
+                                                     IUsersCounter usersCounter)
         {
-            return new Registration(new FullName(firstName, lastName),
+            return new Registration(new TenantId(tenantId), 
+                                        new FullName(firstName, lastName),
                                         password,
                                         new MobileNumber(mobileNoCountryCode, mobileNumber),
-                                        emailId);
+                                        emailId,
+                                        usersCounter);
         }
 
         //public User CreateUser()

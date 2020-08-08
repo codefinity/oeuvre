@@ -18,5 +18,9 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.lastName = lastName;
         }
 
+        public string FirstName { get { return firstName; } }
+
+        public string LastName { get { return lastName; } }
+
     }
 }

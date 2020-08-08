@@ -1,11 +1,12 @@
-﻿using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
+﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 {
-    internal class User
+    internal class User : Entity
     {
         public UserId Id { get; private set; }
 

@@ -5,13 +5,15 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
 {
     public class RegisterNewUserCommand : CommandBase<Guid>
     {
-        public RegisterNewUserCommand(string firstName, 
+        public RegisterNewUserCommand(string tenantId,
+                                        string firstName, 
                                         string lastName, 
                                         string password,
                                         string mobileNoCountryCode,
                                         string mobileNumber, 
                                         string email )
         {
+            TenantId = tenantId;
             FirstName = firstName;
             LastName = lastName;
             Password = password;
@@ -20,6 +22,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
             Email = email;
         }
 
+        public string TenantId { get; }
         public string FirstName { get; }
         public string LastName { get; }
         public string Password { get; }

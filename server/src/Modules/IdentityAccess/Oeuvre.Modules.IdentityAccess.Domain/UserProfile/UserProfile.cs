@@ -1,4 +1,5 @@
-﻿using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
+﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserProfile
 {
-    internal class UserProfile
+    internal class UserProfile : Entity
     {
         public UserProfileId Id { get; private set; }
 

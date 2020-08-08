@@ -1,6 +1,7 @@
 CREATE TABLE public."Registration"
 (
-    "Id" uuid NOT NULL,
+    "Id" uuid PRIMARY KEY,
+    "TenantId" uuid NOT NULL,
     "FirstName" VARCHAR (50) NOT NULL,
     "LastName" VARCHAR (50) NOT NULL,
     "CountryCode" Varchar (50) NOT NULL,

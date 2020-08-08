@@ -49,7 +49,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application
             containerBuilder.RegisterModule(new DataAccessModule(connectionString
                 //, loggerFactory
                 ));
-            //containerBuilder.RegisterModule(new DomainModule());
+            containerBuilder.RegisterModule(new DomainModule());
             //containerBuilder.RegisterModule(new ProcessingModule());
             //containerBuilder.RegisterModule(new EventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
