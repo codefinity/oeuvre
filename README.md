@@ -32,9 +32,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-### Event Storming Reference
 
-[mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
 
 
 ### Evolution - One
@@ -43,3 +41,20 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 - Requirements for Phase One published: https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features
 - Ubiquitous Language: https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features
+
+### Inspired By
+
+#### Event Storming Reference
+
+- [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
+- [ddd-crew
+/
+eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
+
+#### Github 
+
+- [https://github.com/kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+
+#### Articles
+
+#### Books
