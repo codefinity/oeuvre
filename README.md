@@ -32,15 +32,12 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-
-
-
 ### Evolution - One
 
-- Branch: evolution-one 
+- **Branch:** evolution-one 
 
-- Requirements for Phase One published: https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features
-- Ubiquitous Language: https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features
+- [Requirements for Phase One published](https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features)
+- [Ubiquitous Language](https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features)
 
 ### Inspired By
 
