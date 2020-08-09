@@ -44,7 +44,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ### Inspired By
 
-#### Event Storming Reference
+#### Event Storming References
 
 - [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
 - [ddd-crew
@@ -57,4 +57,11 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 #### Articles
 
+-[Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
+
 #### Books
+
+- [Implementing Domain-Driven Design](https://www.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/)
+- [Patterns, Principles, and Practices of Domain-Driven Design](https://www.oreilly.com/library/view/patterns-principles-and/9781118714706/)
+- [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
+- [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
