@@ -57,7 +57,7 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 #### Articles
 
--[Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
+- [Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
 
 #### Books
 
