@@ -9,8 +9,8 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<UsersCounter>()
-                .As<IUsersCounter>()
-                .InstancePerLifetimeScope();
+                            .As<IUsersCounter>()
+                            .InstancePerLifetimeScope();
         }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Processing;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,12 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
                 .WithParameter("connectionString", _databaseConnectionString)
                 .InstancePerLifetimeScope();
 
+
+            builder.RegisterType<MediatrDomainEventDispatcher>()
+                .As<IDomainEventDispatcher>()
+                .WithParameter("connectionString", _databaseConnectionString)
+                .InstancePerLifetimeScope();
+
             builder
                 .Register(c =>
                 {
@@ -48,6 +55,13 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
                 .AsSelf()
                 .As<DbContext>()
                 .InstancePerLifetimeScope();
+
+
+            builder.RegisterAssemblyTypes(typeof(MediatrDomainEventDispatcher).Assembly)
+            .AsImplementedInterfaces()
+            .InstancePerLifetimeScope()
+            .FindConstructorsWith(new AllConstructorFinder());
+
 
             var infrastructureAssembly = typeof(UserAccessContext).Assembly;
 

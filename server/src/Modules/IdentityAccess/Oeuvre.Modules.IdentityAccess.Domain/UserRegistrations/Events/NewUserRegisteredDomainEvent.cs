@@ -3,7 +3,7 @@ using Domania.Domain;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events
 {
-    public class NewUserRegisteredDomainEvent : DomainEventBase
+    public class NewUserRegisteredDomainEvent : IDomainEvent
     {
         public UserRegistrationId UserRegistrationId { get; }
 
@@ -16,6 +16,10 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events
         public string MobileNumber { get; }
 
         public DateTime RegisterDate { get; }
+
+        public Guid Id => throw new NotImplementedException();
+
+        public DateTime OccurredOn => throw new NotImplementedException();
 
         public NewUserRegisteredDomainEvent(UserRegistrationId userRegistrationId,
                                                 string firstName, 
