@@ -53,7 +53,9 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 #### Github 
 
-- [https://github.com/kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+- [kgrzybek
+/
+modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 
 #### Articles
 
