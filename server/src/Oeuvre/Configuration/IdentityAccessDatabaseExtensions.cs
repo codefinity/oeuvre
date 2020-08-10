@@ -27,7 +27,7 @@ namespace Oeuvre.Configuration
             //services.AddScoped<DbConnection>(c => new NpgsqlConnection(connectionString));
             //--
 
-            services.AddDbContext<UserAccessContext>(options =>
+            services.AddDbContext<IdentityAccessContext>(options =>
                 options
                 //.ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>() 
                 .UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
@@ -40,7 +40,7 @@ namespace Oeuvre.Configuration
             //--Database
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<UserAccessContext>();
+                var context = serviceScope.ServiceProvider.GetRequiredService<IdentityAccessContext>();
                 context.Database.EnsureCreated();
             }
             //--

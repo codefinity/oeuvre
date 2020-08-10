@@ -14,7 +14,7 @@ namespace Oeuvre.Modules.IdentityAccess.ArchTests
     {
         protected static Assembly ApplicationAssembly = typeof(CommandBase).Assembly;
         protected static Assembly DomainAssembly = typeof(User).Assembly;
-        protected static Assembly InfrastructureAssembly = typeof(UserAccessContext).Assembly;
+        protected static Assembly InfrastructureAssembly = typeof(IdentityAccessContext).Assembly;
 
         protected static void AssertAreImmutable(IEnumerable<Type> types)
         {

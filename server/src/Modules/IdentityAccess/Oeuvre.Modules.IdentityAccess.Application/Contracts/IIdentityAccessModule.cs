@@ -2,7 +2,7 @@
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Contracts
 {
-    public interface IUserAccessModule
+    public interface IIdentityAccessModule
     {
         Task<TResult> ExecuteCommandAsync<TResult>(ICommand<TResult> command);
 

@@ -7,9 +7,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 {
     public class UserRegistrationRepository : IUserRegistrationRepository
     {
-        private readonly UserAccessContext userAccessContext;
+        private readonly IdentityAccessContext userAccessContext;
 
-        public UserRegistrationRepository(UserAccessContext userAccessContext)
+        public UserRegistrationRepository(IdentityAccessContext userAccessContext)
         {
             this.userAccessContext = userAccessContext;
         }

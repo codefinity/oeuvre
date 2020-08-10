@@ -9,8 +9,8 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UserAccessModule>()
-                .As<IUserAccessModule>()
+            builder.RegisterType<IdentityAccessModule>()
+                .As<IIdentityAccessModule>()
                 .InstancePerLifetimeScope();
         }
     }

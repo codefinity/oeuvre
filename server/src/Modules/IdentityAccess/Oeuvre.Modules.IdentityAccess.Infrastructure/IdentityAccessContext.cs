@@ -12,7 +12,7 @@ using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 {
-    public class UserAccessContext : DbContext
+    public class IdentityAccessContext : DbContext
     {
 
         private  IDomainEventDispatcher dispatcher;
@@ -23,7 +23,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
         //private readonly ILoggerFactory _loggerFactory;
 
-        public UserAccessContext(DbContextOptions options
+        public IdentityAccessContext(DbContextOptions options
             //, IDomainEventDispatcher dispatcher
             ) : base(options)
         {

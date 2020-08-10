@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 {
-    public class UserAccessModule : IUserAccessModule
+    public class IdentityAccessModule : IIdentityAccessModule
     {
         public async Task<TResult> ExecuteCommandAsync<TResult>(ICommand<TResult> command)
         {

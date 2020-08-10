@@ -13,9 +13,9 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
     [ApiController]
     public class UserRegistrationsController : ControllerBase
     {
-        private readonly IUserAccessModule userAccessModule;
+        private readonly IIdentityAccessModule userAccessModule;
 
-        public UserRegistrationsController(IUserAccessModule userAccessModule)
+        public UserRegistrationsController(IIdentityAccessModule userAccessModule)
         {
             this.userAccessModule = userAccessModule;
         }

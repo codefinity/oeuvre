@@ -41,13 +41,13 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
             builder
                 .Register(c =>
                 {
-                    var dbContextOptionsBuilder = new DbContextOptionsBuilder<UserAccessContext>();
+                    var dbContextOptionsBuilder = new DbContextOptionsBuilder<IdentityAccessContext>();
                     dbContextOptionsBuilder.UseNpgsql(_databaseConnectionString);
 
                     dbContextOptionsBuilder
                         .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>();
 
-                    return new UserAccessContext(dbContextOptionsBuilder.Options);
+                    return new IdentityAccessContext(dbContextOptionsBuilder.Options);
                 })
                 .AsSelf()
                 .As<DbContext>()
@@ -60,7 +60,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
             .FindConstructorsWith(new AllConstructorFinder());
 
 
-            var infrastructureAssembly = typeof(UserAccessContext).Assembly;
+            var infrastructureAssembly = typeof(IdentityAccessContext).Assembly;
 
 
 
