@@ -43,22 +43,30 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             return Ok();
         }
 
-        [HttpGet("/identityaccess/registrant/{userRegistrationId}")]
+        [HttpGet("/identityaccess/registrants")]
         //[HasPermission(MeetingsPermissions.GetAllMeetingGroups)]
-        public async Task<IActionResult> GetAllMeetingGroups(Guid userRegistrationId)
+        public async Task<IActionResult> GetAllRegisteredUsers()
         {
-            var registrant = await userAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(
-                                                                        userRegistrationId));
+            var registrantsList = await userAccessModule.ExecuteQueryAsync(new GetAllUserRegistrationQuery());
 
-            return Ok(registrant);
-
+            return Ok(registrantsList);
         }
 
-        [AllowAnonymous]
-        [HttpPatch("{userRegistrationId}/confirm")]
-        public async Task<IActionResult> ConfirmRegistration(Guid userRegistrationId)
+        [HttpGet("/identityaccess/registrant/{registrantId}")]
+        //[HasPermission(MeetingsPermissions.GetMeetingGroupProposals)]
+        public async Task<IActionResult> GetARegisteredUser(Guid registrantId)
         {
-            await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
+            var registrant = await userAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(registrantId));
+
+            return Ok(registrant);
+        }
+
+
+        [AllowAnonymous]
+        [HttpPatch("{registrantId}/confirm")]
+        public async Task<IActionResult> ConfirmRegistration(Guid registrantId)
+        {
+            await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
 
             return Ok();
         }
