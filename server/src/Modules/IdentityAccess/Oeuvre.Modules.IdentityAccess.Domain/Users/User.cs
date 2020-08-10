@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 {
-    internal class User : Entity
+    public class User : Entity, IAggregateRoot
     {
         public UserId Id { get; private set; }
 
@@ -21,5 +21,10 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
         private string password;
 
         private List<UserRole> roles;
+
+        private User()
+        {
+
+        }
     }
 }

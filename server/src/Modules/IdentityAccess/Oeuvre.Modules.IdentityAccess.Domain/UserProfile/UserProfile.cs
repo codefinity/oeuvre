@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserProfile
 {
-    internal class UserProfile : Entity
+    internal class UserProfile : Entity, IAggregateRoot
     {
         public UserProfileId Id { get; private set; }
 
@@ -27,6 +27,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserProfile
         private string twitterAccount;
 
         private string facebookAccount;
+
+        private UserProfile()
+        {
+
+        }
 
 
     }

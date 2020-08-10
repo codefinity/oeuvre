@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserSettings
 {
-    internal class UserSetting : Entity
+    internal class UserSetting : Entity, IAggregateRoot
     {
         public UserSettingId Id { get; private set; }
 
@@ -15,6 +15,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserSettings
         private readonly bool emailPublicVisibility;
 
         private readonly bool mobileNoPublicVisibility;
+
+        private UserSetting()
+        {
+
+        }
 
     }
 }
