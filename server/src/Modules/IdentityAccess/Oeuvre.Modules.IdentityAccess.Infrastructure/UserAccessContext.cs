@@ -14,6 +14,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 {
     public class UserAccessContext : DbContext
     {
+
         private  IDomainEventDispatcher dispatcher;
 
         public DbSet<Registration> UserRegistrations { get; set; }
@@ -65,8 +66,6 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
                .Select(po => po.Entity)
                .Where(po => po.DomainEvents.Any())
                .ToArray();
-
-            //IDomainEventDispatcher mediator = null;
 
             using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
             {

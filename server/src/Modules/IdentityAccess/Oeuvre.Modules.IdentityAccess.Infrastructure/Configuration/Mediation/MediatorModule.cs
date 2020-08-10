@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using FluentValidation;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Processing;
+using Domaina.Infrastructure;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation
 {
@@ -43,6 +45,10 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation
 
             //builder.RegisterGeneric(typeof(RequestPostProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
             //builder.RegisterGeneric(typeof(RequestPreProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+
+            builder.RegisterType<MediatrDomainEventDispatcher>()
+                            .As<IDomainEventDispatcher>()
+                            .InstancePerLifetimeScope();
 
             builder.Register<ServiceFactory>(ctx =>
             {

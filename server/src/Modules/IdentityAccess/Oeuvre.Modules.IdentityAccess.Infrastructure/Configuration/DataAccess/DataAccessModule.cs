@@ -36,10 +36,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
                 .InstancePerLifetimeScope();
 
 
-            builder.RegisterType<MediatrDomainEventDispatcher>()
-                .As<IDomainEventDispatcher>()
-                .WithParameter("connectionString", _databaseConnectionString)
-                .InstancePerLifetimeScope();
+
 
             builder
                 .Register(c =>
