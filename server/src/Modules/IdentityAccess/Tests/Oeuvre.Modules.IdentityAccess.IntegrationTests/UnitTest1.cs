@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Oeuvre.Modules.IdentityAccess.Tests
+namespace Oeuvre.Modules.IdentityAccess.IntegrationTests
 {
     public class UnitTest1
     {
