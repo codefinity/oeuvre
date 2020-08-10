@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj" />
-    <ProjectReference Include="..\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
-    <ProjectReference Include="..\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Oeuvre.Modules.IdentityAccess.Application\Oeuvre.Modules.IdentityAccess.Application.csproj" />
+    <ProjectReference Include="..\..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
+    <ProjectReference Include="..\..\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
