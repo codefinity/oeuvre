@@ -4,7 +4,6 @@ using Moq;
 using Oeuvre.Modules.IdentityAccess.Domain.UnitTests.SeedWork;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
-using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules;
 using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
