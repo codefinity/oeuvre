@@ -26,6 +26,19 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 4. To Run - Use console command 'dotnet run'
 
+### Running Code Coverage
+
+1. On console make sure you are in the test project folder
+
+2. Run this command to generate report in XML format. The Report is saved in /TestResults Folder.
+
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:Exclude="[xunit*]\*" /p:CoverletOutput="./TestResults/"
+
+3. Run this command to generate HTML report from the XML report. The Report is saved in /TestResults/html Folder. To view the report, open the index.html file in the browser.
+
+reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestResults\html" -reporttypes:HTML;
+
+
 ### Event Stroming Boards
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
