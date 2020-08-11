@@ -58,6 +58,10 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 - [Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
 - [Avoid In-Memory Databases for Tests](https://jimmybogard.com/avoid-in-memory-databases-for-tests/)
 
+##### Code Coverage
+
+- [Measuring .NET Core Test Coverage with Coverle](https://www.tonyranieri.com/blog/2019/07/31/Measuring-.NET-Core-Test-Coverage-with-Coverlet/)
+
 #### Books
 
 - [Implementing Domain-Driven Design](https://www.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/)
