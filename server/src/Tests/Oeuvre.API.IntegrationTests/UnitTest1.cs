@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace Oeuvre.IntegrationTests
+namespace Oeuvre.API.IntegrationTests
 {
     public class UnitTest1
     {
