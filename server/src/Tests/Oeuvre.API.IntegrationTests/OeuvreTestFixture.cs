@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
+
 
 namespace Oeuvre.API.IntegrationTests
 {
@@ -16,7 +19,9 @@ namespace Oeuvre.API.IntegrationTests
             builder.ConfigureTestServices(services =>
             {
                 // We can further customize our application setup here.
+
             });
+
 
             builder.ConfigureAppConfiguration(config =>
             {
@@ -28,5 +33,6 @@ namespace Oeuvre.API.IntegrationTests
             })
             .UseEnvironment("IntegrationTesting");
         }
+
     }
 }
