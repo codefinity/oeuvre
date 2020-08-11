@@ -56,6 +56,7 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 #### Articles
 
 - [Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
+- [Avoid In-Memory Databases for Tests](https://jimmybogard.com/avoid-in-memory-databases-for-tests/)
 
 #### Books
 
