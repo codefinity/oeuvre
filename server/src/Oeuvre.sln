@@ -22,8 +22,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domainia", "Domainia\Domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.API", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Oeuvre.Modules.IdentityAccess.API.csproj", "{2C7C1E1B-214B-417B-B15A-F199988790CF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0474CA24-AE1D-4732-B65C-A334A1154219}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domania.Domain", "Domainia\Domania.Domain\Domania.Domain.csproj", "{B3BB410E-BD9E-49C9-99F2-95FA2F46C45C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Infrastructure", "Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj", "{7CD55C13-E613-4FDB-B7C9-1927B8EBD090}"
@@ -38,18 +36,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		Modules\IdentityAccess\DBScripts\identityaccess-delete-tables.sql = Modules\IdentityAccess\DBScripts\identityaccess-delete-tables.sql
 		Modules\IdentityAccess\DBScripts\identityaccess-load-test-data.sql = Modules\IdentityAccess\DBScripts\identityaccess-load-test-data.sql
 		Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql = Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KnowledgeBase", "KnowledgeBase", "{D40526E8-91B8-4894-A559-3013AE87C233}"
-	ProjectSection(SolutionItems) = preProject
-		Documents\KnowledgeBase\DDDConceptReferences.txt = Documents\KnowledgeBase\DDDConceptReferences.txt
-		Documents\KnowledgeBase\DDDReferencePoints.txt = Documents\KnowledgeBase\DDDReferencePoints.txt
-		Documents\KnowledgeBase\PostgresConsoleCommads.txt = Documents\KnowledgeBase\PostgresConsoleCommads.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InstallationProcedures", "InstallationProcedures", "{18E3AF91-6D9A-4395-AC8F-A03102098581}"
-	ProjectSection(SolutionItems) = preProject
-		Documents\InstallationProcedures\setting-pgsql-environment-variable.txt = Documents\InstallationProcedures\setting-pgsql-environment-variable.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
@@ -215,8 +201,6 @@ Global
 		{7CD55C13-E613-4FDB-B7C9-1927B8EBD090} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{7DF31C62-35E5-410A-95DA-021DB974B57A} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{3A71CFB8-B56A-4E13-8738-6E2B8F3245FE} = {AB4FB382-2934-4D1B-A712-5F27C72D08ED}
-		{D40526E8-91B8-4894-A559-3013AE87C233} = {0474CA24-AE1D-4732-B65C-A334A1154219}
-		{18E3AF91-6D9A-4395-AC8F-A03102098581} = {0474CA24-AE1D-4732-B65C-A334A1154219}
 		{85556D77-70C6-42A8-8A3D-6FB6BA2C79BD} = {DA9CC710-EB6E-40E2-9E71-C235091FAE28}
 		{F2C29C85-F19E-4D30-BA32-DCC2A21B99DB} = {DA9CC710-EB6E-40E2-9E71-C235091FAE28}
 		{5DB6F324-E39E-4815-BCB9-BBAC89A31702} = {85556D77-70C6-42A8-8A3D-6FB6BA2C79BD}
