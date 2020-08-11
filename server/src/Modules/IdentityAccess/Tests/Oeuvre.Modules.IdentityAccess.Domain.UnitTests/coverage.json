@@ -1,0 +1,1326 @@
+{
+  "Domania.Domain.dll": {
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Domainia\\Domania.Domain\\BusinessRuleValidationException.cs": {
+      "Domania.Domain.BusinessRuleValidationException": {
+        "Domania.Domain.IBusinessRule Domania.Domain.BusinessRuleValidationException::get_BrokenRule()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Domania.Domain.BusinessRuleValidationException::get_Details()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String Domania.Domain.BusinessRuleValidationException::ToString()": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Void Domania.Domain.BusinessRuleValidationException::.ctor(Domania.Domain.IBusinessRule)": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Domainia\\Domania.Domain\\DomainEventBase.cs": {
+      "Domania.Domain.DomainEventBase": {
+        "System.Guid Domania.Domain.DomainEventBase::get_Id()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Domania.Domain.DomainEventBase::get_OccurredOn()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void Domania.Domain.DomainEventBase::.ctor()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Domainia\\Domania.Domain\\DomainEventNotification.cs": {
+      "Domania.Domain.DomainEventNotification`1": {
+        "TDomainEvent Domania.Domain.DomainEventNotification`1::get_DomainEvent()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void Domania.Domain.DomainEventNotification`1::.ctor(TDomainEvent)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Domainia\\Domania.Domain\\Entity.cs": {
+      "Domania.Domain.Entity": {
+        "System.Collections.Generic.IReadOnlyCollection`1<Domania.Domain.IDomainEvent> Domania.Domain.Entity::get_DomainEvents()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void Domania.Domain.Entity::AddDomainEvent(Domania.Domain.IDomainEvent)": {
+          "Lines": {
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 9,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Domania.Domain.Entity::ClearDomainEvents()": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Domania.Domain.Entity::CheckRule(Domania.Domain.IBusinessRule)": {
+          "Lines": {
+            "31": 2,
+            "32": 2,
+            "33": 1,
+            "34": 1,
+            "36": 1
+          },
+          "Branches": [
+            {
+              "Line": 32,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 32,
+              "Offset": 9,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Domainia\\Domania.Domain\\TypedIdValueBase.cs": {
+      "Domania.Domain.TypedIdValueBase": {
+        "System.Guid Domania.Domain.TypedIdValueBase::get_Value()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Domania.Domain.TypedIdValueBase::Equals(System.Object)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 21,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 Domania.Domain.TypedIdValueBase::GetHashCode()": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Domania.Domain.TypedIdValueBase::Equals(Domania.Domain.TypedIdValueBase)": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 31,
+              "Offset": 9,
+              "EndOffset": 22,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 31,
+              "Offset": 41,
+              "EndOffset": 43,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 31,
+              "Offset": 41,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Domania.Domain.TypedIdValueBase::op_Equality(Domania.Domain.TypedIdValueBase,Domania.Domain.TypedIdValueBase)": {
+          "Lines": {
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 38,
+              "Offset": 22,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 10,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Domania.Domain.TypedIdValueBase::op_Inequality(Domania.Domain.TypedIdValueBase,Domania.Domain.TypedIdValueBase)": {
+          "Lines": {
+            "47": 0,
+            "48": 0,
+            "49": 0
+          },
+          "Branches": []
+        },
+        "System.Void Domania.Domain.TypedIdValueBase::.ctor(System.Guid)": {
+          "Lines": {
+            "11": 3,
+            "12": 3,
+            "13": 3,
+            "14": 0,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 21,
+              "EndOffset": 23,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 21,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Domainia\\Domania.Domain\\ValueObject.cs": {
+      "Domania.Domain.ValueObject": {
+        "System.Boolean Domania.Domain.ValueObject::op_Equality(Domania.Domain.ValueObject,Domania.Domain.ValueObject)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 22,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 22,
+              "EndOffset": 29,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 10,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Domania.Domain.ValueObject::op_Inequality(Domania.Domain.ValueObject,Domania.Domain.ValueObject)": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Domania.Domain.ValueObject::Equals(Domania.Domain.ValueObject)": {
+          "Lines": {
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Domania.Domain.ValueObject::Equals(System.Object)": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 27,
+              "EndOffset": 53,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 56,
+              "EndOffset": 62,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 85,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean Domania.Domain.ValueObject::PropertiesAreEqual(System.Object,System.Reflection.PropertyInfo)": {
+          "Lines": {
+            "47": 0,
+            "48": 0,
+            "49": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Domania.Domain.ValueObject::FieldsAreEqual(System.Object,System.Reflection.FieldInfo)": {
+          "Lines": {
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<System.Reflection.PropertyInfo> Domania.Domain.ValueObject::GetProperties()": {
+          "Lines": {
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "67": 0,
+            "69": 0,
+            "70": 0
+          },
+          "Branches": [
+            {
+              "Line": 58,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 58,
+              "Offset": 12,
+              "EndOffset": 76,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.IEnumerable`1<System.Reflection.FieldInfo> Domania.Domain.ValueObject::GetFields()": {
+          "Lines": {
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "81": 0,
+            "82": 0
+          },
+          "Branches": [
+            {
+              "Line": 74,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 12,
+              "EndOffset": 76,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 Domania.Domain.ValueObject::GetHashCode()": {
+          "Lines": {
+            "85": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "101": 0,
+            "103": 0
+          },
+          "Branches": [
+            {
+              "Line": 89,
+              "Offset": 53,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 122,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 122,
+              "EndOffset": 124,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Int32 Domania.Domain.ValueObject::HashValue(System.Int32,System.Object)": {
+          "Lines": {
+            "106": 0,
+            "107": 0,
+            "109": 0,
+            "110": 0
+          },
+          "Branches": [
+            {
+              "Line": 107,
+              "Offset": 2,
+              "EndOffset": 4,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 107,
+              "Offset": 2,
+              "EndOffset": 7,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Domania.Domain.ValueObject::CheckRule(Domania.Domain.IBusinessRule)": {
+          "Lines": {
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0
+          },
+          "Branches": [
+            {
+              "Line": 114,
+              "Offset": 9,
+              "EndOffset": 11,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 9,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Oeuvre.Modules.IdentityAccess.Domain.dll": {
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Users\\FullName.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Users.FullName": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Users.FullName::.ctor(System.String,System.String)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Users\\MobileNumber.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Users.MobileNumber": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Users.MobileNumber::.ctor(System.String,System.String)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Users\\User.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Users.User": {
+        "Oeuvre.Modules.IdentityAccess.Domain.Users.UserId Oeuvre.Modules.IdentityAccess.Domain.Users.User::get_Id()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Users.User::.ctor()": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "28": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Users\\UserId.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Users.UserId": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Users.UserId::.ctor(System.Guid)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Users\\UserRole.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Users.UserRole": {
+        "Oeuvre.Modules.IdentityAccess.Domain.Users.UserRole Oeuvre.Modules.IdentityAccess.Domain.Users.UserRole::get_Member()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.Users.UserRole::get_Value()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Users.UserRole::.ctor(System.String)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserSettings\\UserSetting.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserSettings.UserSetting": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserSettings.UserSettingId Oeuvre.Modules.IdentityAccess.Domain.UserSettings.UserSetting::get_Id()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserSettings.UserSetting::.ctor()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserSettings\\UserSettingId.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserSettings.UserSettingId": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserSettings.UserSettingId::.ctor(System.Guid)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\FullName.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.FullName": {
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.FullName::get_FirstName()": {
+          "Lines": {
+            "21": 3
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.FullName::get_LastName()": {
+          "Lines": {
+            "23": 3
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.FullName::.ctor(System.String,System.String)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\MobileNumber.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.MobileNumber": {
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.MobileNumber::get_CountryCode()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.MobileNumber::get_Number()": {
+          "Lines": {
+            "21": 3
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.MobileNumber::.ctor(System.String,System.String)": {
+          "Lines": {
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Registration.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration::get_Id()": {
+          "Lines": {
+            "12": 3
+          },
+          "Branches": []
+        },
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration::RegisterNewUser(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.IUsersCounter)": {
+          "Lines": {
+            "73": 2,
+            "74": 2,
+            "75": 2,
+            "76": 2,
+            "77": 2,
+            "78": 2,
+            "79": 2,
+            "80": 1
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration::Confirm()": {
+          "Lines": {
+            "91": 0,
+            "96": 0,
+            "99": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration::Expire()": {
+          "Lines": {
+            "102": 0,
+            "108": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration::.ctor()": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "33": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Registration::.ctor(Oeuvre.Modules.IdentityAccess.Domain.Tenants.TenantId,Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.FullName,System.String,Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.MobileNumber,System.String,Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.IUsersCounter)": {
+          "Lines": {
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "41": 2,
+            "42": 2,
+            "44": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "52": 1,
+            "55": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\UserRegistrationId.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId::.ctor(System.Guid)": {
+          "Lines": {
+            "8": 1,
+            "9": 1,
+            "10": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\UserRegistrationStatus.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus::get_WaitingForConfirmation()": {
+          "Lines": {
+            "7": 1
+          },
+          "Branches": []
+        },
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus::get_Confirmed()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus::get_Expired()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus::get_Value()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus::.ctor(System.String)": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Rules\\UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule": {
+        "System.Boolean Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule::IsBroken()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule::get_Message()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Rules\\UserLoginMustBeUniqueRule.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserLoginMustBeUniqueRule": {
+        "System.Boolean Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserLoginMustBeUniqueRule::IsBroken()": {
+          "Lines": {
+            "18": 2
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserLoginMustBeUniqueRule::get_Message()": {
+          "Lines": {
+            "20": 2
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserLoginMustBeUniqueRule::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.IUsersCounter,System.String)": {
+          "Lines": {
+            "12": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "16": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Rules\\UserRegistrationCannotBeConfirmedAfterExpirationRule.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedAfterExpirationRule": {
+        "System.Boolean Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedAfterExpirationRule::IsBroken()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedAfterExpirationRule::get_Message()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedAfterExpirationRule::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Rules\\UserRegistrationCannotBeConfirmedMoreThanOnceRule.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedMoreThanOnceRule": {
+        "System.Boolean Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedMoreThanOnceRule::IsBroken()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedMoreThanOnceRule::get_Message()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeConfirmedMoreThanOnceRule::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Rules\\UserRegistrationCannotBeExpiredMoreThanOnceRule.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeExpiredMoreThanOnceRule": {
+        "System.Boolean Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeExpiredMoreThanOnceRule::IsBroken()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeExpiredMoreThanOnceRule::get_Message()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules.UserRegistrationCannotBeExpiredMoreThanOnceRule::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationStatus)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Events\\NewUserRegisteredDomainEvent.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_UserRegistrationId()": {
+          "Lines": {
+            "8": 1
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_FirstName()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_LastName()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_EMailId()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.String Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_MobileNumber()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_RegisterDate()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Guid Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_Id()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::get_OccurredOn()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.NewUserRegisteredDomainEvent::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId,System.String,System.String,System.String,System.String,System.DateTime)": {
+          "Lines": {
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "37": 1,
+            "38": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Events\\UserRegistrationConfirmedDomainEvent.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.UserRegistrationConfirmedDomainEvent": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.UserRegistrationConfirmedDomainEvent::get_UserRegistrationId()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.UserRegistrationConfirmedDomainEvent::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId)": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserRegistrations\\Events\\UserRegistrationExpiredDomainEvent.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.UserRegistrationExpiredDomainEvent": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.UserRegistrationExpiredDomainEvent::get_UserRegistrationId()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events.UserRegistrationExpiredDomainEvent::.ctor(Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId)": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserProfile\\FullName.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserProfile.FullName": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserProfile.FullName::.ctor(System.String,System.String)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserProfile\\MobileNumber.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserProfile.MobileNumber": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserProfile.MobileNumber::.ctor(System.String,System.String)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserProfile\\UserProfile.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserProfile.UserProfile": {
+        "Oeuvre.Modules.IdentityAccess.Domain.UserProfile.UserProfileId Oeuvre.Modules.IdentityAccess.Domain.UserProfile.UserProfile::get_Id()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserProfile.UserProfile::.ctor()": {
+          "Lines": {
+            "31": 0,
+            "32": 0,
+            "34": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\UserProfile\\UserProfileId.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.UserProfile.UserProfileId": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.UserProfile.UserProfileId::.ctor(System.Guid)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Tenants\\Tenant.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Tenants.Tenant": {
+        "Oeuvre.Modules.IdentityAccess.Domain.Tenants.TenantId Oeuvre.Modules.IdentityAccess.Domain.Tenants.Tenant::get_Id()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Tenants.Tenant::.ctor()": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\Tenants\\TenantId.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.Tenants.TenantId": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.Tenants.TenantId::.ctor(System.Guid)": {
+          "Lines": {
+            "10": 2,
+            "11": 2,
+            "12": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\PasswordResetRequests\\PasswordResetRequest.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.PasswordResetRequest": {
+        "Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.PasswordResetRequestId Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.PasswordResetRequest::get_Id()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.PasswordResetRequest::.ctor()": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\Nikhil\\Documents\\coding\\oeuvre-project\\oeuvre\\server\\src\\Modules\\IdentityAccess\\Oeuvre.Modules.IdentityAccess.Domain\\PasswordResetRequests\\PasswordResetRequestId.cs": {
+      "Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.PasswordResetRequestId": {
+        "System.Void Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.PasswordResetRequestId::.ctor(System.Guid)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

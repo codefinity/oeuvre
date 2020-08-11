@@ -9,17 +9,17 @@ using Xunit;
 namespace Oeuvre.API.IntegrationTests.IdentityAccess
 {
     [Collection("Database collection")]
-    public class RegistrationIntegrationTests : IClassFixture<OeuvreTestFixture>
+    public class UserIntegrationTests : IClassFixture<OeuvreTestFixture> 
     {
-        //private readonly OeuvreTestFixture fixture;
 
         private readonly HttpClient client;
-        public RegistrationIntegrationTests(OeuvreTestFixture oeuvreTestFixture)
+
+        public UserIntegrationTests(OeuvreTestFixture oeuvreTestFixture)
         {
             //this.fixture = fixture;
             this.client = oeuvreTestFixture.CreateClient();
-        }
 
+        }
 
         [Theory]
         [InlineData("/identityaccess/registrants")]
@@ -76,7 +76,5 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
             //Assert.Equal("application/json; charset=utf-8",
             //                response.Content.Headers.ContentType.ToString());
         }
-
     }
-
 }
