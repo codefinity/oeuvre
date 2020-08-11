@@ -13,9 +13,9 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
     [ApiController]
     public class UserRegistrationsController : ControllerBase
     {
-        private readonly IUserAccessModule userAccessModule;
+        private readonly IIdentityAccessModule userAccessModule;
 
-        public UserRegistrationsController(IUserAccessModule userAccessModule)
+        public UserRegistrationsController(IIdentityAccessModule userAccessModule)
         {
             this.userAccessModule = userAccessModule;
         }
@@ -27,11 +27,13 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             try
             {
                 await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
-                                                        request.Login,
-                                                        request.Password,
-                                                        request.Email,
-                                                        request.FirstName,
-                                                        request.LastName));
+                                                                        request.TenantId,
+                                                                        request.Password,
+                                                                        request.EMail,
+                                                                        request.FirstName,
+                                                                        request.MobileNoCountryCode,
+                                                                        request.MobileNumber,
+                                                                        request.LastName));
             }
             catch (Exception ex)
             {
@@ -41,22 +43,30 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             return Ok();
         }
 
-        [HttpGet("/identityaccess/registrant/{userRegistrationId}")]
+        [HttpGet("/identityaccess/registrants")]
         //[HasPermission(MeetingsPermissions.GetAllMeetingGroups)]
-        public async Task<IActionResult> GetAllMeetingGroups(Guid userRegistrationId)
+        public async Task<IActionResult> GetAllRegisteredUsers()
         {
-            var registrant = await userAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(
-                                                                        userRegistrationId));
+            var registrantsList = await userAccessModule.ExecuteQueryAsync(new GetAllUserRegistrationQuery());
 
-            return Ok(registrant);
-
+            return Ok(registrantsList);
         }
 
-        [AllowAnonymous]
-        [HttpPatch("{userRegistrationId}/confirm")]
-        public async Task<IActionResult> ConfirmRegistration(long userRegistrationId)
+        [HttpGet("/identityaccess/registrant/{registrantId}")]
+        //[HasPermission(MeetingsPermissions.GetMeetingGroupProposals)]
+        public async Task<IActionResult> GetARegisteredUser(Guid registrantId)
         {
-            await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(userRegistrationId));
+            var registrant = await userAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(registrantId));
+
+            return Ok(registrant);
+        }
+
+
+        [AllowAnonymous]
+        [HttpPatch("{registrantId}/confirm")]
+        public async Task<IActionResult> ConfirmRegistration(Guid registrantId)
+        {
+            await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
 
             return Ok();
         }

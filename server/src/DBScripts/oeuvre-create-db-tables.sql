@@ -1,13 +1,14 @@
-CREATE TABLE public."UserRegistrations"
+CREATE TABLE public."Registration"
 (
-    "Id" serial PRIMARY KEY,
-    "Login" VARCHAR (100) NOT NULL,
-    "Email" VARCHAR  (255) NOT NULL,
-    "Password" VARCHAR (255) NOT NULL,
+    "Id" uuid PRIMARY KEY,
+    "TenantId" uuid NOT NULL,
     "FirstName" VARCHAR (50) NOT NULL,
     "LastName" VARCHAR (50) NOT NULL,
-    "Name" VARCHAR  (255) NOT NULL,
+    "CountryCode" Varchar (50) NOT NULL,
+    "MobileNo" VARCHAR (50) NOT NULL,
+    "EMail" VARCHAR  (255) NOT NULL,
+    "Password" VARCHAR (255) NOT NULL,
 	"StatusCode" VARCHAR(50) NOT NULL,
-	"RegisterDate" TIMESTAMP  NOT NULL,
+	"RegistrationDate" TIMESTAMP  NOT NULL,
 	"ConfirmedDate" TIMESTAMP  NULL
 );

@@ -26,11 +26,15 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="Controllers\**" />
+    <Compile Remove="logs\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="Controllers\**" />
+    <Content Remove="logs\**" />
     <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="logs\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="Controllers\**" />
+    <None Remove="logs\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 

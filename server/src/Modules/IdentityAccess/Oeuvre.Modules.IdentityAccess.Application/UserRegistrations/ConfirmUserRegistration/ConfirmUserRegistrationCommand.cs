@@ -1,15 +1,15 @@
 ﻿using System;
-using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration
 {
     public class ConfirmUserRegistrationCommand : CommandBase
     {
-        public ConfirmUserRegistrationCommand(long userRegistrationId)
+        public ConfirmUserRegistrationCommand(Guid userRegistrationId)
         {
             UserRegistrationId = userRegistrationId;
         }
 
-        public long UserRegistrationId { get; }
+        public Guid UserRegistrationId { get; }
     }
 }

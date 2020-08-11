@@ -2,34 +2,32 @@
 using System.Threading.Tasks;
 using Dapper;
 using Domaina.Application.Data;
-using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Configuration.Queries;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration
 {
     internal class GetUserRegistrationQueryHandler : IQueryHandler<GetUserRegistrationQuery, UserRegistrationDto>
     {
-        private readonly ISqlConnectionFactory _sqlConnectionFactory;
+        private readonly ISqlConnectionFactory sqlConnectionFactory;
 
         public GetUserRegistrationQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _sqlConnectionFactory = sqlConnectionFactory;
+            this.sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<UserRegistrationDto> Handle(GetUserRegistrationQuery query, CancellationToken cancellationToken)
         {
-            var connection = _sqlConnectionFactory.GetOpenConnection();
+            var connection = sqlConnectionFactory.GetOpenConnection();
 
-            const string sql = "SELECT " +
-                               "[UserRegistration].[Id], " +
-                               "[UserRegistration].[Login], " +
-                               "[UserRegistration].[Email], " +
-                               "[UserRegistration].[FirstName], " +
-                               "[UserRegistration].[LastName], " +
-                               "[UserRegistration].[Name], " +
-                               "[UserRegistration].[StatusCode] " +
-                               "FROM [users].[v_UserRegistrations] AS [UserRegistration] " +
-                               "WHERE [UserRegistration].[Id] = @UserRegistrationId";
-            
+
+            const string sql = "SELECT \"Id\", \"TenantId\", \"FirstName\"," +
+                                        " \"LastName\", \"CountryCode\"," +
+                                        " \"MobileNo\", \"EMail\", \"Password\"," +
+                                        " \"StatusCode\", \"RegistrationDate\"," +
+                                        " \"ConfirmedDate\"" +
+                                        " FROM public.\"Registration\"" +
+                                        " WHERE \"Id\" = @UserRegistrationId";
+
             return await connection.QuerySingleAsync<UserRegistrationDto>(sql,
                 new
                 {

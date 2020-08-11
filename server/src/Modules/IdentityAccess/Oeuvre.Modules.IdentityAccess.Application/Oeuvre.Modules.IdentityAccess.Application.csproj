@@ -11,18 +11,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
-    <Compile Remove="UserRegistrations\UsersCounter.cs" />
+    <Compile Remove="Configuration\Commands\ICommandsScheduler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
-    <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="MediatR" Version="8.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
-    <ProjectReference Include="..\..\..\Domainia\Domaina.CQRS\Domaina.CQRS.csproj" />
-    <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
-    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Infrastructure\Oeuvre.Modules.IdentityAccess.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

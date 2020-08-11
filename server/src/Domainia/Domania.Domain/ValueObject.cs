@@ -109,12 +109,13 @@ namespace Domania.Domain
             return seed * 23 + currentHash;
         }
 
-        //protected static void CheckRule(IBusinessRule rule)
-        //{
-        //    if (rule.IsBroken())
-        //    {
-        //        throw new BusinessRuleValidationException(rule);
-        //    }
-        //}
+        protected static void CheckRule(IBusinessRule rule)
+        {
+            if (rule.IsBroken())
+            {
+                throw new BusinessRuleValidationException(rule);
+            }
+        }
     }
+
 }
