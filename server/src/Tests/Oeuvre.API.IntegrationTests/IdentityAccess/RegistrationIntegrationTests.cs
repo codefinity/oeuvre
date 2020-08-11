@@ -27,7 +27,6 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
 
             var contents = await response.Content.ReadAsStringAsync();
 
-
             // Assert1
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
             // Assert2

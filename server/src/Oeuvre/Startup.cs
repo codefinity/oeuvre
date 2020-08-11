@@ -28,12 +28,19 @@ namespace Oeuvre
 {
     public class Startup
     {
+        private readonly IConfiguration configuration;
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            //Configuration = configuration;
+
+            this.configuration = new ConfigurationBuilder()
+                                    .AddJsonFile("appsettings.json")
+                                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json")
+                                    //.AddUserSecrets<Startup>()
+                                    .Build();
         }
 
-        public IConfiguration Configuration { get; }
+        //public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -46,7 +53,7 @@ namespace Oeuvre
                 configuration.RootPath = "ClientApp/build";
             });
 
-            services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
+            services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
 
             //services.AddIdentityAcessDatabase(Configuration);
 
@@ -98,7 +105,7 @@ namespace Oeuvre
             builder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
 
             UserAccessStartup.Initialize(
-                Configuration.GetConnectionString("DefaultConnection")
+                configuration.GetConnectionString("DefaultConnection")
                             //,executionContextAccessor,
                             //_logger,
                             //emailsConfiguration,
