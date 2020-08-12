@@ -47,23 +47,33 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
         public async void Post_Register_Valid_Success(string url)
         {
 
-            var registrant = new
-            {
-                TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
-                FirstName = "James",
-                LastName = "Bond",
-                Password = "",
-                MobileNoCountryCode = "",
-                MobileNumber = "",
-                EMail = "a@b.com"
-            };
+            //var registrant = new
+            //{
+            //    TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+            //    FirstName = "Axl",
+            //    LastName = "Rose",
+            //    Password = "GunsNRoses",
+            //    MobileNoCountryCode = "1",
+            //    MobileNumber = "9999999999",
+            //    EMail = "Axl.Rose@GunsNRoses.com"
+            //};
 
-            var json = new StringContent(JsonConvert.SerializeObject(registrant),
-                                        Encoding.UTF8,
-                                        "application/json");
+            var registrantJson = new StringContent(JsonConvert.SerializeObject(
+                                                    new
+                                                    {
+                                                        TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                                                        FirstName = "Axl",
+                                                        LastName = "Rose",
+                                                        Password = "GunsNRoses",
+                                                        MobileNoCountryCode = "1",
+                                                        MobileNumber = "9999999999",
+                                                        EMail = "Axl.Rose@GunsNRoses.com"
+                                                    }),
+                                                    Encoding.UTF8,
+                                                    "application/json");
 
 
-            var response = await client.PostAsync(url, json);
+            var response = await client.PostAsync(url, registrantJson);
 
 
             var contents = await response.Content.ReadAsStringAsync();
