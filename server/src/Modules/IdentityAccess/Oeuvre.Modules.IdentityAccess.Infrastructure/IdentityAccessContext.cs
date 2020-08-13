@@ -7,19 +7,21 @@ using Domaina.Infrastructure;
 using Domania.Domain;
 using Microsoft.EntityFrameworkCore;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
+using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Users;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 {
     public class IdentityAccessContext : DbContext
     {
 
-        private  IDomainEventDispatcher dispatcher;
+        private IDomainEventDispatcher dispatcher;
 
         public DbSet<Registration> UserRegistrations { get; set; }
 
-        //public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         //private readonly ILoggerFactory _loggerFactory;
 
@@ -33,22 +35,23 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserRegistrationEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
         }
 
 
-        public override int SaveChanges()
-        {
-            preSaveChanges().GetAwaiter().GetResult();
-            var res = base.SaveChanges();
-            return res;
-        }
+        //public override int SaveChanges()
+        //{
+        //    preSaveChanges().GetAwaiter().GetResult();
+        //    var res = base.SaveChanges();
+        //    return res;
+        //}
 
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
-        {
-            await preSaveChanges();
-            var res = await base.SaveChangesAsync(cancellationToken);
-            return res;
-        }
+        //public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        //{
+        //    await preSaveChanges();
+        //    var res = await base.SaveChangesAsync(cancellationToken);
+        //    return res;
+        //}
 
         private async Task preSaveChanges()
         {
@@ -62,10 +65,18 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
         /// </summary>
         private async Task dispatchDomainEvents()
         {
-            var domainEventEntities = ChangeTracker.Entries<Entity>()
-               .Select(po => po.Entity)
-               .Where(po => po.DomainEvents.Any())
-               .ToArray();
+            //var domainEventEntities = ChangeTracker
+            //                            .Entries<Entity>()
+            //                            .Select(po => po.Entity)
+            //                            .Where(po => po.DomainEvents.Any())
+            //                            .ToArray();
+
+            var domainEventEntities = ChangeTracker
+                                        .Entries<Entity>()
+                                        .Where(x => x.Entity.DomainEvents != null && x.Entity.DomainEvents.Any()).ToList()
+                                        .Select(x => x.Entity)
+                                        .ToList(); 
+
 
             using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
             {
@@ -85,6 +96,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
                     }
                 }
             }
+
         }
 
     }

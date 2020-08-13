@@ -9,7 +9,7 @@ using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUse
 
 namespace Oeuvre.Modules.IdentityAccess.API.Controller
 {
-    [Route("userAccess/[controller]")]
+    [Route("identityaccess/[controller]")]
     [ApiController]
     public class UserRegistrationsController : ControllerBase
     {
@@ -28,12 +28,12 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             {
                 await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
                                                                         request.TenantId,
-                                                                        request.Password,
-                                                                        request.EMail,
                                                                         request.FirstName,
+                                                                        request.LastName,
+                                                                        request.Password,
                                                                         request.MobileNoCountryCode,
                                                                         request.MobileNumber,
-                                                                        request.LastName));
+                                                                        request.EMail));
             }
             catch (Exception ex)
             {
@@ -63,7 +63,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
 
 
         [AllowAnonymous]
-        [HttpPatch("{registrantId}/confirm")]
+        [HttpPatch("/identityaccess/{registrantId}/confirm")]
         public async Task<IActionResult> ConfirmRegistration(Guid registrantId)
         {
             await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));

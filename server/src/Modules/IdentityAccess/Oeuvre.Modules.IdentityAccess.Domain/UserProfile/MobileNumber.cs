@@ -16,5 +16,9 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserProfile
             this.mobileNumber = mobileNumber;
         }
 
+        public string CountryCode { get { return countryCode; } }
+
+        public string Number { get { return mobileNumber; } }
+
     }
 }

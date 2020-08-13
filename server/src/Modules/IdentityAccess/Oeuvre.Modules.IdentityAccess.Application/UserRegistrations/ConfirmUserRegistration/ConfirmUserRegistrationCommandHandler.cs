@@ -22,6 +22,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUse
 
             userRegistration.Confirm();
 
+            await userRegistrationRepository.AddAsync(userRegistration);
+
             return Unit.Value;
         }
     }

@@ -47,11 +47,14 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
                     dbContextOptionsBuilder
                         .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>();
 
+                    dbContextOptionsBuilder.EnableSensitiveDataLogging();
+
                     return new IdentityAccessContext(dbContextOptionsBuilder.Options);
                 })
                 .AsSelf()
                 .As<DbContext>()
                 .InstancePerLifetimeScope();
+
 
 
             builder.RegisterAssemblyTypes(typeof(MediatrDomainEventDispatcher).Assembly)

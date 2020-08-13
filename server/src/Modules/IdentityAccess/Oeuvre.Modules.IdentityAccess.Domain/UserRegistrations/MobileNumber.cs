@@ -8,17 +8,17 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
     public class MobileNumber : ValueObject
     {
         private readonly string countryCode;
-        private readonly string number;
+        private readonly string mobileNumber;
 
-        public MobileNumber(string countryCode, string number)
+        public MobileNumber(string countryCode, string mobileNumber)
         {
             this.countryCode = countryCode;
-            this.number = number;
+            this.mobileNumber = mobileNumber;
         }
 
         public string CountryCode { get { return countryCode; } }
 
-        public string Number { get { return number; } }
+        public string Number { get { return mobileNumber; } }
 
     }
 }

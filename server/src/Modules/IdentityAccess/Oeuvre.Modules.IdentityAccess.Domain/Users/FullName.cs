@@ -5,7 +5,7 @@ using Domania.Domain;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 {
-    internal class FullName : ValueObject
+    public class FullName : ValueObject
     {
         private readonly string firstName;
 

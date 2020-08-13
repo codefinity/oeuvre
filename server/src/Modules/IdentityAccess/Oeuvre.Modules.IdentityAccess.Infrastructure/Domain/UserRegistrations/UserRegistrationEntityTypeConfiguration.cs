@@ -13,7 +13,18 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
         {
             builder.ToTable("Registration");
 
+            
+
             builder.HasKey(x => x.Id);
+
+            builder.Property(p => p.Id).ValueGeneratedOnAddOrUpdate();
+
+            //builder.Property(p => p.Id).ValueGeneratedOnAdd();
+            builder.Property(p => p.Id).ValueGeneratedNever();
+            //builder.Property(b => b.Id).UseIdentityAlwaysColumn();
+
+            //builder.Property(p => p.Id).UseSerialColumn();
+            //builder.Property(p => p.Id).UseNpgsqlSerialColumn();
 
             builder.Property<TenantId>("tenantId").HasColumnName("TenantId");
 
@@ -26,7 +37,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             builder.OwnsOne<MobileNumber>("mobileNumber", a =>
             {
                 a.Property("countryCode").HasColumnName("CountryCode");
-                a.Property("number").HasColumnName("MobileNo");
+                a.Property("mobileNumber").HasColumnName("MobileNo");
             });
 
 

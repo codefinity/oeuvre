@@ -7,22 +7,37 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 {
     public class UserRegistrationRepository : IUserRegistrationRepository
     {
-        private readonly IdentityAccessContext userAccessContext;
+        private readonly IdentityAccessContext identityAccessContext;
 
-        public UserRegistrationRepository(IdentityAccessContext userAccessContext)
+        public UserRegistrationRepository(IdentityAccessContext identityAccessContext)
         {
-            this.userAccessContext = userAccessContext;
+            this.identityAccessContext = identityAccessContext;
         }
 
         public async Task AddAsync(Registration userRegistration)
         {
-            await userAccessContext.AddAsync(userRegistration);
-            userAccessContext.SaveChanges();
+
+            try
+            {
+                //identityAccessContext.Entry(userRegistration).State = EntityState.Unchanged;
+
+                await identityAccessContext.AddAsync(userRegistration);
+
+
+                await identityAccessContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                int x = 1 + 5;
+            }
         }
+
 
         public async Task<Registration> GetByIdAsync(UserRegistrationId userRegistrationId)
         {
-            return await userAccessContext.UserRegistrations.FirstOrDefaultAsync(x => x.Id == userRegistrationId);
+                        
+            return await identityAccessContext.UserRegistrations.FirstOrDefaultAsync(x => x.Id == userRegistrationId);
+
         }
     }
 }

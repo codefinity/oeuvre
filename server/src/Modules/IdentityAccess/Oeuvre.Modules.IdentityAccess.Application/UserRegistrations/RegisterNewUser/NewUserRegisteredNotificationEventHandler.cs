@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser
 {
-    public class NewUserRegisteredNotification : INotificationHandler<DomainEventNotification<NewUserRegisteredDomainEvent>>
+    public class NewUserRegisteredNotificationEventHandler : INotificationHandler<DomainEventNotification<NewUserRegisteredDomainEvent>>
     {
 
         //private readonly ApplicationDbContext _db;
         //private readonly ILogger<Handler> _log;
 
-        public NewUserRegisteredNotification(
+        public NewUserRegisteredNotificationEventHandler(
             //ApplicationDbContext db, 
             //ILogger<Handler> log
             )
