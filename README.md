@@ -76,6 +76,11 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 - [Measuring .NET Core Test Coverage with Coverle](https://www.tonyranieri.com/blog/2019/07/31/Measuring-.NET-Core-Test-Coverage-with-Coverlet/)
 - [Use code coverage for unit testing](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-code-coverage?tabs=windows)
 
+##### Issue Resolutions
+
+-[Allow optional dependents to be added later when using table splitting](https://github.com/dotnet/efcore/issues/17422)
+
+
 
 #### Books
 
