@@ -78,7 +78,7 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 
 ##### Issue Resolutions
 
--[Allow optional dependents to be added later when using table splitting](https://github.com/dotnet/efcore/issues/17422)
+- [Allow optional dependents to be added later when using table splitting](https://github.com/dotnet/efcore/issues/17422)
 
 
 
