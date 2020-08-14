@@ -66,11 +66,13 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 /
 modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 
-#### Articles
+#### Interesting Reads
 
 - [Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
 - [Avoid In-Memory Databases for Tests](https://jimmybogard.com/avoid-in-memory-databases-for-tests/)
 - [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY&feature=emb_title)
+- [DeactivateUser](https://udidahan.com/2009/09/01/dont-delete-just-dont/)
+- [Avoid Soft Deletes](https://ayende.com/blog/4157/avoid-soft-deletes)
 
 #### Videos
 
