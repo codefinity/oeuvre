@@ -74,7 +74,7 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 - [DeactivateUser](https://udidahan.com/2009/09/01/dont-delete-just-dont/)
 - [Avoid Soft Deletes](https://ayende.com/blog/4157/avoid-soft-deletes)
 
-#### Videos
+#### Insightful Videos
 
 - [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY)
 - [Julie LERMAN: Mapping DDD Domain Models with EF Core 2.1 @ Update Conference Prague 2018](https://www.youtube.com/watch?v=Z62cbp61Bb8)
