@@ -60,7 +60,7 @@ reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestRe
 /
 eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
 
-#### Github 
+#### Worthy Clones 
 
 - [kgrzybek
 /
