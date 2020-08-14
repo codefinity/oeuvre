@@ -76,7 +76,9 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 - [Measuring .NET Core Test Coverage with Coverle](https://www.tonyranieri.com/blog/2019/07/31/Measuring-.NET-Core-Test-Coverage-with-Coverlet/)
 - [Use code coverage for unit testing](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-code-coverage?tabs=windows)
 
-##### Issue Resolutions
+##### Issue Resolutions and Workarounds
+
+"The instance of entity type 'UserRegistrationStatus' with the key value '{RegistrationId: Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId}' is marked as 'Modified', but the instance of entity type 'Registration' with the key value '{Id: Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId}' is marked as 'Added' and both are mapped to the same row."
 
 - [Allow optional dependents to be added later when using table splitting](https://github.com/dotnet/efcore/issues/17422)
 
