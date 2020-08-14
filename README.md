@@ -75,6 +75,7 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 #### Videos
 
 - [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY)
+- [Julie LERMAN: Mapping DDD Domain Models with EF Core 2.1 @ Update Conference Prague 2018](https://www.youtube.com/watch?v=Z62cbp61Bb8)
 
 ##### Code Coverage
 
