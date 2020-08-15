@@ -23,7 +23,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         private string password;
 
-        //private List<UserRole> roles;
+        private List<UserRole> roles;
 
         private bool isActive;
 
@@ -66,10 +66,35 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
             this.password = password;
             this.isActive = true;
 
-            //this.roles = new List<UserRole>();
-            //this.roles.Add(UserRole.Member);
+            this.roles = new List<UserRole>();
+            this.roles.Add(UserRole.Member);
+            this.roles.Add(UserRole.User);
 
             this.AddDomainEvent(new UserCreatedDomainEvent(this.Id));
+        }
+
+        public void AddRole(string role)
+        {
+            //remove role
+            this.roles.Remove(UserRole.Writer);
+
+            //add role
+            //this.roles.Add(UserRole.Writer);
+
+        }
+
+        public void Deactivate()
+        {
+
+            isActive = false;
+
+        }
+
+        public void Activate()
+        {
+
+            isActive = true;
+
         }
     }
 }

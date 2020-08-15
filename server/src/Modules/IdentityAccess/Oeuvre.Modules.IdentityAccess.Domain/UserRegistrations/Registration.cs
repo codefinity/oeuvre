@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using Domania.Domain;
 using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
@@ -58,7 +59,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id,
                                                                     fullName.FirstName,
                                                                     fullName.LastName,
-                                                                    mobileNumber.Number,
+                                                                    mobileNumber.MobileNo,
                                                                     eMailId, 
                                                                     registrationDate));
         }
@@ -83,27 +84,28 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         public User CreateUser()
         {
 
-        //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
+           //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
 
            return User.CreateFromUserRegistration(this.Id,
                                                     this.tenantId,
                                                     this.fullName.FirstName,
                                                     this.fullName.LastName,
                                                     this.mobileNumber.CountryCode,
-                                                    this.mobileNumber.Number,
+                                                    this.mobileNumber.MobileNo,
                                                     this.eMailId,
                                                     this.password);
         }
 
         public void Confirm()
         {
-            //this.CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(status));
-            //this.CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(status));
+            this.CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(status));
+            this.CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(status));
 
-            //status = UserRegistrationStatus.Confirmed;
-            confirmedDate = DateTime.UtcNow;
+            //this.fullName = new FullName("X", "Y");
+            this.status = UserRegistrationStatus.Confirmed;
+            this.confirmedDate = DateTime.UtcNow;
 
-            //this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
+            this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
         }
 
         public void Expire()

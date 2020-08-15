@@ -14,7 +14,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Npgsql;
 using Oeuvre.Configuration;
 using Oeuvre.Modules.IdentityAccess.API.Controller;
 using Oeuvre.Modules.IdentityAccess.Application;
@@ -92,8 +91,8 @@ namespace Oeuvre
             builder.RegisterModule(new UserAccessAutofacModule());
 
             builder.RegisterType<Mediator>()
-                        .As<IMediator>()
-                        .InstancePerLifetimeScope();
+                                .As<IMediator>()
+                                .InstancePerLifetimeScope();
 
             builder.Register<ServiceFactory>(context =>
             {

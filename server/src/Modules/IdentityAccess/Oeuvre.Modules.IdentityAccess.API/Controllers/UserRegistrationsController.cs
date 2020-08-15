@@ -6,6 +6,8 @@ using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
+using Oeuvre.Modules.IdentityAccess.Application.Users.AddRole;
+using Oeuvre.Modules.IdentityAccess.Application.Users.DeactivateUser;
 
 namespace Oeuvre.Modules.IdentityAccess.API.Controller
 {
@@ -67,6 +69,24 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         public async Task<IActionResult> ConfirmRegistration(Guid registrantId)
         {
             await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
+
+            return Ok();
+        }
+
+        [AllowAnonymous]
+        [HttpPatch("/identityaccess/addrole")]
+        public async Task<IActionResult> AddRole(Guid userId, string role)
+        {
+            await userAccessModule.ExecuteCommandAsync(new AddRoleToUserCommand(userId, role));
+
+            return Ok();
+        }
+
+        [AllowAnonymous]
+        [HttpPatch("/identityaccess/user/deactivate")]
+        public async Task<IActionResult> DeactivateUser(Guid userId)
+        {
+            await userAccessModule.ExecuteCommandAsync(new DeactivateUserCommand(userId));
 
             return Ok();
         }

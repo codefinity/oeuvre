@@ -7,14 +7,19 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 {
     public class FullName : ValueObject
     {
-        private readonly string firstName;
+        //public string firstName;
 
-        private readonly string lastName;
+        //public string lastName;
 
         public FullName(string firstName, string lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
+
+        public string FirstName { get; }
+
+        public string LastName { get; }
+
     }
 }

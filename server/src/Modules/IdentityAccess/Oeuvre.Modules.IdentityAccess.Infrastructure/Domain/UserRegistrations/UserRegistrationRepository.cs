@@ -16,19 +16,37 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 
         public async Task AddAsync(Registration userRegistration)
         {
-
             try
             {
+                //string state = identityAccessContext.Entry(userRegistration).State.ToString();
+                //Registration ur = await GetByIdAsync(new UserRegistrationId(System.Guid.Parse("f9a11236-5ed7-462c-8fb6-47cfa64d3d5f")));
+                //ur.Confirm();
+                //string state2 = identityAccessContext.Entry(ur).State.ToString();
                 //identityAccessContext.Entry(userRegistration).State = EntityState.Unchanged;
 
                 await identityAccessContext.AddAsync(userRegistration);
-
 
                 await identityAccessContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                int x = 1 + 5;
+                string message = ex.Message;
+            }
+        }
+
+        public async Task UpdateAsync(Registration userRegistration)
+        {
+            try
+            {
+                await identityAccessContext.AddAsync(userRegistration);
+
+                identityAccessContext.Entry(userRegistration).State = EntityState.Modified;
+
+                await identityAccessContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
             }
         }
 

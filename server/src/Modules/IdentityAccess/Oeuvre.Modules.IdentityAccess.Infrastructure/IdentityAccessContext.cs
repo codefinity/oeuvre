@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
@@ -18,9 +21,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
     {
 
         private IDomainEventDispatcher dispatcher;
-
         public DbSet<Registration> UserRegistrations { get; set; }
-
         public DbSet<User> Users { get; set; }
 
         //private readonly ILoggerFactory _loggerFactory;
@@ -38,24 +39,25 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
         }
 
-
-        //public override int SaveChanges()
-        //{
-        //    preSaveChanges().GetAwaiter().GetResult();
-        //    var res = base.SaveChanges();
-        //    return res;
-        //}
-
-        //public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
-        //{
-        //    await preSaveChanges();
-        //    var res = await base.SaveChangesAsync(cancellationToken);
-        //    return res;
-        //}
-
-        private async Task preSaveChanges()
+        public override int SaveChanges()
         {
-            await dispatchDomainEvents();
+            ApplyFixForUpdatingOwnedEntities();
+
+            ApplyPreSaveActions().GetAwaiter().GetResult();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            ApplyFixForUpdatingOwnedEntities();
+
+            await ApplyPreSaveActions();
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        private async Task ApplyPreSaveActions()
+        {
+            await DispatchDomainEvents();
         }
 
         /// <summary>
@@ -63,8 +65,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
         /// allow aggregates to locally communicate with eachother
         /// cleanly
         /// </summary>
-        private async Task dispatchDomainEvents()
+        private async Task DispatchDomainEvents()
         {
+            //Original statement - Kept for reference.
             //var domainEventEntities = ChangeTracker
             //                            .Entries<Entity>()
             //                            .Select(po => po.Entity)
@@ -75,24 +78,69 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
                                         .Entries<Entity>()
                                         .Where(x => x.Entity.DomainEvents != null && x.Entity.DomainEvents.Any()).ToList()
                                         .Select(x => x.Entity)
-                                        .ToList(); 
+                                        .ToList();
 
 
             using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
             {
                 dispatcher = scope.Resolve<IDomainEventDispatcher>();
 
-                //return await mediator.Send(query);
-
                 foreach (var entity in domainEventEntities)
                 {
-                    //IDomainEvent dev;
-                    //while (entity.DomainEvents.TryTake(out dev))
-                    //    await dispatcher.Dispatch(dev);
-
                     foreach (IDomainEvent events in entity.DomainEvents)
                     {
                         await dispatcher.Dispatch(events);
+                    }
+                }
+            }
+
+        }
+
+        public void ApplyFixForUpdatingOwnedEntities()
+        {
+            var ownedEntities = ChangeTracker.Entries<ValueObject>().Where(x => x.State == EntityState.Added 
+                                                                                || x.State == EntityState.Deleted
+                                                                                //Just added for testing
+                                                                                //|| x.State == EntityState.Modified
+                                                                                )
+                                                                            .ToList();
+
+            foreach (var ownedEntityEntry in ownedEntities)
+            {
+                var ownership = ownedEntityEntry.Metadata.FindOwnership();
+                if (ownership != null)
+                {
+                    var parentKey = ownership.Properties.Select(p => ownedEntityEntry.Property(p.Name).CurrentValue).ToArray();
+                    var parent = Find(ownership.PrincipalEntityType.ClrType, parentKey);
+                    if (parent != null)
+                    {
+                        var parentEntry = Entry(parent);
+                        if (ownedEntityEntry.State == EntityState.Deleted && parentEntry.State != EntityState.Deleted)
+                        {
+                            parentEntry.State = EntityState.Modified;
+                            var navProperty = ownership.PrincipalToDependent.FieldInfo;
+                            if (navProperty.GetValue(parentEntry.Entity) == null)
+                                navProperty.SetValue(parentEntry.Entity, FormatterServices.GetUninitializedObject(ownedEntityEntry.Metadata.ClrType));
+                        }
+                        else if(ownedEntityEntry.State == EntityState.Added && parentEntry.State == EntityState.Modified)
+                        {
+                            string doNothing = "Do Nothing";
+                        }
+                        else if (ownedEntityEntry.State == EntityState.Deleted && parentEntry.State == EntityState.Modified)
+                        {
+                            string doNothingStill = "Still, Do Nothing";
+                        }
+                        else if (ownedEntityEntry.State == EntityState.Added && parentEntry.State != EntityState.Added)
+                        {
+                            ownedEntityEntry.State = EntityState.Modified;
+                        }
+                        //Added to Update the Collection Value Object - not working due to conflict with simple add.
+                        //Conflict resolved in above code.
+                        //else if (ownedEntityEntry.State == EntityState.Added && parentEntry.State == EntityState.Added)
+                        //{
+                        //ownedEntityEntry.State = EntityState.Added;
+                        ////parentEntry.State = EntityState.Modified;
+                        //}
                     }
                 }
             }

@@ -8,5 +8,9 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
     public interface IUserRepository
     {
         Task AddAsync(User user);
+
+        Task UpdateAsync(User user);
+
+        Task<User> GetByIdAsync(UserId userId);
     }
 }
