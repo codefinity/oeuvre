@@ -16,6 +16,10 @@ At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. 
 
 The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
 
+### Latest News
+
+- Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. To be merged to branch evolution-one.
+
 ### Instructions for Running
 
 1. Install [.Net Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.1https://dotnet.microsoft.com/download/dotnet-core/3.1) or above
