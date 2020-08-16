@@ -24,13 +24,13 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 #### Settingup the Database
 
-Download Sql Server Management Studio
+1. Download Sql Server Management Studio
 
-Open Sql Server Management Studio
+2. Open Sql Server Management Studio
 
-Tools > Options > Query Execution > SQL Server > General 
+3. Tools > Options > Query Execution > SQL Server > General 
 
-Ensure this is checked -> "By default, open new queries in SQLCMD mode"
+4. Ensure this is checked -> "By default, open new queries in SQLCMD mode"
 
 #### Setting Up Project
 
