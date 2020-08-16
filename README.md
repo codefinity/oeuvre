@@ -34,7 +34,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 #### Setting Up Project
 
-1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1https://dotnet.microsoft.com/download/dotnet-core/3.1) or above
+1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 2. Clone Git Repository - git clone https://github.com/codefinity/oeuvre.git
 
