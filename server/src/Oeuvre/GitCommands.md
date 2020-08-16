@@ -27,3 +27,5 @@ git branch -r
 
 ### Merge a branch
 
+git checkout &lt;branch-to-merge-to&gt;
+git merge &lt;branch-to-merge-with&gt;
