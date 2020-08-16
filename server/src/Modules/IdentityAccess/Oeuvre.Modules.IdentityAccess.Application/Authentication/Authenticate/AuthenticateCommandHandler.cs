@@ -24,21 +24,28 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Application.Authentication.A
         {
             var connection = _sqlConnectionFactory.GetOpenConnection();
 
+            //Later - This needs to come from the Read DB materialized Views
+
             const string sql = "SELECT " +
-                               "[User].[Id], " +
-                               "[User].[Login], " +
-                               "[User].[Name], " +
-                               "[User].[Email], " +
-                               "[User].[IsActive], " +
-                               "[User].[Password] " +
-                               "FROM [users].[v_Users] AS [User] " +
-                               "WHERE [User].[Login] = @Login";
+                               "[Id], " +
+                               "[TenantId], " +
+                               "[FirstName], " +
+                               "[LastName], " +
+                               "[CountryCode], " +
+                               "[MobileNo], " +
+                               "[EMail], " +
+                               "[Password], " +
+                               "[IsActive] " +
+                               "FROM [identityaccess].[Users] AS [User] " +
+                               "WHERE [EMail] = @EMail";
+
+
 
             var user = await connection.QuerySingleOrDefaultAsync<UserDto>(sql,
-                new
-                {
-                    request.Login,
-                });
+                                                                    new
+                                                                    {
+                                                                        request.EMail,
+                                                                    });
 
             if (user == null)
             {
@@ -56,8 +63,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Application.Authentication.A
             }
 
             user.Claims = new List<Claim>();
-            user.Claims.Add(new Claim(CustomClaimTypes.Name, user.Name));
-            user.Claims.Add(new Claim(CustomClaimTypes.Email, user.Email));
+            user.Claims.Add(new Claim(CustomClaimTypes.Name, (user.FirstName + user.LastName)));
+            user.Claims.Add(new Claim(CustomClaimTypes.EMail, user.EMail));
 
             return new AuthenticationResult(user);
         }

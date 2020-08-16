@@ -2,11 +2,12 @@ using System;
 using System.Data.Common;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using IdentityServer4.AccessTokenValidation;
+using IdentityServer4.Validation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +16,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Oeuvre.Configuration;
+using Oeuvre.Modules.IdentityAccess.API;
 using Oeuvre.Modules.IdentityAccess.API.Controller;
 using Oeuvre.Modules.IdentityAccess.Application;
+using Oeuvre.Modules.IdentityAccess.Application.IdentityServer;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
@@ -44,7 +47,14 @@ namespace Oeuvre
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            //Changed as per reference project
+            //services.AddControllersWithViews();
+            services.AddControllers();
+
+           
+
+            ConfigureIdentityServer(services);
+
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -80,40 +90,6 @@ namespace Oeuvre
 
         }
 
-        public void ConfigureContainer(ContainerBuilder builder)
-        {
-            // Add any Autofac modules or registrations.
-            // This is called AFTER ConfigureServices so things you
-            // register here OVERRIDE things registered in ConfigureServices.
-            //
-            // You must have the call to AddAutofac in the Program.Main
-            // method or this won't be called.
-            builder.RegisterModule(new UserAccessAutofacModule());
-
-            builder.RegisterType<Mediator>()
-                                .As<IMediator>()
-                                .InstancePerLifetimeScope();
-
-            builder.Register<ServiceFactory>(context =>
-            {
-                var c = context.Resolve<IComponentContext>();
-                return t => c.Resolve(t);
-            });
-
-            //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
-            builder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
-
-            UserAccessStartup.Initialize(
-                configuration.GetConnectionString("DefaultConnection")
-                            //,executionContextAccessor,
-                            //_logger,
-                            //emailsConfiguration,
-                            //this._configuration["Security:TextEncryptionKey"],
-                            //null
-                            );
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             //app.UseIdentityAcessDatabase();
@@ -126,6 +102,9 @@ namespace Oeuvre
             //    context.Database.EnsureCreated();
             //}
             ////--
+
+            app.UseIdentityServer();
+
 
             if (env.IsDevelopment())
             {
@@ -164,6 +143,63 @@ namespace Oeuvre
 
             app.UseSwaggerDocumentation();
         }
+
+        private void ConfigureIdentityServer(IServiceCollection services)
+        {
+            services.AddIdentityServer()
+                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                .AddInMemoryApiResources(IdentityServerConfig.GetApis())
+                .AddInMemoryClients(IdentityServerConfig.GetClients())
+                .AddInMemoryPersistedGrants()
+                .AddProfileService<ProfileService>()
+                .AddDeveloperSigningCredential();
+
+            services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
+
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme, x =>
+                {
+                    x.Authority = "http://localhost:5000";
+                    x.ApiName = "oeuvreAPI";
+                    x.RequireHttpsMetadata = false;
+                });
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            // Add any Autofac modules or registrations.
+            // This is called AFTER ConfigureServices so things you
+            // register here OVERRIDE things registered in ConfigureServices.
+            //
+            // You must have the call to AddAutofac in the Program.Main
+            // method or this won't be called.
+            builder.RegisterModule(new UserAccessAutofacModule());
+
+            builder.RegisterType<Mediator>()
+                                .As<IMediator>()
+                                .InstancePerLifetimeScope();
+
+            builder.Register<ServiceFactory>(context =>
+            {
+                var c = context.Resolve<IComponentContext>();
+                return t => c.Resolve(t);
+            });
+
+            //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
+            builder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
+
+            UserAccessStartup.Initialize(
+                configuration.GetConnectionString("DefaultConnection")
+                            //,executionContextAccessor,
+                            //_logger,
+                            //emailsConfiguration,
+                            //this._configuration["Security:TextEncryptionKey"],
+                            //null
+                            );
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
 
     }
 }

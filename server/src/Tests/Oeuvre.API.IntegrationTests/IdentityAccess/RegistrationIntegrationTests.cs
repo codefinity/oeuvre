@@ -19,28 +19,6 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
             this.client = oeuvreTestFixture.CreateClient();
         }
 
-
-        [Theory]
-        [InlineData("/identityaccess/registrants")]
-        public async void Get_GetAllRegistrants_Valid_Success(string url)
-        {
-            // Act
-            var response = await client.GetAsync(url);
-
-            var contents = await response.Content.ReadAsStringAsync();
-
-            //var registrantResponse = JsonConvert.DeserializeObject<List<Registrants>>(response.Content.ReadAsStringAsync().Result);
-
-
-            // Assert1
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            // Assert2
-            Assert.NotEmpty(contents);
-            // Assert2
-            Assert.Equal("application/json; charset=utf-8",
-                response.Content.Headers.ContentType.ToString());
-        }
-
         [Theory]
         [InlineData("/identityaccess/register")]
         public async void Post_Register_Valid_Success(string url)
@@ -75,6 +53,26 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
             //                response.Content.Headers.ContentType.ToString());
         }
 
+        [Theory]
+        [InlineData("/identityaccess/registrants")]
+        public async void Get_GetAllRegistrants_Valid_Success(string url)
+        {
+            // Act
+            var response = await client.GetAsync(url);
+
+            var contents = await response.Content.ReadAsStringAsync();
+
+            //var registrantResponse = JsonConvert.DeserializeObject<List<Registrants>>(response.Content.ReadAsStringAsync().Result);
+
+
+            // Assert1
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            // Assert2
+            Assert.NotEmpty(contents);
+            // Assert2
+            Assert.Equal("application/json; charset=utf-8",
+                response.Content.Headers.ContentType.ToString());
+        }
 
         [Fact]
         //[InlineData("{userRegistrationId}/confirm")]
@@ -85,7 +83,7 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
 
 
             var response = await client
-                .PatchAsync("/identityaccess/321d9a61-f129-427f-bc1d-97aaa8228088/confirm", httpContent);
+                .PatchAsync("/identityaccess/2BAE8A7B-1DCD-4D4C-9878-72A768470EBF/confirm", httpContent);
 
 
             //var contents = await response.Content.ReadAsStringAsync();
