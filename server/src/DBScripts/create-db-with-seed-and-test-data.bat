@@ -1,5 +1,3 @@
-set PGPASSWORD=admin
-psql -h localhost -U postgres -f oeuvre-create-db.sql
-psql -h localhost -U postgres -f oeuvre-create-db-tables.sql -d oeuvre
-psql -h localhost -U postgres -f oeuvre-add-seed-data.sql -d oeuvre
-psql -h localhost -U postgres -f oeuvre-add-test-data.sql -d oeuvre
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-create-db-tables.sql -d oeuvre -E
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-add-seed-data.sql -d oeuvre -E
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-add-test-data.sql -d oeuvre -E

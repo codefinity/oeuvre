@@ -1,2 +1,1 @@
-set PGPASSWORD=admin
-psql -h localhost -U postgres -f oeuvre-drop-db.sql
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-drop-db.sql

@@ -1,4 +1,4 @@
-use oeuvredb;
+use oeuvre;
 
 PRINT N'Creating [identityaccess]...';
 
@@ -42,10 +42,10 @@ GO
 CREATE TABLE [identityaccess].[Users] (
     [Id]                UNIQUEIDENTIFIER        NOT NULL,
     [TenantId]          UNIQUEIDENTIFIER        NOT NULL,
-    [FirstName]         NVARCHAR (50)           NOT NULL,
-    [LastName]          NVARCHAR (50)           NOT NULL,
-    [CountryCode]       NVARCHAR (10)           NOT NULL,
-    [MobileNo]          NVARCHAR (50)           NOT NULL,
+    [FirstName]         NVARCHAR (50)           NULL,
+    [LastName]          NVARCHAR (50)           NULL,
+    [CountryCode]       NVARCHAR (10)           NULL,
+    [MobileNo]          NVARCHAR (50)           NULL,
     [EMail]             NVARCHAR (255)          NOT NULL,
     [Password]          VARCHAR (255)           NOT NULL,
     [IsActive]          BIT                     NOT NULL,

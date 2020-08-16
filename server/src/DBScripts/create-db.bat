@@ -1,0 +1,1 @@
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-create-db.sql

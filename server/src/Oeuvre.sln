@@ -40,14 +40,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
 	ProjectSection(SolutionItems) = preProject
+		DBScripts\create-db-tables.bat = DBScripts\create-db-tables.bat
 		DBScripts\create-db-with-seed-and-test-data.bat = DBScripts\create-db-with-seed-and-test-data.bat
 		DBScripts\create-db-with-seed-data.bat = DBScripts\create-db-with-seed-data.bat
-		DBScripts\drop-and-create-db.bat = DBScripts\drop-and-create-db.bat
+		DBScripts\create-db.bat = DBScripts\create-db.bat
+		DBScripts\drop-and-create-db-tables.bat = DBScripts\drop-and-create-db-tables.bat
+		DBScripts\drop-db-tables.bat = DBScripts\drop-db-tables.bat
 		DBScripts\drop-db.bat = DBScripts\drop-db.bat
 		DBScripts\oeuvre-add-seed-data.sql = DBScripts\oeuvre-add-seed-data.sql
 		DBScripts\oeuvre-add-test-data.sql = DBScripts\oeuvre-add-test-data.sql
 		DBScripts\oeuvre-create-db-tables.sql = DBScripts\oeuvre-create-db-tables.sql
 		DBScripts\oeuvre-create-db.sql = DBScripts\oeuvre-create-db.sql
+		DBScripts\oeuvre-drop-db-tables.sql = DBScripts\oeuvre-drop-db-tables.sql
 		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
 	EndProjectSection
 EndProject
