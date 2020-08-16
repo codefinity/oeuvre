@@ -40,8 +40,10 @@ The technology stack used is .Net, but the concept can be applied to all the pro
   ```
   git clone https://github.com/codefinity/oeuvre.git
   ```
-3. To Run - Use console command 'dotnet run'
-
+3. To Run - Use console command 
+  ```
+  dotnet run
+  ```
 ### Running Code Coverage
 
 1. On console make sure you are in the test project folder
