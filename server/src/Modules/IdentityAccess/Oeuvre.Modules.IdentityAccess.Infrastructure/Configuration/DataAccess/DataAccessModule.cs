@@ -4,14 +4,6 @@ using Domaina.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Logging;
-using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
-using Oeuvre.Modules.IdentityAccess.Infrastructure;
-using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
-using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Processing;
-using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
 {
@@ -36,16 +28,16 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
                 .InstancePerLifetimeScope();
 
 
-
-
             builder
                 .Register(c =>
                 {
                     var dbContextOptionsBuilder = new DbContextOptionsBuilder<IdentityAccessContext>();
-                    dbContextOptionsBuilder.UseNpgsql(_databaseConnectionString);
+                    dbContextOptionsBuilder.UseSqlServer(_databaseConnectionString);
 
                     dbContextOptionsBuilder
                         .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>();
+
+                    dbContextOptionsBuilder.EnableSensitiveDataLogging();
 
                     return new IdentityAccessContext(dbContextOptionsBuilder.Options);
                 })
@@ -54,21 +46,13 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
                 .InstancePerLifetimeScope();
 
 
-            builder.RegisterAssemblyTypes(typeof(MediatrDomainEventDispatcher).Assembly)
-            .AsImplementedInterfaces()
-            .InstancePerLifetimeScope()
-            .FindConstructorsWith(new AllConstructorFinder());
-
-
             var infrastructureAssembly = typeof(IdentityAccessContext).Assembly;
 
-
-
             builder.RegisterAssemblyTypes(infrastructureAssembly)
-                .Where(type => type.Name.EndsWith("Repository"))
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope()
-                .FindConstructorsWith(new AllConstructorFinder());
+                    .Where(type => type.Name.EndsWith("Repository"))
+                    .AsImplementedInterfaces()
+                    .InstancePerLifetimeScope()
+                    .FindConstructorsWith(new AllConstructorFinder());
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserReg
         {
             var connection = _sqlConnectionFactory.GetOpenConnection();
 
-            const string sql = "SELECT \"Id\", \"TenantId\", \"FirstName\", \"LastName\", \"CountryCode\", \"MobileNo\", \"EMail\", \"Password\", \"StatusCode\", \"RegistrationDate\", \"ConfirmedDate\" FROM public.\"Registration\"";
+            const string sql = "SELECT Id, TenantId, FirstName, LastName, CountryCode, MobileNo, EMail, Password, StatusCode, RegistrationDate, ConfirmedDate FROM [identityaccess].[Registrations]";
 ;
             var meetingGroups = await connection.QueryAsync<UserRegistrationDto>(sql);
 

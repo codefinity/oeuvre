@@ -8,19 +8,19 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
     public class FullName : ValueObject
     {
-        private readonly string firstName;
+        //public string firstName;
 
-        private readonly string lastName;
+        //public string lastName;
 
         public FullName(string firstName, string lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
 
-        public string FirstName { get { return firstName; } }
+        public string FirstName { get; }
 
-        public string LastName { get { return lastName; } }
+        public string LastName { get; }
 
     }
 }

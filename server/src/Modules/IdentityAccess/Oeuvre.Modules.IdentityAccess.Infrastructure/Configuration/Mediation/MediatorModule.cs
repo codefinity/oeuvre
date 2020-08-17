@@ -50,6 +50,12 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation
                             .As<IDomainEventDispatcher>()
                             .InstancePerLifetimeScope();
 
+            builder.RegisterAssemblyTypes(typeof(MediatrDomainEventDispatcher).Assembly)
+                    .AsImplementedInterfaces()
+                    .InstancePerLifetimeScope()
+                    .FindConstructorsWith(new AllConstructorFinder());
+
+
             builder.Register<ServiceFactory>(ctx =>
             {
                 var c = ctx.Resolve<IComponentContext>();

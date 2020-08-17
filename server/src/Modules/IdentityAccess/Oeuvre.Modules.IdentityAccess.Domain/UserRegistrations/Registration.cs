@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using Domania.Domain;
 using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules;
+using Oeuvre.Modules.IdentityAccess.Domain.Users;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 {
@@ -57,7 +59,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id,
                                                                     fullName.FirstName,
                                                                     fullName.LastName,
-                                                                    mobileNumber.Number,
+                                                                    mobileNumber.MobileNo,
                                                                     eMailId, 
                                                                     registrationDate));
         }
@@ -79,23 +81,31 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                         usersCounter);
         }
 
-        //public User CreateUser()
-        //{
-        //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(_status));
+        public User CreateUser()
+        {
 
-        //   return User.CreateFromUserRegistration(this.Id, this._login, this._password, this._email, this._firstName,
-        //       this._lastName, this._name);
-        //}
+           //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
+
+           return User.CreateFromUserRegistration(this.Id,
+                                                    this.tenantId,
+                                                    this.fullName.FirstName,
+                                                    this.fullName.LastName,
+                                                    this.mobileNumber.CountryCode,
+                                                    this.mobileNumber.MobileNo,
+                                                    this.eMailId,
+                                                    this.password);
+        }
 
         public void Confirm()
         {
-            //this.CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(_status));
-            //this.CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(_status));
+            this.CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(status));
+            this.CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(status));
 
-            //status = UserRegistrationStatus.Confirmed;
-            confirmedDate = DateTime.UtcNow;
+            //this.fullName = new FullName("X", "Y");
+            this.status = UserRegistrationStatus.Confirmed;
+            this.confirmedDate = DateTime.UtcNow;
 
-            //this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
+            this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
         }
 
         public void Expire()

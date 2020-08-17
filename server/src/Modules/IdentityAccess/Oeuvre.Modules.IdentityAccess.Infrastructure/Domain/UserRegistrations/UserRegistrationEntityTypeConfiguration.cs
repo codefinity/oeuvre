@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Security.Cryptography.X509Certificates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
@@ -11,7 +11,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
     {
         public void Configure(EntityTypeBuilder<Registration> builder)
         {
-            builder.ToTable("Registration");
+            builder.ToTable("Registrations","identityaccess");
 
             builder.HasKey(x => x.Id);
 
@@ -19,14 +19,14 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 
             builder.OwnsOne<FullName>("fullName", a =>
             {
-                a.Property("firstName").HasColumnName("FirstName");
-                a.Property("lastName").HasColumnName("LastName");
+                a.Property(x => x.FirstName).HasColumnName("FirstName");
+                a.Property(x => x.LastName).HasColumnName("LastName");
             });
 
             builder.OwnsOne<MobileNumber>("mobileNumber", a =>
             {
-                a.Property("countryCode").HasColumnName("CountryCode");
-                a.Property("number").HasColumnName("MobileNo");
+                a.Property(x => x.CountryCode).HasColumnName("CountryCode");
+                a.Property(x => x.MobileNo).HasColumnName("MobileNo");
             });
 
 

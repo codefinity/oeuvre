@@ -40,15 +40,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
 	ProjectSection(SolutionItems) = preProject
-		DBScripts\create-db-with-seed-and-test-data.bat = DBScripts\create-db-with-seed-and-test-data.bat
-		DBScripts\create-db-with-seed-data.bat = DBScripts\create-db-with-seed-data.bat
-		DBScripts\drop-and-create-db.bat = DBScripts\drop-and-create-db.bat
-		DBScripts\drop-db.bat = DBScripts\drop-db.bat
-		DBScripts\oeuvre-add-seed-data.sql = DBScripts\oeuvre-add-seed-data.sql
-		DBScripts\oeuvre-add-test-data.sql = DBScripts\oeuvre-add-test-data.sql
-		DBScripts\oeuvre-create-db-tables.sql = DBScripts\oeuvre-create-db-tables.sql
-		DBScripts\oeuvre-create-db.sql = DBScripts\oeuvre-create-db.sql
-		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
+		DBScripts\identityaccess-add-test-data.bat = DBScripts\identityaccess-add-test-data.bat
+		DBScripts\identityaccess-create-db-tables.bat = DBScripts\identityaccess-create-db-tables.bat
+		DBScripts\identityaccess-create-db.bat = DBScripts\identityaccess-create-db.bat
+		DBScripts\identityaccess-drop-and-create-db-tables.bat = DBScripts\identityaccess-drop-and-create-db-tables.bat
+		DBScripts\identityaccess-drop-db-tables.bat = DBScripts\identityaccess-drop-db-tables.bat
+		DBScripts\identityaccess-drop-db.bat = DBScripts\identityaccess-drop-db.bat
+		DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat = DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat
+		DBScripts\identityaccess-recreate-db-with-seed-data.bat = DBScripts\identityaccess-recreate-db-with-seed-data.bat
+		DBScripts\oeuvre-identityaccess-add-seed-data.sql = DBScripts\oeuvre-identityaccess-add-seed-data.sql
+		DBScripts\oeuvre-identityaccess-add-test-data.sql = DBScripts\oeuvre-identityaccess-add-test-data.sql
+		DBScripts\oeuvre-identityaccess-create-db-tables.sql = DBScripts\oeuvre-identityaccess-create-db-tables.sql
+		DBScripts\oeuvre-identityaccess-create-db.sql = DBScripts\oeuvre-identityaccess-create-db.sql
+		DBScripts\oeuvre-identityaccess-drop-db-tables.sql = DBScripts\oeuvre-identityaccess-drop-db-tables.sql
+		DBScripts\oeuvre-identityaccess-drop-db.sql = DBScripts\oeuvre-identityaccess-drop-db.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specifications", "Specifications", "{DA9CC710-EB6E-40E2-9E71-C235091FAE28}"

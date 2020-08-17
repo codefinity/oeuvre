@@ -8,7 +8,6 @@ using Xunit;
 
 namespace Oeuvre.API.IntegrationTests.IdentityAccess
 {
-    [Collection("Database collection")]
     public class RegistrationIntegrationTests : IClassFixture<OeuvreTestFixture>
     {
         //private readonly OeuvreTestFixture fixture;
@@ -20,6 +19,39 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
             this.client = oeuvreTestFixture.CreateClient();
         }
 
+        [Theory]
+        [InlineData("/identityaccess/register")]
+        public async void Post_Register_Valid_Success(string url)
+        {
+
+            var registrantJson = new StringContent(JsonConvert.SerializeObject(
+                                                    new
+                                                    {
+                                                        TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                                                        FirstName = "Axl",
+                                                        LastName = "Rose",
+                                                        Password = "GunsNRoses",
+                                                        MobileNoCountryCode = "1",
+                                                        MobileNumber = "9999999999",
+                                                        EMail = "Axl.Rose@GunsNRoses.com"
+                                                    }),
+                                                    Encoding.UTF8,
+                                                    "application/json");
+
+
+            var response = await client.PostAsync(url, registrantJson);
+
+
+            var contents = await response.Content.ReadAsStringAsync();
+
+            // Assert1
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            // Assert2
+            //Assert.NotEmpty(contents);
+            // Assert2
+            //Assert.Equal("application/json; charset=utf-8",
+            //                response.Content.Headers.ContentType.ToString());
+        }
 
         [Theory]
         [InlineData("/identityaccess/registrants")]
@@ -42,31 +74,19 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
                 response.Content.Headers.ContentType.ToString());
         }
 
-        [Theory]
-        [InlineData("/identityaccess/register")]
-        public async void Post_Register_Valid_Success(string url)
+        [Fact]
+        //[InlineData("{userRegistrationId}/confirm")]
+        public async void Patch_Confirm_User_Registration_Valid_Success()
         {
 
-            var registrant = new
-            {
-                TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
-                FirstName = "James",
-                LastName = "Bond",
-                Password = "",
-                MobileNoCountryCode = "",
-                MobileNumber = "",
-                EMail = "a@b.com"
-            };
-
-            var json = new StringContent(JsonConvert.SerializeObject(registrant),
-                                        Encoding.UTF8,
-                                        "application/json");
+            HttpContent httpContent = new StringContent("X", Encoding.UTF8, "application/json-patch+json");
 
 
-            var response = await client.PostAsync(url, json);
+            var response = await client
+                .PatchAsync("/identityaccess/2BAE8A7B-1DCD-4D4C-9878-72A768470EBF/confirm", httpContent);
 
 
-            var contents = await response.Content.ReadAsStringAsync();
+            //var contents = await response.Content.ReadAsStringAsync();
 
             // Assert1
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);

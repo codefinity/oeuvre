@@ -7,14 +7,18 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 {
     public class MobileNumber : ValueObject
     {
-        private readonly string countryCode;
-        private readonly string mobileNumber;
+        //private readonly string countryCode;
+        //private readonly string mobileNumber;
 
-        public MobileNumber(string countryCode, string mobileNumber)
+        public MobileNumber(string countryCode, string mobileNo)
         {
-            this.countryCode = countryCode;
-            this.mobileNumber = mobileNumber;
+            this.CountryCode = countryCode;
+            this.MobileNo = mobileNo;
         }
+
+        public string CountryCode { get; }
+
+        public string MobileNo { get; }
 
     }
 }

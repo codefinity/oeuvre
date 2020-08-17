@@ -7,22 +7,55 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
 {
     public class UserRegistrationRepository : IUserRegistrationRepository
     {
-        private readonly IdentityAccessContext userAccessContext;
+        private readonly IdentityAccessContext identityAccessContext;
 
-        public UserRegistrationRepository(IdentityAccessContext userAccessContext)
+        public UserRegistrationRepository(IdentityAccessContext identityAccessContext)
         {
-            this.userAccessContext = userAccessContext;
+            this.identityAccessContext = identityAccessContext;
         }
 
         public async Task AddAsync(Registration userRegistration)
         {
-            await userAccessContext.AddAsync(userRegistration);
-            userAccessContext.SaveChanges();
+            try
+            {
+                //string state = identityAccessContext.Entry(userRegistration).State.ToString();
+                //Registration ur = await GetByIdAsync(new UserRegistrationId(System.Guid.Parse("f9a11236-5ed7-462c-8fb6-47cfa64d3d5f")));
+                //ur.Confirm();
+                //string state2 = identityAccessContext.Entry(ur).State.ToString();
+                //identityAccessContext.Entry(userRegistration).State = EntityState.Unchanged;
+
+                await identityAccessContext.AddAsync(userRegistration);
+
+                await identityAccessContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+            }
         }
+
+        public async Task UpdateAsync(Registration userRegistration)
+        {
+            try
+            {
+                await identityAccessContext.AddAsync(userRegistration);
+
+                identityAccessContext.Entry(userRegistration).State = EntityState.Modified;
+
+                await identityAccessContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+            }
+        }
+
 
         public async Task<Registration> GetByIdAsync(UserRegistrationId userRegistrationId)
         {
-            return await userAccessContext.UserRegistrations.FirstOrDefaultAsync(x => x.Id == userRegistrationId);
+                        
+            return await identityAccessContext.UserRegistrations.FirstOrDefaultAsync(x => x.Id == userRegistrationId);
+
         }
     }
 }
