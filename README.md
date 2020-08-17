@@ -78,11 +78,13 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 /
 eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
 
-#### Worthy Clones 
+#### Special Thanks
 
 - [kgrzybek
 /
 modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+
+#### Worthy Clones 
 
 #### Interesting Reads
 
