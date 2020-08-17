@@ -38,8 +38,20 @@ GO
 
 INSERT INTO [identityaccess].[UserRoles]
 ([UserId],									[RoleCode]) VALUES
-('2BAE8A7B-1DCD-4D4C-9878-72A768470EBF',	'Member'),
+('2BAE8A7B-1DCD-4D4C-9878-72A768470EBF',	'Admin'),
 ('A7D9B254-0EB7-4B0C-8B82-B0919BFB5E3A',	'Member')
 ;
 
 GO
+
+INSERT INTO [identityaccess].[Permissions] 
+([Code],					[Name]) VALUES
+-- Identity Access
+('GetRegistrants', 'GetRegistrants')
+;
+
+INSERT INTO [identityaccess].[RolesToPermissions]  
+([RoleCode],		[PermissionCode]) VALUES
+-- Identity Access
+('Admin',			'GetRegistrants')
+;

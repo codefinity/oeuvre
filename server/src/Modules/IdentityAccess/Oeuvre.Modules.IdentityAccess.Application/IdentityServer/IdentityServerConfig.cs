@@ -13,7 +13,17 @@ namespace Oeuvre.Modules.IdentityAccess.Application.IdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("myMeetingsAPI", "My Meetings API")
+                new ApiResource("oeuvreAPI", "My Meetings API")
+            };
+        }
+
+        public static IEnumerable<ApiScope> GetApiScopes()
+        {
+            return new List<ApiScope>
+            {
+                new ApiScope(name: "oeuvreAPI",   displayName: "Read your data."),
+                new ApiScope(name: IdentityServerConstants.StandardScopes.OpenId,  displayName: "Write your data."),
+                new ApiScope(name: IdentityServerConstants.StandardScopes.Profile, displayName: "Delete your data.")
             };
         }
 
@@ -21,8 +31,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application.IdentityServer
         {
             return new IdentityResource[]
             {
-                new IdentityResources.OpenId(),
-                new IdentityResources.Profile(),
+                //new IdentityResources.OpenId(),
+                //new IdentityResources.Profile(),
                 new IdentityResource(CustomClaimTypes.Roles, new List<string>
                 {
                     CustomClaimTypes.Roles
@@ -44,11 +54,12 @@ namespace Oeuvre.Modules.IdentityAccess.Application.IdentityServer
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { 
-                        "myMeetingsAPI",
+                    AllowedScopes = {
+                        "oeuvreAPI",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile
-                    }
+                    },
+                    
                 }
             };
         }

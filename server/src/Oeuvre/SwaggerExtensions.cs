@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
 
-namespace Oeuvre.Configuration
+namespace Oeuvre
 {
     internal static class SwaggerExtensions
     {
@@ -17,7 +17,7 @@ namespace Oeuvre.Configuration
             {
                 options.SwaggerDoc("v1", new OpenApiInfo 
                 { 
-                    Title = "My API", 
+                    Title = "Oeuvre API", 
                     Version = "v1" ,
                     Description =" "
                 });
@@ -32,7 +32,7 @@ namespace Oeuvre.Configuration
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Oeuvre API V1");
             });
 
             return app;

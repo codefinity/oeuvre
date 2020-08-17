@@ -4,6 +4,7 @@ using Oeuvre.Modules.IdentityAccess.Application.Authentication.Authenticate;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,7 @@ namespace Oeuvre.Modules.IdentityAccess.API
                                             authenticationResult.AuthenticationError);
                 return;
             }
+
             context.Result = new GrantValidationResult(
                 authenticationResult.User.Id.ToString(),
                 "forms",

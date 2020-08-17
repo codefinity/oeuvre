@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Configuration\Authorization\AuthorizationChecker.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <Folder Include="Controllers\" />
   </ItemGroup>

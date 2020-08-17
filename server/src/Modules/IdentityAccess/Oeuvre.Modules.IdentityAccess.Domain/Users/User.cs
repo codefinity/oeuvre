@@ -68,7 +68,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
             this.roles = new List<UserRole>();
             this.roles.Add(UserRole.Member);
-            this.roles.Add(UserRole.User);
+            //this.roles.Add(UserRole.User);
 
             this.AddDomainEvent(new UserCreatedDomainEvent(this.Id));
         }

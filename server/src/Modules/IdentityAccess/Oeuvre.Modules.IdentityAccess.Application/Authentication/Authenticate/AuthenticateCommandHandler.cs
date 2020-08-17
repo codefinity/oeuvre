@@ -62,9 +62,11 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Application.Authentication.A
                 return new AuthenticationResult("Incorrect login or password");
             }
 
+
             user.Claims = new List<Claim>();
-            user.Claims.Add(new Claim(CustomClaimTypes.Name, (user.FirstName + user.LastName)));
+            user.Claims.Add(new Claim(CustomClaimTypes.Name, (user.FirstName + " " + user.LastName)));
             user.Claims.Add(new Claim(CustomClaimTypes.EMail, user.EMail));
+
 
             return new AuthenticationResult(user);
         }
