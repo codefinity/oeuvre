@@ -1,10 +1,17 @@
 use oeuvre;
 
+PRINT N'Droping [identityaccess].[Tenants]...';
+
+GO
+
+DROP TABLE IF EXISTS [identityaccess].[Tenants];
+
 PRINT N'Droping [identityaccess].[UserRoles]...';
 
 GO
 
 DROP TABLE IF EXISTS [identityaccess].[UserRoles];
+
 
 PRINT N'Droping [identityaccess].[Registrations]...';
 

@@ -40,6 +40,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
 	ProjectSection(SolutionItems) = preProject
+		DBScripts\identityaccess-add-test-data.bat = DBScripts\identityaccess-add-test-data.bat
 		DBScripts\identityaccess-create-db-tables.bat = DBScripts\identityaccess-create-db-tables.bat
 		DBScripts\identityaccess-create-db-with-seed-and-test-data.bat = DBScripts\identityaccess-create-db-with-seed-and-test-data.bat
 		DBScripts\identityaccess-create-db-with-seed-data.bat = DBScripts\identityaccess-create-db-with-seed-data.bat

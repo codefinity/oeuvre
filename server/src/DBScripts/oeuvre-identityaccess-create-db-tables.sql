@@ -8,6 +8,17 @@ CREATE SCHEMA [identityaccess]
 
 GO
 
+
+PRINT N'Creating [identityaccess].[Tenants]...';
+
+GO
+CREATE TABLE [identityaccess].[Tenants] (
+    [Id]            UNIQUEIDENTIFIER        NOT NULL,
+    [Name]          VARCHAR (100)           NOT NULL,
+    CONSTRAINT [PK_identityaccess_Tenants_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
 PRINT N'Creating [identityaccess].[UserRoles]...';
 
 GO
