@@ -118,7 +118,6 @@ namespace Oeuvre
                 app.UseHsts();
             }
 
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
@@ -144,7 +143,6 @@ namespace Oeuvre
             //        spa.UseReactDevelopmentServer(npmScript: "start");
             //    }
             //});
-
         }
 
         private void ConfigureIdentityServer(IServiceCollection services)
@@ -229,7 +227,6 @@ namespace Oeuvre
 
 
             return new AutofacServiceProvider(container);
-
 
         }
 
