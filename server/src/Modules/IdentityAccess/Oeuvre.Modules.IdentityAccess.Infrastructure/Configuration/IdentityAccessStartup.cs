@@ -2,28 +2,31 @@
 using Domaina.Application;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Logging;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation;
+using Serilog;
+using Serilog.AspNetCore;
 
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
-    public class UserAccessStartup
+    public class IdentityAccessStartup
     {
         private static IContainer container;
 
         public static void Initialize(string connectionString
             ,IExecutionContextAccessor executionContextAccessor
-            //,ILogger logger,
-            //EmailsConfiguration emailsConfiguration,
-            //string textEncryptionKey,
-            //IEmailSender emailSender
+            ,ILogger logger
+            //,EmailsConfiguration emailsConfiguration,
+            //,string textEncryptionKey,
+            //,IEmailSender emailSender
             )
         {
-           // var moduleLogger = logger.ForContext("Module", "UserAccess");
+           var moduleLogger = logger.ForContext("Module", "IdentityAccess");
 
             ConfigureCompositionRoot(connectionString
                                        ,executionContextAccessor
-                                        //,logger,
+                                       ,logger
                                         //,emailsConfiguration
                                         //,textEncryptionKey
                                         //,emailSender
@@ -37,22 +40,24 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
         private static void ConfigureCompositionRoot(
             string connectionString
             ,IExecutionContextAccessor executionContextAccessor
-            //,ILogger logger
+            ,ILogger logger
             //,EmailsConfiguration emailsConfiguration
-            //,string textEncryptionKey,
+            //,string textEncryptionKey
             //,IEmailSender emailSender
             )
         {
             var containerBuilder = new ContainerBuilder();
 
-            //containerBuilder.RegisterModule(new LoggingModule(logger.ForContext("Module", "UserAccess")));
+            containerBuilder.RegisterModule(new LoggingModule(logger.ForContext("Module", "IdentityAccess")));
 
             
 
-            //var loggerFactory = new SerilogLoggerFactory(logger);
-            containerBuilder.RegisterModule(new DataAccessModule(connectionString
-                //, loggerFactory
-                ));
+            var loggerFactory = new SerilogLoggerFactory(logger);
+            containerBuilder.RegisterModule(
+                                        new DataAccessModule(connectionString
+                                                                , loggerFactory
+                                        ));
+
             containerBuilder.RegisterModule(new DomainModule());
             //containerBuilder.RegisterModule(new ProcessingModule());
             //containerBuilder.RegisterModule(new EventsBusModule());
@@ -64,11 +69,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 
             containerBuilder.RegisterInstance(executionContextAccessor);
 
-            
-
             container = containerBuilder.Build();
 
-            UserAccessCompositionRoot.SetContainer(container);
+            IdentityAccessCompositionRoot.SetContainer(container);
         }
     }
 }

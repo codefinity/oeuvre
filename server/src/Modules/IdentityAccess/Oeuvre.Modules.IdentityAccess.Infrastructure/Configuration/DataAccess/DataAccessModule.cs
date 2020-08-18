@@ -9,37 +9,36 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess
 {
     internal class DataAccessModule : Autofac.Module
     {
-        private readonly string _databaseConnectionString;
-        private readonly ILoggerFactory _loggerFactory;
+        private readonly string databaseConnectionString;
+        private readonly ILoggerFactory loggerFactory;
 
         internal DataAccessModule(string databaseConnectionString
-            //, ILoggerFactory loggerFactory
-            )
+                                    , ILoggerFactory loggerFactory)
         {
-            _databaseConnectionString = databaseConnectionString;
-            //_loggerFactory = loggerFactory;
+            this.databaseConnectionString = databaseConnectionString;
+            this.loggerFactory = loggerFactory;
         }
 
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<SqlConnectionFactory>()
-                .As<ISqlConnectionFactory>()
-                .WithParameter("connectionString", _databaseConnectionString)
-                .InstancePerLifetimeScope();
+                    .As<ISqlConnectionFactory>()
+                    .WithParameter("connectionString", databaseConnectionString)
+                    .InstancePerLifetimeScope();
 
 
             builder
                 .Register(c =>
                 {
                     var dbContextOptionsBuilder = new DbContextOptionsBuilder<IdentityAccessContext>();
-                    dbContextOptionsBuilder.UseSqlServer(_databaseConnectionString);
+                    dbContextOptionsBuilder.UseSqlServer(databaseConnectionString);
 
                     dbContextOptionsBuilder
                         .ReplaceService<IValueConverterSelector, StronglyTypedIdValueConverterSelector>();
 
                     dbContextOptionsBuilder.EnableSensitiveDataLogging();
 
-                    return new IdentityAccessContext(dbContextOptionsBuilder.Options);
+                    return new IdentityAccessContext(dbContextOptionsBuilder.Options, loggerFactory);
                 })
                 .AsSelf()
                 .As<DbContext>()

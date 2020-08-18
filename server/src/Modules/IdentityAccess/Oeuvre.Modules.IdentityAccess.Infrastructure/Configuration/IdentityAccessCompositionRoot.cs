@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
-    internal static class UserAccessCompositionRoot
+    internal static class IdentityAccessCompositionRoot
     {
         private static IContainer _container;
 

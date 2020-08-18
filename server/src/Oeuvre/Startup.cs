@@ -37,9 +37,13 @@ namespace Oeuvre
     {
         private readonly IConfiguration configuration;
         //public IConfiguration Configuration { get; }
+        private static ILogger logger;
+        private static ILogger loggerForApi;
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             //Configuration = configuration;
+
+            ConfigureLogger();
 
             this.configuration = new ConfigurationBuilder()
                                     .AddJsonFile("appsettings.json")
@@ -53,7 +57,6 @@ namespace Oeuvre
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
 
-            IdentityModelEventSource.ShowPII = true;
             //Changed as per reference project
             //services.AddControllersWithViews();
             services.AddControllers();
@@ -84,6 +87,10 @@ namespace Oeuvre
             });
 
             services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
+
+            //This will display errors for IdentityServer
+            //Disable for production
+            //IdentityModelEventSource.ShowPII = true;
 
             return CreateAutofacServiceProvider(services);
 
@@ -180,6 +187,18 @@ namespace Oeuvre
                     });
         }
 
+        private static void ConfigureLogger()
+        {
+            logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{Module}] [{Context}] {Message:lj}{NewLine}{Exception}")
+                .WriteTo.RollingFile(new CompactJsonFormatter(), "logs/logs")
+                .CreateLogger();
+
+            loggerForApi = logger.ForContext("Module", "API");
+
+            loggerForApi.Information("Logger configured");
+        }
 
         private IServiceProvider CreateAutofacServiceProvider(IServiceCollection services)
         {
@@ -196,13 +215,13 @@ namespace Oeuvre
             var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
 
 
-            UserAccessStartup.Initialize(
+            IdentityAccessStartup.Initialize(
                 configuration.GetConnectionString("DefaultConnection")
                             ,executionContextAccessor
-                            //,_logger,
-                            //emailsConfiguration,
-                            //this._configuration["Security:TextEncryptionKey"],
-                            //null
+                            ,logger
+                            //,emailsConfiguration
+                            //,this._configuration["Security:TextEncryptionKey"]
+                            //,null
                             );
 
 
