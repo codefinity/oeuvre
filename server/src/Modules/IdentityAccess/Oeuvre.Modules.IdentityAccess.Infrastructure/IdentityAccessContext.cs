@@ -9,6 +9,7 @@ using Autofac;
 using Domaina.Infrastructure;
 using Domania.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
@@ -24,12 +25,13 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
         public DbSet<Registration> UserRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
 
-        //private readonly ILoggerFactory _loggerFactory;
-
+        private readonly ILoggerFactory loggerFactory;
         public IdentityAccessContext(DbContextOptions options
-            //, IDomainEventDispatcher dispatcher
-            ) : base(options)
+                                        , ILoggerFactory loggerFactory
+                                        //, IDomainEventDispatcher dispatcher
+                                        ) : base(options)
         {
+            this.loggerFactory = loggerFactory;
             //this.dispatcher = dispatcher;
         }
 
@@ -81,7 +83,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
                                         .ToList();
 
 
-            using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
+            using (var scope = IdentityAccessCompositionRoot.BeginLifetimeScope())
             {
                 dispatcher = scope.Resolve<IDomainEventDispatcher>();
 

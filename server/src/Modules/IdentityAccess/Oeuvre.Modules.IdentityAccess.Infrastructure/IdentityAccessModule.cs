@@ -21,7 +21,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
         public async Task<TResult> ExecuteQueryAsync<TResult>(IQuery<TResult> query)
         {
-            using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
+            using (var scope = IdentityAccessCompositionRoot.BeginLifetimeScope())
             {
                 var mediator = scope.Resolve<IMediator>();
 

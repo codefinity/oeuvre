@@ -20,6 +20,8 @@ namespace Oeuvre
             CreateHostBuilder(args).Build().Run();
         }
 
+        //New Recommended for .net 3.1 but not convinient to be used this way
+        //because some of the Autofac configurations are difficult to do.
         //public static IHostBuilder CreateHostBuilder(string[] args) =>
         //    Host.CreateDefaultBuilder(args)
         //        .UseServiceProviderFactory(new AutofacServiceProviderFactory())

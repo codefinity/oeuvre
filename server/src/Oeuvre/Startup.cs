@@ -37,9 +37,13 @@ namespace Oeuvre
     {
         private readonly IConfiguration configuration;
         //public IConfiguration Configuration { get; }
+        //private static ILogger logger;
+        private static ILogger loggerForApi;
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             //Configuration = configuration;
+
+            ConfigureLoggerForAPI();
 
             this.configuration = new ConfigurationBuilder()
                                     .AddJsonFile("appsettings.json")
@@ -53,7 +57,6 @@ namespace Oeuvre
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
 
-            IdentityModelEventSource.ShowPII = true;
             //Changed as per reference project
             //services.AddControllersWithViews();
             services.AddControllers();
@@ -85,6 +88,10 @@ namespace Oeuvre
 
             services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
 
+            //This will display errors for IdentityServer
+            //Disable for production
+            //IdentityModelEventSource.ShowPII = true;
+
             return CreateAutofacServiceProvider(services);
 
         }
@@ -111,7 +118,6 @@ namespace Oeuvre
                 app.UseHsts();
             }
 
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
@@ -137,7 +143,6 @@ namespace Oeuvre
             //        spa.UseReactDevelopmentServer(npmScript: "start");
             //    }
             //});
-
         }
 
         private void ConfigureIdentityServer(IServiceCollection services)
@@ -180,6 +185,21 @@ namespace Oeuvre
                     });
         }
 
+        private static void ConfigureLoggerForAPI()
+        {
+            string apiLogPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
+                                    + "\\OeuvreLogs\\API\\API";
+
+            loggerForApi = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{Module}] [{Context}] {Message:lj}{NewLine}{Exception}")
+                .WriteTo.RollingFile(new CompactJsonFormatter(), apiLogPath)
+                .CreateLogger();
+
+            loggerForApi = loggerForApi.ForContext("Module", "API");
+
+            loggerForApi.Information("Logger configured");
+        }
 
         private IServiceProvider CreateAutofacServiceProvider(IServiceCollection services)
         {
@@ -196,60 +216,59 @@ namespace Oeuvre
             var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
 
 
-            UserAccessStartup.Initialize(
+            IdentityAccessStartup.Initialize(
                 configuration.GetConnectionString("DefaultConnection")
-                            ,executionContextAccessor
-                            //,_logger,
-                            //emailsConfiguration,
-                            //this._configuration["Security:TextEncryptionKey"],
-                            //null
+                            , executionContextAccessor
+                            //,logger
+                            //,emailsConfiguration
+                            //,this._configuration["Security:TextEncryptionKey"]
+                            //,null
                             );
 
 
             return new AutofacServiceProvider(container);
 
-
         }
 
 
+        //New Recommended for .net 3.1 but not convinient to be used this way.
+        //public void ConfigureContainer(ContainerBuilder builder)
+        //{
 
-            //public void ConfigureContainer(ContainerBuilder builder)
-            //{
+        //    //var containerBuilder = new ContainerBuilder();
 
-            //    //var containerBuilder = new ContainerBuilder();
+        //    //containerBuilder.Populate(services);
 
-            //    //containerBuilder.Populate(services);
+        //    builder.RegisterModule(new UserAccessAutofacModule());
 
-            //    builder.RegisterModule(new UserAccessAutofacModule());
+        //    //var container = builder.Build();
 
-            //    //var container = builder.Build();
+        //    //var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
+        //    var executionContextAccessor = new ExecutionContextAccessor(new HttpContextAccessor());
 
-            //    //var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
-            //    var executionContextAccessor = new ExecutionContextAccessor(new HttpContextAccessor());
+        //    //containerBuilder.RegisterType<Mediator>()
+        //    //                    .As<IMediator>()
+        //    //                    .InstancePerLifetimeScope();
 
-            //    //containerBuilder.RegisterType<Mediator>()
-            //    //                    .As<IMediator>()
-            //    //                    .InstancePerLifetimeScope();
+        //    //containerBuilder.Register<ServiceFactory>(context =>
+        //    //{
+        //    //    var c = context.Resolve<IComponentContext>();
+        //    //    return t => c.Resolve(t);
+        //    //});
 
-            //    //containerBuilder.Register<ServiceFactory>(context =>
-            //    //{
-            //    //    var c = context.Resolve<IComponentContext>();
-            //    //    return t => c.Resolve(t);
-            //    //});
+        //    //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
+        //    //containerBuilder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
 
-            //    //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
-            //    //containerBuilder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
+        //    UserAccessStartup.Initialize(
+        //        configuration.GetConnectionString("DefaultConnection")
+        //                    //,executionContextAccessor
+        //                    //,_logger,
+        //                    //emailsConfiguration,
+        //                    //this._configuration["Security:TextEncryptionKey"],
+        //                    //null
+        //                    );
 
-            //    UserAccessStartup.Initialize(
-            //        configuration.GetConnectionString("DefaultConnection")
-            //                    //,executionContextAccessor
-            //                    //,_logger,
-            //                    //emailsConfiguration,
-            //                    //this._configuration["Security:TextEncryptionKey"],
-            //                    //null
-            //                    );
+        //}
 
-            //}
-
-        }
+    }
 }
