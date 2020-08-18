@@ -217,7 +217,7 @@ namespace Oeuvre
 
 
             IdentityAccessStartup.Initialize(
-                configuration.GetConnectionString("DefaultConnection")
+                            configuration.GetConnectionString("DefaultConnection")
                             , executionContextAccessor
                             //,logger
                             //,emailsConfiguration
