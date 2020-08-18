@@ -32,27 +32,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre", "Oeuvre\Oeuvre.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{3A71CFB8-B56A-4E13-8738-6E2B8F3245FE}"
 	ProjectSection(SolutionItems) = preProject
-		Modules\IdentityAccess\DBScripts\identityaccess-create-tables.sql = Modules\IdentityAccess\DBScripts\identityaccess-create-tables.sql
-		Modules\IdentityAccess\DBScripts\identityaccess-delete-tables.sql = Modules\IdentityAccess\DBScripts\identityaccess-delete-tables.sql
-		Modules\IdentityAccess\DBScripts\identityaccess-load-test-data.sql = Modules\IdentityAccess\DBScripts\identityaccess-load-test-data.sql
-		Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql = Modules\IdentityAccess\DBScripts\identityacess-load-seed-data.sql
+		Modules\IdentityAccess\DBScripts\identityaccess-add-test-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-add-test-data.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-create-db-tables.bat = Modules\IdentityAccess\DBScripts\identityaccess-create-db-tables.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-drop-and-create-db-tables.bat = Modules\IdentityAccess\DBScripts\identityaccess-drop-and-create-db-tables.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-drop-db-tables.bat = Modules\IdentityAccess\DBScripts\identityaccess-drop-db-tables.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-data.bat
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
 	ProjectSection(SolutionItems) = preProject
-		DBScripts\identityaccess-add-test-data.bat = DBScripts\identityaccess-add-test-data.bat
-		DBScripts\identityaccess-create-db-tables.bat = DBScripts\identityaccess-create-db-tables.bat
 		DBScripts\identityaccess-create-db.bat = DBScripts\identityaccess-create-db.bat
-		DBScripts\identityaccess-drop-and-create-db-tables.bat = DBScripts\identityaccess-drop-and-create-db-tables.bat
-		DBScripts\identityaccess-drop-db-tables.bat = DBScripts\identityaccess-drop-db-tables.bat
 		DBScripts\identityaccess-drop-db.bat = DBScripts\identityaccess-drop-db.bat
-		DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat = DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat
-		DBScripts\identityaccess-recreate-db-with-seed-data.bat = DBScripts\identityaccess-recreate-db-with-seed-data.bat
-		DBScripts\oeuvre-identityaccess-add-seed-data.sql = DBScripts\oeuvre-identityaccess-add-seed-data.sql
-		DBScripts\oeuvre-identityaccess-add-test-data.sql = DBScripts\oeuvre-identityaccess-add-test-data.sql
-		DBScripts\oeuvre-identityaccess-create-db-tables.sql = DBScripts\oeuvre-identityaccess-create-db-tables.sql
 		DBScripts\oeuvre-identityaccess-create-db.sql = DBScripts\oeuvre-identityaccess-create-db.sql
-		DBScripts\oeuvre-identityaccess-drop-db-tables.sql = DBScripts\oeuvre-identityaccess-drop-db-tables.sql
 		DBScripts\oeuvre-identityaccess-drop-db.sql = DBScripts\oeuvre-identityaccess-drop-db.sql
 	EndProjectSection
 EndProject
@@ -104,9 +100,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{08DF6DFC-421B-491D-8994-167A298EFBD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.ContentCreation.API", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.API\Oeuvre.Modules.ContentCreation.API.csproj", "{1EF6CBD0-C5CE-4BC1-BB28-6232F08A686F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreation.API", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.API\Oeuvre.Modules.ContentCreation.API.csproj", "{1EF6CBD0-C5CE-4BC1-BB28-6232F08A686F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.ContentCreation.Infrastructure", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Infrastructure\Oeuvre.Modules.ContentCreation.Infrastructure.csproj", "{5B4E4515-8D58-4274-93B7-980A03D76F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreation.Infrastructure", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Infrastructure\Oeuvre.Modules.ContentCreation.Infrastructure.csproj", "{5B4E4515-8D58-4274-93B7-980A03D76F0C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreation.Application", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Application\Oeuvre.Modules.ContentCreation.Application.csproj", "{21F10608-11F3-4C68-ACAB-6787AAB350D4}"
 EndProject
