@@ -30,6 +30,8 @@ using Serilog.Formatting.Compact;
 using Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
+using Oeuvre.Modules.ContentCreation.API.Controllers;
 
 namespace Oeuvre
 {
@@ -88,8 +90,7 @@ namespace Oeuvre
 
             services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
 
-            //This will display errors for IdentityServer
-            //Disable for production
+            //This will display errors for IdentityServer. Disable for production.
             //IdentityModelEventSource.ShowPII = true;
 
             return CreateAutofacServiceProvider(services);
@@ -148,13 +149,13 @@ namespace Oeuvre
         private void ConfigureIdentityServer(IServiceCollection services)
         {
             services.AddIdentityServer()
-                .AddInMemoryApiScopes(IdentityServerConfig.GetApiScopes())
-                .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
-                .AddInMemoryApiResources(IdentityServerConfig.GetApis())
-                .AddInMemoryClients(IdentityServerConfig.GetClients())
-                .AddInMemoryPersistedGrants()
-                .AddProfileService<ProfileService>()
-                .AddDeveloperSigningCredential();
+                        .AddInMemoryApiScopes(IdentityServerConfig.GetApiScopes())
+                        .AddInMemoryIdentityResources(IdentityServerConfig.GetIdentityResources())
+                        .AddInMemoryApiResources(IdentityServerConfig.GetApis())
+                        .AddInMemoryClients(IdentityServerConfig.GetClients())
+                        .AddInMemoryPersistedGrants()
+                        .AddProfileService<ProfileService>()
+                        .AddDeveloperSigningCredential();
 
             services.AddTransient<IResourceOwnerPasswordValidator, ResourceOwnerPasswordValidator>();
 
@@ -208,7 +209,8 @@ namespace Oeuvre
 
             containerBuilder.Populate(services);
 
-            containerBuilder.RegisterModule(new UserAccessAutofacModule());
+            containerBuilder.RegisterModule(new IdentityAccessAutofacModule());
+            containerBuilder.RegisterModule(new ContentCreationAutofacModule());
 
             var container = containerBuilder.Build();
 
@@ -223,6 +225,15 @@ namespace Oeuvre
                             //,emailsConfiguration
                             //,this._configuration["Security:TextEncryptionKey"]
                             //,null
+                            );
+
+            ContentCreationStartup.Initialize(
+                            configuration.GetConnectionString("DefaultConnection")
+                            , executionContextAccessor
+                            //,logger
+                            //,emailsConfiguration
+                            //,this._configuration["Security:TextEncryptionKey"]
+                            ,null
                             );
 
 

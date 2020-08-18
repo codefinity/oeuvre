@@ -35,6 +35,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules\ContentCreation\Oeuvre.Modules.ContentCreation.API\Oeuvre.Modules.ContentCreation.API.csproj" />
+    <ProjectReference Include="..\Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Infrastructure\Oeuvre.Modules.ContentCreation.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.API\Oeuvre.Modules.IdentityAccess.API.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>

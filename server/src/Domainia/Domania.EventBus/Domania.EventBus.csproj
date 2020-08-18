@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Configuration\Queries\" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="8.1.0" />
+    <ProjectReference Include="..\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

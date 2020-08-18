@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Configuration.EventsBus;
 using Domaina.Application;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain;
@@ -47,7 +48,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 
             //QuartzStartup.Initialize(moduleLogger);
 
-            //EventsBusStartup.Initialize(moduleLogger);
+            EventsBusStartup.Initialize(moduleLogger);
         }
 
         private static void ConfigureCompositionRoot(
@@ -71,7 +72,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 
             containerBuilder.RegisterModule(new DomainModule());
             //containerBuilder.RegisterModule(new ProcessingModule());
-            //containerBuilder.RegisterModule(new EventsBusModule());
+            containerBuilder.RegisterModule(new EventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
             //containerBuilder.RegisterModule(new OutboxModule());
             //containerBuilder.RegisterModule(new QuartzModule());

@@ -22,6 +22,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.IntegrationEvents\Oeuvre.Modules.IdentityAccess.IntegrationEvents.csproj" />
   </ItemGroup>
 </Project>
