@@ -37,11 +37,13 @@ namespace Oeuvre
     {
         private readonly IConfiguration configuration;
         //public IConfiguration Configuration { get; }
-        private static ILogger logger;
+        //private static ILogger logger;
         private static ILogger loggerForApi;
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             //Configuration = configuration;
+
+
 
             ConfigureLogger();
 
@@ -189,13 +191,16 @@ namespace Oeuvre
 
         private static void ConfigureLogger()
         {
-            logger = new LoggerConfiguration()
+            string apiLogPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) 
+                                    + "\\OeuvreLogs\\API\\API";
+
+            loggerForApi = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{Module}] [{Context}] {Message:lj}{NewLine}{Exception}")
-                .WriteTo.RollingFile(new CompactJsonFormatter(), "logs/logs")
+                .WriteTo.RollingFile(new CompactJsonFormatter(), apiLogPath)
                 .CreateLogger();
 
-            loggerForApi = logger.ForContext("Module", "API");
+            loggerForApi = loggerForApi.ForContext("Module", "API");
 
             loggerForApi.Information("Logger configured");
         }
@@ -218,7 +223,7 @@ namespace Oeuvre
             IdentityAccessStartup.Initialize(
                 configuration.GetConnectionString("DefaultConnection")
                             ,executionContextAccessor
-                            ,logger
+                            //,logger
                             //,emailsConfiguration
                             //,this._configuration["Security:TextEncryptionKey"]
                             //,null
