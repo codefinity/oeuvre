@@ -44,6 +44,15 @@ The technology stack used is .Net, but the concept can be applied to all the pro
   ```
   dotnet run
   ```
+
+#### Logs
+
+Logs are stored in the following locations in their respective modules folder.
+
+  '''
+  C:\Users\<Windows-Account>\OeuvreLogs
+  '''
+  
 ### Running Code Coverage
 
 1. On console make sure you are in the test project folder
