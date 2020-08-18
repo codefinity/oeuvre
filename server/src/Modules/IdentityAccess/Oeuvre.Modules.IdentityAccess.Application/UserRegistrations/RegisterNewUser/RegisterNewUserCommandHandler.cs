@@ -27,9 +27,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
 
         public async Task<Guid> Handle(RegisterNewUserCommand request, CancellationToken cancellationToken)
         {
-
             logger.Information("Register request handled");
-
 
             string password = PasswordManager.HashPassword(request.Password);
 
