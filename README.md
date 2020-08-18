@@ -49,9 +49,9 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 Logs are stored in the following locations in their respective modules folder.
 
-  '''
+  ```
   C:\Users\<Windows-Account>\OeuvreLogs
-  '''
+  ```
   
 ### Running Code Coverage
 
