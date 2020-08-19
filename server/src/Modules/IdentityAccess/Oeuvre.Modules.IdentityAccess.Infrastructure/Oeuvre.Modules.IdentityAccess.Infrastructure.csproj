@@ -31,5 +31,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="AppBuilderDatabaseExtensions.cs" />
+    <Compile Remove="Configuration\EventsBus\IntegrationEventGenericHandler.cs" />
   </ItemGroup>
 </Project>

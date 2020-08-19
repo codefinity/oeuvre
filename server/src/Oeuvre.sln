@@ -106,9 +106,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreation.Application", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Application\Oeuvre.Modules.ContentCreation.Application.csproj", "{21F10608-11F3-4C68-ACAB-6787AAB350D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domania.EventBus", "Domainia\Domania.EventBus\Domania.EventBus.csproj", "{7C7633C6-D456-49B5-A6E0-9E6940F8D14D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domania.EventBus", "Domainia\Domania.EventBus\Domania.EventBus.csproj", "{7C7633C6-D456-49B5-A6E0-9E6940F8D14D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.IdentityAccess.IntegrationEvents", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.IntegrationEvents\Oeuvre.Modules.IdentityAccess.IntegrationEvents.csproj", "{5EB0E481-F78D-493B-9074-8EFE786FFA25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.IdentityAccess.IntegrationEvents", "Modules\IdentityAccess\Oeuvre.Modules.IdentityAccess.IntegrationEvents\Oeuvre.Modules.IdentityAccess.IntegrationEvents.csproj", "{5EB0E481-F78D-493B-9074-8EFE786FFA25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

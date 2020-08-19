@@ -2,6 +2,7 @@
 using Domaina.Application;
 using Domaina.Infrastructure.EventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Logging;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Mediation;
 using Serilog;
@@ -48,7 +49,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
 
             //QuartzStartup.Initialize(moduleLogger);
 
-            EventsBusStartup.Initialize(moduleLogger);
+            InMemoryEventsBusStartup.Initialize(moduleLogger);
         }
 
         private static void ConfigureCompositionRoot(
@@ -64,7 +65,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
 
             var loggerFactory = new SerilogLoggerFactory(logger);
             //containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
-            containerBuilder.RegisterModule(new EventsBusModule(eventsBus));
+            containerBuilder.RegisterModule(new InMemoryEventsBusModule(eventsBus));
             containerBuilder.RegisterModule(new MediatorModule());
 
             //containerBuilder.RegisterModule(new ProcessingModule());

@@ -5,13 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus
+namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus
 {
-    internal class EventsBusModule : Autofac.Module
+    internal class InMemoryEventsBusModule : Autofac.Module
     {
         private readonly IEventsBus _eventsBus;
 
-        public EventsBusModule(IEventsBus eventsBus)
+        public InMemoryEventsBusModule(IEventsBus eventsBus)
         {
             _eventsBus = eventsBus;
         }

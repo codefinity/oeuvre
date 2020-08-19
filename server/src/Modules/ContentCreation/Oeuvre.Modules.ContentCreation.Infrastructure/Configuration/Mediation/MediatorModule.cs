@@ -17,14 +17,14 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Mediation
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterAssemblyTypes(typeof(IMediator).GetTypeInfo().Assembly)
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope();
+                    .AsImplementedInterfaces()
+                    .InstancePerLifetimeScope();
 
             builder.RegisterSource(new ScopedContravariantRegistrationSource(
-                typeof(IRequestHandler<,>),
-                typeof(IRequestHandler<>),
-                typeof(INotificationHandler<>),
-                typeof(IValidator<>)
+                                    typeof(IRequestHandler<,>),
+                                    typeof(IRequestHandler<>),
+                                    typeof(INotificationHandler<>),
+                                    typeof(IValidator<>)
             ));
 
             var mediatorOpenTypes = new[]

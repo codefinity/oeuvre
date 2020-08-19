@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus
 {
-    internal class IntegrationEventGenericHandler<T> : IIntegrationEventHandler<T>
+    public class NewUserRegisteredIntegrationEventListener<T> : IIntegrationEventHandler<T>
                                                             where T : IntegrationEvent
     {
         public async Task Handle(T @event)
