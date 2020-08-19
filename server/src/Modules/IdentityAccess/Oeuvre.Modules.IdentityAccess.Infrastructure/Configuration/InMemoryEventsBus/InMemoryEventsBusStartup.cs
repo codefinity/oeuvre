@@ -3,9 +3,9 @@ using Domaina.Infrastructure.EventBus;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using Serilog;
 
-namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Configuration.EventsBus
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.InMemoryEventBus
 {
-    public static class EventsBusStartup
+    public static class InMemoryEventsBusStartup
     {
         public static void Initialize(
             ILogger logger)

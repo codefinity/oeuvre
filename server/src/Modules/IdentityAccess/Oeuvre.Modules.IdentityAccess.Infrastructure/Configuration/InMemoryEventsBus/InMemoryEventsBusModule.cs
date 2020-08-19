@@ -2,9 +2,9 @@
 using Domaina.Infrastructure.EventBus;
 using Domania.EventBus;
 
-namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Configuration.EventsBus
+namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.InMemoryEventBus
 {
-    internal class EventsBusModule : Autofac.Module
+    internal class InMemoryEventsBusModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {
