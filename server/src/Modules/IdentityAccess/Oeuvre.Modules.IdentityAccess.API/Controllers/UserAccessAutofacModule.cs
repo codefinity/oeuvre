@@ -5,7 +5,7 @@ using Oeuvre.Modules.IdentityAccess.Infrastructure;
 
 namespace Oeuvre.Modules.IdentityAccess.API.Controller
 {
-    public class UserAccessAutofacModule : Module
+    public class IdentityAccessAutofacModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {

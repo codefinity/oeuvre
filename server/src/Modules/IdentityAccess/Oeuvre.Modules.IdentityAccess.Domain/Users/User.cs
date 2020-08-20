@@ -70,7 +70,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
             this.roles.Add(UserRole.Member);
             //this.roles.Add(UserRole.User);
 
-            this.AddDomainEvent(new UserCreatedDomainEvent(this.Id));
+            this.AddDomainEvent(new UserCreatedDomainEvent(this.Id, 
+                                                            this.tenantId, 
+                                                            this.fullName.FirstName,
+                                                            this.fullName.LastName,
+                                                            this.eMailId));
         }
 
         public void AddRole(string role)

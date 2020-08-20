@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CommandBase.cs" />
+    <Compile Remove="ICommand.cs" />
+    <Compile Remove="ICommandHandler.cs" />
+    <Compile Remove="InternalCommandBase.cs" />
+    <Compile Remove="IQuery.cs" />
+    <Compile Remove="IQueryHandler.cs" />
+    <Compile Remove="QueryBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="8.0.2" />
   </ItemGroup>
 

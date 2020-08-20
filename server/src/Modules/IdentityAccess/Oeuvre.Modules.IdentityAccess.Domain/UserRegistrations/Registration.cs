@@ -57,6 +57,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             status = UserRegistrationStatus.WaitingForConfirmation;
 
             this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id,
+                                                                    tenantId,
                                                                     fullName.FirstName,
                                                                     fullName.LastName,
                                                                     mobileNumber.MobileNo,

@@ -8,7 +8,8 @@ using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
 {
-    public class UserRegistrationConfirmedNotificationHandler : INotificationHandler<DomainEventNotification<UserRegistrationConfirmedDomainEvent>>
+    public class UserRegistrationConfirmedNotificationHandler 
+                : INotificationHandler<DomainEventNotification<UserRegistrationConfirmedDomainEvent>>
     {
         private readonly ICommandsScheduler commandsScheduler;
 

@@ -1,7 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configuration\Authorization\AuthorizationChecker.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Oeuvre.Modules.ContentCreation.Application\Oeuvre.Modules.ContentCreation.Application.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.ContentCreation.Infrastructure\Oeuvre.Modules.ContentCreation.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Configuration\Authorization\" />
+  </ItemGroup>
 
 </Project>

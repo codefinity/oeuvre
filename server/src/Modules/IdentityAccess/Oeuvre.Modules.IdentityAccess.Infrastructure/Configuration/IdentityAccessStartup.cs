@@ -2,6 +2,7 @@
 using Domaina.Application;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.InMemoryEventBus;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Logging;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Mediation;
 using Serilog;
@@ -47,7 +48,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 
             //QuartzStartup.Initialize(moduleLogger);
 
-            //EventsBusStartup.Initialize(moduleLogger);
+            InMemoryEventsBusStartup.Initialize(moduleLogger);
         }
 
         private static void ConfigureCompositionRoot(
@@ -64,14 +65,11 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
             containerBuilder.RegisterModule(new LoggingModule(logger.ForContext("Module", "IdentityAccess")));
 
             var loggerFactory = new SerilogLoggerFactory(logger);
-            containerBuilder.RegisterModule(
-                                        new DataAccessModule(connectionString
-                                                                , loggerFactory
-                                        ));
 
+            containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
             containerBuilder.RegisterModule(new DomainModule());
             //containerBuilder.RegisterModule(new ProcessingModule());
-            //containerBuilder.RegisterModule(new EventsBusModule());
+            containerBuilder.RegisterModule(new InMemoryEventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
             //containerBuilder.RegisterModule(new OutboxModule());
             //containerBuilder.RegisterModule(new QuartzModule());

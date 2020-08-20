@@ -1,7 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Authorization\" />
+    <Folder Include="Configuration\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.1.0" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domania.Security\Domania.Security.csproj" />
+    <ProjectReference Include="..\..\IdentityAccess\Oeuvre.Modules.IdentityAccess.IntegrationServices\Oeuvre.Modules.IdentityAccess.IntegrationServices.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.ContentCreation.Domain\Oeuvre.Modules.ContentCreation.Domain.csproj" />
+  </ItemGroup>
 
 </Project>
