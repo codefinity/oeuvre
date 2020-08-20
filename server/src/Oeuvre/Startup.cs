@@ -22,16 +22,13 @@ using Oeuvre.Modules.IdentityAccess.API;
 using Oeuvre.Modules.IdentityAccess.API.Controller;
 using Oeuvre.Modules.IdentityAccess.Application;
 using Oeuvre.Modules.IdentityAccess.Application.IdentityServer;
-using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
-using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using Serilog;
 using Serilog.Formatting.Compact;
-using Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization;
-using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
 using Oeuvre.Modules.ContentCreation.API.Controllers;
+using Domania.Security.Authorization;
 
 namespace Oeuvre
 {
@@ -70,6 +67,7 @@ namespace Oeuvre
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IExecutionContextAccessor, ExecutionContextAccessor>();
 
+            //-----Authorization
             services.AddAuthorization(options =>
             {
                 options.AddPolicy(HasPermissionAttribute.HasPermissionPolicyName, policyBuilder =>
@@ -80,7 +78,9 @@ namespace Oeuvre
             });
 
 
-            services.AddScoped<IAuthorizationHandler, HasPermissionAuthorizationHandler>();
+            services.AddScoped<IAuthorizationHandler,
+                        Modules.IdentityAccess.Application.Authorization.HasPermissionAuthorizationHandler>();
+            //-----
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -92,7 +92,6 @@ namespace Oeuvre
 
             //This will display errors for IdentityServer. Disable for production.
             //IdentityModelEventSource.ShowPII = true;
-
             return CreateAutofacServiceProvider(services);
 
         }
@@ -106,7 +105,6 @@ namespace Oeuvre
             app.UseSwaggerDocumentation();
 
             app.UseIdentityServer();
-
 
             if (env.IsDevelopment())
             {
@@ -233,7 +231,7 @@ namespace Oeuvre
                             //,logger
                             //,emailsConfiguration
                             //,this._configuration["Security:TextEncryptionKey"]
-                            ,null
+                            //,null
                             );
 
 

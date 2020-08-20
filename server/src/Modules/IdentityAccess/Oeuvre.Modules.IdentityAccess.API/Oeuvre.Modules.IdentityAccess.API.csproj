@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configuration\" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <Folder Include="Controllers\" />
   </ItemGroup>

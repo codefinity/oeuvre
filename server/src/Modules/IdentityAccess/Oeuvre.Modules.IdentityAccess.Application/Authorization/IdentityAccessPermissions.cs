@@ -1,6 +1,6 @@
 ﻿
 
-namespace Oeuvre.Modules.IdentityAccess.API
+namespace Oeuvre.Modules.IdentityAccess.Application.Authorization
 {
     public class IdentityAccessPermissions
     {

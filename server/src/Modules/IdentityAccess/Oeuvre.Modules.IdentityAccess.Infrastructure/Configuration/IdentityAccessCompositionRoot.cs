@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
-    internal static class IdentityAccessCompositionRoot
+    public static class IdentityAccessCompositionRoot
     {
         private static IContainer _container;
 
-        internal static void SetContainer(IContainer container)
+        public static void SetContainer(IContainer container)
         {
             _container = container;
         }
 
-        internal static ILifetimeScope BeginLifetimeScope()
+        public static ILifetimeScope BeginLifetimeScope()
         {
             return _container.BeginLifetimeScope();
         }

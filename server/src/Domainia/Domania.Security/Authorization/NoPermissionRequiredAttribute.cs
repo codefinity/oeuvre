@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization
+namespace Domania.Security.Authorization
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class NoPermissionRequiredAttribute : Attribute

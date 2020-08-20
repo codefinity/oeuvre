@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Authorization;
 
-namespace Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization
+namespace Domania.Security.Authorization
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class HasPermissionAttribute : AuthorizeAttribute

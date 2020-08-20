@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oeuvre.Modules.ContentCreation.Domain
+namespace Oeuvre.Modules.ContentDisplay.Domain
 {
     public class Class1
     {

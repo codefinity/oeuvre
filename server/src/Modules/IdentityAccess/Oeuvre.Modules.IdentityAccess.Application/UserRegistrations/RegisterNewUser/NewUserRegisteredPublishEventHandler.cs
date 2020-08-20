@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser
 {
-    public class NewUserRegisteredPublishEventHandler : INotificationHandler<DomainEventNotification<NewUserRegisteredDomainEvent>>
+    public class NewUserRegisteredPublishEventHandler 
+                    : INotificationHandler<DomainEventNotification<NewUserRegisteredDomainEvent>>
     {
 
         private readonly IEventsBus eventsBus;
@@ -22,15 +23,15 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
         }
         public Task Handle(DomainEventNotification<NewUserRegisteredDomainEvent> notification, CancellationToken cancellationToken)
         {
-            eventsBus.Publish(new NewUserRegisteredIntegrationEvent(
-                                                notification.DomainEvent.Id,
-                                                notification.DomainEvent.OccurredOn,
-                                                notification.DomainEvent.UserRegistrationId.Value,
-                                                notification.DomainEvent.TenantId.Value,
-                                                notification.DomainEvent.FirstName,
-                                                notification.DomainEvent.LastName,
-                                                notification.DomainEvent.EMail,
-                                                notification.DomainEvent.MobileNumber));
+            //eventsBus.Publish(new NewUserCreatedIntegrationEvent(
+            //                                    notification.DomainEvent.Id,
+            //                                    notification.DomainEvent.OccurredOn,
+            //                                    notification.DomainEvent.UserRegistrationId.Value,
+            //                                    notification.DomainEvent.TenantId.Value,
+            //                                    notification.DomainEvent.FirstName,
+            //                                    notification.DomainEvent.LastName,
+            //                                    notification.DomainEvent.EMail,
+            //                                    notification.DomainEvent.MobileNumber));
 
             return Task.CompletedTask;
         }

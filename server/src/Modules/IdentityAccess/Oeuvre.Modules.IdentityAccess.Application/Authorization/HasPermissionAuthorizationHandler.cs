@@ -2,11 +2,12 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Domaina.Application;
+using Domania.Security.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Oeuvre.Modules.IdentityAccess.Application.Authorization.GetUserPermissions;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 
-namespace Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization
+namespace Oeuvre.Modules.IdentityAccess.Application.Authorization
 {
     public class HasPermissionAuthorizationHandler : AttributeAuthorizationHandler<HasPermissionAuthorizationRequirement, HasPermissionAttribute>
     {

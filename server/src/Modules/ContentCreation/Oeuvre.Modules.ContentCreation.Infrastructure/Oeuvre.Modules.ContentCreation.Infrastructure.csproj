@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
   </ItemGroup>
@@ -14,8 +16,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domania.EventBus\Domania.EventBus.csproj" />
+    <ProjectReference Include="..\..\IdentityAccess\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
     <ProjectReference Include="..\..\IdentityAccess\Oeuvre.Modules.IdentityAccess.IntegrationEvents\Oeuvre.Modules.IdentityAccess.IntegrationEvents.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.ContentCreation.Application\Oeuvre.Modules.ContentCreation.Application.csproj" />
+    <ProjectReference Include="..\Oeuvre.Modules.ContentCreation.Domain\Oeuvre.Modules.ContentCreation.Domain.csproj" />
   </ItemGroup>
 
 </Project>

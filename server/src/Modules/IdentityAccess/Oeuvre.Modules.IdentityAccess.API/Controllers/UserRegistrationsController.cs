@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Domania.Security.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization;
+using Oeuvre.Modules.IdentityAccess.Application.Authorization;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration;
@@ -62,7 +63,8 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [Authorize]
         public async Task<IActionResult> GetAllRegisteredUsers()
         {
-            var registrantsList = await userAccessModule.ExecuteQueryAsync(new GetAllUserRegistrationQuery());
+            var registrantsList = await userAccessModule
+                                            .ExecuteQueryAsync(new GetAllUserRegistrationQuery());
 
             return Ok(registrantsList);
         }
@@ -72,7 +74,8 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [Authorize]
         public async Task<IActionResult> GetARegisteredUser(Guid registrantId)
         {
-            var registrant = await userAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(registrantId));
+            var registrant = await userAccessModule
+                                        .ExecuteQueryAsync(new GetUserRegistrationQuery(registrantId));
 
             return Ok(registrant);
         }

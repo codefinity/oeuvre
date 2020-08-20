@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Domaina.Application;
 using Domaina.Infrastructure.EventBus;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Logging;
@@ -24,7 +25,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
             IExecutionContextAccessor executionContextAccessor
             //,ILogger logger,
             //,EmailsConfiguration emailsConfiguration
-            ,IEventsBus eventsBus
+            //,IEventsBus eventsBus
             )
         {
 
@@ -43,9 +44,10 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
             ConfigureCompositionRoot(
                 connectionString,
                 executionContextAccessor,
-                moduleLogger,
+                moduleLogger
                 //,emailsConfiguration,
-                eventsBus);
+                //eventsBus
+                );
 
             //QuartzStartup.Initialize(moduleLogger);
 
@@ -57,15 +59,17 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
             IExecutionContextAccessor executionContextAccessor
             ,ILogger logger
             //,EmailsConfiguration emailsConfiguration,
-            ,IEventsBus eventsBus)
+            //,IEventsBus eventsBus
+            )
         {
             var containerBuilder = new ContainerBuilder();
 
-            containerBuilder.RegisterModule(new LoggingModule(logger.ForContext("Module", "Meetings")));
+            containerBuilder.RegisterModule(new LoggingModule(logger.ForContext("Module", "ContentCreation")));
 
             var loggerFactory = new SerilogLoggerFactory(logger);
-            //containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
-            containerBuilder.RegisterModule(new InMemoryEventsBusModule(eventsBus));
+
+            containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
+            containerBuilder.RegisterModule(new InMemoryEventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
 
             //containerBuilder.RegisterModule(new ProcessingModule());

@@ -65,11 +65,8 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
             containerBuilder.RegisterModule(new LoggingModule(logger.ForContext("Module", "IdentityAccess")));
 
             var loggerFactory = new SerilogLoggerFactory(logger);
-            containerBuilder.RegisterModule(
-                                        new DataAccessModule(connectionString
-                                                                , loggerFactory
-                                        ));
 
+            containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
             containerBuilder.RegisterModule(new DomainModule());
             //containerBuilder.RegisterModule(new ProcessingModule());
             containerBuilder.RegisterModule(new InMemoryEventsBusModule());

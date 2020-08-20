@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace Oeuvre.Modules.IdentityAccess.API.Configuration.Authorization
+namespace Domania.Security.Authorization
 {
     public class HasPermissionAuthorizationRequirement : IAuthorizationRequirement
     {

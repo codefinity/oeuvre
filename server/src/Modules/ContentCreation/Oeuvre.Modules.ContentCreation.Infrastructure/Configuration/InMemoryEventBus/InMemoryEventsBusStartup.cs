@@ -20,7 +20,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEv
         {
             var eventBus = ContentCreationCompositionRoot.BeginLifetimeScope().Resolve<IEventsBus>();
 
-            eventBus.Subscribe(new NewUserRegisteredIntegrationEventListener<NewUserRegisteredIntegrationEvent>());
+            eventBus.Subscribe(new UserCreatedIntegrationEventListener<UserCreatedIntegrationEvent>());
 
             //SubscribeToIntegrationEvent<NewUserRegisteredIntegrationEvent>(eventBus, logger);
             //SubscribeToIntegrationEvent<MeetingGroupProposalAcceptedIntegrationEvent>(eventBus, logger);
