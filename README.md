@@ -26,13 +26,11 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ##### Enable Running Scripts in Console
 
-1. Download Sql Server Management Studio
+1. Download Sql Server Management Studio and Run it.
 
-2. Open Sql Server Management Studio
+2. Go to -> Tools > Options > Query Execution > SQL Server > General 
 
-3. Tools > Options > Query Execution > SQL Server > General 
-
-4. Ensure this is checked -> "By default, open new queries in SQLCMD mode"
+3. Ensure this is checked -> "By default, open new queries in SQLCMD mode"
 
 ##### Creating the DB
 
@@ -41,7 +39,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 2. In the console go to location of "oeuvre\server\src\DBScripts" and run the batch file
 
   ```
-  C:\...oeuvre\server\src\DBScripts>**oeuvre-recreate-db-tables-with-test-data.bat**
+  C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-data.bat
   ```
 
 #### Setting Up Project
