@@ -24,9 +24,15 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 #### Settingup the Database
 
+##### Clone the Repository
+
+  ```
+  git clone https://github.com/codefinity/oeuvre.git
+  ```
+
 ##### Enable Running Scripts in Console
 
-1. Download Sql Server Management Studio and Run it.
+1. Open SQL Server Management Studio.
 
 2. Go to -> Tools > Options > Query Execution > SQL Server > General 
 
@@ -34,9 +40,9 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ##### Creating the DB
 
-1. in Sql Server Management Studio Create a DB named "oeuvre"
+1. In Sql Server Management Studio Create a DB named "oeuvre"
 
-2. In the console go to location of "oeuvre\server\src\DBScripts" and run the batch file
+2. In the windows console go to this location -> "oeuvre\server\src\DBScripts" and run the batch file
 
   ```
   C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-data.bat
@@ -46,13 +52,10 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
-2. Clone Git Repository  
+
+2. To Run - Use console command 
   ```
-  git clone https://github.com/codefinity/oeuvre.git
-  ```
-3. To Run - Use console command 
-  ```
-  dotnet run
+  C:\..\oeuvre\server\src\Oeuvre>dotnet run
   ```
 
 #### Logs
