@@ -5,7 +5,7 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus;
+using Oeuvre.Modules.ContentCreation.Infrastructure.PortsAndAdapters.Listeners.InMemory;
 
 namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus
 {

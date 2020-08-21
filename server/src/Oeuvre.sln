@@ -36,8 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		Modules\IdentityAccess\DBScripts\identityaccess-create-db-tables.bat = Modules\IdentityAccess\DBScripts\identityaccess-create-db-tables.bat
 		Modules\IdentityAccess\DBScripts\identityaccess-drop-and-create-db-tables.bat = Modules\IdentityAccess\DBScripts\identityaccess-drop-and-create-db-tables.bat
 		Modules\IdentityAccess\DBScripts\identityaccess-drop-db-tables.bat = Modules\IdentityAccess\DBScripts\identityaccess-drop-db-tables.bat
-		Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-and-test-data.bat
-		Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-with-seed-data.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-tables-with-seed-and-test-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-tables-with-seed-and-test-data.bat
+		Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-tables-with-test-data.bat = Modules\IdentityAccess\DBScripts\identityaccess-recreate-db-tables-with-test-data.bat
 		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql
 		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql
 		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql
@@ -46,10 +46,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
 	ProjectSection(SolutionItems) = preProject
-		DBScripts\identityaccess-create-db.bat = DBScripts\identityaccess-create-db.bat
-		DBScripts\identityaccess-drop-db.bat = DBScripts\identityaccess-drop-db.bat
-		DBScripts\oeuvre-identityaccess-create-db.sql = DBScripts\oeuvre-identityaccess-create-db.sql
-		DBScripts\oeuvre-identityaccess-drop-db.sql = DBScripts\oeuvre-identityaccess-drop-db.sql
+		DBScripts\oeuvre-create-db.bat = DBScripts\oeuvre-create-db.bat
+		DBScripts\oeuvre-create-db.sql = DBScripts\oeuvre-create-db.sql
+		DBScripts\oeuvre-drop-db.bat = DBScripts\oeuvre-drop-db.bat
+		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
+		DBScripts\oeuvre-recreate-db-tables-with-test-data.bat = DBScripts\oeuvre-recreate-db-tables-with-test-data.bat
+		DBScripts\oeuvre-recreate-db-tables.bat = DBScripts\oeuvre-recreate-db-tables.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specifications", "Specifications", "{DA9CC710-EB6E-40E2-9E71-C235091FAE28}"
@@ -96,10 +98,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.ArchTests", "Tests\O
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.API.IntegrationTests", "Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj", "{110210E9-61FE-4317-9293-36FDBA613390}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5C81CEBB-552C-4F30-A2DD-58978ADFD282}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{08DF6DFC-421B-491D-8994-167A298EFBD1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreation.API", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.API\Oeuvre.Modules.ContentCreation.API.csproj", "{1EF6CBD0-C5CE-4BC1-BB28-6232F08A686F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentCreation.Infrastructure", "Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Infrastructure\Oeuvre.Modules.ContentCreation.Infrastructure.csproj", "{5B4E4515-8D58-4274-93B7-980A03D76F0C}"
@@ -124,7 +122,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domania.Security", "Domaini
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.CQRS", "Domainia\Domaina.CQRS\Domaina.CQRS.csproj", "{195B7FAA-61B6-4C40-B072-C9F301D4C9EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.ContentDisplay.Domain", "Modules\ContentDisplay\Oeuvre.Modules.ContentDisplay.Domain\Oeuvre.Modules.ContentDisplay.Domain.csproj", "{42411913-3572-43DD-ABB9-FF3DEC46349E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.ContentDisplay.Domain", "Modules\ContentDisplay\Oeuvre.Modules.ContentDisplay.Domain\Oeuvre.Modules.ContentDisplay.Domain.csproj", "{42411913-3572-43DD-ABB9-FF3DEC46349E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{3B6B1603-15B2-4D64-9F05-DAAE05EE3B59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{7EC0A834-5D66-4478-BDB1-4A2D079B3B49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{780A222F-0473-4AA4-9F8C-AA0498A5698B}"
+	ProjectSection(SolutionItems) = preProject
+		Modules\ContentCreation\DBScripts\contentcreation-add-test-data.bat = Modules\ContentCreation\DBScripts\contentcreation-add-test-data.bat
+		Modules\ContentCreation\DBScripts\contentcreation-create-db-tables.bat = Modules\ContentCreation\DBScripts\contentcreation-create-db-tables.bat
+		Modules\ContentCreation\DBScripts\contentcreation-drop-and-create-db-tables.bat = Modules\ContentCreation\DBScripts\contentcreation-drop-and-create-db-tables.bat
+		Modules\ContentCreation\DBScripts\contentcreation-drop-db-tables.bat = Modules\ContentCreation\DBScripts\contentcreation-drop-db-tables.bat
+		Modules\ContentCreation\DBScripts\contentcreation-recreate-db-tables-with-seed-and-test-data.bat = Modules\ContentCreation\DBScripts\contentcreation-recreate-db-tables-with-seed-and-test-data.bat
+		Modules\ContentCreation\DBScripts\contentcreation-recreate-db-tables-with-test-data.bat = Modules\ContentCreation\DBScripts\contentcreation-recreate-db-tables-with-test-data.bat
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-seed-data.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-seed-data.sql
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-test-data.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-test-data.sql
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-db-tables.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-db-tables.sql
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-drop-db-tables.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-drop-db-tables.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0970DFC1-74EE-4FEA-ADCF-414C100A6875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -301,8 +319,6 @@ Global
 		{B8C28946-815D-4A63-9B49-CA395BB30F75} = {BA6C7F7F-A3C0-48DD-9641-FEEB5C604652}
 		{FCCD93CC-59C2-4180-8933-97113F992A61} = {1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}
 		{110210E9-61FE-4317-9293-36FDBA613390} = {1BD9A1F9-BC19-4491-8A2C-257A3C69EB7B}
-		{5C81CEBB-552C-4F30-A2DD-58978ADFD282} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
-		{08DF6DFC-421B-491D-8994-167A298EFBD1} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 		{1EF6CBD0-C5CE-4BC1-BB28-6232F08A686F} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 		{5B4E4515-8D58-4274-93B7-980A03D76F0C} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 		{21F10608-11F3-4C68-ACAB-6787AAB350D4} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
@@ -316,6 +332,10 @@ Global
 		{97257303-D327-46EF-AFF9-EFCC9A3BADE8} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{195B7FAA-61B6-4C40-B072-C9F301D4C9EF} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 		{42411913-3572-43DD-ABB9-FF3DEC46349E} = {235BF8FD-D997-4ADB-8D94-617FE05C9E29}
+		{3B6B1603-15B2-4D64-9F05-DAAE05EE3B59} = {6F7603C3-F7BD-4A22-B5F4-0C601A3B7DAB}
+		{7EC0A834-5D66-4478-BDB1-4A2D079B3B49} = {235BF8FD-D997-4ADB-8D94-617FE05C9E29}
+		{780A222F-0473-4AA4-9F8C-AA0498A5698B} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
+		{0970DFC1-74EE-4FEA-ADCF-414C100A6875} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B54B5131-7792-4BE2-A981-EB1CCA99473E}

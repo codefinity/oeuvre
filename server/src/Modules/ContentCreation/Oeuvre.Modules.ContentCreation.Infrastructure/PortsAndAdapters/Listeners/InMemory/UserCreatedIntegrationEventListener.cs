@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus
+namespace Oeuvre.Modules.ContentCreation.Infrastructure.PortsAndAdapters.Listeners.InMemory
 {
     public class UserCreatedIntegrationEventListener<T> : IIntegrationEventHandler<T>
                                                             where T : IntegrationEvent
