@@ -37,6 +37,12 @@ GO
 
 DROP TABLE IF EXISTS [identityaccess].[Permissions];
 
+PRINT N'Droping View [identityaccess].[v_UserPermissions]...';
+
+GO
+
+DROP VIEW IF EXISTS [identityaccess].[v_UserPermissions]
+
 PRINT N'Droping Schema [identityaccess]...';
 
 GO

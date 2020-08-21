@@ -1,0 +1,1 @@
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-contentcreation-create-db-tables.sql

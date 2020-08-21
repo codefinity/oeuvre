@@ -2,7 +2,6 @@
 using Domaina.Application;
 using Domaina.Infrastructure.EventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.DataAccess;
-using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.EventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Logging;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Mediation;

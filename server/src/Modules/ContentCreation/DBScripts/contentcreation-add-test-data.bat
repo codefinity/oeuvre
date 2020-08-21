@@ -1,0 +1,1 @@
+sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-contentcreation-add-test-data.sql
