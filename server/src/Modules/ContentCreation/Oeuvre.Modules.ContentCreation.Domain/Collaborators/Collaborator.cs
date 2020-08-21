@@ -8,7 +8,7 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Collaborators
 {
     public class Collaborator : Entity
     {
-        private CollaboratorId id;
+        public CollaboratorId id;
 
         private TenantId tenantId;
 
