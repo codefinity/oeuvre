@@ -22,11 +22,12 @@ namespace Oeuvre.Modules.ContentCreation.API.Controllers
         }
 
         [HttpPost("/contentcreation/createnew")]
-        [HasPermission("CreateArticle")]
-        [Authorize]
+        //[HasPermission("CreateArticle")]
+        //[Authorize]
 
         public async Task<IActionResult> CreateNewArticle(CreateNewArticleRequest request)
         {
+
             try
             {
                 await contentCreationModule.ExecuteCommandAsync(new CreateNewArticleCommand(

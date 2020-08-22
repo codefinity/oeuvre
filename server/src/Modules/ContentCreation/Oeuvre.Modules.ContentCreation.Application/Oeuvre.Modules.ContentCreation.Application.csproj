@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domania.Security\Domania.Security.csproj" />
     <ProjectReference Include="..\..\IdentityAccess\Oeuvre.Modules.IdentityAccess.IntegrationServices\Oeuvre.Modules.IdentityAccess.IntegrationServices.csproj" />

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Domaina.Infrastructure.EventBus;
 using Domania.EventBus;
+using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +15,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEv
             builder.RegisterType<InMemoryEventBusClient>()
                     .As<IEventsBus>()
                     .SingleInstance();
+
         }
     }
 }

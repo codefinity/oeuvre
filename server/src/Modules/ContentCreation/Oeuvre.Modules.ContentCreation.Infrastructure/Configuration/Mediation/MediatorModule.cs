@@ -1,9 +1,11 @@
 ﻿using Autofac;
 using Autofac.Core;
 using Autofac.Features.Variance;
+using Domaina.Infrastructure;
 using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Processing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +48,10 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Mediation
 
             //builder.RegisterGeneric(typeof(RequestPostProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
             //builder.RegisterGeneric(typeof(RequestPreProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+
+            builder.RegisterType<MediatrDomainEventDispatcher>()
+                    .As<IDomainEventDispatcher>()
+                    .InstancePerLifetimeScope();
 
             builder.Register<ServiceFactory>(ctx =>
             {

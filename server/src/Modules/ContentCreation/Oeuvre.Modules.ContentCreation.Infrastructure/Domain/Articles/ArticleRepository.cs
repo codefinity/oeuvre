@@ -20,7 +20,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Articles
         {
             //string state = identityAccessContext.Entry(user).State.ToString();
 
-            await contentCreationContext.Article.AddAsync(article);
+            ///await contentCreationContext.Article.AddAsync(article);
 
             try
             {
@@ -38,7 +38,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Articles
 
         public async Task UpdateAsync(Article article)
         {
-            await contentCreationContext.Article.AddAsync(article);
+            //await contentCreationContext.Article.AddAsync(article);
 
             try
             {
@@ -58,7 +58,9 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Articles
         public async Task<Article> GetByIdAsync(ArticleId articleId)
         {
 
-            return await contentCreationContext.Article.FirstOrDefaultAsync(x => x.Id == articleId);
+            //return await contentCreationContext.Article.FirstOrDefaultAsync(x => x.Id == articleId);
+
+            return null;
 
         }
     }

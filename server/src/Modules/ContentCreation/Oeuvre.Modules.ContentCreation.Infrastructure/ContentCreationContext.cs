@@ -4,8 +4,10 @@ using Domania.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Oeuvre.Modules.ContentCreation.Domain.Articles;
+using Oeuvre.Modules.ContentCreation.Domain.Collaborators;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Articles;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Collaborators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,9 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure
     {
 
         private IDomainEventDispatcher dispatcher;
-        public DbSet<Article> Article { get; set; }
+
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Collaborator> Collaborators { get; set; }
 
         private readonly ILoggerFactory loggerFactory;
         public ContentCreationContext(DbContextOptions options
@@ -35,6 +39,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ArticleEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CollaboratorEntityTypeConfiguration());
         }
 
         public override int SaveChanges()

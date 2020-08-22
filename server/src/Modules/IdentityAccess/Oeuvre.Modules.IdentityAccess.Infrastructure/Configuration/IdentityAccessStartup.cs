@@ -17,7 +17,8 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
         private static IContainer container;
         private static ILogger logger;
 
-        public static void Initialize(string connectionString
+        public static void Initialize(
+            string connectionString
             , IExecutionContextAccessor executionContextAccessor
             //,ILogger logger
             //,EmailsConfiguration emailsConfiguration,
@@ -68,9 +69,10 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 
             containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
             containerBuilder.RegisterModule(new DomainModule());
-            //containerBuilder.RegisterModule(new ProcessingModule());
             containerBuilder.RegisterModule(new InMemoryEventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
+
+            //containerBuilder.RegisterModule(new ProcessingModule());
             //containerBuilder.RegisterModule(new OutboxModule());
             //containerBuilder.RegisterModule(new QuartzModule());
             //containerBuilder.RegisterModule(new EmailModule(emailsConfiguration, emailSender));
