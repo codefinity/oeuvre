@@ -29,6 +29,8 @@ using Microsoft.IdentityModel.Tokens;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
 using Oeuvre.Modules.ContentCreation.API.Controllers;
 using Domania.Security.Authorization;
+using Oeuvre.Modules.ContentCreation.Application.Contracts;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 
 namespace Oeuvre
 {
@@ -211,6 +213,11 @@ namespace Oeuvre
             containerBuilder.RegisterModule(new ContentCreationAutofacModule());
 
             var container = containerBuilder.Build();
+
+            //bool registered = container.IsRegistered(typeof(IIdentityAccessModule));
+            //var contentCreationModule = container.Resolve<IIdentityAccessModule>();
+            //bool registered1 = container.IsRegistered(typeof(IContentCreationModule));
+            //var contentCreationModule1 = container.Resolve<IContentCreationModule>();
 
             var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
             var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);

@@ -4,7 +4,7 @@ using Oeuvre.Modules.ContentCreation.Infrastructure;
 
 namespace Oeuvre.Modules.ContentCreation.API.Controllers
 {
-    public class ContentCreationAutofacModule : Autofac.Module
+    public class ContentCreationCQRSModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {

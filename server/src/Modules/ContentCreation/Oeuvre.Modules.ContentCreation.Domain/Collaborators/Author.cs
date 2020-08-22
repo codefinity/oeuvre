@@ -7,7 +7,7 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Collaborators
 {
     public class Author: Collaborator
     {
-        public Author(CollaboratorId id, TenantId tenantId, string name, string email) :base( id, tenantId,  name,  email)
+        public Author(Guid id, Guid tenantId, string name, string email) :base( id, tenantId,  name,  email)
         {
 
         }

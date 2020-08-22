@@ -3,9 +3,6 @@ using MediatR;
 using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Processing;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Oeuvre.Modules.ContentCreation.Infrastructure

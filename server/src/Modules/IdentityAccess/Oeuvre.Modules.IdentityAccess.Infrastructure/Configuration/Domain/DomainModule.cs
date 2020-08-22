@@ -4,7 +4,7 @@ using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain
 {
-    internal class DomainModule : Module
+    internal class DomainModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {

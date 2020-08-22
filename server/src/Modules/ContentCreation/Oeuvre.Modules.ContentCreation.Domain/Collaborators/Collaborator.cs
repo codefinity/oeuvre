@@ -8,7 +8,7 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Collaborators
 {
     public class Collaborator : Entity
     {
-        public CollaboratorId id;
+        public CollaboratorId Id { get; private set; }
 
         private TenantId tenantId;
 
@@ -16,13 +16,27 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Collaborators
 
         private string email;
 
-        public Collaborator(CollaboratorId id, TenantId tenantId, string name, string email)
+        private DateTime createdDate;
+
+        private Collaborator()
         {
-            this.id = id;
-            this.tenantId = tenantId;
+            // Only for EF.
+        }
+
+        public Collaborator(Guid id, Guid tenantId, string name, string email)
+        {
+            this.Id = new CollaboratorId(id);
+            this.tenantId = new TenantId(tenantId);
             this.name = name;
             this.email = email;
+            this.createdDate = DateTime.Now;
         }
+
+        public static Collaborator Create(Guid id, Guid tenantId, string name, string email)
+        {
+            return new Collaborator(id, tenantId, name, email);
+        }
+
 
     }
 }

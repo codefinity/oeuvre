@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Oeuvre.Modules.ContentCreation.Domain.Articles;
-using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
+using Oeuvre.Modules.ContentCreation.Domain.Tenants;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,9 +22,6 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Articles
             builder.Property<string>("topic").HasColumnName("Topic");
             builder.Property<string>("body").HasColumnName("Body");
 
-
-            //builder.Property<DateTime>("registrationDate").HasColumnName("RegistrationDate");
-            //builder.Property<DateTime?>("confirmedDate").HasColumnName("ConfirmedDate");
 
         }
 

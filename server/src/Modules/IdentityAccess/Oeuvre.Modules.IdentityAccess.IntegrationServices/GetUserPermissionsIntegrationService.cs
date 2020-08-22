@@ -12,22 +12,14 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationServices
 {
     public class GetUserPermissionsIntegrationService : IIntegrationService
     {
-
-
-        //public GetUserPermissionsIntegrationService(IIdentityAccessModule userAccessModule)
-        //{
-        //    this.userAccessModule = userAccessModule;
-        //}
-
-
         public async Task<List<GetUserPermissionIntegrationDto>> GetPermissions(Guid userId)
         {
 
             using (var scope = IdentityAccessCompositionRoot.BeginLifetimeScope())
             {
-                var userAccessModule = scope.Resolve<IIdentityAccessModule>();
+                var identityAccessModule = scope.Resolve<IIdentityAccessModule>();
 
-                var permissions = await userAccessModule
+                var permissions = await identityAccessModule
                                         .ExecuteQueryAsync(new GetUserPermissionsQuery(userId));
 
                 List<GetUserPermissionIntegrationDto> permissionsDto = new List<GetUserPermissionIntegrationDto>();

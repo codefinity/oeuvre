@@ -9,7 +9,7 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Collaborators
 {
     public class Reviewer : Collaborator
     {
-        public Reviewer(CollaboratorId id, TenantId tenantId, string name, string email) : base(id, tenantId, name, email)
+        public Reviewer(Guid id, Guid tenantId, string name, string email) : base(id, tenantId, name, email)
         {
 
         }

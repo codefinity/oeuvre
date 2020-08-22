@@ -16,13 +16,18 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Articles
 
         private string body;
 
-        public Article(ArticleId id, 
+        public Article()
+        {
+
+        }
+
+        public Article(ArticleId articleId,
                         TenantId tenantId, 
                         string topic, 
                         string body)
         {
-            this.Id = id;
-            this.tenantId = tenantId;
+            this.Id = new ArticleId(articleId.Value);
+            this.tenantId = new TenantId(tenantId.Value);
             this.topic = topic;
             this.body = body;
         }

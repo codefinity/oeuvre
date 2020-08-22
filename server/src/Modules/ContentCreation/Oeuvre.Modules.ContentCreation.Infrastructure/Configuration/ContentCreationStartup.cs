@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Domaina.Application;
 using Domaina.Infrastructure.EventBus;
+using Oeuvre.Modules.ContentCreation.API.Controllers;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Logging;
@@ -16,7 +17,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
 {
     public class ContentCreationStartup
     {
-        private static IContainer _container;
+        private static IContainer container;
         private static ILogger logger;
 
         public static void Initialize(
@@ -70,6 +71,8 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
             containerBuilder.RegisterModule(new DataAccessModule(connectionString, loggerFactory));
             containerBuilder.RegisterModule(new InMemoryEventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
+            containerBuilder.RegisterModule(new ContentCreationCQRSModule());
+
 
             //containerBuilder.RegisterModule(new ProcessingModule());
             //containerBuilder.RegisterModule(new AuthenticationModule());
@@ -88,9 +91,9 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
 
             containerBuilder.RegisterInstance(executionContextAccessor);
 
-            _container = containerBuilder.Build();
+            container = containerBuilder.Build();
 
-            ContentCreationCompositionRoot.SetContainer(_container);
+            ContentCreationCompositionRoot.SetContainer(container);
         }
     }
 }

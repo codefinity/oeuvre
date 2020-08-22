@@ -21,23 +21,18 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Authorization
             this.identityAccessModule = identityAccessModule;
         }
 
-        protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, HasPermissionAuthorizationRequirement requirement, IEnumerable<HasPermissionAttribute> attributes)
+        protected override async Task HandleRequirementAsync(
+                                        AuthorizationHandlerContext context,
+                                        HasPermissionAuthorizationRequirement requirement,
+                                        HasPermissionAttribute attribute)
         {
-            var permissions = await identityAccessModule.ExecuteQueryAsync(new GetUserPermissionsQuery(executionContextAccessor.UserId));
-            
-            if(permissions.Count == 0)
+            var permissions = await identityAccessModule
+                                        .ExecuteQueryAsync(new GetUserPermissionsQuery(executionContextAccessor.UserId));
+
+            if (!await AuthorizeAsync(attribute.Name, permissions))
             {
                 context.Fail();
                 return;
-            }
-
-            foreach (var permissionAttribute in attributes)
-            {
-                if (!await AuthorizeAsync(permissionAttribute.Name, permissions))
-                {
-                    context.Fail();
-                    return;
-                }
             }
 
             context.Succeed(requirement);
@@ -45,9 +40,9 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Authorization
 
         private Task<bool> AuthorizeAsync(string permission, List<UserPermissionDto> permissions)
         {
-//#if !DEBUG
+            //#if !DEBUG
             //return Task.FromResult(true);
-//#endif
+            //#endif
 
             if (permissions.Any(x => x.Code == permission))
             {

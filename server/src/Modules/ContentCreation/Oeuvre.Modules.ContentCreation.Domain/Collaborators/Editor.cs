@@ -9,7 +9,7 @@ namespace Oeuvre.Modules.ContentCreation.Domain.Collaborators
     public class Editor : Collaborator
     {
 
-        public Editor(CollaboratorId id, TenantId tenantId, string name, string email) : base(id, tenantId, name, email)
+        public Editor(Guid id, Guid tenantId, string name, string email) : base(id, tenantId, name, email)
         {
 
         }

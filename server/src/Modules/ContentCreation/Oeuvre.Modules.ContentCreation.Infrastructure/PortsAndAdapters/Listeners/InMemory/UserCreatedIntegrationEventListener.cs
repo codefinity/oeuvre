@@ -1,45 +1,34 @@
-﻿using Domaina.Infrastructure.EventBus;
+﻿using Autofac;
+using Domaina.Infrastructure.EventBus;
+using Oeuvre.Modules.ContentCreation.Application.Collaborators;
+using Oeuvre.Modules.ContentCreation.Application.Contracts;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
+using Oeuvre.Modules.IdentityAccess.IntegrationEvents;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Oeuvre.Modules.ContentCreation.Infrastructure.PortsAndAdapters.Listeners.InMemory
 {
-    public class UserCreatedIntegrationEventListener<T> : IIntegrationEventHandler<T>
-                                                            where T : IntegrationEvent
+    public class UserCreatedIntegrationEventListener<T> : IIntegrationEventHandler<UserCreatedIntegrationEvent>
+    //where T : IntegrationEvent
     {
-        public async Task Handle(T @event)
+        public async Task Handle(UserCreatedIntegrationEvent @event)
         {
 
 
+            var contentCreationModule = ContentCreationCompositionRoot.BeginLifetimeScope().Resolve<IContentCreationModule>();
 
+            await contentCreationModule.ExecuteCommandAsync(new CreateCollaboratorCommand(
+                                                @event.Id,
+                                                @event.UserId,
+                                                @event.TenantId,
+                                                @event.FirstName + " " + @event.LastName,
+                                                @event.Email));
 
-
-
-
-            //using (var scope = UserAccessCompositionRoot.BeginLifetimeScope())
-            //{
-            //    using (var connection = scope.Resolve<ISqlConnectionFactory>().GetOpenConnection())
-            //    {
-            //        string type = @event.GetType().FullName;
-            //        var data = JsonConvert.SerializeObject(@event, new JsonSerializerSettings
-            //        {
-            //            ContractResolver = new AllPropertiesContractResolver()
-            //        });
-
-            //        var sql = "INSERT INTO [users].[InboxMessages] (Id, OccurredOn, Type, Data) " +
-            //                  "VALUES (@Id, @OccurredOn, @Type, @Data)";
-
-            //        await connection.ExecuteScalarAsync(sql, new
-            //        {
-            //            @event.Id,
-            //            @event.OccurredOn,
-            //            type,
-            //            data
-            //        });
-            //    }
-            //}
         }
     }
 }
