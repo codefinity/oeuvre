@@ -36,6 +36,16 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
             return Task.CompletedTask;
         }
 
+
+
+
+
+
+
+
+
+
+
         //Reference from: https://cfrenzel.com/domain-events-efcore-mediatr/
         //public Task Handle(DomainEventNotification<NewUserRegisteredDomainEvent> notification, CancellationToken cancellationToken)
         //{

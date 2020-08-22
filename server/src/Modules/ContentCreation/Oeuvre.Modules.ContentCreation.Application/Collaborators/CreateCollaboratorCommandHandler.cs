@@ -36,8 +36,6 @@ namespace Oeuvre.Modules.ContentCreation.Application.Collaborators
                 string message = ex.Message;
             }
 
-
-
             return Unit.Value;
         }
 
