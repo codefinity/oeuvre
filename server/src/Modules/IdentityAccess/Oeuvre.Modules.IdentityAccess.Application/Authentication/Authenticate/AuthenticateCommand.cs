@@ -1,4 +1,5 @@
 ﻿
+using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Authentication.Authenticate

@@ -1,5 +1,6 @@
-﻿using Newtonsoft.Json;
-using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
+﻿using Domaina.CQRS;
+using Newtonsoft.Json;
+using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;

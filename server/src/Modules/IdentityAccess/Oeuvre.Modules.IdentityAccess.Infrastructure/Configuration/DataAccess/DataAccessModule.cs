@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Domaina.Application.Data;
+using Domaina.CQRS;
 using Domaina.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;

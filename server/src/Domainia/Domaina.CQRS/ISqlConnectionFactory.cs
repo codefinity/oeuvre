@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace Domaina.Application.Data
+namespace Domaina.CQRS
 {
     public interface ISqlConnectionFactory
     {

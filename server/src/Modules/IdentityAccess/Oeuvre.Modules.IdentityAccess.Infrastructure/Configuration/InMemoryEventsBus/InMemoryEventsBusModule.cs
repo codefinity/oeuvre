@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Domaina.Infrastructure.EventBus;
 using Domania.EventBus;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.InMemoryEventBus

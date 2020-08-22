@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.Contracts
+namespace Domaina.CQRS
 {
     public interface ICommand<out TResult> : IRequest<TResult>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Domaina.CQRS;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands
+namespace Domaina.CQRS
 {
     public abstract class InternalCommandBase : ICommand
     {

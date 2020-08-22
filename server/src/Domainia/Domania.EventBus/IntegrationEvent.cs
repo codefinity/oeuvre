@@ -1,9 +1,8 @@
 ﻿using System;
-using MediatR;
 
-namespace Domaina.Infrastructure.EventBus
+namespace Domania.EventBus
 {
-    public abstract class IntegrationEvent : INotification
+    public abstract class IntegrationEvent //: INotification
     {
         public Guid Id { get; }
 

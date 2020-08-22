@@ -1,4 +1,4 @@
-﻿namespace Oeuvre.Modules.IdentityAccess.Application.Contracts
+﻿namespace Oeuvre.Modules.IdentityAccess.Application.IdentityServer
 {
     public class Roles
     {

@@ -1,4 +1,5 @@
-﻿using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+﻿using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser

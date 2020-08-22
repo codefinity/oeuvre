@@ -1,32 +1,32 @@
 ﻿using System;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.Contracts
+namespace Domaina.CQRS
 {
-    public abstract class QueryBase
+    public abstract class CommandBase : ICommand
     {
         public Guid Id { get; }
 
-        protected QueryBase()
+        protected CommandBase()
         {
             this.Id = Guid.NewGuid();
         }
 
-        protected QueryBase(Guid id)
+        protected CommandBase(Guid id)
         {
             this.Id = id;
         }
     }
 
-    public abstract class QueryBase<TResult> : IQuery<TResult>
+    public abstract class CommandBase<TResult> : ICommand<TResult>
     {
         public Guid Id { get; }
 
-        protected QueryBase()
+        protected CommandBase()
         {
             this.Id = Guid.NewGuid();
         }
 
-        protected QueryBase(Guid id)
+        protected CommandBase(Guid id)
         {
             this.Id = id;
         }

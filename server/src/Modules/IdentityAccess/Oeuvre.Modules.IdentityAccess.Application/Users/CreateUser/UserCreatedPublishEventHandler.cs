@@ -1,5 +1,5 @@
-﻿using Domaina.Infrastructure.EventBus;
-using Domania.Domain;
+﻿using Domania.Domain;
+using Domania.EventBus;
 using MediatR;
 using Oeuvre.Modules.IdentityAccess.Domain.Users.Events;
 using Oeuvre.Modules.IdentityAccess.IntegrationEvents;

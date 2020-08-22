@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Domaina.CQRS;
 using MediatR;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;

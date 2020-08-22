@@ -1,12 +1,11 @@
-﻿using Domaina.Application.Data;
-//using Npgsql;
+﻿//using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace Domaina.Infrastructure
+namespace Domaina.CQRS
 {
     public class SqlConnectionFactory : ISqlConnectionFactory, IDisposable
     {

@@ -1,4 +1,5 @@
-﻿using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+﻿using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;

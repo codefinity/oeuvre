@@ -3,11 +3,12 @@ using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
-using Domaina.Application.Data;
+using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Application.Authentication;
 using Oeuvre.Modules.IdentityAccess.Application.Authentication.Authenticate;
-using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
+
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Oeuvre.Modules.IdentityAccess.Application.IdentityServer;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Application.Authentication.Authenticate
 {

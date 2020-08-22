@@ -22,9 +22,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domaina.Application\Domaina.Application.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domaina.CQRS\Domaina.CQRS.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\Domainia\Domania.Security\Domania.Security.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.IntegrationEvents\Oeuvre.Modules.IdentityAccess.IntegrationEvents.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\Commands\" />
+    <Folder Include="Configuration\Queries\" />
   </ItemGroup>
 </Project>

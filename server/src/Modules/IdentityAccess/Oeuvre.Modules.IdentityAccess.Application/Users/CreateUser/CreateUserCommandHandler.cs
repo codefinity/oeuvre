@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
+using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 

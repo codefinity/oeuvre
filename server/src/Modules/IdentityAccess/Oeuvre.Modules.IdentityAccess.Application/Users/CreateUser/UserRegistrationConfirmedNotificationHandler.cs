@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Domania.Domain;
 using MediatR;
-using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
+using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
 

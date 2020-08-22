@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domaina.Infrastructure.EventBus
+namespace Domania.EventBus
 {
     public interface IEventsBus : IDisposable
     {

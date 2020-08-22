@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Domaina.Infrastructure.EventBus
+namespace Domania.EventBus
 {
     public interface IIntegrationEventHandler<in TIntegrationEvent> : IIntegrationEventHandler
         where TIntegrationEvent: IntegrationEvent

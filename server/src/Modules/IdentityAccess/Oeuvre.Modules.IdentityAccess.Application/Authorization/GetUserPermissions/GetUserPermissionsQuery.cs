@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Authorization.GetUserPermissions

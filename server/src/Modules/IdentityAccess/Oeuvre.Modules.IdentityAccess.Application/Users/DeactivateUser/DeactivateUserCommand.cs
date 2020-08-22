@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Domaina.CQRS;
+using Newtonsoft.Json;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 using System.Collections.Generic;

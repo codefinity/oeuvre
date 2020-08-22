@@ -1,5 +1,4 @@
-﻿using Domaina.Infrastructure.EventBus;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Domania.EventBus
