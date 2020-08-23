@@ -6,6 +6,7 @@ using Oeuvre.Modules.IdentityAccess.Application.Authentication;
 using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Serilog;
+using Domaina.CQRS.Command;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser
 {

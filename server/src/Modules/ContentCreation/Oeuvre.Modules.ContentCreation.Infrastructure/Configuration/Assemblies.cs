@@ -1,4 +1,5 @@
-﻿using Oeuvre.Modules.ContentCreation.Application.Configuration.Command;
+﻿using Domaina.CQRS.Command;
+using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,6 +9,6 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
 {
     internal static class Assemblies
     {
-        public static readonly Assembly Application = typeof(InternalCommandBase).Assembly;
+        public static readonly Assembly Application = typeof(IContentCreationModule).Assembly;
     }
 }

@@ -8,6 +8,7 @@ using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using Xunit;
 using Domaina.CQRS;
+using Domaina.CQRS.Command;
 
 namespace Oeuvre.Modules.IdentityAccess.ArchTests
 {

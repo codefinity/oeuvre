@@ -1,4 +1,5 @@
 ﻿using Domaina.CQRS;
+using Domaina.CQRS.Query;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 using System.Collections.Generic;

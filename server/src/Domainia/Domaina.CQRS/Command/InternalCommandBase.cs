@@ -1,9 +1,7 @@
-﻿using Oeuvre.Modules.ContentCreation.Application.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Domaina.CQRS;
 
-namespace Oeuvre.Modules.ContentCreation.Application.Configuration.Command
+namespace Domaina.CQRS.Command
 {
     public abstract class InternalCommandBase : ICommand
     {

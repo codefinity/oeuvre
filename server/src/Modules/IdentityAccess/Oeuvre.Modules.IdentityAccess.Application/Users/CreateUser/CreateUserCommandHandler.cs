@@ -5,6 +5,7 @@ using MediatR;
 using Domaina.CQRS;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
+using Domaina.CQRS.Command;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
 {

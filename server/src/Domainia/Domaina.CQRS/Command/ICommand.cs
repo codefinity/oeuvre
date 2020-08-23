@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace Domaina.CQRS
+namespace Domaina.CQRS.Command
 {
     public interface ICommand<out TResult> : IRequest<TResult>
     {

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Domaina.CQRS.Command;
 using MediatR;
 using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using System;

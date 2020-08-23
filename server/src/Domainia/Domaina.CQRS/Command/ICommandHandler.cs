@@ -2,7 +2,7 @@
 using MediatR;
 
 
-namespace Domaina.CQRS
+namespace Domaina.CQRS.Command
 {
     public interface ICommandHandler<in TCommand> : 
         IRequestHandler<TCommand> where TCommand : ICommand

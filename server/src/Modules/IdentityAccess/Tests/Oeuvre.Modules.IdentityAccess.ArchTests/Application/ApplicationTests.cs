@@ -10,6 +10,8 @@ using Domaina.CQRS;
 //using NUnit.Framework;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Xunit;
+using Domaina.CQRS.Command;
+using Domaina.CQRS.Query;
 
 namespace Oeuvre.Modules.IdentityAccess.ArchTests.Application
 {

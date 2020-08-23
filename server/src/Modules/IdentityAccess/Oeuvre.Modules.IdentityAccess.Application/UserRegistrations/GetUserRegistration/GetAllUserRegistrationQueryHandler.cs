@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Dapper;
 using MediatR;
 using Domaina.CQRS;
+using Domaina.CQRS.Command;
+using Domaina.CQRS.Query;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oeuvre.Modules.ContentCreation.Application.Contracts
+namespace Domaina.CQRS.Query
 {
     public abstract class QueryBase
     {

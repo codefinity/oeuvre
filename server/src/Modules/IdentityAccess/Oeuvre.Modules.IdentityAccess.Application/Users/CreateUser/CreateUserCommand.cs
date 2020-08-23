@@ -1,5 +1,6 @@
 ﻿using System;
 using Domaina.CQRS;
+using Domaina.CQRS.Command;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser

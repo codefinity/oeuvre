@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Domaina.CQRS;
+using Domaina.CQRS.Command;
 using MediatR;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 

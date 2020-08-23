@@ -1,5 +1,6 @@
 ﻿using System;
 using Domaina.CQRS;
+using Domaina.CQRS.Query;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser

@@ -3,7 +3,8 @@ using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
-using Domaina.CQRS;
+using Domaina.CQRS.Command;
+using Domaina.CQRS.Query;
 using Oeuvre.Modules.IdentityAccess.Application.Authentication;
 using Oeuvre.Modules.IdentityAccess.Application.Authentication.Authenticate;
 

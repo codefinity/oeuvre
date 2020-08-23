@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace Domaina.CQRS
+namespace Domaina.CQRS.Query
 {
     public class SqlConnectionFactory : ISqlConnectionFactory, IDisposable
     {

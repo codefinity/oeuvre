@@ -7,6 +7,7 @@ using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Domaina.CQRS.Command;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.AddRole
 {

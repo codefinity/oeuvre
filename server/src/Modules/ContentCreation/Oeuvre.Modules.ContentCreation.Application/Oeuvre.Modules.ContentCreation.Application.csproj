@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Authorization\" />
+    <Folder Include="Configuration\Command\" />
     <Folder Include="Configuration\Queries\" />
   </ItemGroup>
 
