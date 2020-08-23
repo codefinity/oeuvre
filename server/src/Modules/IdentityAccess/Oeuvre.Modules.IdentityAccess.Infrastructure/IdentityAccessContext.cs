@@ -10,9 +10,11 @@ using Domaina.Infrastructure;
 using Domania.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
+using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Users;
 
@@ -22,6 +24,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
     {
 
         private IDomainEventDispatcher dispatcher;
+        public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Registration> UserRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
 
@@ -37,6 +40,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new TenantEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserRegistrationEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
         }

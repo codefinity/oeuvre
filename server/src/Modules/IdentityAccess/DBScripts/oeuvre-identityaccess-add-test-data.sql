@@ -6,8 +6,8 @@ PRINT N'Adding Data To [identityaccess].[Tenants]...';
 GO
 
 INSERT INTO [identityaccess].[Tenants]
-([Id],										[Name]) VALUES
-('42D60457-5A80-4C83-96B6-890A5E5E4D22',	'Tenant One')
+([Id],										[Name],			[IsActive]) VALUES
+('42D60457-5A80-4C83-96B6-890A5E5E4D22',	'Tenant One',	1)
 ;
 
 PRINT N'Adding Data To [identityaccess].[Registrations]...';
