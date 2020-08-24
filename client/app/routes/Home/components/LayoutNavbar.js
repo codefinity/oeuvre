@@ -27,9 +27,9 @@ export const LayoutNavbar = () => (
             </Nav>
             <Nav className="ml-auto" pills>
 
-                <strong><a href="#" className="text-dark">Sign In</a></strong>
-
-
+                <Link to="/login" className="text-dark">
+                <strong>Sign In</strong>
+                </Link>
             </Nav>
         </Navbar>
     </React.Fragment>

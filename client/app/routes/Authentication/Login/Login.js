@@ -31,9 +31,6 @@ const Login = () => (
                         Email Adress
                     </Label>
                     <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" />
-                    <FormText color="muted">
-                        We&amp;ll never share your email with anyone else.
-                    </FormText>
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">
