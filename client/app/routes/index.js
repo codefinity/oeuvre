@@ -5,6 +5,9 @@ import {
     Redirect
 } from 'react-router';
 
+{/* Home */}
+import Home from './Home';
+
 {/* Authentication */}
 import Login from './Authentication/Login';
 import Register from './Authentication/Register';
@@ -120,9 +123,13 @@ export const RoutedContent = () => {
         <Switch>
 
 
-            <Redirect from="/login" exact to="/" />
+            { <Redirect from="/home" exact to="/" /> }
+
+            {/* Home */}
+            <Route path="/" exact component={ Home } />
+
             {/* Authentication */}
-            <Route path="/" exact component={ Login } />
+            <Route path="/login" exact component={ Login } />
             <Route path="/register" exact component={ Register }/>
             <Route path="/forgot-password" exact component={ ForgotPassword }  />
             
@@ -232,7 +239,7 @@ export const RoutedContent = () => {
             <Route path='/icons' exact component={Icons} />
 
             { /*    404    */ }
-            <Redirect to="/pages/error-404" />
+            {/* <Redirect to="/pages/error-404" /> */}
         </Switch>
     );
 };
@@ -249,6 +256,12 @@ export const RoutedNavbars  = () => (
             component={ NavbarOnly.Navbar }
             path="/layouts/navbar"
         />
+
+        <Route
+            component={ Home.Navbar }
+            path="/"
+        />
+        
         <Route
             component={ SidebarWithNavbar.Navbar }
             path="/layouts/sidebar-with-navbar"
