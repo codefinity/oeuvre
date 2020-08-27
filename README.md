@@ -53,10 +53,8 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 
-2. To Run - Use console command 
-  ```
-  C:\..\oeuvre\server\src\Oeuvre>dotnet run
-  ```
+2. Open the project in Visual Studio.
+
 
 #### Logs
 
