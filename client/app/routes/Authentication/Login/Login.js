@@ -27,6 +27,14 @@
                 submitted: false
             };
 
+            handleSubmit(e) {
+
+                e.preventDefault();
+
+                console.log("Form Submitted");
+
+            }
+
             render() {
 
                 // console.log(this.state.password);
@@ -41,7 +49,7 @@
                             />
                             { /* END Header */}
                             { /* START Form */}
-                            <Form className="mb-3">
+                            <Form className="mb-3" onSubmit={this.handleSubmit}>
                                 <FormGroup>
                                     <Label for="emailAdress">
                                         Email Adress
@@ -66,7 +74,10 @@
                                 <ThemeConsumer>
                                     {
                                         ({ color }) => (
-                                            <Button color={color} block tag={Link} to="/dashboards/analytics">
+                                            <Button color={color}
+                                                //block tag={Link} 
+                                                //to="/dashboards/analytics"
+                                                >
                                                 Sign In
                                             </Button>
                                         )
@@ -78,10 +89,10 @@
                             <div className="d-flex mb-5">
                                 <Link to="/forgot-password" className="text-decoration-none">
                                     Forgot Password
-                        </Link>
+                                </Link>
                                 <Link to="/register" className="ml-auto text-decoration-none">
                                     Register
-                        </Link>
+                                </Link>
                             </div>
                             { /* END Bottom Links */}
                             { /* START Footer */}
