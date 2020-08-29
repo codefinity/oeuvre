@@ -2,7 +2,7 @@
         import { Link } from 'react-router-dom';
 
         import { connect } from 'react-redux';
-        import { authenticate } from '../../../actions';
+        import { authenticate } from '../Authentication.actions';
 
         import {
             Form,
@@ -27,11 +27,21 @@
                 submitted: false
             };
 
-            handleSubmit(e) {
+            handleSubmit =(e) => {
 
                 e.preventDefault();
 
                 console.log("Form Submitted");
+
+                this.setState({ submitted: true });
+
+                this.props.authenticate(this.state.emailId, this.state.password);
+
+
+                //const { dispatch } = this.props;
+                //if (username && password) {
+                    //dispatch(userActions.login(emailId, password));
+                //}
 
             }
 

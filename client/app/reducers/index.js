@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import usersReducer from './usersReducer';
+import authenticationReducer from './Authentication.reducer';
 //import postsReducer from './postsReducer';
 
 export default combineReducers({
-    users: usersReducer
+    authentication: authenticationReducer
     //,posts: postsReducer
 
 });
