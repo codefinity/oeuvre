@@ -1,72 +1,106 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+        import React from 'react';
+        import { Link } from 'react-router-dom';
 
-import {
-    Form,
-    FormGroup,
-    FormText,
-    Input,
-    CustomInput,
-    Button,
-    Label,
-    EmptyLayout,
-    ThemeConsumer
-} from './../../../components';
+        import { connect } from 'react-redux';
+        import { authenticate } from '../../../actions';
 
-import { HeaderAuth } from "../../components/Pages/HeaderAuth";
-import { FooterAuth } from "../../components/Pages/FooterAuth";
+        import {
+            Form,
+            FormGroup,
+            FormText,
+            Input,
+            CustomInput,
+            Button,
+            Label,
+            EmptyLayout,
+            ThemeConsumer
+        } from './../../../components';
 
-const Login = () => (
-    <EmptyLayout>
-        <EmptyLayout.Section center>
-            { /* START Header */}
-            <HeaderAuth 
-                title="Sign In to Application"
-            />
-            { /* END Header */}
-            { /* START Form */}
-            <Form className="mb-3">
-                <FormGroup>
-                    <Label for="emailAdress">
-                        Email Adress
-                    </Label>
-                    <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="password">
-                        Password
-                    </Label>
-                    <Input type="password" name="password" id="password" placeholder="Password..." className="bg-white" />
-                </FormGroup>
-                <FormGroup>
-                    <CustomInput type="checkbox" id="rememberPassword" label="Remember Password" inline />
-                </FormGroup>
-                <ThemeConsumer>
-                {
-                    ({ color }) => (
-                        <Button color={ color } block tag={ Link } to="/dashboards/analytics">
-                            Sign In
-                        </Button>
-                    )
-                }
-                </ThemeConsumer>
-            </Form>
-            { /* END Form */}
-            { /* START Bottom Links */}
-            <div className="d-flex mb-5">
-                <Link to="/forgot-password" className="text-decoration-none">
-                    Forgot Password
-                </Link>
-                <Link to="/register" className="ml-auto text-decoration-none">
-                    Register
-                </Link>
-            </div>
-            { /* END Bottom Links */}
-            { /* START Footer */}
-            <FooterAuth />
-            { /* END Footer */}
-        </EmptyLayout.Section>
-    </EmptyLayout>
-);
+        import { HeaderAuth } from "../../components/Pages/HeaderAuth";
+        import { FooterAuth } from "../../components/Pages/FooterAuth";
 
-export default Login;
+        class Login extends React.Component {
+
+            state = {
+                emailId: '',
+                password: '',
+                submitted: false
+            };
+
+            render() {
+
+                // console.log(this.state.password);
+
+                return (
+
+                    <EmptyLayout>
+                        <EmptyLayout.Section center>
+                            { /* START Header */}
+                            <HeaderAuth
+                                title="Sign In to Application"
+                            />
+                            { /* END Header */}
+                            { /* START Form */}
+                            <Form className="mb-3">
+                                <FormGroup>
+                                    <Label for="emailAdress">
+                                        Email Adress
+                                    </Label>
+                                    <Input type="email" name="email" id="emailAdress" 
+                                                value={this.state.emailId}
+                                                onChange={(e)=>this.setState({emailId: e.target.value})} 
+                                                placeholder="Enter email..." className="bg-white" />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="password">
+                                        Password
+                                    </Label>
+                                    <Input type="password" name="password" id="password" 
+                                            value={this.state.password}
+                                            onChange={(e)=>this.setState({password: e.target.value})} 
+                                            placeholder="Password..." className="bg-white" />
+                                </FormGroup>
+                                <FormGroup>
+                                    <CustomInput type="checkbox" id="rememberPassword" label="Remember Password" inline />
+                                </FormGroup>
+                                <ThemeConsumer>
+                                    {
+                                        ({ color }) => (
+                                            <Button color={color} block tag={Link} to="/dashboards/analytics">
+                                                Sign In
+                                            </Button>
+                                        )
+                                    }
+                                </ThemeConsumer>
+                            </Form>
+                            { /* END Form */}
+                            { /* START Bottom Links */}
+                            <div className="d-flex mb-5">
+                                <Link to="/forgot-password" className="text-decoration-none">
+                                    Forgot Password
+                        </Link>
+                                <Link to="/register" className="ml-auto text-decoration-none">
+                                    Register
+                        </Link>
+                            </div>
+                            { /* END Bottom Links */}
+                            { /* START Footer */}
+                            <FooterAuth />
+                            { /* END Footer */}
+                        </EmptyLayout.Section>
+                    </EmptyLayout>
+                );
+
+         };
+
+        }
+
+
+        const mapStateToProps = state => {
+            return { users: state.users };
+        };
+        
+        export default connect(
+            mapStateToProps,
+            { authenticate }
+        )(Login);
