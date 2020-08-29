@@ -1,1 +1,1 @@
-sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-identityaccess-add-test-data.sql
+sqlcmd -S DESKTOP-6DRE2VL -i oeuvre-identityaccess-add-test-data.sql

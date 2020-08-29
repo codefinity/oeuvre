@@ -1,1 +1,1 @@
-sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-identityaccess-create-db-tables.sql
+sqlcmd -S DESKTOP-6DRE2VL -i oeuvre-identityaccess-create-db-tables.sql

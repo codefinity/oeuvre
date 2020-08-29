@@ -15,6 +15,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application.IdentityServer
             context.IssuedClaims.Add(context.Subject.Claims.Single(x => x.Type == CustomClaimTypes.Name));
             context.IssuedClaims.Add(context.Subject.Claims.Single(x => x.Type == CustomClaimTypes.EMail));
 
+            context.IssuedClaims.Add(new Claim("employee_id", "eid"));
+
             return Task.CompletedTask;
         }
 
