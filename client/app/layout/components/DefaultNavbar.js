@@ -1,5 +1,6 @@
     import React from 'react';
     import { Link } from 'react-router-dom';
+    import { connect } from 'react-redux';
     import {
         //Button,
         DropdownToggle,
@@ -21,9 +22,11 @@
     //import { NavbarNavigation } from './../../components/Navbars/NavbarNavigation';
     import { LogoThemed } from '../../routes/components/LogoThemed/LogoThemed';
 
-    export class DefaultNavbar extends React.Component {
+    class DefaultNavbar extends React.Component {
 
         render() {
+
+            console.log("LoggingIn in Navbar:" + this.props.authentication.LoggedIn);
 
             return(
                 <React.Fragment>
@@ -45,7 +48,9 @@
 
                         { /* END Navbar: Left Side */ }
                         { /* START Navbar: Right Side */ }
-                        <Nav className="ml-auto" pills>
+
+                        {this.props.authentication.LoggedIn
+                            ?<Nav className="ml-auto" pills>
                             {/* <NavbarMessages /> */}
                             <NavbarActivityFeed />
                             { /* START Navbar: Dropdown */ }
@@ -73,6 +78,13 @@
                             { /* END Navbar: Dropdown */ }
                             {/* <NavbarUser className="d-none d-lg-block" /> */}
                         </Nav>
+                        :<Nav pills>
+                            <Link to="/login" className="text-dark">
+                            <strong>Sign In</strong>
+                            </Link>
+                        </Nav>
+                        }
+
                         { /* END Navbar: Right Side */ }
                     </Navbar>
 
@@ -95,3 +107,11 @@
             );
         }
     }
+
+    const mapStateToProps = state => {
+        return { authentication: state.authentication };
+    };
+    
+    export default connect(
+        mapStateToProps
+    )(DefaultNavbar);
