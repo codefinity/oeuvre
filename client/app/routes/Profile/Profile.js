@@ -5,9 +5,10 @@ import {
     FloatGrid as Grid,
 } from './../../components';
 
+import { setupPage } from './../../components/Layout/setupPage';
 
 
-class HomeAuthenticated extends React.Component {
+class Profile extends React.Component {
 
     componentDidMount() {
 
@@ -23,7 +24,7 @@ class HomeAuthenticated extends React.Component {
             <React.Fragment>
                 <Container fluid={ false }>
  
-                    Authenticated User
+                    Profile
 
                 </Container>
 
@@ -32,4 +33,6 @@ class HomeAuthenticated extends React.Component {
     }
 }
 
-export default HomeAuthenticated;
+export default setupPage({
+    pageTitle: 'Profile'
+})(Profile);

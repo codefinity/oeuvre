@@ -39,7 +39,7 @@
 
             return(
                 <React.Fragment>
-                    <Navbar light expand="lg" themed>
+                    <Navbar light expand="sm" themed>
                         <Link to="/" className="navbar-brand mr-0 mr-sm-3">
                             <LogoThemed className="mb-1" checkBackground />
                         </Link>
@@ -66,20 +66,20 @@
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav>
                                     <Avatar.Image
-                                        size="sm"
+                                        size="md"
                                         src={ randomAvatar() }
-                                        addOns={[
-                                            <AvatarAddOn.Icon 
-                                                className="fa fa-circle"
-                                                color="white"
-                                                key="avatar-icon-bg"
-                                            />,
-                                            <AvatarAddOn.Icon 
-                                                className="fa fa-circle"
-                                                color="danger"
-                                                key="avatar-icon-fg"
-                                            />
-                                        ]}
+                                        //addOns={[
+                                        //    <AvatarAddOn.Icon 
+                                        //        className="fa fa-circle"
+                                                //color="white"
+                                        //        key="avatar-icon-bg"
+                                        //    />
+                                            //, <AvatarAddOn.Icon 
+                                            //     className="fa fa-circle"
+                                            //     color="danger"
+                                            //     key="avatar-icon-fg"
+                                            // />
+                                        //]}
                                     /> 
                                 </DropdownToggle>
                                 {/* <DropdownProfile  right /> */}
@@ -89,18 +89,23 @@
                                             { "FName" } { "LName" }
                                         </DropdownItem>
                                         <DropdownItem divider />
-                                        <DropdownItem tag={ Link } to="/apps/profile-details">
-                                            My Profile
+                                        <DropdownItem tag={ Link } to="/apps/billing-edit">
+                                            New article
                                         </DropdownItem>
+                                        <DropdownItem tag={ Link } to="/apps/billing-edit">
+                                            Articles
+                                        </DropdownItem>
+                                        <DropdownItem tag={ Link } to="/apps/billing-edit">
+                                            Saved Articles
+                                        </DropdownItem>
+                                        <DropdownItem divider />
                                         <DropdownItem tag={ Link } to="/apps/settings-edit">
                                             Settings
                                         </DropdownItem>
-                                        <DropdownItem tag={ Link } to="/apps/billing-edit">
-                                            Billings
+                                        <DropdownItem tag={ Link } to="/apps/profile-details">
+                                            My Profile
                                         </DropdownItem>
-                                        <DropdownItem divider />
                                         <DropdownItem  onClick={this.signOut} >
-                                            <i className="fa fa-fw fa-sign-out mr-2"></i>
                                             Sign Out
                                         </DropdownItem>
                                     </DropdownMenu>

@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import faker from 'faker/locale/en_US';
-import { withPageConfig } from
-    './../../components/Layout/withPageConfig';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 import {
     Container,
@@ -10,6 +8,8 @@ import {
 } from './../../components';
 
 import { setupPage } from './../../components/Layout/setupPage';
+import HomeAnonymous from './HomeAnonymous';
+import HomeAuthenticated from './HomeAuthenticated';
 
 
 const LAYOUT = {
@@ -47,24 +47,24 @@ SessionByDevice.propTypes = {
 }
 
 class Home extends React.Component {
-    static propTypes = {
-        pageConfig: PropTypes.object
-    };
+    //static propTypes = {
+    //    pageConfig: PropTypes.object
+    //};
 
     componentDidMount() {
-        const { pageConfig } = this.props;
+        //const { pageConfig } = this.props;
         
-        pageConfig.setElementsVisibility({
-            sidebarHidden: true
-        });
+        //pageConfig.setElementsVisibility({
+        //    sidebarHidden: true
+        //});
     }
 
     componentWillUnmount() {
-        const { pageConfig } = this.props;
+        //const { pageConfig } = this.props;
 
-        pageConfig.setElementsVisibility({
-            sidebarHidden: false
-        });
+        //pageConfig.setElementsVisibility({
+        //    sidebarHidden: false
+        //});
     }
 
     render() {
@@ -73,7 +73,11 @@ class Home extends React.Component {
             <React.Fragment>
                 <Container fluid={ false }>
  
-                    Welcome to Oeuvre
+                    {this.props.authentication.LoggedIn
+
+                        ?<HomeAuthenticated/>
+                        :<HomeAnonymous/>
+                    }
 
                 </Container>
 
@@ -82,6 +86,15 @@ class Home extends React.Component {
     }
 }
 
-export default setupPage({
-    pageTitle: 'Home'
-})(Home);
+
+const mapStateToProps = state => {
+    return { authentication: state.authentication };
+};
+
+export default connect(
+    mapStateToProps
+)(Home);
+
+// export default setupPage({
+//     pageTitle: 'Home'
+// })(Home);
