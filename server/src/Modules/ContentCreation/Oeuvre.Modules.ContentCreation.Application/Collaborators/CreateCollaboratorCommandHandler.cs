@@ -1,5 +1,5 @@
-﻿using MediatR;
-using Oeuvre.Modules.ContentCreation.Application.Configuration.Command;
+﻿using Domaina.CQRS.Command;
+using MediatR;
 using Oeuvre.Modules.ContentCreation.Domain.Collaborators;
 using System;
 using System.Collections.Generic;

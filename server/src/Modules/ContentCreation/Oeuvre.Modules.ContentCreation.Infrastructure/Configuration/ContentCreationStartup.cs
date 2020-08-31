@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Domaina.Application;
-using Domaina.Infrastructure.EventBus;
 using Oeuvre.Modules.ContentCreation.API.Controllers;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus;

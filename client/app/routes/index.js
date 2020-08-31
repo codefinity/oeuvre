@@ -5,10 +5,19 @@ import {
     Redirect
 } from 'react-router';
 
+import { ProtectedRoute } from './components/ProtectedRoute';
+
+{/* Home */}
+import Home from './Home';
+
 {/* Authentication */}
 import Login from './Authentication/Login';
 import Register from './Authentication/Register';
 import ForgotPassword from './Authentication/ForgotPassword';
+
+{/* Profile */}
+import Profile from './Profile';
+
 
 // ----------- Pages Imports ---------------
 import Analytics from './Dashboards/Analytics';
@@ -107,26 +116,36 @@ import Timeline from './Pages/Timeline';
 import Icons from './Icons';
 
 // ----------- Layout Imports ---------------
-import { DefaultNavbar } from './../layout/components/DefaultNavbar';
+import  DefaultNavbar  from './../layout/components/DefaultNavbar';
 import { DefaultSidebar } from './../layout/components/DefaultSidebar';
 
 import { SidebarANavbar } from './../layout/components/SidebarANavbar';
 import { SidebarASidebar } from './../layout/components/SidebarASidebar';
 
+
 //------ Route Definitions --------
 // eslint-disable-next-line no-unused-vars
 export const RoutedContent = () => {
+
+
+
     return (
         <Switch>
 
+            { <Redirect from="/home" exact to="/" /> }
 
-            <Redirect from="/login" exact to="/" />
+            {/* Home */}
+            <Route path="/" exact component={ Home } />
+
             {/* Authentication */}
-            <Route path="/" exact component={ Login } />
+            <Route path="/login" exact component={ Login } />
             <Route path="/register" exact component={ Register }/>
             <Route path="/forgot-password" exact component={ ForgotPassword }  />
             
-            
+            {/* Profile */}
+            <ProtectedRoute path="/profile" exact component={ Profile } />
+
+            {/* Other */}
             <Route path="/dashboards/analytics" exact component={Analytics} />
             <Route path="/dashboards/projects" exact component={ProjectsDashboard} />
             <Route path="/dashboards/system" exact component={System} />
@@ -232,7 +251,7 @@ export const RoutedContent = () => {
             <Route path='/icons' exact component={Icons} />
 
             { /*    404    */ }
-            <Redirect to="/pages/error-404" />
+            {/* <Redirect to="/pages/error-404" /> */}
         </Switch>
     );
 };
@@ -249,11 +268,12 @@ export const RoutedNavbars  = () => (
             component={ NavbarOnly.Navbar }
             path="/layouts/navbar"
         />
+        
         <Route
             component={ SidebarWithNavbar.Navbar }
             path="/layouts/sidebar-with-navbar"
         />
-        { /* Default Navbar: */}
+        { /* Default Navbar: For all the pages*/}
         <Route
             component={ DefaultNavbar }
         />

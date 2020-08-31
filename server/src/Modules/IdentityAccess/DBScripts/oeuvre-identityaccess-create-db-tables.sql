@@ -15,6 +15,7 @@ GO
 CREATE TABLE [identityaccess].[Tenants] (
     [Id]            UNIQUEIDENTIFIER        NOT NULL,
     [Name]          VARCHAR (100)           NOT NULL,
+    [IsActive]      BIT                     NOT NULL,
     CONSTRAINT [PK_identityaccess_Tenants_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

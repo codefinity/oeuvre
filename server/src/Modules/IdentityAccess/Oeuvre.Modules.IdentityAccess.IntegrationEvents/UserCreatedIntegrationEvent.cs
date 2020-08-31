@@ -1,4 +1,4 @@
-﻿using Domaina.Infrastructure.EventBus;
+﻿using Domania.EventBus;
 using System;
 using System.Collections.Generic;
 using System.Text;

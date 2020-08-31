@@ -42,7 +42,7 @@ const NavbarActivityFeed = (props) => (
             <IconWithBadge
                 badge={ <Badge pill color="primary">6</Badge> }
             >
-                <i className="fa fa-bell-o fa-fw" />
+                <i className="fa fa-bell-o fa-fw fa-lg" />
             </IconWithBadge>
         </DropdownToggle>
         <ExtendedDropdown right>

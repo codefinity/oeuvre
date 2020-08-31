@@ -1,3 +1,3 @@
-import AppClient from './AppClient';
+import App from './AppClient';
 
-export default AppClient;
+export default App;

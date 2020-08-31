@@ -1,4 +1,5 @@
-﻿using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
+﻿using Domaina.CQRS;
+using Domaina.CQRS.Command;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;

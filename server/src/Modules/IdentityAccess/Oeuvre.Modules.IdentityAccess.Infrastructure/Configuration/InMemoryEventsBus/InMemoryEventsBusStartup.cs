@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Domaina.Infrastructure.EventBus;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration;
 using Serilog;
 

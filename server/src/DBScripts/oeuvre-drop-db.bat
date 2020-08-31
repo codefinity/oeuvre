@@ -1,1 +1,1 @@
-sqlcmd -S (LocalDb)\MSSQLLocalDB -i oeuvre-identityaccess-drop-db.sql
+sqlcmd -S DESKTOP-6DRE2VL -i oeuvre-identityaccess-drop-db.sql

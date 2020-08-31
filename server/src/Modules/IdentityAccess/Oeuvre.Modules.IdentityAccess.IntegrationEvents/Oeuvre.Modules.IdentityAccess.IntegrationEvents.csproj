@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\Domainia\Domania.EventBus\Domania.EventBus.csproj" />
   </ItemGroup>
 
 </Project>

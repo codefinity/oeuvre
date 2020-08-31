@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Domaina.CQRS.Command;
+using Domaina.CQRS.Query;
+using System.Threading.Tasks;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Contracts
 {

@@ -30,9 +30,6 @@ const ForgotPassword = () => (
                         Email Adress or Username
                     </Label>
                     <Input type="email" name="email" id="emailAdress" placeholder="Enter..." className="bg-white" />
-                    <FormText color="muted">
-                        We&amp;ll never share your email with anyone else.
-                    </FormText>
                 </FormGroup>
                 <div className="d-flex">
                     <ThemeConsumer>

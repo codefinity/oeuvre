@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Domaina.Infrastructure.EventBus;
 using Domania.EventBus;
 using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using System;

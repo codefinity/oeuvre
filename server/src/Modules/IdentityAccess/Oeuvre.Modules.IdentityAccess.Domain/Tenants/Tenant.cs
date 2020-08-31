@@ -5,16 +5,22 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Tenants
 {
-    internal class Tenant : Entity, IAggregateRoot
+    public class Tenant : Entity, IAggregateRoot
     {
         public TenantId Id { get; private set; }
 
-        private string Name;
+        private string name;
 
-        private Tenant()
+        private bool isActive;
+
+        public Tenant(string name,
+                    bool isActive)
         {
-
+            this.name = name;
+            this.isActive = isActive;
         }
+
+        public bool IsActive => isActive;
   
     }
 }

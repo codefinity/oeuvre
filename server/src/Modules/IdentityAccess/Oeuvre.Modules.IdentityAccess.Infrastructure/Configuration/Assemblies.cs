@@ -1,4 +1,5 @@
-﻿using Oeuvre.Modules.IdentityAccess.Application.Configuration.Commands;
+﻿using Domaina.CQRS;
+using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,6 +9,6 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 {
     internal static class Assemblies
     {
-        public static readonly Assembly Application = typeof(InternalCommandBase).Assembly;
+        public static readonly Assembly Application = typeof(IIdentityAccessModule).Assembly;
     }
 }

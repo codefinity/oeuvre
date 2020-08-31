@@ -1,5 +1,6 @@
 ﻿using Dapper;
-using Domaina.Application.Data;
+using Domaina.CQRS;
+using Domaina.CQRS.Query;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using System;
 using System.Collections.Generic;

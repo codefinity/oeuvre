@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
-using Domaina.Application.Data;
-using Oeuvre.Modules.IdentityAccess.Application.Configuration.Queries;
+using Domaina.CQRS;
+using Domaina.CQRS.Query;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser
 {

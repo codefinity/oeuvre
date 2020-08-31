@@ -5,17 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="CommandBase.cs" />
-    <Compile Remove="ICommand.cs" />
-    <Compile Remove="ICommandHandler.cs" />
-    <Compile Remove="InternalCommandBase.cs" />
-    <Compile Remove="IQuery.cs" />
-    <Compile Remove="IQueryHandler.cs" />
-    <Compile Remove="QueryBase.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="MediatR" Version="8.0.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,11 @@
 ﻿using Autofac;
-using Domaina.Infrastructure.EventBus;
 using Oeuvre.Modules.IdentityAccess.IntegrationEvents;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Oeuvre.Modules.ContentCreation.Infrastructure.PortsAndAdapters.Listeners.InMemory;
+using Domania.EventBus;
 
 namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus
 {

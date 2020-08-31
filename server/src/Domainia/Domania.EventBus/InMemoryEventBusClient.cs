@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Domaina.Infrastructure.EventBus;
 using Serilog;
 
 namespace Domania.EventBus
