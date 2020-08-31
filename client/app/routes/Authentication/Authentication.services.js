@@ -3,7 +3,7 @@ import qs from 'qs';
 
 export const authenticationServices = {
     login,
-    logout
+    signOut
 }
 
 
@@ -34,7 +34,7 @@ async function login(emailId, password) {
       return response;
 }
 
-function logout() {
+async function signOut() {
     // remove token from local storage to log user out
     localStorage.removeItem('token');
 }

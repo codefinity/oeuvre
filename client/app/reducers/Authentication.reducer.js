@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
 
         return {...state, LoggedIn : false };
 
-    case authentiationActionTypes.LOGOUT:
+    case authentiationActionTypes.SIGNOUT:
 
       return {...state, LoggedIn : false };
 

@@ -3,5 +3,5 @@ export const authentiationActionTypes = {
     AUTHENTICATE_SUCCESS: 'AUTHENTICATE_SUCCESS',
     AUTHENTICATE_FAILURE: 'AUTHENTICATE_FAILURE',
     
-    LOGOUT: 'LOGOUT',
+    SIGNOUT: 'SIGNOUT'
 };

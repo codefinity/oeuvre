@@ -47,7 +47,15 @@ export const authenticate = (emailId, password) => async dispatch =>
   function failure(error) { return { type: authentiationActionTypes.AUTHENTICATE_FAILURE, payload: error } }
 };
 
+export const signOut = () => async dispatch => {
 
+  authenticationServices.signOut();
+  dispatch(request());
+
+  history.push('/');
+
+  function request() { return { type: authentiationActionTypes.SIGNOUT } }
+}
 
 // export const fetchUser = id => async dispatch => {
 //   const response = await jsonPlaceholder.get(`/users/${id}`);

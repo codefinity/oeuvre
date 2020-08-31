@@ -11,7 +11,9 @@
         AvatarAddOn,
         Navbar,
         NavbarToggler,
-        UncontrolledDropdown
+        UncontrolledDropdown,
+        DropdownMenu, 
+        DropdownItem
         //,ThemeConsumer,
     } from '../../components';
     import { randomAvatar } from './../../utilities';
@@ -21,8 +23,15 @@
     import { DropdownProfile } from './../../routes/components/Dropdowns/DropdownProfile';
     //import { NavbarNavigation } from './../../components/Navbars/NavbarNavigation';
     import { LogoThemed } from '../../routes/components/LogoThemed/LogoThemed';
+    import { signOut } from '../../routes/Authentication/Authentication.actions';
 
     class DefaultNavbar extends React.Component {
+
+        signOut =(e) => {
+
+            console.log("Logout Clicked");
+            this.props.signOut();
+        }
 
         render() {
 
@@ -73,7 +82,29 @@
                                         ]}
                                     /> 
                                 </DropdownToggle>
-                                <DropdownProfile  right />
+                                {/* <DropdownProfile  right /> */}
+                                <React.Fragment>
+                                    <DropdownMenu right={true} >
+                                        <DropdownItem header>
+                                            { "FName" } { "LName" }
+                                        </DropdownItem>
+                                        <DropdownItem divider />
+                                        <DropdownItem tag={ Link } to="/apps/profile-details">
+                                            My Profile
+                                        </DropdownItem>
+                                        <DropdownItem tag={ Link } to="/apps/settings-edit">
+                                            Settings
+                                        </DropdownItem>
+                                        <DropdownItem tag={ Link } to="/apps/billing-edit">
+                                            Billings
+                                        </DropdownItem>
+                                        <DropdownItem divider />
+                                        <DropdownItem  onClick={this.signOut} >
+                                            <i className="fa fa-fw fa-sign-out mr-2"></i>
+                                            Sign Out
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </React.Fragment>
                             </UncontrolledDropdown>
                             { /* END Navbar: Dropdown */ }
                             {/* <NavbarUser className="d-none d-lg-block" /> */}
@@ -113,5 +144,6 @@
     };
     
     export default connect(
-        mapStateToProps
+        mapStateToProps,
+        { signOut }
     )(DefaultNavbar);
