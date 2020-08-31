@@ -102,7 +102,7 @@
                                         <DropdownItem tag={ Link } to="/apps/settings-edit">
                                             Settings
                                         </DropdownItem>
-                                        <DropdownItem tag={ Link } to="/apps/profile-details">
+                                        <DropdownItem tag={ Link } to="/profile">
                                             My Profile
                                         </DropdownItem>
                                         <DropdownItem  onClick={this.signOut} >

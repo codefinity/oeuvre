@@ -5,6 +5,8 @@ import {
     Redirect
 } from 'react-router';
 
+import { ProtectedRoute } from './components/ProtectedRoute';
+
 {/* Home */}
 import Home from './Home';
 
@@ -12,6 +14,10 @@ import Home from './Home';
 import Login from './Authentication/Login';
 import Register from './Authentication/Register';
 import ForgotPassword from './Authentication/ForgotPassword';
+
+{/* Profile */}
+import Profile from './Profile';
+
 
 // ----------- Pages Imports ---------------
 import Analytics from './Dashboards/Analytics';
@@ -116,6 +122,7 @@ import { DefaultSidebar } from './../layout/components/DefaultSidebar';
 import { SidebarANavbar } from './../layout/components/SidebarANavbar';
 import { SidebarASidebar } from './../layout/components/SidebarASidebar';
 
+
 //------ Route Definitions --------
 // eslint-disable-next-line no-unused-vars
 export const RoutedContent = () => {
@@ -124,7 +131,6 @@ export const RoutedContent = () => {
 
     return (
         <Switch>
-
 
             { <Redirect from="/home" exact to="/" /> }
 
@@ -136,7 +142,9 @@ export const RoutedContent = () => {
             <Route path="/register" exact component={ Register }/>
             <Route path="/forgot-password" exact component={ ForgotPassword }  />
             
-            
+            {/* Profile */}
+            <ProtectedRoute path="/profile" exact component={ Profile } />
+
             {/* Other */}
             <Route path="/dashboards/analytics" exact component={Analytics} />
             <Route path="/dashboards/projects" exact component={ProjectsDashboard} />
