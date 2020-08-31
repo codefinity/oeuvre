@@ -9,6 +9,8 @@ import {
     FloatGrid as Grid,
 } from './../../components';
 
+import { setupPage } from './../../components/Layout/setupPage';
+
 
 const LAYOUT = {
     'metric-v-target-users': { h: 6, md: 4 },
@@ -71,21 +73,15 @@ class Home extends React.Component {
             <React.Fragment>
                 <Container fluid={ false }>
  
-
-                Welcome to Oeuvre
+                    Welcome to Oeuvre
 
                 </Container>
 
-
-            
-            
             </React.Fragment>
         );
     }
 }
 
-const ExtendedNavbarOnly = withPageConfig(Home);
-
-export {
-    ExtendedNavbarOnly as Home
-};
+export default setupPage({
+    pageTitle: 'Home'
+})(Home);

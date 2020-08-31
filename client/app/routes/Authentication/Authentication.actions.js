@@ -8,22 +8,39 @@ export const authenticate = (emailId, password) => async dispatch =>
 
   dispatch(request({ emailId }));
 
-  try {
+  //try {
 
-      const response = await authenticationServices.login(emailId,password);
+      //const response = 
+      
+      authenticationServices.login(emailId,password)
+          .then(function (response) {
 
-      console.log(response.data);
+            console.log("The Response");
+            console.log(response);
+            dispatch(success(response.data));
+            history.push('/');
+          
+          })
+          .catch(function (error) {
 
-      dispatch(success(response.data));
+            console.log("The Error");
+            console.log(error);
+            dispatch(failure(error));
+          
+          });
+
+      //console.log(response.data);
+
+      //dispatch(success(response.data));
 
       //https://stackoverflow.com/questions/42701129/how-to-push-to-history-in-react-router-v4
-      history.push('/register');
+      //history.push('/register');
 
-  }
-  catch(error){
-      console.log(error);
-      dispatch(failure(error));
-  }
+  //}
+  //catch(error){
+  //    console.log(error);
+  //    dispatch(failure(error));
+  //}
 
   function request(emailId) { return { type: authentiationActionTypes.AUTHENTICATE_REQUEST, payload: emailId } }
   function success(data) { return { type: authentiationActionTypes.AUTHENTICATE_SUCCESS, payload: data } }

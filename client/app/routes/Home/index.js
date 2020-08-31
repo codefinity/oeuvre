@@ -1,6 +1,5 @@
-import { Home } from './Home';
-import { LayoutNavbar } from './components/LayoutNavbar';
-
-Home.Navbar = LayoutNavbar;
+import Home from './Home';
 
 export default Home;
+
+

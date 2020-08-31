@@ -134,6 +134,7 @@ export const RoutedContent = () => {
             <Route path="/forgot-password" exact component={ ForgotPassword }  />
             
             
+            {/* Other */}
             <Route path="/dashboards/analytics" exact component={Analytics} />
             <Route path="/dashboards/projects" exact component={ProjectsDashboard} />
             <Route path="/dashboards/system" exact component={System} />
@@ -256,17 +257,12 @@ export const RoutedNavbars  = () => (
             component={ NavbarOnly.Navbar }
             path="/layouts/navbar"
         />
-
-        <Route
-            component={ Home.Navbar }
-            path="/"
-        />
         
         <Route
             component={ SidebarWithNavbar.Navbar }
             path="/layouts/sidebar-with-navbar"
         />
-        { /* Default Navbar: */}
+        { /* Default Navbar: For all the pages*/}
         <Route
             component={ DefaultNavbar }
         />

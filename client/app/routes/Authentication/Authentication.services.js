@@ -6,7 +6,8 @@ export const authenticationServices = {
     logout
 }
 
-async function  login(emailId, password) {
+
+async function login(emailId, password) {
 
     const data = qs.stringify({
         grant_type: 'password',
@@ -26,7 +27,7 @@ async function  login(emailId, password) {
         headers
       )
 
-      //console.log(response.data.access_token)  
+      console.log("Token: " + response.data.access_token);
 
       localStorage.setItem('token', response.data.access_token);
 
