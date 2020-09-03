@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Domain.Users

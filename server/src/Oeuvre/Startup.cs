@@ -31,6 +31,7 @@ using Oeuvre.Modules.ContentCreation.API.Controllers;
 using Domania.Security.Authorization;
 using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Microsoft.IdentityModel.Logging;
 
 namespace Oeuvre
 {
@@ -99,7 +100,7 @@ namespace Oeuvre
             services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
 
             //This will display errors for IdentityServer. Disable for production.
-            //IdentityModelEventSource.ShowPII = true;
+            IdentityModelEventSource.ShowPII = true;
             return CreateAutofacServiceProvider(services);
 
         }
