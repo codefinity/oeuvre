@@ -29,20 +29,19 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         private bool isActive;
 
-
         private User()
         {
 
         }
 
         internal static User CreateFromUserRegistration(UserRegistrationId userRegistrationId,
-                                                        TenantId tenantId,
-                                                        string firstName,
-                                                        string lastName,
-                                                        string countryCode,
-                                                        string mobileNumber,
-                                                        string eMailId,
-                                                        string password)
+                                                            TenantId tenantId,
+                                                            string firstName,
+                                                            string lastName,
+                                                            string countryCode,
+                                                            string mobileNumber,
+                                                            string eMailId,
+                                                            string password)
         {
             return new User(userRegistrationId, 
                                 tenantId, 

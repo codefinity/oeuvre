@@ -13,14 +13,24 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Tenants
 
         private bool isActive;
 
-        public Tenant(string name,
-                    bool isActive)
+        public Tenant(TenantId tenantId, 
+                        string name,
+                        bool isActive)
         {
+            this.Id = tenantId;
             this.name = name;
             this.isActive = isActive;
         }
 
-        public bool IsActive => isActive;
-  
+        public void Activate()
+        {
+            isActive = true;
+        }
+
+        public void Deactivate()
+        {
+            isActive = false;
+        }
+
     }
 }
