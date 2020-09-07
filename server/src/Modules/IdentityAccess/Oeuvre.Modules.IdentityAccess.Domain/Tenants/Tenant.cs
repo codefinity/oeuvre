@@ -1,4 +1,5 @@
 ﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,6 +22,12 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Tenants
             this.name = name;
             this.isActive = isActive;
         }
+
+        //public User ProvisionAdministrator()
+        //{
+
+
+        //}
 
         public void Activate()
         {

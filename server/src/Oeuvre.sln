@@ -52,6 +52,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
 		DBScripts\oeuvre-recreate-db-tables-with-test-data.bat = DBScripts\oeuvre-recreate-db-tables-with-test-data.bat
 		DBScripts\oeuvre-recreate-db-tables.bat = DBScripts\oeuvre-recreate-db-tables.bat
+		DBScripts\prepare-oeuvre-integration-tests-db.bat = DBScripts\prepare-oeuvre-integration-tests-db.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specifications", "Specifications", "{DA9CC710-EB6E-40E2-9E71-C235091FAE28}"

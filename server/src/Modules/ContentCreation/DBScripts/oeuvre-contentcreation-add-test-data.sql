@@ -1,6 +1,5 @@
-USE [oeuvre]
-GO
-
+--USE [oeuvre]
+--GO
 
 PRINT N'Adding Data To [contentcreation].[Collaborators]...';
 

@@ -1,4 +1,5 @@
-use oeuvre;
+--USE [oeuvre]
+--GO
 
 PRINT N'Droping [identityaccess].[Tenants]...';
 
