@@ -17,6 +17,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         private FullName fullName;
 
+        private Bio bio;
+
         private MobileNumber mobileNumber;
 
         private string eMailId;
@@ -44,7 +46,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
         {
             return new User(userRegistrationId, 
                                 tenantId, 
-                                new FullName(firstName, lastName), 
+                                new FullName(firstName, lastName),
                                 new MobileNumber(countryCode, mobileNumber),
                                 eMailId, 
                                 password);
@@ -89,16 +91,12 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         public void Deactivate()
         {
-
             isActive = false;
-
         }
 
         public void Activate()
         {
-
             isActive = true;
-
         }
     }
 }

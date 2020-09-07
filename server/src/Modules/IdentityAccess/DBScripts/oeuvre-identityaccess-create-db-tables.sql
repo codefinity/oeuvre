@@ -56,6 +56,7 @@ CREATE TABLE [identityaccess].[Users] (
     [TenantId]          UNIQUEIDENTIFIER        NOT NULL,
     [FirstName]         NVARCHAR (50)           NULL,
     [LastName]          NVARCHAR (50)           NULL,
+    [BioText]           NVARCHAR (255)          NULL,
     [CountryCode]       NVARCHAR (10)           NULL,
     [MobileNo]          NVARCHAR (50)           NULL,
     [EMail]             NVARCHAR (255)          NOT NULL,
