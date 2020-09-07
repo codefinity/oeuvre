@@ -22,21 +22,21 @@ namespace Oeuvre
 
         //New Recommended for .net 3.1 but not convinient to be used this way
         //because some of the Autofac configurations are difficult to do.
-        //public static IHostBuilder CreateHostBuilder(string[] args) =>
-        //    Host.CreateDefaultBuilder(args)
-        //        .UseServiceProviderFactory(new AutofacServiceProviderFactory())
-        //        .ConfigureWebHostDefaults(webBuilder =>
-        //        {
-        //            webBuilder.UseStartup<Startup>();
-        //        });
-
-        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-
-                .UseStartup<Startup>()
-                .ConfigureAppConfiguration(builder =>
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    builder.AddJsonFile("appsettings.json");
+                    webBuilder.UseStartup<Startup>();
                 });
+
+        //public static IWebHostBuilder CreateHostBuilder(string[] args) =>
+        //    WebHost.CreateDefaultBuilder(args)
+
+        //        .UseStartup<Startup>()
+        //        .ConfigureAppConfiguration(builder =>
+        //        {
+        //            builder.AddJsonFile("appsettings.json");
+        //        });
     }
 }

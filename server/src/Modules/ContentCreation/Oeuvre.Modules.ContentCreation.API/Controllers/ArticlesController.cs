@@ -22,9 +22,8 @@ namespace Oeuvre.Modules.ContentCreation.API.Controllers
         }
 
         [HttpPost("/contentcreation/createnew")]
-        //[HasPermission("CreateArticle")]
-        //[Authorize]
-
+        [Authorize]
+        [HasPermission("CreateArticle")]
         public async Task<IActionResult> CreateNewArticle(CreateNewArticleRequest request)
         {
 

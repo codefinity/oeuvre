@@ -32,6 +32,7 @@ using Domania.Security.Authorization;
 using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Microsoft.IdentityModel.Logging;
+using Oeuvre.Modules.IdentityAccess.Application.Authorization;
 
 namespace Oeuvre
 {
@@ -56,7 +57,7 @@ namespace Oeuvre
 
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(o => o.AddPolicy("CORSPolicy", builder =>
             {
@@ -76,6 +77,12 @@ namespace Oeuvre
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IExecutionContextAccessor, ExecutionContextAccessor>();
 
+            //services.AddProblemDetails(x =>
+            //{
+            //    x.Map<InvalidCommandException>(ex => new InvalidCommandProblemDetails(ex));
+            //    x.Map<BusinessRuleValidationException>(ex => new BusinessRuleValidationExceptionProblemDetails(ex));
+            //});
+
             //-----Authorization
             services.AddAuthorization(options =>
             {
@@ -87,8 +94,7 @@ namespace Oeuvre
             });
 
 
-            services.AddScoped<IAuthorizationHandler,
-                        Modules.IdentityAccess.Application.Authorization.HasPermissionAuthorizationHandler>();
+            services.AddScoped<IAuthorizationHandler, HasPermissionAuthorizationHandler>();
             //-----
 
             // In production, the React files will be served from this directory
@@ -101,13 +107,22 @@ namespace Oeuvre
 
             //This will display errors for IdentityServer. Disable for production.
             IdentityModelEventSource.ShowPII = true;
-            return CreateAutofacServiceProvider(services);
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
+            containerBuilder.RegisterModule(new IdentityAccessAutofacModule());
+            containerBuilder.RegisterModule(new ContentCreationAutofacModule());
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
+        {
+            var container = app.ApplicationServices.GetAutofacRoot();
+
+            InitializeModules(container);
+
             app.UseCors("CORSPolicy");
 
             app.UseMiddleware<CorrelationMiddleware>();
@@ -210,26 +225,12 @@ namespace Oeuvre
             loggerForApi.Information("Logger configured");
         }
 
-        private IServiceProvider CreateAutofacServiceProvider(IServiceCollection services)
+        private void InitializeModules(ILifetimeScope container)
         {
-
-            var containerBuilder = new ContainerBuilder();
-
-            containerBuilder.Populate(services);
-
-            containerBuilder.RegisterModule(new IdentityAccessAutofacModule());
-            containerBuilder.RegisterModule(new ContentCreationAutofacModule());
-
-            var container = containerBuilder.Build();
-
-            //bool registered = container.IsRegistered(typeof(IIdentityAccessModule));
-            //var contentCreationModule = container.Resolve<IIdentityAccessModule>();
-            //bool registered1 = container.IsRegistered(typeof(IContentCreationModule));
-            //var contentCreationModule1 = container.Resolve<IContentCreationModule>();
-
             var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
             var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
 
+            //var emailsConfiguration = new EmailsConfiguration(_configuration["EmailsConfiguration:FromEmail"]);
 
             IdentityAccessStartup.Initialize(
                             configuration.GetConnectionString("DefaultConnection")
@@ -249,10 +250,60 @@ namespace Oeuvre
                             //,null
                             );
 
-
-            return new AutofacServiceProvider(container);
-
         }
+
+
+        //public void ConfigureContainer(ContainerBuilder builder)
+        //{
+
+        //    builder.RegisterModule(new IdentityAccessAutofacModule());
+        //    builder.RegisterModule(new ContentCreationAutofacModule());
+
+        //    //bool registered = container.IsRegistered(typeof(IIdentityAccessModule));
+        //    //var contentCreationModule = container.Resolve<IIdentityAccessModule>();
+        //    //bool registered1 = container.IsRegistered(typeof(IContentCreationModule));
+        //    //var contentCreationModule1 = container.Resolve<IContentCreationModule>();
+
+        //    //IServiceCollection serviceCollection = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
+
+
+        //    var serviceProvider = new ServiceCollection()
+        //                            .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
+        //                            .AddSingleton<IExecutionContextAccessor, ExecutionContextAccessor>()
+        //                            .BuildServiceProvider();
+
+        //    //var serviceProvider2 = serviceCollection.BuildServiceProvider();
+
+        //    //var serviceProvider = serviceCollection.BuildServiceProvider();
+
+        //    var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
+
+        //    //var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
+        //    var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
+
+
+        //    IdentityAccessStartup.Initialize(
+        //                    configuration.GetConnectionString("DefaultConnection")
+        //                    , executionContextAccessor
+        //                    //,logger
+        //                    //,emailsConfiguration
+        //                    //,this._configuration["Security:TextEncryptionKey"]
+        //                    //,null
+        //                    );
+
+        //    ContentCreationStartup.Initialize(
+        //                    configuration.GetConnectionString("DefaultConnection")
+        //                    , executionContextAccessor
+        //                    //,logger
+        //                    //,emailsConfiguration
+        //                    //,this._configuration["Security:TextEncryptionKey"]
+        //                    //,null
+        //                    );
+
+
+        //    //return new AutofacServiceProvider(container);
+
+        //}
 
 
         //New Recommended for .net 3.1 but not convinient to be used this way.

@@ -80,8 +80,6 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             return Ok(registrant);
         }
 
-
-
         [AllowAnonymous]
         [HttpPatch("/identityaccess/addrole")]
         public async Task<IActionResult> AddRole(Guid userId, string role)

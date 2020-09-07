@@ -4,7 +4,7 @@ ECHO Setting up Oeuvre Integration Test DB
 
 :: -Q (uppercase) to run query and exit.
 ::sqlcmd -S DESKTOP-6DRE2VL -Q "USE oeuvre_integration_tests;"
-set databaseName=oeuvre_integration_tests
+set databaseName=oeuvre_integration_testing
 
 ECHO
 ECHO ==========================================IdentityAccess Module==========================================

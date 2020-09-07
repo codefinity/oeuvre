@@ -6,13 +6,31 @@ using Microsoft.Extensions.DependencyInjection;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 
 namespace Oeuvre.API.IntegrationTests
 {
-    public class OeuvreTestFixture : WebApplicationFactory<Startup>
+    public class OeuvreTestFixture : WebApplicationFactory<Startup>,  IDisposable
     {
+        public OeuvreTestFixture()
+        {
+
+            // ... initialize data in the test database ...
+            //Runs before all the tests in DemoFixtureTest
+            Debug.WriteLine("Runs before all tests");
+        }
+
+        public new void Dispose()
+        {
+
+
+            // ... clean up test data from the database ...
+            //Runs after all the tests in DemoFixtureTest
+            Debug.WriteLine("Runs after all tests");
+        }
+
         //override methods here as needed for Test purpose
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {

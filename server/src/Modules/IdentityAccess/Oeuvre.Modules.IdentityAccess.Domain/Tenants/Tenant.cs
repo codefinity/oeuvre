@@ -14,6 +14,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Tenants
 
         private bool isActive;
 
+        private Tenant()
+        {
+            // Only EF.
+        }
+
         public Tenant(TenantId tenantId, 
                         string name,
                         bool isActive)

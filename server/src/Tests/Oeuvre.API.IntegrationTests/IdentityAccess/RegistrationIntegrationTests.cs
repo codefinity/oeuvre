@@ -28,12 +28,12 @@ namespace Oeuvre.API.IntegrationTests.IdentityAccess
                                                     new
                                                     {
                                                         TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
-                                                        FirstName = "Axl",
-                                                        LastName = "Rose",
-                                                        Password = "GunsNRoses",
-                                                        MobileNoCountryCode = "1",
-                                                        MobileNumber = "9999999999",
-                                                        EMail = "Axl.Rose@GunsNRoses.com"
+                                                        FirstName = "Bryan",
+                                                        LastName = "Adams",
+                                                        Password = "IDoItForYou",
+                                                        MobileNoCountryCode = "+1",
+                                                        MobileNumber = "2145678992",
+                                                        EMail = "Bryan@BryanAdams.com"
                                                     }),
                                                     Encoding.UTF8,
                                                     "application/json");
