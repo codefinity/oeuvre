@@ -77,6 +77,7 @@ namespace Oeuvre
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IExecutionContextAccessor, ExecutionContextAccessor>();
 
+            //From Reference Project. Check Later.
             //services.AddProblemDetails(x =>
             //{
             //    x.Map<InvalidCommandException>(ex => new InvalidCommandProblemDetails(ex));
@@ -251,99 +252,6 @@ namespace Oeuvre
                             );
 
         }
-
-
-        //public void ConfigureContainer(ContainerBuilder builder)
-        //{
-
-        //    builder.RegisterModule(new IdentityAccessAutofacModule());
-        //    builder.RegisterModule(new ContentCreationAutofacModule());
-
-        //    //bool registered = container.IsRegistered(typeof(IIdentityAccessModule));
-        //    //var contentCreationModule = container.Resolve<IIdentityAccessModule>();
-        //    //bool registered1 = container.IsRegistered(typeof(IContentCreationModule));
-        //    //var contentCreationModule1 = container.Resolve<IContentCreationModule>();
-
-        //    //IServiceCollection serviceCollection = new Microsoft.Extensions.DependencyInjection.ServiceCollection();
-
-
-        //    var serviceProvider = new ServiceCollection()
-        //                            .AddSingleton<IHttpContextAccessor, HttpContextAccessor>()
-        //                            .AddSingleton<IExecutionContextAccessor, ExecutionContextAccessor>()
-        //                            .BuildServiceProvider();
-
-        //    //var serviceProvider2 = serviceCollection.BuildServiceProvider();
-
-        //    //var serviceProvider = serviceCollection.BuildServiceProvider();
-
-        //    var httpContextAccessor = serviceProvider.GetService<IHttpContextAccessor>();
-
-        //    //var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
-        //    var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
-
-
-        //    IdentityAccessStartup.Initialize(
-        //                    configuration.GetConnectionString("DefaultConnection")
-        //                    , executionContextAccessor
-        //                    //,logger
-        //                    //,emailsConfiguration
-        //                    //,this._configuration["Security:TextEncryptionKey"]
-        //                    //,null
-        //                    );
-
-        //    ContentCreationStartup.Initialize(
-        //                    configuration.GetConnectionString("DefaultConnection")
-        //                    , executionContextAccessor
-        //                    //,logger
-        //                    //,emailsConfiguration
-        //                    //,this._configuration["Security:TextEncryptionKey"]
-        //                    //,null
-        //                    );
-
-
-        //    //return new AutofacServiceProvider(container);
-
-        //}
-
-
-        //New Recommended for .net 3.1 but not convinient to be used this way.
-        //public void ConfigureContainer(ContainerBuilder builder)
-        //{
-
-        //    //var containerBuilder = new ContainerBuilder();
-
-        //    //containerBuilder.Populate(services);
-
-        //    builder.RegisterModule(new UserAccessAutofacModule());
-
-        //    //var container = builder.Build();
-
-        //    //var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
-        //    var executionContextAccessor = new ExecutionContextAccessor(new HttpContextAccessor());
-
-        //    //containerBuilder.RegisterType<Mediator>()
-        //    //                    .As<IMediator>()
-        //    //                    .InstancePerLifetimeScope();
-
-        //    //containerBuilder.Register<ServiceFactory>(context =>
-        //    //{
-        //    //    var c = context.Resolve<IComponentContext>();
-        //    //    return t => c.Resolve(t);
-        //    //});
-
-        //    //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
-        //    //containerBuilder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
-
-        //    UserAccessStartup.Initialize(
-        //        configuration.GetConnectionString("DefaultConnection")
-        //                    //,executionContextAccessor
-        //                    //,_logger,
-        //                    //emailsConfiguration,
-        //                    //this._configuration["Security:TextEncryptionKey"],
-        //                    //null
-        //                    );
-
-        //}
 
     }
 }
