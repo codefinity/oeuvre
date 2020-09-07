@@ -9,7 +9,6 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 {
-
     public class UserRegistrationTests : TestBase
     {
         [Fact]
@@ -171,61 +170,15 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 
         }
 
-        //Write in such a way that it depends in the expiration policy depending
-        //on the registration date.
-        //[Fact]
-        //public void UserRegistration_WhenIsExpired_CannotBeConfirmed()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
+        [Fact]
+        public void CreateUser_WhenRegistrationDateIsMoreThanXDays_IsNotPossible()
+        {
 
-        //    registration.Expire();
 
-        //    AssertBrokenRule<UserRegistrationCannotBeConfirmedAfterExpirationRule>(() =>
-        //    {
-        //        registration.Confirm();
-        //    });
-        //}
 
-        //Write in such a way that it depends in the expiration policy depending
-        //on the registration date.
-        //[Fact]
-        //public void ExpiringUserRegistration_WhenWaitingForConfirmation_IsSuccessful()
-        //{
-        //    var usersCounter = new Mock<IUsersCounter>();
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
-
-        //    registration.Expire();
-
-        //    var userRegistrationExpired = AssertPublishedDomainEvent<UserRegistrationExpiredDomainEvent>(registration);
-
-        //    Assert.That(userRegistrationExpired.UserRegistrationId, Is.EqualTo(registration.Id));
-        //}
-
-        //Write in such a way that it depends in the expiration policy depending
-        //on the registration date.
-        //[Fact]
-        //public void UserRegistration_WhenIsExpired_CannotBeExpiredAgain()
-        //{
-        //    var usersCounter = new Mock<IUsersCounter>();
-
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
-
-        //    registration.Expire();
-
-        //    AssertBrokenRule<UserRegistrationCannotBeExpiredMoreThanOnceRule>(() =>
-        //    {
-        //        registration.Expire();
-        //    });       
-        //}
+        }
 
     }
 }

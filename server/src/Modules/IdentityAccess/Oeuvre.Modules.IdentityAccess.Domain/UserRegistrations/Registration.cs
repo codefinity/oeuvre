@@ -109,13 +109,5 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
         }
 
-        public void Expire()
-        {
-            //this.CheckRule(new UserRegistrationCannotBeExpiredMoreThanOnceRule(_status));
-
-            //status = UserRegistrationStatus.Expired;
-
-            //this.AddDomainEvent(new UserRegistrationExpiredDomainEvent(this.Id));
-        }
     }
 }
