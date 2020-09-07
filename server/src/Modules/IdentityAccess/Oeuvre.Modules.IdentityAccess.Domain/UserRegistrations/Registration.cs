@@ -41,7 +41,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                 string eMailId,
                                 IUsersCounter usersCounter)
         {
-            this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, eMailId));
+            this.CheckRule(new UserEmailIdLoginMustBeUniqueRule(usersCounter, eMailId));
 
             this.Id = new UserRegistrationId(Guid.NewGuid());
 
@@ -85,7 +85,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         public User CreateUser()
         {
 
-           //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
+           this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
 
            return User.CreateFromUserRegistration(this.Id,
                                                     this.tenantId,
