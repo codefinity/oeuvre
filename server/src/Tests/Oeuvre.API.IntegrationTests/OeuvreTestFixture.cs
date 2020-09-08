@@ -19,6 +19,10 @@ namespace Oeuvre.API.IntegrationTests
 
             // ... initialize data in the test database ...
             //Runs before all the tests in DemoFixtureTest
+
+            TestDBHelpers.DropTables();
+            TestDBHelpers.CreateTables();
+
             Debug.WriteLine("Runs before all tests");
         }
 

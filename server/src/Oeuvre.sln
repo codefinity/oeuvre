@@ -41,7 +41,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql
 		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql
 		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql
-		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables.sql
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-schema.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-schema.sql
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-views.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-views.sql
+		Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables-and-schema.sql = Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables-and-schema.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{5F850014-2398-4D85-BF0E-A9DC95B88AFD}"
@@ -50,8 +52,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		DBScripts\oeuvre-create-db.sql = DBScripts\oeuvre-create-db.sql
 		DBScripts\oeuvre-drop-db.bat = DBScripts\oeuvre-drop-db.bat
 		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
-		DBScripts\oeuvre-recreate-db-tables-with-test-data.bat = DBScripts\oeuvre-recreate-db-tables-with-test-data.bat
-		DBScripts\oeuvre-recreate-db-tables.bat = DBScripts\oeuvre-recreate-db-tables.bat
+		DBScripts\oeuvre-recreate-db-tables-with-test-and-seed-data.bat = DBScripts\oeuvre-recreate-db-tables-with-test-and-seed-data.bat
+		DBScripts\oeuvre-recreate-db.bat = DBScripts\oeuvre-recreate-db.bat
 		DBScripts\prepare-oeuvre-integration-tests-db.bat = DBScripts\prepare-oeuvre-integration-tests-db.bat
 	EndProjectSection
 EndProject
