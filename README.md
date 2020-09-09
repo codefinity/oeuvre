@@ -9,7 +9,16 @@ The Theater Of Evolutionary Architecture
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
-### Introducing Oeuvre
+## Table of Contents
+
+[1. Introduction](# Introducing Oeuvre)
+[2. News](# News)
+[3. Setup Instructions](# Setup Instructions)
+[4. Features](# Features)
+
+
+
+## Introducing Oeuvre
 
 Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
 At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. This project will also demonstrate how quickly and efficiently DDD aligns to the changes in business.
@@ -20,6 +29,8 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 - Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
 - Integration Tests Written.
+
+
 
 ## Setup Instructions
 
