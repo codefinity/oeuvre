@@ -10,7 +10,7 @@ ECHO ==
 ECHO ==========================================IdentityAccess Module==========================================
 ECHO Dropping Tables and Schema
 
-sqlcmd -S DESKTOP-6DRE2VL -d %databaseName% -i ..\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables-and-schema.sql
+sqlcmd -S DESKTOP-6DRE2VL -d %databaseName% -i ..\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables-and-views-and-schema.sql
 
 ECHO Creating Schema
 sqlcmd -S DESKTOP-6DRE2VL -d %databaseName% -i ..\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-schema.sql

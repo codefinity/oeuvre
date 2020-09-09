@@ -12,27 +12,23 @@ using System.Text;
 
 namespace Oeuvre.API.IntegrationTests
 {
-    public class OeuvreTestFixture : WebApplicationFactory<Startup>,  IDisposable
+    public class OeuvreIntegrationTestFixture : WebApplicationFactory<Startup>,  IDisposable
     {
-        public OeuvreTestFixture()
+        public OeuvreIntegrationTestFixture()
         {
+            //Initializing the data in the integtating testing database
 
-            // ... initialize data in the test database ...
-            //Runs before all the tests in DemoFixtureTest
-
-            TestDBHelpers.DropTables();
-            TestDBHelpers.CreateTables();
-
-            Debug.WriteLine("Runs before all tests");
+            TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
+            TestDBInitializationHelpers.CreateSchemaAndTablesAndViews();
+            TestDBInitializationHelpers.AddSeedData();
+            TestDBInitializationHelpers.AddTestData();
         }
 
         public new void Dispose()
         {
+            //Clean-up
+            TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
 
-
-            // ... clean up test data from the database ...
-            //Runs after all the tests in DemoFixtureTest
-            Debug.WriteLine("Runs after all tests");
         }
 
         //override methods here as needed for Test purpose

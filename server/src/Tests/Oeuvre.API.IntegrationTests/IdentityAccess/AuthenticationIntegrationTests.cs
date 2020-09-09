@@ -8,42 +8,91 @@ using Xunit;
 
 namespace Oeuvre.API.IntegrationTests.IdentityAccess
 {
-    public class AuthenticationIntegrationTests : IClassFixture<OeuvreTestFixture>
+    [Collection("IdentityAccessTestCollection")]
+    public class AuthenticationIntegrationTests //: IClassFixture<OeuvreIntegrationTestFixture>
     {
-        private readonly HttpClient client;
+        private readonly HttpClient client = null;
+
+        public AuthenticationIntegrationTests(OeuvreIntegrationTestFixture oeuvreTestFixture)
+        {
+            this.client = oeuvreTestFixture.CreateClient();
+        }
 
         [Theory]
-        [InlineData("/identityaccess/register")]
-        public async void Post_Authenticate_Valid_Success(string url)
+        [InlineData("http://localhost:5000/connect/token")]
+        public async void Post_Authenticate_Success_With_Valid_Credentials(string url)
+        {
+            //Arrange
+            var body = new Dictionary<string, string>();
+
+            body.Add("grant_type", "password");
+            body.Add("username", "elvis@presley.com");
+            body.Add("password", "music");
+            body.Add("client_id", "ro.client");
+            body.Add("client_secret", "secret");
+            body.Add("scope", "oeuvreAPI openid profile");
+
+            //Act
+            var req = new HttpRequestMessage(
+                HttpMethod.Post, url)
+            { Content = new FormUrlEncodedContent(body) };
+
+            var response = client.SendAsync(req).Result;
+
+            string contents = response.Content.ReadAsStringAsync().Result;
+
+            Token token = JsonConvert.DeserializeObject<Token>(contents);
+
+            //Assert
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
+            Assert.NotEmpty(contents);
+
+            Assert.NotEmpty(token.access_token);
+
+            Assert.Equal("application/json; charset=UTF-8".ToLower(),
+                            response.Content.Headers.ContentType.ToString().ToLower());
+        }
+
+        [Theory]
+        [InlineData("http://localhost:5000/connect/token")]
+        public async void Post_Authenticate_Fail_With_Invalid_Credentials(string url)
         {
 
-            var registrantJson = new StringContent(JsonConvert.SerializeObject(
-                                                    new
-                                                    {
-                                                        TenantId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
-                                                        FirstName = "Axl",
-                                                        LastName = "Rose",
-                                                        Password = "GunsNRoses",
-                                                        MobileNoCountryCode = "1",
-                                                        MobileNumber = "9999999999",
-                                                        EMail = "Axl.Rose@GunsNRoses.com"
-                                                    }),
-                                                    Encoding.UTF8,
-                                                    "application/json");
+            //Arrange
+            var body = new Dictionary<string, string>();
 
+            body.Add("grant_type", "password");
+            body.Add("username", "elvis@presley.com");
+            body.Add("password", "music-music");        //Wrong Password
+            body.Add("client_id", "ro.client");
+            body.Add("client_secret", "secret");
+            body.Add("scope", "oeuvreAPI openid profile");
 
-            var response = await client.PostAsync(url, registrantJson);
+            //Act
+            var req = new HttpRequestMessage(
+                HttpMethod.Post, url)
+            { Content = new FormUrlEncodedContent(body) };
 
+            var response = client.SendAsync(req).Result;
 
-            var contents = await response.Content.ReadAsStringAsync();
+            string contents = response.Content.ReadAsStringAsync().Result;
 
-            // Assert1
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            // Assert2
-            //Assert.NotEmpty(contents);
-            // Assert2
-            //Assert.Equal("application/json; charset=utf-8",
-            //                response.Content.Headers.ContentType.ToString());
+            Token token = JsonConvert.DeserializeObject<Token>(contents);
+
+            //Assert
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+
+            Assert.NotEmpty(contents);
+
+            Assert.Null(token.access_token);
+
+            Assert.Equal("{\"error\":\"invalid_grant\"," +
+                            "\"error_description\":\"Incorrect login or password\"}",
+                            contents);
+
+            Assert.Equal("application/json; charset=UTF-8".ToLower(),
+                            response.Content.Headers.ContentType.ToString().ToLower());
         }
 
     }
