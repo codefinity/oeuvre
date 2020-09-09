@@ -10,7 +10,7 @@ using Xunit;
 namespace Oeuvre.API.IntegrationTests.IdentityAccess
 {
     [Collection("IdentityAccessTestCollection")]
-    public class RegistrationIntegrationTests //: IClassFixture<OeuvreIntegrationTestFixture>
+    public class RegistrationIntegrationTests
     {
         private readonly HttpClient client;
         public RegistrationIntegrationTests(OeuvreIntegrationTestFixture oeuvreTestFixture)
