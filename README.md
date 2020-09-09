@@ -11,9 +11,12 @@ The Theater Of Evolutionary Architecture
 
 ## Table of Contents
 
-[1. Introduction](#Introducing Oeuvre)
+[1. Introduction](#Introducing-Oeuvre)
+
 [2. News](#News)
-[3. Setup Instructions](#Setup Instructions)
+
+[3. Setup Instructions](#Setup-Instructions)
+
 [4. Features](#Features)
 
 
