@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Domain.Users
@@ -21,19 +19,20 @@ namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Domain.Users
         {
             //string state = identityAccessContext.Entry(user).State.ToString();
 
-            await identityAccessContext.Users.AddAsync(user);
-
             try
             {
+                await identityAccessContext.Users.AddAsync(user);
+
                 //string state1 = identityAccessContext.Entry(user).State.ToString();
                 //identityAccessContext.Entry(user).State = EntityState.Modified;
                 string state2 = identityAccessContext.Entry(user).State.ToString();
 
-                identityAccessContext.SaveChanges();
+                await identityAccessContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
                 string message = ex.Message;
+                throw;
             }
         }
 
@@ -53,6 +52,7 @@ namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Domain.Users
             catch (Exception ex)
             {
                 string message = ex.Message;
+                throw;
             }
         }
 

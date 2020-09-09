@@ -26,6 +26,14 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Authorization
                                         HasPermissionAuthorizationRequirement requirement,
                                         HasPermissionAttribute attribute)
         {
+
+            
+            if (executionContextAccessor.UserId == null)
+            {
+                context.Fail();
+                return;
+            }
+
             var permissions = await identityAccessModule
                                         .ExecuteQueryAsync(new GetUserPermissionsQuery(executionContextAccessor.UserId));
 

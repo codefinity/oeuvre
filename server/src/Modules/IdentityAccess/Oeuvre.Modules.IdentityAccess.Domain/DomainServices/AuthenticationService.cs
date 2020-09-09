@@ -35,14 +35,14 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.DomainServices
 
             Tenant tenant = await tenantRepository.GetByIdAsync(tenantId);
 
-            if(tenant != null && tenant.IsActive)
-            {
+            //if(tenant != null && tenant.IsActive)
+            //{
 
                 String encryptedPassword = encryptionService.encryptedValue(password);
 
                 //User user = userRepository.GetByIdAsync()
 
-            }
+            //}
 
             return null;
         }

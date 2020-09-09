@@ -10,6 +10,10 @@ var config = require('./../config');
 
 var BASE_PATH = process.env.BASE_PATH || '/';
 
+const dotenv = require('dotenv').config( {
+    path: path.join(__dirname, '../config/.env.production')
+  } );
+
 module.exports = {
     devtool: 'inline-source-map',
     mode: 'production',
@@ -43,8 +47,9 @@ module.exports = {
         new ExtractCssChunks(),
         new OptimizeCssAssetsPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production'),
-            'process.env.BASE_PATH': JSON.stringify(BASE_PATH),
+            "process.env": JSON.stringify(dotenv.parsed)
+            //'process.env.NODE_ENV': JSON.stringify('production'),
+            //'process.env.BASE_PATH': JSON.stringify(BASE_PATH),
         })
     ],
     optimization: {

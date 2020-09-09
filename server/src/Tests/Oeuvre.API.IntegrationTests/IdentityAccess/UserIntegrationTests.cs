@@ -8,12 +8,12 @@ using Xunit;
 
 namespace Oeuvre.API.IntegrationTests.IdentityAccess
 {
-    public class UserIntegrationTests : IClassFixture<OeuvreTestFixture> 
+    public class UserIntegrationTests : IClassFixture<OeuvreIntegrationTestFixture> 
     {
 
         private readonly HttpClient client;
 
-        public UserIntegrationTests(OeuvreTestFixture oeuvreTestFixture)
+        public UserIntegrationTests(OeuvreIntegrationTestFixture oeuvreTestFixture)
         {
             //this.fixture = fixture;
             this.client = oeuvreTestFixture.CreateClient();

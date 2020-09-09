@@ -1,14 +1,14 @@
-﻿
-using Domania.Domain;
+﻿using Domania.Domain;
 using Moq;
 using Oeuvre.Modules.IdentityAccess.Domain.UnitTests.SeedWork;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
+using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules;
+using Oeuvre.Modules.IdentityAccess.Domain.Users.Events;
 using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 {
-
     public class UserRegistrationTests : TestBase
     {
         [Fact]
@@ -19,7 +19,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 
             // Act
             var userRegistration =
-                Registration.RegisterNewUser( new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                Registration.RegisterNewUser(new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
                                               "firstName",
                                               "lastName",
                                               "password",
@@ -35,143 +35,150 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
         }
 
         [Fact]
-        public void NewUserRegistration_WithoutUniqueLogin_BreaksUserLoginMustBeUniqueRule()
+        public void NewUserRegistration_WithoutUniqueEmailId_Login_BreaksUserLoginEmailIdMustBeUniqueRule()
         {
             // Arrange
             var usersCounter = new Mock<IUsersCounter>();
-            usersCounter.Setup(p => p.CountUsersWithLogin("emailId")).Returns(1);
+            usersCounter.Setup(p => p.CountUsersWithLogin("Manfred@ManfredMann.com")).Returns(1);
 
             // Assert
-            var exception = Record.Exception(() => Registration.RegisterNewUser(new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
-                                              "firstName",
-                                              "lastName",
-                                              "password",
-                                              "mobileNoCountryCode",
-                                              "mobileNumber",
-                                              "emailId",
-                                               usersCounter.Object));
+            var exception = Record.Exception(() => Registration.RegisterNewUser(
+                                                     new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                                                     "Manfred",
+                                                     "Mann",
+                                                     "doWaDiddy",
+                                                     "+44",
+                                                     "4525856425",
+                                                     "Manfred@ManfredMann.com",
+                                                      usersCounter.Object));
 
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserEmailIdLoginMustBeUniqueRule>(exc.BrokenRule);
 
             Assert.IsType<BusinessRuleValidationException>(exception);
 
         }
 
-        //[Fact]
-        //public void ConfirmingUserRegistration_WhenWaitingForConfirmation_IsSuccessful()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
+        [Fact]
+        public void ConfirmingUserRegistration_WhenWaitingForConfirmation_IsSuccessful()
+        {
+            //Arrange
+            var usersCounter = new Mock<IUsersCounter>();
 
-        //    var registration = Registration.RegisterNewUser(
-        //            "login", "password", "test@email",
-        //            "firstName", "lastName", usersCounter);
+            var registration = Registration.RegisterNewUser(
+                                 new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                                 "Manfred",
+                                 "Mann",
+                                 "doWaDiddy",
+                                 "+44",
+                                 "4525856425",
+                                 "Manfred@ManfredMann.com",
+                                  usersCounter.Object);
 
-        //    registration.Confirm();
+            //Act
+            registration.Confirm();
 
-        //    var userRegistrationConfirmedDomainEvent = AssertPublishedDomainEvent<UserRegistrationConfirmedDomainEvent>(registration);
+            //Assert
+            var userRegistrationConfirmedDomainEvent = AssertPublishedDomainEvent<UserRegistrationConfirmedDomainEvent>(registration);
 
-        //    Assert.That(userRegistrationConfirmedDomainEvent.UserRegistrationId, Is.EqualTo(registration.Id));
-        //}
+            Assert.Equal(userRegistrationConfirmedDomainEvent.UserRegistrationId, registration.Id);
+        }
 
-        //[Fact]
-        //public void UserRegistration_WhenIsConfirmed_CannotBeConfirmedAgain()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
+        [Fact]
+        public void UserRegistration_WhenIsConfirmed_CannotBeConfirmedAgain()
+        {
+            //Arrange
+            var usersCounter = new Mock<IUsersCounter>();
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
 
-        //    registration.Confirm();
+            var registration = Registration.RegisterNewUser(
+                                 new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                                 "Manfred",
+                                 "Mann",
+                                 "doWaDiddy",
+                                 "+44",
+                                 "4525856425",
+                                 "Manfred@ManfredMann.com",
+                                  usersCounter.Object);
 
-        //    AssertBrokenRule<UserRegistrationCannotBeConfirmedMoreThanOnceRule>(() =>
-        //    {
-        //        registration.Confirm();
-        //    });
-        //}
+            //Act
+            //Calling first time
+            registration.Confirm();
 
-        //[Fact]
-        //public void UserRegistration_WhenIsExpired_CannotBeConfirmed()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
+            var exception = Record.Exception(() => registration.Confirm());
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
+            // Assert
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
 
-        //    registration.Expire();
+            Assert.IsType<UserRegistrationCannotBeConfirmedMoreThanOnceRule>(exc.BrokenRule);
 
-        //    AssertBrokenRule<UserRegistrationCannotBeConfirmedAfterExpirationRule>(() =>
-        //    {
-        //        registration.Confirm();
-        //    });
-        //}
+            Assert.IsType<BusinessRuleValidationException>(exception);
 
-        //[Fact]
-        //public void ExpiringUserRegistration_WhenWaitingForConfirmation_IsSuccessful()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
+        }
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
+        [Fact]
+        public void CreateUser_WhenRegistrationIsConfirmed_IsSuccessful()
+        {
+            var usersCounter = new Mock<IUsersCounter>();
 
-        //    registration.Expire();
+            var registration = Registration.RegisterNewUser(
+                                 new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                                 "Manfred",
+                                 "Mann",
+                                 "doWaDiddy",
+                                 "+44",
+                                 "4525856425",
+                                 "Manfred@ManfredMann.com",
+                                  usersCounter.Object);
 
-        //    var userRegistrationExpired = AssertPublishedDomainEvent<UserRegistrationExpiredDomainEvent>(registration);
+            registration.Confirm();
 
-        //    Assert.That(userRegistrationExpired.UserRegistrationId, Is.EqualTo(registration.Id));          
-        //}
+            var user = registration.CreateUser();
 
-        //[Fact]
-        //public void UserRegistration_WhenIsExpired_CannotBeExpiredAgain()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
+            var userCreatedDomainEvent = AssertPublishedDomainEvent<UserCreatedDomainEvent>(user);
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
+            Assert.Equal(user.Id.Value, registration.Id.Value);
+            Assert.Equal(userCreatedDomainEvent.UserId.Value, registration.Id.Value);
 
-        //    registration.Expire();
+        }
 
-        //    AssertBrokenRule<UserRegistrationCannotBeExpiredMoreThanOnceRule>(() =>
-        //    {
-        //        registration.Expire();
-        //    });       
-        //}
+        [Fact]
+        public void UserCreation_WhenRegistrationIsNotConfirmed_IsNotPossible()
+        {
+            var usersCounter = new Mock<IUsersCounter>();
 
-        //[Fact]
-        //public void CreateUser_WhenRegistrationIsConfirmed_IsSuccessful()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
+            var registration = Registration.RegisterNewUser(
+                                 new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                                 "Manfred",
+                                 "Mann",
+                                 "doWaDiddy",
+                                 "+44",
+                                 "4525856425",
+                                 "Manfred@ManfredMann.com",
+                                  usersCounter.Object);
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
+            // Act
+            var exception = Record.Exception(() => registration.CreateUser());
 
-        //    registration.Confirm();
+            //Assert
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
 
-        //    var user = registration.CreateUser();
+            Assert.IsType<UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule>(exc.BrokenRule);
 
-        //    var userCreated = AssertPublishedDomainEvent<UserCreatedDomainEvent>(user);
+            Assert.IsType<BusinessRuleValidationException>(exception);
 
-        //    Assert.That(user.Id, Is.EqualTo(registration.Id));
-        //    Assert.That(userCreated.Id, Is.EqualTo(registration.Id));
-        //}
+        }
 
-        //[Fact]
-        //public void UserCreation_WhenRegistrationIsNotConfirmed_IsNotPossible()
-        //{
-        //    var usersCounter = Substitute.For<IUsersCounter>();
 
-        //    var registration = Registration.RegisterNewUser(
-        //        "login", "password", "test@email",
-        //        "firstName", "lastName", usersCounter);
+        [Fact]
+        public void CreateUser_WhenRegistrationDateIsMoreThanXDays_IsNotPossible()
+        {
 
-        //    AssertBrokenRule<UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule>(
-        //        () =>
-        //        {
-        //            registration.CreateUser(); 
-        //        });
-        //}
+
+
+
+        }
+
     }
 }

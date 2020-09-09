@@ -8,6 +8,13 @@ var config = require('./../config');
 
 var BASE_PATH = process.env.BASE_PATH || '/';
 
+
+//https://dev.to/sanfra1407/how-to-use-env-file-in-javascript-applications-with-webpack-18df  
+const dotenv = require('dotenv').config( {
+    path: path.join(__dirname, '../config/.env.development')
+  } );
+
+
 module.exports = {
     name: 'client',
     devtool: 'cheap-eval-source-map',
@@ -41,8 +48,9 @@ module.exports = {
             chunksSortMode: 'none'
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development'),
-            'process.env.BASE_PATH': JSON.stringify(BASE_PATH),
+            "process.env": JSON.stringify(dotenv.parsed)
+            //'process.env.NODE_ENV': JSON.stringify('development'),
+            //'process.env.BASE_PATH': JSON.stringify(BASE_PATH),
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),

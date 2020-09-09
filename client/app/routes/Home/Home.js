@@ -46,6 +46,15 @@ SessionByDevice.propTypes = {
     value: PropTypes.string
 }
 
+// `process.env` is the one defined in the webpack's DefinePlugin
+const envVariables = process.env;
+
+// Read vars from envVariables object
+const {
+    APP_ENV,
+    API_BASE_URL
+} = envVariables;
+
 class Home extends React.Component {
     //static propTypes = {
     //    pageConfig: PropTypes.object
@@ -68,6 +77,12 @@ class Home extends React.Component {
     }
 
     render() {
+
+        //console.log(process.env);
+        //console.log(process.env.NODE_ENV);
+        console.log("Environment: ");
+        console.log(APP_ENV);
+        console.log(API_BASE_URL);
 
         return (
             <React.Fragment>

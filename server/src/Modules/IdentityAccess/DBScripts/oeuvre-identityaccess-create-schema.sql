@@ -1,0 +1,1 @@
+CREATE SCHEMA [identityaccess] AUTHORIZATION [dbo]; 

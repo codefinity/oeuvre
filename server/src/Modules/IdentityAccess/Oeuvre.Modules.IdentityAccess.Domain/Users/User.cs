@@ -17,6 +17,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         private FullName fullName;
 
+        private Bio bio;
+
         private MobileNumber mobileNumber;
 
         private string eMailId;
@@ -27,24 +29,23 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         private bool isActive;
 
-
         private User()
         {
 
         }
 
         internal static User CreateFromUserRegistration(UserRegistrationId userRegistrationId,
-                                                        TenantId tenantId,
-                                                        string firstName,
-                                                        string lastName,
-                                                        string countryCode,
-                                                        string mobileNumber,
-                                                        string eMailId,
-                                                        string password)
+                                                            TenantId tenantId,
+                                                            string firstName,
+                                                            string lastName,
+                                                            string countryCode,
+                                                            string mobileNumber,
+                                                            string eMailId,
+                                                            string password)
         {
             return new User(userRegistrationId, 
                                 tenantId, 
-                                new FullName(firstName, lastName), 
+                                new FullName(firstName, lastName),
                                 new MobileNumber(countryCode, mobileNumber),
                                 eMailId, 
                                 password);
@@ -89,16 +90,12 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         public void Deactivate()
         {
-
             isActive = false;
-
         }
 
         public void Activate()
         {
-
             isActive = true;
-
         }
     }
 }

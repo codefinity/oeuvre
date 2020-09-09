@@ -41,7 +41,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                 string eMailId,
                                 IUsersCounter usersCounter)
         {
-            this.CheckRule(new UserLoginMustBeUniqueRule(usersCounter, eMailId));
+            this.CheckRule(new UserEmailIdLoginMustBeUniqueRule(usersCounter, eMailId));
 
             this.Id = new UserRegistrationId(Guid.NewGuid());
 
@@ -109,13 +109,5 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.AddDomainEvent(new UserRegistrationConfirmedDomainEvent(this.Id));
         }
 
-        public void Expire()
-        {
-            //this.CheckRule(new UserRegistrationCannotBeExpiredMoreThanOnceRule(_status));
-
-            //status = UserRegistrationStatus.Expired;
-
-            //this.AddDomainEvent(new UserRegistrationExpiredDomainEvent(this.Id));
-        }
     }
 }

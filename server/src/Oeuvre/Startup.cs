@@ -31,6 +31,8 @@ using Oeuvre.Modules.ContentCreation.API.Controllers;
 using Domania.Security.Authorization;
 using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
+using Microsoft.IdentityModel.Logging;
+using Oeuvre.Modules.IdentityAccess.Application.Authorization;
 
 namespace Oeuvre
 {
@@ -55,7 +57,7 @@ namespace Oeuvre
 
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(o => o.AddPolicy("CORSPolicy", builder =>
             {
@@ -75,6 +77,13 @@ namespace Oeuvre
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IExecutionContextAccessor, ExecutionContextAccessor>();
 
+            //From Reference Project. Check Later.
+            //services.AddProblemDetails(x =>
+            //{
+            //    x.Map<InvalidCommandException>(ex => new InvalidCommandProblemDetails(ex));
+            //    x.Map<BusinessRuleValidationException>(ex => new BusinessRuleValidationExceptionProblemDetails(ex));
+            //});
+
             //-----Authorization
             services.AddAuthorization(options =>
             {
@@ -86,8 +95,7 @@ namespace Oeuvre
             });
 
 
-            services.AddScoped<IAuthorizationHandler,
-                        Modules.IdentityAccess.Application.Authorization.HasPermissionAuthorizationHandler>();
+            services.AddScoped<IAuthorizationHandler, HasPermissionAuthorizationHandler>();
             //-----
 
             // In production, the React files will be served from this directory
@@ -99,14 +107,23 @@ namespace Oeuvre
             services.Configure<KestrelServerOptions>(configuration.GetSection("Kestrel"));
 
             //This will display errors for IdentityServer. Disable for production.
-            //IdentityModelEventSource.ShowPII = true;
-            return CreateAutofacServiceProvider(services);
+            IdentityModelEventSource.ShowPII = true;
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
+            containerBuilder.RegisterModule(new IdentityAccessAutofacModule());
+            containerBuilder.RegisterModule(new ContentCreationAutofacModule());
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
+        {
+            var container = app.ApplicationServices.GetAutofacRoot();
+
+            InitializeModules(container);
+
             app.UseCors("CORSPolicy");
 
             app.UseMiddleware<CorrelationMiddleware>();
@@ -209,26 +226,12 @@ namespace Oeuvre
             loggerForApi.Information("Logger configured");
         }
 
-        private IServiceProvider CreateAutofacServiceProvider(IServiceCollection services)
+        private void InitializeModules(ILifetimeScope container)
         {
-
-            var containerBuilder = new ContainerBuilder();
-
-            containerBuilder.Populate(services);
-
-            containerBuilder.RegisterModule(new IdentityAccessAutofacModule());
-            containerBuilder.RegisterModule(new ContentCreationAutofacModule());
-
-            var container = containerBuilder.Build();
-
-            //bool registered = container.IsRegistered(typeof(IIdentityAccessModule));
-            //var contentCreationModule = container.Resolve<IIdentityAccessModule>();
-            //bool registered1 = container.IsRegistered(typeof(IContentCreationModule));
-            //var contentCreationModule1 = container.Resolve<IContentCreationModule>();
-
             var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
             var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
 
+            //var emailsConfiguration = new EmailsConfiguration(_configuration["EmailsConfiguration:FromEmail"]);
 
             IdentityAccessStartup.Initialize(
                             configuration.GetConnectionString("DefaultConnection")
@@ -248,50 +251,7 @@ namespace Oeuvre
                             //,null
                             );
 
-
-            return new AutofacServiceProvider(container);
-
         }
-
-
-        //New Recommended for .net 3.1 but not convinient to be used this way.
-        //public void ConfigureContainer(ContainerBuilder builder)
-        //{
-
-        //    //var containerBuilder = new ContainerBuilder();
-
-        //    //containerBuilder.Populate(services);
-
-        //    builder.RegisterModule(new UserAccessAutofacModule());
-
-        //    //var container = builder.Build();
-
-        //    //var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
-        //    var executionContextAccessor = new ExecutionContextAccessor(new HttpContextAccessor());
-
-        //    //containerBuilder.RegisterType<Mediator>()
-        //    //                    .As<IMediator>()
-        //    //                    .InstancePerLifetimeScope();
-
-        //    //containerBuilder.Register<ServiceFactory>(context =>
-        //    //{
-        //    //    var c = context.Resolve<IComponentContext>();
-        //    //    return t => c.Resolve(t);
-        //    //});
-
-        //    //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
-        //    //containerBuilder.RegisterType<RegisterNewUserCommandHandler>().AsImplementedInterfaces().InstancePerDependency();
-
-        //    UserAccessStartup.Initialize(
-        //        configuration.GetConnectionString("DefaultConnection")
-        //                    //,executionContextAccessor
-        //                    //,_logger,
-        //                    //emailsConfiguration,
-        //                    //this._configuration["Security:TextEncryptionKey"],
-        //                    //null
-        //                    );
-
-        //}
 
     }
 }

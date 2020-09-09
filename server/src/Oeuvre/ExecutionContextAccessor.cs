@@ -9,18 +9,18 @@ namespace Oeuvre
 {
     public class ExecutionContextAccessor : IExecutionContextAccessor
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IHttpContextAccessor httpContextAccessor;
 
         public ExecutionContextAccessor(IHttpContextAccessor httpContextAccessor)
         {
-            _httpContextAccessor = httpContextAccessor;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
         public Guid UserId
         {
             get
             {
-                if (_httpContextAccessor
+                if (httpContextAccessor
                         .HttpContext?
                         .User?
                         .Claims?
@@ -28,7 +28,7 @@ namespace Oeuvre
                         .Value != null)
 
                 {
-                    return Guid.Parse(_httpContextAccessor.HttpContext.User.Claims.Single(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value);
+                    return Guid.Parse(httpContextAccessor.HttpContext.User.Claims.Single(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value);
 
                 }
 
@@ -41,15 +41,15 @@ namespace Oeuvre
         {
             get
             {
-                if (IsAvailable && _httpContextAccessor.HttpContext.Request.Headers.Keys.Any(x => x == CorrelationMiddleware.CorrelationHeaderKey))
+                if (IsAvailable && httpContextAccessor.HttpContext.Request.Headers.Keys.Any(x => x == CorrelationMiddleware.CorrelationHeaderKey))
                 {
                     return Guid.Parse(
-                        _httpContextAccessor.HttpContext.Request.Headers[CorrelationMiddleware.CorrelationHeaderKey]);
+                        httpContextAccessor.HttpContext.Request.Headers[CorrelationMiddleware.CorrelationHeaderKey]);
                 }
                 throw new ApplicationException("Http context and correlation id is not available");
             }
         }
 
-        public bool IsAvailable => _httpContextAccessor.HttpContext != null;
+        public bool IsAvailable => httpContextAccessor.HttpContext != null;
     }
 }

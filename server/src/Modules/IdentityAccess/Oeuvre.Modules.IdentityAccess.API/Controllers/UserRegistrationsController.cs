@@ -31,7 +31,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         {
             try
             {
-                await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
+                Guid registrantId = await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
                                                                         request.TenantId,
                                                                         request.FirstName,
                                                                         request.LastName,
@@ -39,13 +39,13 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
                                                                         request.MobileNoCountryCode,
                                                                         request.MobileNumber,
                                                                         request.EMail));
+
+                return Ok(new { Id = registrantId });
             }
             catch (Exception ex)
             {
                 throw;
             }
-
-            return Ok();
         }
 
         [NoPermissionRequired]
@@ -79,8 +79,6 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
 
             return Ok(registrant);
         }
-
-
 
         [AllowAnonymous]
         [HttpPatch("/identityaccess/addrole")]

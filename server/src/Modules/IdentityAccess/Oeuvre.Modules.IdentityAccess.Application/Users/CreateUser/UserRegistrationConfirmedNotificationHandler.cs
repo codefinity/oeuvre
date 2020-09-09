@@ -19,11 +19,14 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
             this.identityAccessModule = identityAccessModule;
         }
 
-        public Task Handle(DomainEventNotification<UserRegistrationConfirmedDomainEvent> notification, CancellationToken cancellationToken)
+        //Had to add async to the method and commented "return Task.CompletedTask;" 
+        //because the integration test gave an error due to async/await issues
+        //TesName - Patch_Confirm_User_Registration_Valid_Success()
+        public async Task Handle(DomainEventNotification<UserRegistrationConfirmedDomainEvent> notification, CancellationToken cancellationToken)
         {
-            identityAccessModule.ExecuteCommandAsync(new CreateUserCommand(Guid.NewGuid(), notification.DomainEvent.UserRegistrationId));
+            await identityAccessModule.ExecuteCommandAsync(new CreateUserCommand(Guid.NewGuid(), notification.DomainEvent.UserRegistrationId));
 
-            return Task.CompletedTask;
+            //return Task.CompletedTask;
         }
     }
 }

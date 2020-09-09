@@ -26,6 +26,11 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Users
                 a.Property(x => x.LastName).HasColumnName("LastName");
             });
 
+            builder.OwnsOne<Bio>("bio", a =>
+            {
+                a.Property(x => x.BioText).HasColumnName("BioText");
+            });
+
             builder.OwnsOne<MobileNumber>("mobileNumber", a =>
             {
                 a.Property(x => x.CountryCode).HasColumnName("CountryCode");

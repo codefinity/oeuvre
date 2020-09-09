@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Configuration\**" />
     <Compile Remove="UserRegistration\**" />
+    <EmbeddedResource Remove="Configuration\**" />
     <EmbeddedResource Remove="UserRegistration\**" />
+    <None Remove="Configuration\**" />
     <None Remove="UserRegistration\**" />
   </ItemGroup>
   <ItemGroup>
@@ -27,9 +30,5 @@
     <ProjectReference Include="..\..\..\Domainia\Domania.Security\Domania.Security.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.Domain\Oeuvre.Modules.IdentityAccess.Domain.csproj" />
     <ProjectReference Include="..\Oeuvre.Modules.IdentityAccess.IntegrationEvents\Oeuvre.Modules.IdentityAccess.IntegrationEvents.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\Commands\" />
-    <Folder Include="Configuration\Queries\" />
   </ItemGroup>
 </Project>

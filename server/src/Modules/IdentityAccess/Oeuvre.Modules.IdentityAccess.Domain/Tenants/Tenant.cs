@@ -1,4 +1,5 @@
 ﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,14 +14,35 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Tenants
 
         private bool isActive;
 
-        public Tenant(string name,
-                    bool isActive)
+        private Tenant()
         {
+            // Only EF.
+        }
+
+        public Tenant(TenantId tenantId, 
+                        string name,
+                        bool isActive)
+        {
+            this.Id = tenantId;
             this.name = name;
             this.isActive = isActive;
         }
 
-        public bool IsActive => isActive;
-  
+        //public User ProvisionAdministrator()
+        //{
+
+
+        //}
+
+        public void Activate()
+        {
+            isActive = true;
+        }
+
+        public void Deactivate()
+        {
+            isActive = false;
+        }
+
     }
 }

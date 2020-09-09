@@ -27,6 +27,7 @@
     "circular-dependency-plugin": "^5.0.2",
     "commander": "^2.20.0",
     "css-loader": "^3.1.0",
+    "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "eslint": "^6.1.0",
