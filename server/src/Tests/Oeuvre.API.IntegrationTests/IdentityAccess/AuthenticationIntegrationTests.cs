@@ -9,7 +9,7 @@ using Xunit;
 namespace Oeuvre.API.IntegrationTests.IdentityAccess
 {
     [Collection("IdentityAccessTestCollection")]
-    public class AuthenticationIntegrationTests //: IClassFixture<OeuvreIntegrationTestFixture>
+    public class AuthenticationIntegrationTests
     {
         private readonly HttpClient client = null;
 
