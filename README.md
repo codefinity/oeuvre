@@ -17,11 +17,17 @@ The Theater Of Evolutionary Architecture
 
 [3. Setup Instructions](#Setup-Instructions)
 
-[4. Features](#Features)
+[4. Logs](#Logs)
 
-[5. Analysis and Design](#Analysis-and-Design)
+[5. Running Tests(#Running Tests)
 
+[6. Running Code Coverage](#Running-Code-Coverage)
 
+[7. Features](#Features)
+
+[8. Analysis and Design](#Analysis-and-Design)
+
+[9. Inspiration](#Inspiration)
 
 ## Introducing Oeuvre
 
@@ -83,14 +89,14 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 ![](design/RunningOeuvre.png)
 
 
-### Logs
+## Logs
 
 Logs are stored in the following locations in their respective modules folder.
 
   ```
   C:\Users\<Windows-Account>\OeuvreLogs
   ```
-### Running Tests
+## Running Tests
 
 #### Integration Tests
 
@@ -98,7 +104,7 @@ Logs are stored in the following locations in their respective modules folder.
   C:\...oeuvre>dotnet test server\src\Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj
   ```
   
-### Running Code Coverage
+## Running Code Coverage
 
 1. On console make sure you are in the test project folder
 
@@ -304,7 +310,7 @@ Scenario: Member can update his Settings
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-## Inspired By
+## Inspiration
 
 #### Event Storming References
 
