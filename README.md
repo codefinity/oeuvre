@@ -65,7 +65,9 @@ Logs are stored in the following locations in their respective modules folder.
   ```
 ### Running Integration Tests
 
-C:\...oeuvre>dotnet test server\src\Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj
+  ```
+  C:\...oeuvre>dotnet test server\src\Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj
+  ```
   
 ### Running Code Coverage
 
