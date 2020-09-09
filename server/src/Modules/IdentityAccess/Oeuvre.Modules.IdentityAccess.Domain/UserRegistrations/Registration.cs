@@ -34,7 +34,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             // Only EF.
         }
 
-        private Registration(TenantId tenantId, 
+        private Registration(TenantId tenantId,
                                 FullName fullName,
                                 string password,
                                 MobileNumber mobileNumber,
@@ -61,7 +61,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                                                     fullName.FirstName,
                                                                     fullName.LastName,
                                                                     mobileNumber.MobileNo,
-                                                                    eMailId, 
+                                                                    eMailId,
                                                                     registrationDate));
         }
 
@@ -74,7 +74,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                                      string emailId,
                                                      IUsersCounter usersCounter)
         {
-            return new Registration(new TenantId(tenantId), 
+            return new Registration(new TenantId(tenantId),
                                         new FullName(firstName, lastName),
                                         password,
                                         new MobileNumber(mobileNoCountryCode, mobileNumber),
@@ -85,16 +85,17 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         public User CreateUser()
         {
 
-           //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
+            //Not Working - Check This
+            //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
 
-           return User.CreateFromUserRegistration(this.Id,
-                                                    this.tenantId,
-                                                    this.fullName.FirstName,
-                                                    this.fullName.LastName,
-                                                    this.mobileNumber.CountryCode,
-                                                    this.mobileNumber.MobileNo,
-                                                    this.eMailId,
-                                                    this.password);
+            return User.CreateFromUserRegistration(this.Id,
+                                                     this.tenantId,
+                                                     this.fullName.FirstName,
+                                                     this.fullName.LastName,
+                                                     this.mobileNumber.CountryCode,
+                                                     this.mobileNumber.MobileNo,
+                                                     this.eMailId,
+                                                     this.password);
         }
 
         public void Confirm()
