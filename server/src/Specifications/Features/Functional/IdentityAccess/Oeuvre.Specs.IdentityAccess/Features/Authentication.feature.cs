@@ -112,18 +112,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "name",
                             "email",
                             "password"});
                 table1.AddRow(new string[] {
-                            "mark",
                             "email@gmail.com",
                             "Passw0rd123"});
 #line 5
  testRunner.When("I try to authenticate using valid", ((string)(null)), table1, "When ");
 #line hidden
 #line 8
- testRunner.Then("I should be authenticated.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should be authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -161,18 +159,69 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "name",
                             "email",
                             "password"});
                 table2.AddRow(new string[] {
-                            "mark",
                             "email@gmail.com",
                             "Passw0rd123"});
 #line 12
- testRunner.When("I try to authenticate using valid", ((string)(null)), table2, "When ");
+ testRunner.When("I try to authenticate using in-valid", ((string)(null)), table2, "When ");
 #line hidden
 #line 15
- testRunner.Then("I should be authenticated.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should not be authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Authentication should not be allowed if the User has not verified his EMail using" +
+            " the link sent to him in the EMail")]
+        [Xunit.TraitAttribute("FeatureTitle", "Authentication")]
+        [Xunit.TraitAttribute("Description", "Authentication should not be allowed if the User has not verified his EMail using" +
+            " the link sent to him in the EMail")]
+        public virtual void AuthenticationShouldNotBeAllowedIfTheUserHasNotVerifiedHisEMailUsingTheLinkSentToHimInTheEMail()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Authentication should not be allowed if the User has not verified his EMail using" +
+                    " the link sent to him in the EMail", null, tagsOfScenario, argumentsOfScenario);
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 18
+ testRunner.Given("I am logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 19
+ testRunner.And("I have Registered on the Oeuvre Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "email",
+                            "password"});
+                table3.AddRow(new string[] {
+                            "email@gmail.com",
+                            "Passw0rd123"});
+#line 20
+ testRunner.When("I try to authenticate using valid", ((string)(null)), table3, "When ");
+#line hidden
+#line 23
+ testRunner.Then("I should not be authenticated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

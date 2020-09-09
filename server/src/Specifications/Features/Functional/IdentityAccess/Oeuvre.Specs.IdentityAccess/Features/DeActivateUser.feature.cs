@@ -19,7 +19,7 @@ namespace Oeuvre.Specs.IdentityAccess.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ForgotPasswordRequestFeature : object, Xunit.IClassFixture<ForgotPasswordRequestFeature.FixtureData>, System.IDisposable
+    public partial class DeActivateAUserFeature : object, Xunit.IClassFixture<DeActivateAUserFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Oeuvre.Specs.IdentityAccess.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "ForgotPasswordRequest.feature"
+#line 1 "DeActivateUser.feature"
 #line hidden
         
-        public ForgotPasswordRequestFeature(ForgotPasswordRequestFeature.FixtureData fixtureData, Oeuvre_Specs_IdentityAccess_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public DeActivateAUserFeature(DeActivateAUserFeature.FixtureData fixtureData, Oeuvre_Specs_IdentityAccess_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace Oeuvre.Specs.IdentityAccess.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ForgotPasswordRequest", "\tAs a Member who has forgotten his Oeuvre password\r\n\tIn order to login again\r\n\tI " +
-                    "want to be able to reset my password", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DeActivate A User", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,15 +80,15 @@ namespace Oeuvre.Specs.IdentityAccess.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Send reset password link when the EMail provided is correct")]
-        [Xunit.TraitAttribute("FeatureTitle", "ForgotPasswordRequest")]
-        [Xunit.TraitAttribute("Description", "Send reset password link when the EMail provided is correct")]
-        public virtual void SendResetPasswordLinkWhenTheEMailProvidedIsCorrect()
+        [Xunit.SkippableFactAttribute(DisplayName="Admin can DeActivate a User")]
+        [Xunit.TraitAttribute("FeatureTitle", "DeActivate A User")]
+        [Xunit.TraitAttribute("Description", "Admin can DeActivate a User")]
+        public virtual void AdminCanDeActivateAUser()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send reset password link when the EMail provided is correct", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin can DeActivate a User", null, tagsOfScenario, argumentsOfScenario);
+#line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -109,32 +108,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I am a regestered Member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 4
+ testRunner.Given("I an Admin of Oeuvre Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
- testRunner.And("For reseting my password I am asked my EMail-Id I had provided at the time of reg" +
-                        "istration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 5
+ testRunner.When("I DeActivate a User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
- testRunner.When("I provide my Correct EMail-Id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
- testRunner.Then("I should get the Password Reset Link in my email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 6
+ testRunner.Then("that user should not be allowed to login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Do not Send reset password link when the EMail provided is in-correct")]
-        [Xunit.TraitAttribute("FeatureTitle", "ForgotPasswordRequest")]
-        [Xunit.TraitAttribute("Description", "Do not Send reset password link when the EMail provided is in-correct")]
-        public virtual void DoNotSendResetPasswordLinkWhenTheEMailProvidedIsIn_Correct()
+        [Xunit.SkippableFactAttribute(DisplayName="Admin can DeActivate a User while the user is Logged-In")]
+        [Xunit.TraitAttribute("FeatureTitle", "DeActivate A User")]
+        [Xunit.TraitAttribute("Description", "Admin can DeActivate a User while the user is Logged-In")]
+        public virtual void AdminCanDeActivateAUserWhileTheUserIsLogged_In()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Do not Send reset password link when the EMail provided is in-correct", null, tagsOfScenario, argumentsOfScenario);
-#line 12
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin can DeActivate a User while the user is Logged-In", null, tagsOfScenario, argumentsOfScenario);
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -154,17 +149,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 13
- testRunner.Given("I am a regestered Member", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.Given("I an Admin of Oeuvre Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
- testRunner.And("For reseting my password I am asked my EMail-Id at the time of registration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("I DeActivate a User who is already Logged-In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
- testRunner.When("I provide my InCorrect EMail-Id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("the user should be logged-out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 16
- testRunner.Then("No Email should be sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.And("that user should not be allowed to login again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -177,12 +172,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                ForgotPasswordRequestFeature.FeatureSetup();
+                DeActivateAUserFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ForgotPasswordRequestFeature.FeatureTearDown();
+                DeActivateAUserFeature.FeatureTearDown();
             }
         }
     }
