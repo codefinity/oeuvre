@@ -63,7 +63,9 @@ Logs are stored in the following locations in their respective modules folder.
   ```
   C:\Users\<Windows-Account>\OeuvreLogs
   ```
-### Running Integration Tests
+### Running Tests
+
+#### Integration Tests
 
   ```
   C:\...oeuvre>dotnet test server\src\Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj
@@ -83,6 +85,16 @@ Logs are stored in the following locations in their respective modules folder.
 ```
 
 ### Event Stroming Boards
+
+#### IdentityAccess Module
+
+##### Big Picture Event Storming 
+
+![](docs/EventStorming-IdentityAccess-BigPictureEventStorming.png)
+
+
+
+##### Miro
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
