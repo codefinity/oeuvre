@@ -197,7 +197,6 @@ Scenario: Reset password on clicking the link in the Reset password EMail sent a
 ```gherkin
 Feature: UserProfile
 
-
 Scenario: Member can Update the User Profile
 	Given I am a Registered Member
 	When I try to update my User Profile
