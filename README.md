@@ -89,6 +89,7 @@ Logs are stored in the following locations in their respective modules folder.
 
 ### IdentityAccess Module
 
+```gherkin
 Feature: Authentication
 
 Scenario: Authentication with valid credentials should allow logging in
@@ -105,7 +106,7 @@ Scenario: Authentication with in-valid credentials should not allow logging in
 		| mark  | email@gmail.com | Passw0rd123 |
 	Then I should be authenticated.
 
-
+```
 
 ## Analysis and Design
 
