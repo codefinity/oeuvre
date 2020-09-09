@@ -29,6 +29,8 @@ The Theater Of Evolutionary Architecture
 
 [9. Inspiration](#Inspiration)
 
+[10. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
+
 ## Introducing Oeuvre
 
 Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
