@@ -23,15 +23,15 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ## Setup Instructions
 
-#### Settingup the Database
+### Settingup the Database
 
-##### Clone the Repository
+#### Clone the Repository
 
   ```
   git clone https://github.com/codefinity/oeuvre.git
   ```
 
-##### Enable Running Scripts in Console
+#### Enable Running Scripts in Console
 
 1. Open SQL Server Management Studio.
 
@@ -39,7 +39,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 3. Ensure this is checked -> "By default, open new queries in SQLCMD mode"
 
-##### Creating the DB
+#### Creating the DB
 
 1. In Sql Server Management Studio Create a DB named "oeuvre"
 
@@ -49,7 +49,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
   C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-and-seed-data.bat
   ```
 
-#### Setting Up Project
+### Setting Up Project
 
 1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
@@ -57,7 +57,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 2. Open the project in Visual Studio.
 
 
-#### Logs
+### Logs
 
 Logs are stored in the following locations in their respective modules folder.
 
