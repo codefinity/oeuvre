@@ -180,6 +180,25 @@ Scenario: Authentication should not be allowed if the User has not verified his 
 
 ```
 
+##### [DeActivateUser.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/DeActivateUser.feature)
+
+```gherkin
+
+Feature: DeActivate A User
+
+Scenario: Admin can DeActivate a User
+	Given I an Admin of Oeuvre Portal
+	When I DeActivate a User
+	Then that user should not be allowed to login
+
+Scenario: Admin can DeActivate a User while the user is Logged-In
+	Given I an Admin of Oeuvre Portal
+	When I DeActivate a User who is already Logged-In
+	Then the user should be logged-out
+	And that user should not be allowed to login again
+
+```
+
 ##### [ForgotPasswordRequest.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/ForgotPasswordRequest.feature)
 ```gherkin
 
@@ -298,6 +317,10 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 
 - [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY)
 - [Julie LERMAN: Mapping DDD Domain Models with EF Core 2.1 @ Update Conference Prague 2018](https://www.youtube.com/watch?v=Z62cbp61Bb8)
+
+##### BDD
+
+-[SpecFlow - Getting Started](https://specflow.org/getting-started/)
 
 ##### Code Coverage
 
