@@ -23,7 +23,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ## Setup Instructions
 
-### Settingup the Database
+### Setting-up the Database
 
 #### Clone the Repository
 
@@ -49,7 +49,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
   C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-and-seed-data.bat
   ```
 
-### Setting Up Project
+### Setting-up the Project
 
 1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
