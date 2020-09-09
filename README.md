@@ -245,6 +245,8 @@ Scenario: Member can update his Settings
 
 ## Analysis and Design
 
+### Ubiquitous Language
+
 ### Event Stroming Boards
 
 #### IdentityAccess Module
@@ -266,12 +268,6 @@ Scenario: Member can update his Settings
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
-
-### Evolution - One
-
-- **Current Working Branch:** evolution-one 
-- [Requirements for Phase One published](https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features)
-- [Ubiquitous Language](https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features)
 
 ## Inspired By
 
