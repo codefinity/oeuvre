@@ -1,8 +1,8 @@
 ﻿Feature: ResetPassword
 
 Scenario: Reset password on clicking the link in the Reset password EMail sent and supplying the new password and retype password
-	Given that I have received the reset password EMail
+	Given that I have received the reset password EMail with the reset link
 	When I click on the link
 	And supply the new password
 	And the retype password
-	Then my password should be reset
+	Then my password should be reset to the new password
