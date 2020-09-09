@@ -45,7 +45,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 2. In the windows console go to this location -> "oeuvre\server\src\DBScripts" and run the batch file
 
   ```
-  C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-data.bat
+  C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-and-seed-data.bat
   ```
 
 #### Setting Up Project
@@ -63,6 +63,9 @@ Logs are stored in the following locations in their respective modules folder.
   ```
   C:\Users\<Windows-Account>\OeuvreLogs
   ```
+### Running Integration Tests
+
+C:\...oeuvre>dotnet test server\src\Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj
   
 ### Running Code Coverage
 
