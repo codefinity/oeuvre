@@ -257,6 +257,10 @@ Scenario: Member can update his Settings
 
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
 
+##### Arranged Design Level  Event-Storming 
+
+![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
+
 ##### Miro
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
