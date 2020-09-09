@@ -91,11 +91,13 @@ Logs are stored in the following locations in their respective modules folder.
 
 #### IdentityAccess Module
 
-##### Big Picture Event Storming 
+##### Big Picture Event-Storming 
 
 ![](design/EventStorming-IdentityAccess-BigPictureEventStorming.png)
 
+##### Design Level  Event-Storming 
 
+![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
 
 ##### Miro
 
