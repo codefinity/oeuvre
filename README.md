@@ -54,7 +54,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
   C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-and-seed-data.bat
   ```
 
-### Setting-up the Project
+### Setting-up and Running the Project
 
 1. Install [.Net Core 3.1 LTS](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
