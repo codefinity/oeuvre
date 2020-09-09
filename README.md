@@ -20,7 +20,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 - Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
 
-### Instructions for Running
+## Setup Instructions
 
 #### Settingup the Database
 
