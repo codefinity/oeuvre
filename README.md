@@ -111,7 +111,7 @@ Logs are stored in the following locations in their respective modules folder.
 - [Requirements for Phase One published](https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features)
 - [Ubiquitous Language](https://github.com/codefinity/oeuvre/tree/evolution-one/server/src/Specifications/Features)
 
-### Inspired By
+## Inspired By
 
 #### Event Storming References
 
