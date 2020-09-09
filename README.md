@@ -86,6 +86,16 @@ Logs are stored in the following locations in their respective modules folder.
 
 ### Event Stroming Boards
 
+#### IdentityAccess Module
+
+##### Big Picture Event Storming 
+
+![](docs/EventStorming-IdentityAccess-BigPictureEventStorming.png)
+
+
+
+##### Miro
+
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
