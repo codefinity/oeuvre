@@ -84,6 +84,8 @@ Logs are stored in the following locations in their respective modules folder.
   reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestResults\html" -reporttypes:HTML;
 ```
 
+## Analysis and Design
+
 ### Event Stroming Boards
 
 #### IdentityAccess Module
