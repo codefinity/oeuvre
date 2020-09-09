@@ -207,25 +207,15 @@ Scenario: Member can Update the User Profile
 
 ##### [UserSettings.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/UserSettings.feature)
 ```gherkin
-Feature: UserProfile
+Feature: UserSettings
 
-
-Scenario: Member can Update the User Profile
+Scenario: Member can update his Settings
 	Given I am a Registered Member
-	When I try to update my User Profile
-	Then My user Profile should be Updated
-
-```)
-```gherkin
-Feature: UserProfile
-
-
-Scenario: Member can Update the User Profile
-	Given I am a Registered Member
-	When I try to update my User Profile
-	Then My user Profile should be Updated
+	When I try to update my Settings
+	Then My user Settings should be updated
 
 ```
+
 
 
 
