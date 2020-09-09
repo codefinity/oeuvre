@@ -23,13 +23,18 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ## Setup Instructions
 
-### Setting-up the Database
 
-#### Clone the Repository
+### Clone the Repository
 
   ```
   git clone https://github.com/codefinity/oeuvre.git
   ```
+
+### Setting-up the Database
+
+1. Inslall [SQL Server Developer Edition](https://www.microsoft.com/en-gb/sql-server/sql-server-downloads)
+
+2. Install [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
 
 #### Enable Running Scripts in Console
 
