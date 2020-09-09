@@ -90,7 +90,7 @@ Logs are stored in the following locations in their respective modules folder.
 
 ##### Big Picture Event Storming 
 
-![](docs/EventStorming-IdentityAccess-BigPictureEventStorming.png)
+![](design/EventStorming-IdentityAccess-BigPictureEventStorming.png)
 
 
 
