@@ -19,7 +19,7 @@ The Theater Of Evolutionary Architecture
 
 [4. Logs](#Logs)
 
-[5. Running Tests](#Running Tests)
+[5. Running Tests](#Running-Tests)
 
 [6. Running Code Coverage](#Running-Code-Coverage)
 
