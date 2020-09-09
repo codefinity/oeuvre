@@ -166,7 +166,7 @@ Scenario: New Member registers using valid credentials
 	Given I am not a User of Oeuvre
 	And I wish to register on Oeuvre
 	When I register using the following valid details
-	  |TenantId								|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
+	  |TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 	  |47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be registered on the Oeuvre portal
 	And I should receive a registration mail containing the email verification link account 
@@ -175,7 +175,7 @@ Scenario: New Member registers using in-valid credentials
 
 	Given I am not a User of Oeuvre
 	When I register the following in-valid details
-	  |TenantId								|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
+	  |TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 	  |47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then a new account will not be created for me
 	And I should not receive a registration mail containing the email verification link account
