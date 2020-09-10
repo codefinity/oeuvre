@@ -1,1 +1,1 @@
-sqlcmd -S DESKTOP-6DRE2VL -i oeuvre-identityaccess-create-db.sql
+sqlcmd -S DESKTOP-6DRE2VL -i oeuvre-create-db.sql
