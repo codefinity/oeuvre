@@ -358,7 +358,11 @@ modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd
 
 ##### BDD
 
--[SpecFlow - Getting Started](https://specflow.org/getting-started/)
+- [SpecFlow - Getting Started](https://specflow.org/getting-started/)
+
+##### Event Stroming 
+
+- [Whirlpool-of-Events](https://github.com/codefinity/whirlpool-of-events)
 
 ##### Code Coverage
 
