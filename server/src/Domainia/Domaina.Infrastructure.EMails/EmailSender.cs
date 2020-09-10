@@ -18,7 +18,7 @@ namespace Domaina.Infrastructure.EMails
             this.logger = logger;
             this.configuration = configuration;
         }
-        public void SendEmail(EmailMessage message)
+        public async void SendEmail(EmailMessage message)
         {
             logger.Information(
                 "Email sent. From: {From}, To: {To}, Subject: {Subject}, Content: {Content}.",
@@ -40,7 +40,11 @@ namespace Domaina.Infrastructure.EMails
                 //Will run only in dev environment
                 DevEnvironametHelpers.CreateTestMailFolderIfNotExists(client.PickupDirectoryLocation);
 
-                client.Send(configuration.RegiatrationEmailFromId, message.To, message.Subject, message.Content);
+                client.SendAsync(configuration.RegiatrationEmailFromId, 
+                                        message.To, 
+                                        message.Subject, 
+                                        message.Content,
+                                        null);
             }
             catch (System.Exception ex)
             {

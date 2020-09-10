@@ -9,7 +9,7 @@ using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Events;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
 {
-    public class UserRegistrationConfirmedNotificationHandler 
+    public class UserRegistrationConfirmedNotificationHandler
                 : INotificationHandler<DomainEventNotification<UserRegistrationConfirmedDomainEvent>>
     {
         private readonly IIdentityAccessModule identityAccessModule;
@@ -22,11 +22,12 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
         //Had to add async to the method and commented "return Task.CompletedTask;" 
         //because the integration test gave an error due to async/await issues
         //TesName - Patch_Confirm_User_Registration_Valid_Success()
-        public async Task Handle(DomainEventNotification<UserRegistrationConfirmedDomainEvent> notification, CancellationToken cancellationToken)
+        //Removed Async - Need to develop better stratergy for Integrating Testing
+        public Task Handle(DomainEventNotification<UserRegistrationConfirmedDomainEvent> notification, CancellationToken cancellationToken)
         {
-            await identityAccessModule.ExecuteCommandAsync(new CreateUserCommand(Guid.NewGuid(), notification.DomainEvent.UserRegistrationId));
+             identityAccessModule.ExecuteCommandAsync(new CreateUserCommand(Guid.NewGuid(), notification.DomainEvent.UserRegistrationId));
 
-            //return Task.CompletedTask;
+            return Task.CompletedTask;
         }
     }
 }

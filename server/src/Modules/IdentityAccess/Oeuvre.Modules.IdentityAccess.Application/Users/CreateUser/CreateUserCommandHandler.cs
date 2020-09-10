@@ -26,7 +26,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
         {
             var userRegistration = await userRegistrationRepository.GetByIdAsync(request.UserRegistrationId);
 
-            var user = userRegistration.CreateUser();
+            var user =  userRegistration.CreateUser();
 
             await userRepository.AddAsync(user);
 

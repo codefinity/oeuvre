@@ -31,6 +31,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             catch (Exception ex)
             {
                 string message = ex.Message;
+                throw;
             }
         }
 
@@ -47,6 +48,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
             catch (Exception ex)
             {
                 string message = ex.Message;
+                throw;
             }
         }
 
