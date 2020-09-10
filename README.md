@@ -308,6 +308,11 @@ Scenario: Member can update his Settings
 
 ### Ubiquitous Language
 
+```
+*Registrant* : One who has just registred to Oeuvre Portal through registration page.
+
+```
+
 ### Event Stroming Boards
 
 #### IdentityAccess Module
