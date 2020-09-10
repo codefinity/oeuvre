@@ -24,13 +24,13 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
             Email = email;
         }
 
-        public string TenantId { get; }
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Password { get; }
+        public string TenantId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Password { get; set; }
         public string MobileNoCountryCode { get; set; }
-        public string MobileNumber { get; }
-        public string Email { get; }
+        public string MobileNumber { get; set; }
+        public string Email { get; set; }
 
     }
 }

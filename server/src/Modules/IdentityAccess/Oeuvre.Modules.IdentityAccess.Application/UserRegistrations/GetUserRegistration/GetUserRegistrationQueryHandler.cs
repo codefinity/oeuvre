@@ -20,13 +20,13 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserReg
             var connection = sqlConnectionFactory.GetOpenConnection();
 
 
-            const string sql = "SELECT \"Id\", \"TenantId\", \"FirstName\"," +
-                                        " \"LastName\", \"CountryCode\"," +
-                                        " \"MobileNo\", \"EMail\", \"Password\"," +
-                                        " \"StatusCode\", \"RegistrationDate\"," +
-                                        " \"ConfirmedDate\"" +
-                                        " FROM public.\"Registration\"" +
-                                        " WHERE \"Id\" = @UserRegistrationId";
+            const string sql = "SELECT Id, TenantId, FirstName," +
+                                        " LastName, CountryCode," +
+                                        " MobileNo, EMail, Password," +
+                                        " StatusCode, RegistrationDate," +
+                                        " ConfirmedDate" +
+                                        " FROM [identityaccess].[Registrations]" +
+                                        " WHERE Id = @UserRegistrationId";
 
             return await connection.QuerySingleAsync<UserRegistrationDto>(sql,
                 new

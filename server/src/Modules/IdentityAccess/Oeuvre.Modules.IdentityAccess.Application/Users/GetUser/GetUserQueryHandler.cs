@@ -19,14 +19,16 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser
         {
             var connection = _sqlConnectionFactory.GetOpenConnection();
 
-            const string sql = "SELECT" +
-                               "[User].[Id], " +
-                               "[User].[IsActive], " +
-                               "[User].[Login], " +
-                               "[User].[Email], " +
-                               "[User].[Name] " +
-                               "FROM [users].[v_Users] AS [User] " +
-                               "WHERE [User].[Id] = @UserId";
+            const string sql = "SELECT " +
+                               "[Id], " +
+                               "[FirstName], " +
+                               "[Lastname], " +
+                               "[CountryCode], " +
+                               "[MobileNo], " +
+                               "[EMail], " +
+                               "[Password] " +
+                               "FROM [identityaccess].[Users] AS [User] " +
+                               "WHERE Id = @UserId";
             
             return await connection.QuerySingleAsync<UserDto>(sql, new
             {

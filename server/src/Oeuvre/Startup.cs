@@ -50,8 +50,8 @@ namespace Oeuvre
             ConfigureLoggerForAPI();
 
             this.configuration = new ConfigurationBuilder()
-                                    .AddJsonFile("appsettings.json")
-                                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json")
+                                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true)
                                     //.AddUserSecrets<Startup>()
                                     .Build();
         }

@@ -9,8 +9,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserReg
         public string FirstName { get; }
         public string LastName { get; }
         public string Password { get; }
-        public string MobileNoCountryCode { get; set; }
-        public string MobileNumber { get; }
+        public string CountryCode { get; set; }
+        public string MobileNo { get; }
         public string Email { get; }
     }
 }
