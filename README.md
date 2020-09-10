@@ -84,9 +84,11 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 2. Install [Visual Studio](https://visualstudio.microsoft.com/)  
 
-3. Open the project in Visual Studio.
+3. Install [SpecFlow for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=TechTalkSpecFlowTeam.SpecFlowForVisualStudio)
 
-4. Select "Oeuvre.API" from Run Dropdown and then Click on Run
+4. Open the project in Visual Studio.
+
+5. Select "Oeuvre.API" from Run Dropdown and then Click on Run
 
 ![](design/RunningOeuvre.png)
 
