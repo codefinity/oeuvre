@@ -1,7 +1,7 @@
 ﻿Feature: DeActivate A User
 
 Scenario: Admin can DeActivate a User
-	Given I an Admin of Oeuvre Portal
+	Given I am the Admin of Oeuvre Portal
 	When I DeActivate a User
 	Then that user should not be allowed to login
 

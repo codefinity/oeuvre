@@ -19,7 +19,7 @@ namespace Oeuvre.Specs.IdentityAccess.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.3.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class DeActivateAUserFeature : object, Xunit.IClassFixture<DeActivateAUserFeature.FixtureData>, System.IDisposable
+    public partial class AdminCanActivateADeActivatedUserFeature : object, Xunit.IClassFixture<AdminCanActivateADeActivatedUserFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Oeuvre.Specs.IdentityAccess.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "DeActivateUser.feature"
+#line 1 "ActivateUser.feature"
 #line hidden
         
-        public DeActivateAUserFeature(DeActivateAUserFeature.FixtureData fixtureData, Oeuvre_Specs_IdentityAccess_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AdminCanActivateADeActivatedUserFeature(AdminCanActivateADeActivatedUserFeature.FixtureData fixtureData, Oeuvre_Specs_IdentityAccess_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Oeuvre.Specs.IdentityAccess.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DeActivate A User", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Admin can Activate A DeActivated User", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace Oeuvre.Specs.IdentityAccess.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Admin can DeActivate a User")]
-        [Xunit.TraitAttribute("FeatureTitle", "DeActivate A User")]
-        [Xunit.TraitAttribute("Description", "Admin can DeActivate a User")]
-        public virtual void AdminCanDeActivateAUser()
+        [Xunit.SkippableFactAttribute(DisplayName="Admin can Activate a User who is DeActivated")]
+        [Xunit.TraitAttribute("FeatureTitle", "Admin can Activate A DeActivated User")]
+        [Xunit.TraitAttribute("Description", "Admin can Activate a User who is DeActivated")]
+        public virtual void AdminCanActivateAUserWhoIsDeActivated()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin can DeActivate a User", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin can Activate a User who is DeActivated", null, tagsOfScenario, argumentsOfScenario);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,54 +112,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I am the Admin of Oeuvre Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
- testRunner.When("I DeActivate a User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("a User is DeActivated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 6
- testRunner.Then("that user should not be allowed to login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I Activate that User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Admin can DeActivate a User while the user is Logged-In")]
-        [Xunit.TraitAttribute("FeatureTitle", "DeActivate A User")]
-        [Xunit.TraitAttribute("Description", "Admin can DeActivate a User while the user is Logged-In")]
-        public virtual void AdminCanDeActivateAUserWhileTheUserIsLogged_In()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Admin can DeActivate a User while the user is Logged-In", null, tagsOfScenario, argumentsOfScenario);
-#line 8
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 9
- testRunner.Given("I an Admin of Oeuvre Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 10
- testRunner.When("I DeActivate a User who is already Logged-In", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 11
- testRunner.Then("the user should be logged-out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 12
- testRunner.And("that user should not be allowed to login again", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+ testRunner.Then("that user should be allowed to login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -172,12 +131,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                DeActivateAUserFeature.FeatureSetup();
+                AdminCanActivateADeActivatedUserFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                DeActivateAUserFeature.FeatureTearDown();
+                AdminCanActivateADeActivatedUserFeature.FeatureTearDown();
             }
         }
     }
