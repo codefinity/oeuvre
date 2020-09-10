@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Oeuvre.Reporting
+namespace Oeuvre.Modules.Reporting
 {
     public class Class1
     {
