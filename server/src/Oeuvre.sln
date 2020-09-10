@@ -147,7 +147,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0970DFC1-74EE-4FEA-ADCF-414C100A6875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domaina.Infrastructure.EMails", "Domainia\Domaina.Infrastructure.EMails\Domaina.Infrastructure.EMails.csproj", "{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Infrastructure.EMails", "Domainia\Domaina.Infrastructure.EMails\Domaina.Infrastructure.EMails.csproj", "{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{21355DF9-CD37-476B-B6E3-04C5305262D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Reporting", "Oeuvre.Reporting\Oeuvre.Reporting.csproj", "{594AA1D1-79BA-4AF8-BC91-BF1AC81F3DC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,6 +295,10 @@ Global
 		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{594AA1D1-79BA-4AF8-BC91-BF1AC81F3DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594AA1D1-79BA-4AF8-BC91-BF1AC81F3DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594AA1D1-79BA-4AF8-BC91-BF1AC81F3DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594AA1D1-79BA-4AF8-BC91-BF1AC81F3DC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -346,6 +354,8 @@ Global
 		{780A222F-0473-4AA4-9F8C-AA0498A5698B} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 		{0970DFC1-74EE-4FEA-ADCF-414C100A6875} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
+		{21355DF9-CD37-476B-B6E3-04C5305262D5} = {631E02E8-D39B-4720-86A8-DE293FDF8571}
+		{594AA1D1-79BA-4AF8-BC91-BF1AC81F3DC6} = {21355DF9-CD37-476B-B6E3-04C5305262D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B54B5131-7792-4BE2-A981-EB1CCA99473E}
