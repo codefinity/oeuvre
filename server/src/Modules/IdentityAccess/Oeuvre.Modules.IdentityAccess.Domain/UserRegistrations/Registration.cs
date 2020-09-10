@@ -41,7 +41,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                 string eMailId,
                                 IUsersCounter usersCounter)
         {
-            this.CheckRule(new UserEmailIdLoginMustBeUniqueRule(usersCounter, eMailId));
+            //Rules
+            CheckRule(new UserEmailIdLoginMustBeUniqueRule(usersCounter, eMailId));
 
             this.Id = new UserRegistrationId(Guid.NewGuid());
 
@@ -56,7 +57,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             //this.status = 1;
             status = UserRegistrationStatus.WaitingForConfirmation;
 
-            this.AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id,
+            AddDomainEvent(new NewUserRegisteredDomainEvent(this.Id,
                                                                     tenantId,
                                                                     fullName.FirstName,
                                                                     fullName.LastName,
