@@ -100,6 +100,12 @@ Logs are stored in the following locations in their respective modules folder.
   ```
 ## Running Tests
 
+#### Running All Tests
+
+  ```
+  C:\...oeuvre>run-all-tests.bat
+  ```
+
 #### Integration Tests
 
   ```
