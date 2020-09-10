@@ -17,11 +17,11 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
     [ApiController]
     public class UserRegistrationsController : ControllerBase
     {
-        private readonly IIdentityAccessModule userAccessModule;
+        private readonly IIdentityAccessModule identityAccessModule;
 
-        public UserRegistrationsController(IIdentityAccessModule userAccessModule)
+        public UserRegistrationsController(IIdentityAccessModule identityAccessModule)
         {
-            this.userAccessModule = userAccessModule;
+            this.identityAccessModule = identityAccessModule;
         }
 
         [NoPermissionRequired]
@@ -31,7 +31,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         {
             try
             {
-                Guid registrantId = await userAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
+                Guid registrantId = await identityAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
                                                                         request.TenantId,
                                                                         request.FirstName,
                                                                         request.LastName,
@@ -53,7 +53,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPatch("/identityaccess/{registrantId}/confirm")]
         public async Task<IActionResult> ConfirmRegistration(Guid registrantId)
         {
-            await userAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
+            await identityAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
 
             return Ok();
         }
@@ -63,7 +63,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [Authorize]
         public async Task<IActionResult> GetAllRegisteredUsers()
         {
-            var registrantsList = await userAccessModule
+            var registrantsList = await identityAccessModule
                                             .ExecuteQueryAsync(new GetAllUserRegistrationQuery());
 
             return Ok(registrantsList);
@@ -74,7 +74,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [Authorize]
         public async Task<IActionResult> GetARegisteredUser(Guid registrantId)
         {
-            var registrant = await userAccessModule
+            var registrant = await identityAccessModule
                                         .ExecuteQueryAsync(new GetUserRegistrationQuery(registrantId));
 
             return Ok(registrant);
@@ -84,7 +84,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPatch("/identityaccess/addrole")]
         public async Task<IActionResult> AddRole(Guid userId, string role)
         {
-            await userAccessModule.ExecuteCommandAsync(new AddRoleToUserCommand(userId, role));
+            await identityAccessModule.ExecuteCommandAsync(new AddRoleToUserCommand(userId, role));
 
             return Ok();
         }
@@ -93,7 +93,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPatch("/identityaccess/user/deactivate")]
         public async Task<IActionResult> DeactivateUser(Guid userId)
         {
-            await userAccessModule.ExecuteCommandAsync(new DeactivateUserCommand(userId));
+            await identityAccessModule.ExecuteCommandAsync(new DeactivateUserCommand(userId));
 
             return Ok();
         }
