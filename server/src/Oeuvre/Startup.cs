@@ -33,6 +33,7 @@ using Oeuvre.Modules.ContentCreation.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Microsoft.IdentityModel.Logging;
 using Oeuvre.Modules.IdentityAccess.Application.Authorization;
+using Domaina.Infrastructure.EMails;
 
 namespace Oeuvre
 {
@@ -231,15 +232,17 @@ namespace Oeuvre
             var httpContextAccessor = container.Resolve<IHttpContextAccessor>();
             var executionContextAccessor = new ExecutionContextAccessor(httpContextAccessor);
 
-            //var emailsConfiguration = new EmailsConfiguration(_configuration["EmailsConfiguration:FromEmail"]);
+            var emailsConfiguration = new EmailsConfiguration();
+            configuration.Bind("EmailsConfiguration", emailsConfiguration);
+
 
             IdentityAccessStartup.Initialize(
                             configuration.GetConnectionString("DefaultConnection")
                             , executionContextAccessor
                             //,logger
-                            //,emailsConfiguration
+                            ,emailsConfiguration
                             //,this._configuration["Security:TextEncryptionKey"]
-                            //,null
+                            ,null
                             );
 
             ContentCreationStartup.Initialize(

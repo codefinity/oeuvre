@@ -1,5 +1,7 @@
 ﻿using Autofac;
+using CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Configuration.Email;
 using Domaina.Application;
+using Domaina.Infrastructure.EMails;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain;
 using Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.InMemoryEventBus;
@@ -21,9 +23,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
             string connectionString
             , IExecutionContextAccessor executionContextAccessor
             //,ILogger logger
-            //,EmailsConfiguration emailsConfiguration,
+            ,EmailsConfiguration emailsConfiguration
             //,string textEncryptionKey,
-            //,IEmailSender emailSender
+            ,IEmailSender emailSender
             )
         {
 
@@ -40,11 +42,11 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
             var moduleLogger = logger.ForContext("Module", "IdentityAccess");
 
             ConfigureCompositionRoot(connectionString
-                                       , executionContextAccessor
-                                       , moduleLogger
-                                        //,emailsConfiguration
+                                        ,executionContextAccessor
+                                        ,moduleLogger
+                                        ,emailsConfiguration
                                         //,textEncryptionKey
-                                        //,emailSender
+                                        ,emailSender
                                         );
 
             //QuartzStartup.Initialize(moduleLogger);
@@ -54,11 +56,11 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
 
         private static void ConfigureCompositionRoot(
             string connectionString
-            , IExecutionContextAccessor executionContextAccessor
-            , ILogger logger
-            //,EmailsConfiguration emailsConfiguration
-            //,string textEncryptionKey
-            //,IEmailSender emailSender
+                ,IExecutionContextAccessor executionContextAccessor
+                ,ILogger logger
+                ,EmailsConfiguration emailsConfiguration
+                //,string textEncryptionKey
+                ,IEmailSender emailSender
             )
         {
             var containerBuilder = new ContainerBuilder();
@@ -71,11 +73,11 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration
             containerBuilder.RegisterModule(new DomainModule());
             containerBuilder.RegisterModule(new InMemoryEventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
+            containerBuilder.RegisterModule(new EmailModule(emailsConfiguration, emailSender));
 
             //containerBuilder.RegisterModule(new ProcessingModule());
             //containerBuilder.RegisterModule(new OutboxModule());
             //containerBuilder.RegisterModule(new QuartzModule());
-            //containerBuilder.RegisterModule(new EmailModule(emailsConfiguration, emailSender));
             //containerBuilder.RegisterModule(new SecurityModule(textEncryptionKey));
 
             containerBuilder.RegisterInstance(executionContextAccessor);

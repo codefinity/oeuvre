@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domainia\Domaina.Infrastructure.EMails\Domaina.Infrastructure.EMails.csproj" />
     <ProjectReference Include="..\Domainia\Domaina.Infrastructure\Domaina.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules\ContentCreation\Oeuvre.Modules.ContentCreation.API\Oeuvre.Modules.ContentCreation.API.csproj" />
     <ProjectReference Include="..\Modules\ContentCreation\Oeuvre.Modules.ContentCreation.Application\Oeuvre.Modules.ContentCreation.Application.csproj" />

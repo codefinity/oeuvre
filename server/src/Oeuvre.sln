@@ -52,8 +52,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		DBScripts\oeuvre-create-db.sql = DBScripts\oeuvre-create-db.sql
 		DBScripts\oeuvre-drop-db.bat = DBScripts\oeuvre-drop-db.bat
 		DBScripts\oeuvre-drop-db.sql = DBScripts\oeuvre-drop-db.sql
-		DBScripts\oeuvre-recreate-db-tables-with-test-and-seed-data.bat = DBScripts\oeuvre-recreate-db-tables-with-test-and-seed-data.bat
 		DBScripts\oeuvre-recreate-db.bat = DBScripts\oeuvre-recreate-db.bat
+		DBScripts\oeuvre-recreate-dev-db-tables-with-test-and-seed-data.bat = DBScripts\oeuvre-recreate-dev-db-tables-with-test-and-seed-data.bat
 		DBScripts\prepare-oeuvre-integration-tests-db.bat = DBScripts\prepare-oeuvre-integration-tests-db.bat
 	EndProjectSection
 EndProject
@@ -146,6 +146,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0970DFC1-74EE-4FEA-ADCF-414C100A6875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domaina.Infrastructure.EMails", "Domainia\Domaina.Infrastructure.EMails\Domaina.Infrastructure.EMails.csproj", "{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -285,6 +287,10 @@ Global
 		{42411913-3572-43DD-ABB9-FF3DEC46349E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42411913-3572-43DD-ABB9-FF3DEC46349E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42411913-3572-43DD-ABB9-FF3DEC46349E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -339,6 +345,7 @@ Global
 		{7EC0A834-5D66-4478-BDB1-4A2D079B3B49} = {235BF8FD-D997-4ADB-8D94-617FE05C9E29}
 		{780A222F-0473-4AA4-9F8C-AA0498A5698B} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
 		{0970DFC1-74EE-4FEA-ADCF-414C100A6875} = {667255BF-0CCF-44CF-BAF8-7B75468DC4C7}
+		{DA19DFCC-1DDB-4DBE-B0A3-C53F2DDD9A01} = {9C138D2E-38CF-4DE9-B26D-0000F99E6771}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B54B5131-7792-4BE2-A981-EB1CCA99473E}

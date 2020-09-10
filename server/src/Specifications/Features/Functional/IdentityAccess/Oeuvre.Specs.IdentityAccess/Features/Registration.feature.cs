@@ -80,6 +80,67 @@ namespace Oeuvre.Specs.IdentityAccess.Features
             this.TestTearDown();
         }
         
+        [Xunit.SkippableFactAttribute(DisplayName="New Member registers using valid credentials")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registration")]
+        [Xunit.TraitAttribute("Description", "New Member registers using valid credentials")]
+        public virtual void NewMemberRegistersUsingValidCredentials()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New Member registers using valid credentials", null, tagsOfScenario, argumentsOfScenario);
+#line 3
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 5
+ testRunner.Given("I am not a User of Oeuvre", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "TenantId",
+                            "FirstName",
+                            "LastName",
+                            "EMail",
+                            "Password",
+                            "MobileNoCountryCode",
+                            "MobileNumber"});
+                table4.AddRow(new string[] {
+                            "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                            "Mary",
+                            "Carpenter",
+                            "Mary@TheCarpenters.com",
+                            "topoftheworld",
+                            "+1",
+                            "4387790052"});
+#line 6
+ testRunner.When("I register using the following valid details", ((string)(null)), table4, "When ");
+#line hidden
+#line 9
+ testRunner.Then("I should be registered on the Oeuvre portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 10
+ testRunner.And("I should receive a registration mail containing the email verification link accou" +
+                        "nt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
         [Xunit.SkippableFactAttribute(DisplayName="New Member registers using invalid credentials")]
         [Xunit.TraitAttribute("FeatureTitle", "Registration")]
         [Xunit.TraitAttribute("Description", "New Member registers using invalid credentials")]
@@ -111,7 +172,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 14
  testRunner.Given("I am not a User of Oeuvre", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "TenantId",
                             "FirstName",
                             "LastName",
@@ -119,7 +180,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Password",
                             "MobileNoCountryCode",
                             "MobileNumber"});
-                table4.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "47d60457-5a80-4c83-96b6-890a5e5e4d22",
                             "Mary",
                             "Carpenter",
@@ -128,7 +189,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "+1",
                             "4387790052"});
 #line 15
- testRunner.When("I register the following invalid details", ((string)(null)), table4, "When ");
+ testRunner.When("I register the following invalid details", ((string)(null)), table5, "When ");
 #line hidden
 #line 18
  testRunner.Then("a new account will not be created for me", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -136,6 +197,88 @@ this.ScenarioInitialize(scenarioInfo);
 #line 19
  testRunner.And("I should not receive a registration mail containing the email verification link a" +
                         "ccount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="New Member register using Facebook")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registration")]
+        [Xunit.TraitAttribute("Description", "New Member register using Facebook")]
+        public virtual void NewMemberRegisterUsingFacebook()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New Member register using Facebook", null, tagsOfScenario, argumentsOfScenario);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 25
+ testRunner.Given("I am not a User of Oeuvre", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 26
+ testRunner.When("I choose to register through my Facebook account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 27
+ testRunner.Then("a new account will be created for me 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="New Member register using Google")]
+        [Xunit.TraitAttribute("FeatureTitle", "Registration")]
+        [Xunit.TraitAttribute("Description", "New Member register using Google")]
+        public virtual void NewMemberRegisterUsingGoogle()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New Member register using Google", null, tagsOfScenario, argumentsOfScenario);
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 31
+ testRunner.Given("I am not a User of Oeuvre", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 32
+ testRunner.When("I choose to register through my Google account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+ testRunner.Then("a new account will be created for me", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
