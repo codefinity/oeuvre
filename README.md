@@ -70,12 +70,10 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 #### Creating the DB
 
-1. In Sql Server Management Studio Create a DB named "oeuvre"
-
-2. In the windows console go to this location -> "oeuvre\server\src\DBScripts" and run the batch file
+In the windows console go to this location -> "oeuvre\server\src\DBScripts" and run the batch file
 
   ```
-  C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-db-tables-with-test-and-seed-data.bat
+  C:\...oeuvre\server\src\DBScripts>oeuvre-recreate-dev-db-tables-with-test-and-seed-data.bat
   ```
 
 ### Setting-up and Running the Project
