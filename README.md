@@ -223,6 +223,20 @@ Scenario: Admin can DeActivate a User while the user is Logged-In
 
 ```
 
+##### [ActivateUser.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/ActivateUser.feature)
+
+```gherkin
+
+Feature: Admin can Activate A DeActivated User
+
+Scenario: Admin can Activate a User who is DeActivated
+	Given I am the Admin of Oeuvre Portal
+	And a User is DeActivated
+	When I Activate that User
+	Then that user should be allowed to login
+
+```
+
 ##### [ForgotPasswordRequest.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/ForgotPasswordRequest.feature)
 ```gherkin
 
