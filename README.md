@@ -105,6 +105,17 @@ Logs are stored in the following locations in their respective modules folder.
   ```
   C:\...oeuvre>dotnet test server\src\Tests\Oeuvre.API.IntegrationTests\Oeuvre.API.IntegrationTests.csproj
   ```
+
+#### ArchUnit Tests for a Specific Module
+
+  ```
+  C:\...oeuvre>dotnet test server\src\Modules\<ModuleName>\Tests\Oeuvre.Modules.IdentityAccess.ArchTests\Oeuvre.Modules.IdentityAccess.ArchTests.csproj
+  
+  Example: For IdentityAccess Module
+  
+  C:\...oeuvre>dotnet test server\src\Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.ArchTests\Oeuvre.Modules.IdentityAccess.ArchTests.csproj
+  
+  ```
   
 ## Running Code Coverage
 
