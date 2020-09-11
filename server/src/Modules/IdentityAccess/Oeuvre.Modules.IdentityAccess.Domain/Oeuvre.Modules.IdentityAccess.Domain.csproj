@@ -15,7 +15,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Domainia\Domania.Domain\Domania.Domain.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserRegistrations\Rules\" />
-  </ItemGroup>
 </Project>
