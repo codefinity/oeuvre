@@ -168,7 +168,7 @@ Logs are stored in the following locations in their respective modules folder.
 
 Feature: Registration
 
-Scenario: New Registrant registers using valid credentials
+Scenario: New Registrant registers using an EMail Id that does not belong to any Oeuvre user
 
 	Given I have not registered at Oeuvre 
 	And there is no other user registered with my EMailId "Mary@TheCarpenters.com"
