@@ -1,7 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 
-namespace Oeuvre.Specs.IdentityAccess.Steps
+namespace Oeuvre.Specs.IdentityAccess.Steps.Registration
 {
     [Binding]
     public class RegistrationSteps
