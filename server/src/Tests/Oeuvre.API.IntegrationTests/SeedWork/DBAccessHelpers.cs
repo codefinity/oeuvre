@@ -6,12 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Oeuvre.API.IntegrationTests
+namespace Oeuvre.API.IntegrationTests.SeedWork
 {
     public static class DBAccessHelpers
     {
-        private static readonly string integrationDbconnectionString
-                = "Server=DESKTOP-6DRE2VL;Database=oeuvre_integration_testing;Trusted_Connection=True;";
+        private static readonly string integrationDbconnectionString = TestConfigurationVariables.ConnectionString;
 
         public static async Task<T> GetData<T>(string query)
         {

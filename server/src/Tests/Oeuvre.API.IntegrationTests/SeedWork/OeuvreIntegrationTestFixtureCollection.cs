@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Oeuvre.API.IntegrationTests
+namespace Oeuvre.API.IntegrationTests.SeedWork
 {
 
     [CollectionDefinition("IdentityAccessTestCollection")]

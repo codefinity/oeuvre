@@ -9,14 +9,12 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
 {
     public static class TestDBInitializationHelpers
     {
-        private static readonly string integrationDbconnectionString
-            = "Server=DESKTOP-6DRE2VL;Database=oeuvre_integration_testing;Trusted_Connection=True;";
-
+        private static readonly string integrationDbconnectionString = TestConfigurationVariables.ConnectionString;
         public static void DropTablesAndViewsAndSchema()
         {
             using (var connection = new SqlConnection(integrationDbconnectionString))
             {
-                var soultionPath = SoultionPath();
+                var soultionPath = PathHelpers.SoultionPath();
 
                 string sqlScript = File.ReadAllText(
                     soultionPath + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-drop-db-tables-and-views-and-schema.sql");
@@ -30,7 +28,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
         {
             using (var connection = new SqlConnection(integrationDbconnectionString))
             {
-                var soultionPath = SoultionPath();
+                var soultionPath = PathHelpers.SoultionPath();
 
                 string createSchemaScript = File.ReadAllText(
                     soultionPath + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-schema.sql");
@@ -51,7 +49,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
         {
             using (var connection = new SqlConnection(integrationDbconnectionString))
             {
-                var soultionPath = SoultionPath();
+                var soultionPath = PathHelpers.SoultionPath();
 
                 string createSchemaScript = File.ReadAllText(
                     soultionPath + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-seed-data.sql");
@@ -64,7 +62,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
         {
             using (var connection = new SqlConnection(integrationDbconnectionString))
             {
-                var soultionPath = SoultionPath();
+                var soultionPath = PathHelpers.SoultionPath();
 
                 string createSchemaScript = File.ReadAllText(
                     soultionPath + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-add-test-data.sql");
@@ -73,27 +71,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
             }
         }
 
-        public static string SoultionPath()
-        {
-            return Directory.GetParent(
-                    Directory.GetParent(
-                    Directory.GetParent(
-                    Directory.GetParent(
-                    Directory.GetParent(
-                        Directory.GetParent(
 
-                    Directory.GetParent(
-                        Directory.GetCurrentDirectory()).FullName
-                    )
-                    .FullName)
-                    .FullName)
-                    .FullName)
-                    .FullName)
-                                        .FullName)
-
-                .ToString();
-
-        }
 
     }
 }

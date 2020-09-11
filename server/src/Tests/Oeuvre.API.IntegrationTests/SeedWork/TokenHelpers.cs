@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Oeuvre.API.IntegrationTests
+namespace Oeuvre.API.IntegrationTests.SeedWork
 {
     public static class TokenHelpers
     {

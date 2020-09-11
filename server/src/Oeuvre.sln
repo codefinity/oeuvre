@@ -153,6 +153,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Reporting", "Modules\Reporting\Oeuvre.Modules.Reporting\Oeuvre.Modules.Reporting.csproj", "{FBC69211-40BB-4AFC-8DDF-3492BC4B13F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{5611E4FE-621B-4246-8008-F17BF9DF2013}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\run-all-tests.bat = ..\..\run-all-tests.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

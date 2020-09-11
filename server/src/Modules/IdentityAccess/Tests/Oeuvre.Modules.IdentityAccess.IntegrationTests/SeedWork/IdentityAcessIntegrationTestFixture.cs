@@ -18,11 +18,26 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
 {
     public class IdentityAcessIntegrationTestFixture : IDisposable
     {
-
         public IdentityAcessIntegrationTestFixture()
         {
-            //Initializing the data in the integtating testing database
+            //Initializing Settings
+            Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "IntegrationTesting");
 
+            var builder = new ConfigurationBuilder()
+                    .SetBasePath(PathHelpers.SoultionPath() + @"\Oeuvre")
+                    .AddJsonFile("appsettings.IntegrationTesting.json", optional: false, reloadOnChange: true)
+                    .AddEnvironmentVariables();
+
+            IConfiguration configuration = builder.Build();
+
+            TestConfigurationVariables.ConnectionString = configuration.GetConnectionString("DefaultConnection");
+
+            var emailsConfiguration = new EmailsConfiguration();
+            configuration.Bind("EmailsConfiguration", emailsConfiguration);
+            TestConfigurationVariables.EmailsConfiguration = emailsConfiguration;
+
+
+            //Initializing the data in the integtating testing database
             TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
             TestDBInitializationHelpers.CreateSchemaAndTablesAndViews();
             TestDBInitializationHelpers.AddSeedData();
@@ -37,28 +52,6 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
 
         }
 
-        //override methods here as needed for Test purpose
-        //protected override void ConfigureWebHost(IWebHostBuilder builder)
-        //{
-        //    builder.ConfigureTestServices(services =>
-        //    {
-        //        // We can further customize our application setup here.
-
-        //    });
-
-
-        //    builder.ConfigureAppConfiguration(config =>
-        //    {
-        //        //var integrationConfig = new ConfigurationBuilder()
-        //        //  .AddJsonFile("appsettings.IntegrationTests.json")
-        //        //  .Build();
-
-        //        //config.AddConfiguration(integrationConfig);
-        //    })
-        //    .UseEnvironment("IntegrationTesting");
-        //}
-
-
         //protected async Task<T> GetLastOutboxMessage<T>()
         //    where T : class, INotification
         //{
@@ -69,7 +62,5 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
         //        return OutboxMessagesHelper.Deserialize<T>(messages.Last());
         //    }
         //}
-
-
     }
 }

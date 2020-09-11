@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Text;
 
 
-namespace Oeuvre.API.IntegrationTests
+namespace Oeuvre.API.IntegrationTests.SeedWork
 {
     public class OeuvreIntegrationTestFixture : WebApplicationFactory<Startup>,  IDisposable
     {
@@ -18,10 +18,6 @@ namespace Oeuvre.API.IntegrationTests
         {
             //Initializing the data in the integtating testing database
 
-            TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
-            TestDBInitializationHelpers.CreateSchemaAndTablesAndViews();
-            TestDBInitializationHelpers.AddSeedData();
-            TestDBInitializationHelpers.AddTestData();
         }
 
         public new void Dispose()
@@ -34,6 +30,7 @@ namespace Oeuvre.API.IntegrationTests
         //override methods here as needed for Test purpose
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
+
             builder.ConfigureTestServices(services =>
             {
                 // We can further customize our application setup here.
@@ -43,13 +40,28 @@ namespace Oeuvre.API.IntegrationTests
 
             builder.ConfigureAppConfiguration(config =>
             {
-                //var integrationConfig = new ConfigurationBuilder()
-                //  .AddJsonFile("appsettings.IntegrationTests.json")
-                //  .Build();
 
-                //config.AddConfiguration(integrationConfig);
+                var integrationConfig = new ConfigurationBuilder()
+                                              .AddJsonFile("appsettings.IntegrationTesting.json")
+                                              .Build();
+
+                config.AddConfiguration(integrationConfig);
+
+                TestConfigurationVariables.ConnectionString = integrationConfig.GetSection("ConnectionStrings:DefaultConnection").Value;
+
+
+                //Keeping it here instead of the constructor because this method retrieves the connection string
+                //Required for the following methods.
+                //Need to find a better way
+                TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
+                TestDBInitializationHelpers.CreateSchemaAndTablesAndViews();
+                TestDBInitializationHelpers.AddSeedData();
+                TestDBInitializationHelpers.AddTestData();
+
+
             })
             .UseEnvironment("IntegrationTesting");
+
         }
 
     }
