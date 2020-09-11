@@ -21,11 +21,11 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [3. Setup Instructions](#Setup-Instructions)
 
-[4. Logs](#Logs)
+[4. Running Tests](#Running-Tests)
 
-[5. Running Tests](#Running-Tests)
+[5. Running Code Coverage](#Running-Code-Coverage)
 
-[6. Running Code Coverage](#Running-Code-Coverage)
+[6. Logs](#Logs)
 
 [7. Features](#Features)
 
@@ -171,7 +171,7 @@ Feature: Registration
 Scenario: New Member registers using valid credentials
 
 	Given I have not registered at Oeuvre 
-	And there is no other user registered with my EMailId Mary@TheCarpenters.com
+	And there is no other user registered with my EMailId "Mary@TheCarpenters.com"
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
