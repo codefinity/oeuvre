@@ -404,7 +404,7 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 #### Worthy Clones 
 
-[ddd-by-examples/library](https://github.com/ddd-by-examples/library)
+- [ddd-by-examples/library](https://github.com/ddd-by-examples/library)
 
 #### Interesting Reads
 
