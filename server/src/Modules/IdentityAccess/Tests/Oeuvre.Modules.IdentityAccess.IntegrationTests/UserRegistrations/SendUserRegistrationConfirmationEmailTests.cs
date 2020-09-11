@@ -34,7 +34,6 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 
             EmailSender.Verify(m => m.SendEmail(email), Times.Once());
 
-            //EmailSender.Received(Quantity.Exactly(1)).SendEmail(email);
         }
     }
 }
