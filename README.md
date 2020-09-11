@@ -95,13 +95,7 @@ In the windows console go to this location -> "oeuvre\server\src\DBScripts" and 
 ![](design/RunningOeuvre.png)
 
 
-## Logs
 
-Logs are stored in the following locations in their respective modules folder.
-
-  ```
-  C:\Users\<Windows-Account>\OeuvreLogs
-  ```
 ## Running Tests
 
 
@@ -156,6 +150,14 @@ Logs are stored in the following locations in their respective modules folder.
 ```
   reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestResults\html" -reporttypes:HTML;
 ```
+
+## Logs
+
+Logs are stored in the following locations in their respective modules folder.
+
+  ```
+  C:\Users\<Windows-Account>\OeuvreLogs
+  ```
 
 ## Features
 
