@@ -9,6 +9,10 @@ The Theater Of Evolutionary Architecture
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
+## A Note
+
+This project is in design and analysis phase. Please feel free to go through the code and if you have any Questions or Suggestions, you can use the [Issues](https://github.com/codefinity/oeuvre/issues) tab. 
+
 ## Table of Contents
 
 [1. Introducing Oeuvre](#Introducing-Oeuvre)
@@ -99,6 +103,12 @@ Logs are stored in the following locations in their respective modules folder.
   C:\Users\<Windows-Account>\OeuvreLogs
   ```
 ## Running Tests
+
+#### Running All Tests
+
+  ```
+  C:\...oeuvre>run-all-tests.bat
+  ```
 
 #### Integration Tests
 
