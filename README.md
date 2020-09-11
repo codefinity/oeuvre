@@ -378,7 +378,7 @@ User : 		One who has registered and verified his EMail.
 | Flow		| View 		| Command 	| Aggregate 	| Event 		| Policy 			| Command 		| Aggregate 	| Event
 | :---         	|:---		| :---          |:--- 		|:---			|:--- 				|:---			|:---		|:---
 | **Registration**  | Registration	| Register    	| Registration	| User Registered	| Send Registration Email	| Send Reg Email	| Registration	| User Verification Email Sent
-| 	     	|		| 		|		|			|				|
+| Registration	|		| 		|		|			|				|
 
 ##### Miro
 
