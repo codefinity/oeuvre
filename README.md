@@ -400,11 +400,11 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 #### Special Thanks
 
-- [kgrzybek
-/
-modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+- [kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 
 #### Worthy Clones 
+
+[ddd-by-examples/library](https://github.com/ddd-by-examples/library)
 
 #### Interesting Reads
 
