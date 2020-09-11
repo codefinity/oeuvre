@@ -173,7 +173,8 @@ Feature: Registration
 
 Scenario: New Member registers using valid credentials
 
-	Given I am not a User of Oeuvre
+	Given I have not registered at Oeuvre 
+	And there is no other user registered with my EMailId Mary@TheCarpenters.com
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
