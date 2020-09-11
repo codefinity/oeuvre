@@ -175,17 +175,17 @@ Scenario: New Registrant registers using valid credentials
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
-	Then I should be a Registrant on the Oeuvre portal
+	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
 
-Scenario: New Registrant registers using an already existing EMail
+Scenario: New Registrant registers with an EMail Id that belongs to an existing Oeuvre User
 
 	Given That a User with my EMail Id "Mary@TheCarpenters.com" already exists
 	When I register with the following details
 		| TenantId				| FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		| 47d60457-5a80-4c83-96b6-890a5e5e4d22	| Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
-	Then a new account will not be created for me
-	And I should not receive a registration mail containing the email verification link account
+	Then I should not be able to register
+	And I should not receive a registration mail containing the email verification link
 
 
 #Not Complete - Working On Them
