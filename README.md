@@ -373,6 +373,13 @@ User : 		One who has registered and verified his EMail.
 
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
+##### Event Storming - Component Map
+
+| Flow		| View 		| Command 	| Aggregate 	| Event 		| Policy 			| Command 		| Aggregate 	| Event
+| :---         	|:---		| :---          |:--- 		|:---			|:--- 				|:---			|:---		|:---
+| **Registration**  | Registration	| Register    	| Registration	| User Registered	| Send Registration Email	| Send Reg Email	| Registration	| User Verification Email Sent
+| git diff     	| git diff      | git diff      |		|			|				|
+
 ##### Miro
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
