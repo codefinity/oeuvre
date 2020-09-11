@@ -374,11 +374,10 @@ User : 		One who has registered and verified his EMail.
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
 ##### Event Storming - Component Map
-
-| Flow			| View 			| Command 	| Aggregate 	| Event 		| Policy 			| Command 		| Aggregate 	| Event
-| :---         		|:---			| :---          |:--- 		|:---			|:--- 				|:---			|:---		|:---
-| **Registration**  	| Registration Form	| Register    	| Registration	| User Registered	| Send Registration Email	| Send Reg Email	| Registration	| User Verification Email Sent
-| 			|			| 		|		|			|				|
+| Flow			| View 			| Command 																													| Aggregate 																					| Event 		| Policy 			| Command 		| Aggregate 	| Event
+| :---         		|:---			| :---          																												|:--- 																						|:---			|:--- 				|:---			|:---		|:---
+| **Registration**  	| Registration Form	| Register    																													| Registration																					| User Registered	| Send Registration Email	| Send Reg Email	| Registration	| User Verification Email Sent
+| 			|			| [RegisterNewUserCommandHandler.cs](https://github.com/codefinity/oeuvre/blob/master/server/src/Modules/IdentityAccess/Oeuvre.Modules.IdentityAccess.Application/UserRegistrations/RegisterNewUser/RegisterNewUserCommandHandler.cs)  		|[Registration.cs](https://github.com/codefinity/oeuvre/blob/master/server/src/Modules/IdentityAccess/Oeuvre.Modules.IdentityAccess.Domain/UserRegistrations/Registration.cs)	|			|				|			|		|
 
 ##### Miro
 
