@@ -375,9 +375,9 @@ User : 		One who has registered and verified his EMail.
 
 ##### Event Storming - Component Map
 
-| Flow		| View 		| Command 	| Aggregate 	| Event 		| Policy 			| Command 		| Aggregate 	| Event
-| :---         	|:---		| :---          |:--- 		|:---			|:--- 				|:---			|:---		|:---
-| **Registration**  | Registration	| Register    	| Registration	| User Registered	| Send Registration Email	| Send Reg Email	| Registration	| User Verification Email Sent
+| Flow			| View 			| Command 	| Aggregate 	| Event 		| Policy 			| Command 		| Aggregate 	| Event
+| :---         		|:---			| :---          |:--- 		|:---			|:--- 				|:---			|:---		|:---
+| **Registration**  	| Registration Form	| Register    	| Registration	| User Registered	| Send Registration Email	| Send Reg Email	| Registration	| User Verification Email Sent
 | Registration	|		| 		|		|			|				|
 
 ##### Miro
