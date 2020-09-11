@@ -120,7 +120,7 @@ Logs are stored in the following locations in their respective modules folder.
   
   C:\...oeuvre>dotnet test server\src\Modules\<ModuleName>\Tests\Oeuvre.Modules.<ModuleName>.Domain.UnitTests\Oeuvre.Modules.<ModuleName>.Domain.UnitTests.csproj
   
-  Example: For IdentityAccess Module
+  # Example: For IdentityAccess Module
   
   C:\...oeuvre>dotnet test server\src\Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.Domain.UnitTests\Oeuvre.Modules.IdentityAccess.Domain.UnitTests.csproj
   
@@ -129,7 +129,7 @@ Logs are stored in the following locations in their respective modules folder.
   
   C:\...oeuvre>dotnet test server\src\Modules\<ModuleName>\Tests\Oeuvre.Modules.<ModuleName>.IntegrationTests\Oeuvre.Modules.<ModuleName>.IntegrationTests.csproj
   
-  Example: For IdentityAccess Module
+  # Example: For IdentityAccess Module
   
   C:\...oeuvre>dotnet test server\src\Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.IntegrationTests\Oeuvre.Modules.IdentityAccess.IntegrationTests.csproj
   
@@ -138,7 +138,7 @@ Logs are stored in the following locations in their respective modules folder.
   
   C:\...oeuvre>dotnet test server\src\Modules\<ModuleName>\Tests\Oeuvre.Modules.<ModuleName>.ArchTests\Oeuvre.Modules.<ModuleName>.ArchTests.csproj
   
-  Example: For IdentityAccess Module
+  # Example: For IdentityAccess Module
   
   C:\...oeuvre>dotnet test server\src\Modules\IdentityAccess\Tests\Oeuvre.Modules.IdentityAccess.ArchTests\Oeuvre.Modules.IdentityAccess.ArchTests.csproj
   
