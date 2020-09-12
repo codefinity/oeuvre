@@ -40,11 +40,20 @@ namespace Oeuvre.API.IntegrationTests.SeedWork
                     soultionPath + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-db-tables.sql");
                 connection.Execute(createTablesScript);
 
-                string createViewsScript = File.ReadAllText(
-                    soultionPath + 
-                    @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-views.sql")
+                //Split the view file and run create view statements separately.
+                //Running entire script file is not working.
+                //Also removed "GO" keyword because its a sqlcmd keyword.
+                string createViewsScriptContent = File.ReadAllText(
+                    soultionPath
+                    + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-views.sql")
                     .Replace("GO", "");
-                connection.Execute(createViewsScript);
+
+                string[] ceateViewScripts = createViewsScriptContent.Split("--Split--");
+
+                foreach (string createViewsScript in ceateViewScripts)
+                {
+                    connection.Execute(createViewsScript);
+                }
 
             }
         }
