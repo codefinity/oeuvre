@@ -30,15 +30,15 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [5. Testing and Code Coverage](#Testing-and-Code-Coverage)
 
-[5. Features](#Features)
+[6. Features](#Features)
 
-[6. Analysis and Design](#Analysis-and-Design)
+[7. Analysis and Design](#Analysis-and-Design)
 
-[7. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
+[8. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
 
-[8. Inspiration](#Inspiration)
+[9. Inspiration](#Inspiration)
 
-[9. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
+[10. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
 
 ## A Need for a Project Like Oeuvre
 
