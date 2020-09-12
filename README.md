@@ -385,12 +385,10 @@ User : 		One who has registered and verified his EMail.
 
 ##### API Definitions
 
-											|URL						|Method					|											|URL						|Method						|Request JSON					|Response JSON					|Success Code					|Failure Code						|
-|:--											|:---						|:---						|:---							|:---							|:---							|:---								|
-|Register									|							|							|								|								|								|									|			
-|Confirm Registration						|							|							|								|								|								|									|		
-
-
+											|URL						|Method					||											|URL						|Method						|Request JSON					|Response JSON					|Success Code					|Failure Code						
+|:--										|:---						|:---						|:---							|:---							|:---							|:---								
+|**Register**								|							|							|								|								|								|											
+|**Confirm Registration**					|							|							|								|								|								|					
 
 
 ##### Miro
