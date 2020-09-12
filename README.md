@@ -5,7 +5,7 @@
 ### Oeuvre
 /ˈəːvr(ə)/
 
-**Pronounced as:**  *uh·vruh* | noun: **oeuvre**; plural noun: **oeuvres**
+**Pronounced as:**  *uh·vruh* | **noun:** oeuvre; **plural noun**: oeuvres
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
@@ -17,6 +17,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 - Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
 - Integration Tests Written.
+- IdentityAccess Module appears to be stable. 
 
 ## Table of Contents
 
@@ -41,6 +42,10 @@ This project is in design and analysis phase. Please feel free to go through the
 [10. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
 
 ## A Need for a Project Like Oeuvre
+
+[This Section is Under Development]
+
+
 
 
 
@@ -78,10 +83,19 @@ SetUp instructions for this project can be found [here](SETUP.md).
 #### Domain Driven Design
 
 
+#### Command Query Responsibility Segregation (CQRS)
+
+
 #### Event Driven Architecture
 
 
 #### The Reactive Manifesto
+
+
+#### Continuous Integration and Deployment (CI/CD)
+
+
+#### Code Coverage
 
 ## Testing and Code Coverage
 
