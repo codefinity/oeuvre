@@ -8,7 +8,7 @@ namespace Domaina.Infrastructure.EMails
 {
     public static class DevEnvironametHelpers
     {
-        public static void CreateTestMailFolderIfNotExists(string path)
+        public static void InDevEnvCreateTestMailFolderIfNotExists(string path)
         {
             var isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == Environments.Development;
 

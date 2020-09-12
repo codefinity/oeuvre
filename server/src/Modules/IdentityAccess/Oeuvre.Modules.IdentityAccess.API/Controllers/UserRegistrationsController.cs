@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Domania.Security.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Oeuvre.Modules.IdentityAccess.Application.Authorization;
 using Oeuvre.Modules.IdentityAccess.Application.Contracts;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
@@ -10,6 +11,7 @@ using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistr
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
 using Oeuvre.Modules.IdentityAccess.Application.Users.AddRole;
 using Oeuvre.Modules.IdentityAccess.Application.Users.DeactivateUser;
+using Serilog;
 
 namespace Oeuvre.Modules.IdentityAccess.API.Controller
 {
@@ -18,10 +20,14 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
     public class UserRegistrationsController : ControllerBase
     {
         private readonly IIdentityAccessModule identityAccessModule;
+        private readonly ILogger logger;
 
-        public UserRegistrationsController(IIdentityAccessModule identityAccessModule)
+        public UserRegistrationsController(IIdentityAccessModule identityAccessModule
+                                                    ,ILogger logger
+                                                    )
         {
             this.identityAccessModule = identityAccessModule;
+            this.logger = logger;
         }
 
         [NoPermissionRequired]
@@ -29,6 +35,9 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPost("/identityaccess/register")]
         public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
         {
+            logger.Information("===== Begin Request - Register New User =====\n " 
+                                    + JsonConvert.SerializeObject(request, Formatting.Indented));
+
             try
             {
                 Guid registrantId = await identityAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(

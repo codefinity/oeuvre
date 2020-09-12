@@ -46,9 +46,6 @@ namespace Oeuvre
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             //Configuration = configuration;
-
-            ConfigureLoggerForAPI();
-
             this.configuration = new ConfigurationBuilder()
                                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                                     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: false, reloadOnChange: true)
@@ -70,6 +67,8 @@ namespace Oeuvre
             //Changed as per reference project
             //services.AddControllersWithViews();
             services.AddControllers();
+
+            ConfigureLoggerForAPI(services);
 
             services.AddSwaggerDocumentation();
 
@@ -211,19 +210,19 @@ namespace Oeuvre
                     });
         }
 
-        private static void ConfigureLoggerForAPI()
+        private static void ConfigureLoggerForAPI(IServiceCollection services)
         {
             string apiLogPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
                                     + "\\OeuvreLogs\\API\\API";
 
             loggerForApi = new LoggerConfiguration()
-                .Enrich.FromLogContext()
+                .Enrich
+                .FromLogContext()
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{Module}] [{Context}] {Message:lj}{NewLine}{Exception}")
                 .WriteTo.RollingFile(new CompactJsonFormatter(), apiLogPath)
-                .CreateLogger();
+                .CreateLogger().ForContext("Module", "API");
 
-            loggerForApi = loggerForApi.ForContext("Module", "API");
-
+            services.AddSingleton<ILogger>(loggerForApi);
             loggerForApi.Information("Logger configured");
         }
 

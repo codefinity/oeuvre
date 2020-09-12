@@ -24,7 +24,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Processing
         {
             var domainEventNotification = createDomainEventNotification(domainEvent);
             
-            log.Information("Dispatching Domain Event as MediatR notification.  EventType: {eventType}", domainEvent.GetType());
+            //log.Information("Dispatching Domain Event as MediatR notification.  EventType: {eventType}", domainEvent.GetType());
 
             await mediator.Publish(domainEventNotification);
         }

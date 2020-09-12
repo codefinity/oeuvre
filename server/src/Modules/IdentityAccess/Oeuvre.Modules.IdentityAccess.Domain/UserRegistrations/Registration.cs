@@ -42,6 +42,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                 IUsersCounter usersCounter)
         {
             //Rules
+            Console.WriteLine("Business Rule Check - User EMail Id Must be Unique");
             CheckRule(new UserEmailIdLoginMustBeUniqueRule(usersCounter, eMailId));
 
             this.Id = new UserRegistrationId(Guid.NewGuid());

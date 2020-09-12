@@ -30,17 +30,18 @@ namespace Domaina.Infrastructure.EMails
             try
             {
 
-                string pickupDirectoryLocation = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
-                                + "\\"+ configuration.PickupDirectoryLocation;
+                string pickupDirectoryLocation = Environment.GetFolderPath(
+                    Environment.SpecialFolder.UserProfile)
+                    + "\\"+ configuration.PickupDirectoryLocation;
 
                 var client = new SmtpClient() { DeliveryMethod = (SmtpDeliveryMethod)Enum.Parse(typeof(SmtpDeliveryMethod), configuration.DeliveryMethod),
                                                 PickupDirectoryLocation = pickupDirectoryLocation
                 };
 
                 //Will run only in dev environment
-                DevEnvironametHelpers.CreateTestMailFolderIfNotExists(client.PickupDirectoryLocation);
+                DevEnvironametHelpers.InDevEnvCreateTestMailFolderIfNotExists(client.PickupDirectoryLocation);
 
-                client.SendAsync(configuration.RegiatrationEmailFromId, 
+                client.SendAsync(configuration.RegiatrationEmailFromId,
                                         message.To, 
                                         message.Subject, 
                                         message.Content,
