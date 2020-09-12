@@ -182,7 +182,7 @@ EMails for Dev Environment go into this folder.
 
 ### Architecture Decision Logs
 
-[Michael Nygard template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Arctural Decisions. The logs can be found in this [folder](design/architecture-decision-logs) 
+[Michael Nygard template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
 
 ### Event Storming
 
