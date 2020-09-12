@@ -17,8 +17,6 @@
 [2. Running Code Coverage](Running-Code-Coverage)
 
 
-All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests.
-
 ### Running Tests 
 
 #### All Tests
