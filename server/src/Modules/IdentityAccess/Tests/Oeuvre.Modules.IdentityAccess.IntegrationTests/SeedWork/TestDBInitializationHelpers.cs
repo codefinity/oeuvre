@@ -39,7 +39,9 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
                 connection.Execute(createTablesScript);
 
                 string createViewsScript = File.ReadAllText(
-                    soultionPath + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-views.sql");
+                    soultionPath 
+                    + @"\Modules\IdentityAccess\DBScripts\oeuvre-identityaccess-create-views.sql")
+                    .Replace("GO","");
                 connection.Execute(createViewsScript);
 
             }

@@ -40,7 +40,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
 
             try
             {
-                Guid registrantId = await identityAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
+                await identityAccessModule.ExecuteCommandAsync(new RegisterNewUserCommand(
                                                                         request.TenantId,
                                                                         request.FirstName,
                                                                         request.LastName,
@@ -49,11 +49,11 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
                                                                         request.MobileNumber,
                                                                         request.EMail));
 
-                return Ok(new { Id = registrantId });
+                return Ok();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw;
+                return BadRequest();
             }
         }
 
