@@ -99,6 +99,8 @@ In the windows console go to this location -> "oeuvre\server\src\DBScripts" and 
 
 Flow of each request can be followed on the console window. Observe how it goes from one component to another, and corellate it with the Event-Storming flow. The messages are logged manually as of now. Will be done automatically using AOP in future.
 
+This is the example for request flow tracing for the Registration feature.
+
 ![](design/screens/InformationFlowTracability.png)
 
 ## Running Tests
