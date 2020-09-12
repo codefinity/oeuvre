@@ -384,7 +384,7 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 ##### BDD
 
 - [SpecFlow - Getting Started](https://specflow.org/getting-started/)
-- [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
+
 
 ##### Event Stroming 
 
@@ -407,6 +407,7 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 - [Patterns, Principles, and Practices of Domain-Driven Design](https://www.oreilly.com/library/view/patterns-principles-and/9781118714706/)
 - [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
 - [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
+- [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
 ## Issue Resolutions and Workarounds
 
