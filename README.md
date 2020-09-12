@@ -20,7 +20,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 ## Table of Contents
 
-[1. A Need for a Project like Oeuvre](#A-Need-for-a-Project-like-Oeuvre)
+[1. A Need for a Project Like Oeuvre](#A-Need-for-a-Project-Like-Oeuvre)
 
 [2. Introducing Oeuvre](#Introducing-Oeuvre)
 
@@ -44,7 +44,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [12. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
 
-## A Need for a Project like Oeuvre
+## A Need for a Project Like Oeuvre
 
 
 
