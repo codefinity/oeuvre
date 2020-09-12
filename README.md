@@ -91,6 +91,12 @@ SetUp instructions for this project can be found [here](SETUP.md).
 
 #### The Reactive Manifesto
 
+
+#### Continuous Integration and Deployment (CI/CD)
+
+
+#### Code Coverage
+
 ## Testing and Code Coverage
 
 All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
