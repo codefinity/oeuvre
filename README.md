@@ -57,6 +57,11 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
 
+### Requirement is the King
+
+Key to a good architecture is getting requirements right. Requirement is where everything starts from.
+
+
 ## Introducing Oeuvre
 
 Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
