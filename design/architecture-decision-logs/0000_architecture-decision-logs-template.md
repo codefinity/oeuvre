@@ -1,4 +1,4 @@
-# <DecisionNo>. Title
+# [DecisionNo]. Title
 
 ## Status
 
