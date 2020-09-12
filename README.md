@@ -166,7 +166,7 @@ Logs are stored in the following locations in their respective modules folder.
 EMails for Dev Environment go into this folder.
 
   ```
-  C:\Users\<Windows-Account>i\OeuvreDevMails
+  C:\Users\<Windows-Account>\OeuvreDevMails
   ```
 
 ## Features
