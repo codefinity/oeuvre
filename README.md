@@ -178,6 +178,33 @@ EMails for Dev Environment go into this folder.
   C:\Users\<Windows-Account>\OeuvreDevMails
   ```
 
+## Development Methodologies
+
+### Architecture Decision Logs
+
+[Michael Nygard template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Arctural Decisions. The logs can be found in this [folder](design/architecture-decision-logs) 
+
+### Event Storming
+
+
+### Behaviour Driven Development
+
+
+### Test Driven Development
+
+
+### Modular Monolith
+
+
+### Domain Driven Design
+
+
+### Event Driven Architecture
+
+
+### The Reactive Manifesto
+
+
 ## Features
 
 ### IdentityAccess Module
