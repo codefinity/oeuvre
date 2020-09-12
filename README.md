@@ -61,6 +61,16 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 Key to a good architecture is getting requirements right. Requirement is where everything starts from.
 
+### Fitness Functions Used
+
+#### Arch Unit
+
+
+#### BDD
+
+
+#### Integration Tests
+
 
 ### Quantas Used In This Architecture
 
@@ -74,6 +84,9 @@ Key to a good architecture is getting requirements right. Requirement is where e
 
 
 #### Aggregates
+
+
+#### Modules/Bonded Contexts - Deployment Quantas
 
 
 ## Introducing Oeuvre
