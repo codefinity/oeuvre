@@ -13,11 +13,16 @@
 
 This project is in design and analysis phase. Please feel free to go through the code and if you have any Questions or Suggestions, you can use the [Issues](https://github.com/codefinity/oeuvre/issues) tab. 
 
+## News
+
+- Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
+- Integration Tests Written.
+
 ## Table of Contents
 
-[1. Introducing Oeuvre](#Introducing-Oeuvre)
+[1. A Need for a Project like Oeuvre](#A-Need-for-a-Project-like-Oeuvre)
 
-[2. News](#News)
+[2. Introducing Oeuvre](#Introducing-Oeuvre)
 
 [3. Setup Instructions](#Setup-Instructions)
 
@@ -39,18 +44,17 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [12. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
 
+## A Need for a Project like Oeuvre
+
+
+
+
 ## Introducing Oeuvre
 
 Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
 At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. This project will also demonstrate how quickly and efficiently DDD aligns to the changes in business.
 
 The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
-
-## News
-
-- Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
-- Integration Tests Written.
-
 
 
 ## Setup Instructions
