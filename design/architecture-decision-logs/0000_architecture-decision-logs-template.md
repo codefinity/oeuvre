@@ -1,5 +1,7 @@
 # [DecisionNo]. Title
 
+#### Date: DD-MM-YYYY
+
 ## Status
 
 What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.?
