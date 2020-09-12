@@ -1,28 +1,28 @@
 # Setup Instructions
 
-## Table of Contents
+### Table of Contents
 
 [1. Clone the Repository](#Clone-the-Repository)
 
 [2. Setting-up the Database](#Setting-up-the-Database)
 
-[3. Enable Running Scripts in Console](#Enable-Running-Scripts-in-Console)
+  [2.1 Enable Running Scripts in Console](#Enable-Running-Scripts-in-Console)
 
-[4. Creating the DB](#Creating-the-DB)
+  [2.2 Creating the DB](#Creating-the-DB)
 
-[5. Setting-up and Running the Project](#Setting-up-and-Running-the-Project)
+[3. Setting-up and Running the Project](#Setting-up-and-Running-the-Project)
 
-[6. Request Flow Tracing](#Request-Flow-Tracing)
+[4. Request Flow Tracing](#Request-Flow-Tracing)
 
-[7. Running Tests](#Running-Tests)
+[5. Running Tests](#Running-Tests)
 
-[8. Running Code Coverage](Running-Code-Coverage)
+[6. Running Code Coverage](Running-Code-Coverage)
 
-[9. Application Resources](Application-Resources)
+[7. Application Resources](Application-Resources)
 
-[Logs](#Logs) 
+  [7.1 Logs](#Logs) 
 
-[EMails](#EMails)
+  [7.2 EMails](#EMails)
 
 
 ### Clone the Repository
@@ -76,7 +76,7 @@ This is the example for request flow tracing for the Registration feature.
 
 ![](design/screens/InformationFlowTracability.png)
 
-## Running Tests
+### Running Tests
 
 All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests.
 
@@ -119,7 +119,7 @@ All **Integration Tests** are done on a separate database "oeuvre_integration_te
   
   ```
   
-## Running Code Coverage
+### Running Code Coverage
 
 1. On console make sure you are in the test project folder
 
@@ -132,9 +132,9 @@ All **Integration Tests** are done on a separate database "oeuvre_integration_te
   reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestResults\html" -reporttypes:HTML;
 ```
 
-## Application Resources
+### Application Resources
 
-### Logs
+#### Logs
 
 Logs are stored in the following locations in their respective modules folder.
 
@@ -143,7 +143,7 @@ Logs are stored in the following locations in their respective modules folder.
   ```
   
 
-### EMails
+#### EMails
 
 EMails for Dev Environment go into this folder.
 
