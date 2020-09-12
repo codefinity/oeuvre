@@ -31,7 +31,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [8. Analysis and Design](#Analysis-and-Design)
 
-[9. Test Driven Design Methodilogy](#Test-Driven-Design-Methodilogy)
+[9. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
 
 [10. Inspiration](#Inspiration)
 
@@ -421,7 +421,7 @@ User : 		One who has registered and verified his EMail.
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-## Test Driven Design Methodilogy
+## Test Driven Design Methodology
 
 1. Write Domain Unit Tests
 2. Write Module Integration Unit Tests
