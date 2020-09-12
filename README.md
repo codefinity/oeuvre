@@ -92,9 +92,16 @@ In the windows console go to this location -> "oeuvre\server\src\DBScripts" and 
 
 5. Select "Oeuvre.API" from Run Dropdown and then Click on Run
 
-![](design/RunningOeuvre.png)
+![](design/screens/RunningOeuvre.png)
 
 
+### Request Flow Tracing
+
+Flow of each request can be followed on the console window. Observe how it goes from one component to another, and corellate it with the Event-Storming flow. The messages are logged manually as of now. Will be done automatically using AOP in future.
+
+This is the example for request flow tracing for the Registration feature.
+
+![](design/screens/InformationFlowTracability.png)
 
 ## Running Tests
 
