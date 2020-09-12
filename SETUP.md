@@ -6,9 +6,9 @@
 
 [2. Setting-up the Database](#Setting-up-the-Database)
 
-  [2.1 Enable Running Scripts in Console](#Enable-Running-Scripts-in-Console)
+&nbsp;&nbsp;[2.1 Enable Running Scripts in Console](#Enable-Running-Scripts-in-Console)
 
-  [2.2 Creating the DB](#Creating-the-DB)
+&nbsp;&nbsp;[2.2 Creating the DB](#Creating-the-DB)
 
 [3. Setting-up and Running the Project](#Setting-up-and-Running-the-Project)
 
@@ -20,9 +20,9 @@
 
 [7. Application Resources](Application-Resources)
 
-  [7.1 Logs](#Logs) 
+&nbsp;&nbsp;[7.1 Logs](#Logs) 
 
-  [7.2 EMails](#EMails)
+&nbsp;&nbsp;[7.2 EMails](#EMails)
 
 
 ### Clone the Repository
