@@ -42,6 +42,10 @@ This project is in design and analysis phase. Please feel free to go through the
 
 ## A Need for a Project Like Oeuvre
 
+[This Section is Under Development]
+
+
+
 
 
 
@@ -76,6 +80,9 @@ SetUp instructions for this project can be found [here](SETUP.md).
 
 
 #### Domain Driven Design
+
+
+#### Command Query Responsibility Segregation (CQRS)
 
 
 #### Event Driven Architecture
