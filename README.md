@@ -98,7 +98,7 @@ In the windows console go to this location -> "oeuvre\server\src\DBScripts" and 
 
 ## Running Tests
 
-All Integration tests are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests.
+All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests.
 
   ```powershell
   # 1. Running All Tests
