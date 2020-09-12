@@ -86,7 +86,7 @@ SetUp instructions for this project can be found [here](SETUP.md).
 ## Testing and Code Coverage
 
 All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
-Instructions for running tests and code coverage can be found [here](TESTS.md)
+Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 ## Features
 
