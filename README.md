@@ -25,17 +25,19 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [5. Running Code Coverage](#Running-Code-Coverage)
 
-[6. Logs](#Logs)
+[6. Application Resources](#Application-Resources)
 
-[7. Features](#Features)
+[7. Development Methodologies](#Development-Methodologies)
 
-[8. Analysis and Design](#Analysis-and-Design)
+[8. Features](#Features)
 
-[9. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
+[9. Analysis and Design](#Analysis-and-Design)
 
-[10. Inspiration](#Inspiration)
+[10. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
 
-[11. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
+[11. Inspiration](#Inspiration)
+
+[12. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
 
 ## Introducing Oeuvre
 
@@ -161,7 +163,9 @@ All **Integration Tests** are done on a separate database "oeuvre_integration_te
   reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestResults\html" -reporttypes:HTML;
 ```
 
-## Logs
+## Application Resources
+
+### Logs
 
 Logs are stored in the following locations in their respective modules folder.
 
@@ -170,7 +174,7 @@ Logs are stored in the following locations in their respective modules folder.
   ```
   
 
-## EMails
+### EMails
 
 EMails for Dev Environment go into this folder.
 
@@ -182,7 +186,7 @@ EMails for Dev Environment go into this folder.
 
 ### Architecture Decision Logs
 
-[Michael Nygard template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
+[Michael Nygard's template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
 
 ### Event Storming
 
