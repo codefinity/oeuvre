@@ -1,6 +1,6 @@
 # [DecisionNo]. Title
 
-#### Date: DD-MM-YYYY
+**Date:** dd-mm-yyyy
 
 ## Status
 
