@@ -389,6 +389,6 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 ## Issue Resolutions and Workarounds
 
-"The instance of entity type 'UserRegistrationStatus' with the key value '{RegistrationId: Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId}' is marked as 'Modified', but the instance of entity type 'Registration' with the key value '{Id: Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.UserRegistrationId}' is marked as 'Added' and both are mapped to the same row."
+Issues encountered diring development of this application and their workarounds can be found [here](IssueResolutionsAndWorkarounds.md).
 
-[Allow optional dependents to be added later when using table splitting](https://github.com/dotnet/efcore/issues/17422)
+
