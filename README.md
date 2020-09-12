@@ -57,29 +57,29 @@ SetUp instructions for this project can be found [here](SETUP.md).
 
 ## Development Methodologies
 
-### Architecture Decision Logs
+#### Architecture Decision Logs
 
 [Michael Nygard's template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
 
-### Event Storming
+#### Event Storming
 
 
-### Behaviour Driven Development
+#### Behaviour Driven Development
 
 
-### Test Driven Development
+#### Test Driven Development
 
 
-### Modular Monolith
+#### Modular Monolith
 
 
-### Domain Driven Design
+#### Domain Driven Design
 
 
-### Event Driven Architecture
+#### Event Driven Architecture
 
 
-### The Reactive Manifesto
+#### The Reactive Manifesto
 
 
 ## Features
