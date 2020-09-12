@@ -2,7 +2,7 @@
 
 ### Table of Contents
 
-[1. Running Tests](Running-Tests)
+[1. Running Tests](#Running-Tests)
 
 &nbsp;&nbsp;[1.1 All Tests](#All-Tests)
 
