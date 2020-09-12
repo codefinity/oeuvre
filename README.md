@@ -17,6 +17,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 - Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
 - Integration Tests Written.
+- IdentityAccess Module appears to be stable. 
 
 ## Table of Contents
 
