@@ -28,6 +28,8 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [4. Development Methodologies](#Development-Methodologies)
 
+[5. Testing and Code Coverage](#Testing-and-Code-Coverage)
+
 [5. Features](#Features)
 
 [6. Analysis and Design](#Analysis-and-Design)
@@ -81,6 +83,10 @@ SetUp instructions for this project can be found [here](SETUP.md).
 
 #### The Reactive Manifesto
 
+## Testing and Code Coverage
+
+All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
+Instructions for running tests and code coverage can be found [here](TESTS.md)
 
 ## Features
 
