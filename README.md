@@ -45,7 +45,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [This Section is Under Development]
 
-Oeuvre is not a demonstration, it is **Software Evolution** in motion.
+**Oeuvre is not a demonstration, it is Software Evolution in motion.**
 
 It is a well known fact, often inconvenient, that in the long run the many of the projects become unmaintainable. New requirements come in, new capabilities are demanded due to changes in the market, the technology landscape becomes better, and the softwares is expected to accommodate these things without software rewrites.
 
