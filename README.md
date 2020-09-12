@@ -383,6 +383,16 @@ User : 		One who has registered and verified his EMail.
 
 <!---Table Begin-->
 
+##### API Definitions
+
+											|URL						|Method						|Request JSON					|Response JSON					|Success Code					|Failure Code						|
+											|:---						|:---						|:---							|:---							|:---							|:---								|
+Register									|							|							|								|								|								|									|			
+Confirm Registration						|							|							|								|								|								|									|		
+
+
+
+
 ##### Miro
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
