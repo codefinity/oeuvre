@@ -384,6 +384,7 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 ##### BDD
 
 - [SpecFlow - Getting Started](https://specflow.org/getting-started/)
+- [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
 ##### Event Stroming 
 
