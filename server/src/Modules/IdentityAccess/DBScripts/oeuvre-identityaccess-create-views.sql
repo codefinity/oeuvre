@@ -9,6 +9,10 @@ FROM [identityaccess].UserRoles AS [UserRole]
 
 GO
 
+--Split is required so that the unit testing code can split the view text and execute 
+--them one by one. Unable to create all the views at once
+--Split--
+
 CREATE VIEW [identityaccess].[v_Users]
 AS
 SELECT
@@ -18,5 +22,5 @@ SELECT
     [LastName],
 	[IsActive]
 FROM [identityaccess].[Users] AS [User];
-
 GO
+

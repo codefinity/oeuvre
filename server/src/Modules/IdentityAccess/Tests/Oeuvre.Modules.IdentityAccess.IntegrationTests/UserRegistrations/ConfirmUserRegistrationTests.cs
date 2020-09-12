@@ -25,7 +25,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                                                 "pass",
                                                                 "+1",
                                                                 "1234567",
-                                                                "e@mail.com");
+                                                                "e2@mail.com");
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
