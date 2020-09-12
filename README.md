@@ -1,11 +1,11 @@
 # Oeuvre
 
-The Theater Of Evolutionary Architecture
+**The Theater Of Evolutionary Architecture**
 
 ### Oeuvre
 /ˈəːvr(ə)/
 
-**Pronounced as:** uh·vruh | noun: oeuvre; plural noun: oeuvres
+**Pronounced as:**  *uh·vruh* | noun: **oeuvre**; plural noun: **oeuvres**
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
