@@ -381,15 +381,18 @@ User : 		One who has registered and verified his EMail.
 |**Tests**			|																																								|						|																																															|																																																																													|																																|																																																																																																																																																				|										|																																																														|																																|																		
 
 
-<!---Table Begin-->
+<!---Table End-->
 
 ##### API Definitions
 
-											|URL						|Method					||											|URL						|Method						|Request JSON					|Response JSON					|Success Code					|Failure Code						
-|:--										|:---						|:---						|:---							|:---							|:---							|:---								
-|**Register**								|							|							|								|								|								|											
-|**Confirm Registration**					|							|							|								|								|								|					
+<!---Table Begin-->
 
+|Feature					|URL						|Method						|Request JSON					|Response JSON					|Success Code					|Failure Code
+|:--						|:---						|:---						|:---							|:---							|:---							|:---
+|**Register**				|							|							|								|								|								|											
+|**Confirm Registration**	|							|							|								|								|								|
+
+<!---Table End-->
 
 ##### Miro
 
