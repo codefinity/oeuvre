@@ -77,7 +77,9 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 #### Requirement is the King
 
-> "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." - Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+> "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." 
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 Key to a good architecture is getting requirements right. Requirement is where everything starts from.
 
@@ -89,10 +91,34 @@ Key to a good architecture is getting requirements right. Requirement is where e
 https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
 
 
+#### Fitness Function
+
+>"A fitness function is an objective function used to summarize how close a prospective design solution is to achieving the set aims. In evolutionary computing, the fitness function determines whether an algorithm has improved over time. In other words, as each variant of an algorithm is generated, the fitness functions determine how “fit” each variant is based on how the designer of the algorithm defined “fit.”"
+
+>"We have a similar goal in evolutionary architecture—as architecture evolves, we need mechanisms to evaluate how changes impact the important characteristics of the architecture and prevent degradation of those characteristics over time. The fitness function metaphor encompasses a variety of mechanisms we employ to ensure architecture doesn’t change in undesirable ways, including metrics, tests, and other verifi cation tools. When an architect identifies an architectural characteristic they want to protect as things evolve, they define one or more fitness functions to protect that feature."
+
+>"The fitness function drives architectural decision making, guiding the architecture while allowing the changes needed to support changing business and technology environments."
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+Dimentions of Evolution
+
+<!--pg10-->
+
+#### Evolutionary Over Adaptation
+
+<!--pg14-->
+
+Evolutionary change is permanent and from within, on the other hand Adaptatation is force fitting a solution to a problem. There can be limits to adaptation. There might come come a time when the system is just not able to adapt to change, whereas the evolution changes the system from inside out.
+
+#### Guided Evolution
+
+
 #### The Architectral Quanta
 
 
-#### Fitness Function
+
+
 
 
 
