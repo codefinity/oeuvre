@@ -397,9 +397,18 @@ Scenario: Member can update his Settings
 
 ```
 
+## Creating Fitness Functions
+
+#### Test Driven Design Methodology
+
+1. Write Domain Unit Tests
+2. Write Module Integration Unit Tests
+3. Write Application Integration Test
+
+
 ## Development
 
-##### Event Storming - Component Map
+#### Event Storming - Component Map
 
 <!---Table Begin-->
 |User Story			|Feature																																						|View 					|Command 																																													|Rules	 																																																																											|Aggregate 																														|Event 																																																																																																																																																			|Policy									|Command 																																																												| Aggregate 																													|Event
@@ -411,7 +420,7 @@ Scenario: Member can update his Settings
 
 <!---Table End-->
 
-##### API Definitions
+#### API Definitions
 
 <!---Table Begin-->
 
@@ -430,11 +439,7 @@ Scenario: Member can update his Settings
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-## Test Driven Design Methodology
 
-1. Write Domain Unit Tests
-2. Write Module Integration Unit Tests
-3. Write Application Integration Test
 
 ## Inspiration
 
