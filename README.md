@@ -171,6 +171,8 @@ Key to a good architecture is getting requirements right. Requirement is where e
 ### Non-Functional Expectations
 
 - Should be scalable to microservices.
+- OS Independent.
+- Self Healing - able to bounce back from crashes on its own.
 
 
 ### How Does The Architecture Address Non-Functional Expectations
