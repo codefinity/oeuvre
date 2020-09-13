@@ -196,7 +196,7 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ##### Process Discovery
 
 
-#### Ubiquitous Language Discovery
+##### Ubiquitous Language Discovery
 
 ```text
 Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
