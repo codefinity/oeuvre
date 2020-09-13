@@ -176,7 +176,7 @@ Designing optimal AQ enables faster evolution cycles.
 
 ### Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
-#### Why N-Layered Architecture Fails to Evolve?
+#### Why Classical N-Layered Architecture Fails to Evolve?
 
 <!-- pg69 -->
 
