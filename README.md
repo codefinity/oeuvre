@@ -82,6 +82,10 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
+![](images/ExplanationDiagrams-EAProcess.png)
+
+
+
 #### Requirement is the King
 
 > "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." 
