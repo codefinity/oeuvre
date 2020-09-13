@@ -82,7 +82,7 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
-![](images/ExplanationDiagrams-EAProcess.png)
+![](design/images/ExplanationDiagrams-EAProcess.png)
 
 
 
