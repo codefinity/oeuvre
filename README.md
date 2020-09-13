@@ -75,7 +75,15 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 ### How To Make Principles Of Evolution Work for Architecture
 
+#### Single Responsibility Principle
+
+#### Importance of Boundaries
+
+https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
+
+
 #### The Architectral Quanta
+
 
 #### Fitness Function
 
@@ -84,9 +92,7 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
 
-#### Importance of Boundaries
 
-https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
 
 #### Requirement is the King
 
