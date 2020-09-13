@@ -193,10 +193,15 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
 
 
+##### Boundary Analysis
+
+
 ##### Process Discovery
 
 
 ##### Ubiquitous Language Discovery
+
+###### Identity Access
 
 ```text
 Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
