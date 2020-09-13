@@ -65,8 +65,6 @@ SetUp instructions for this project can be found [here](SETUP.md).
 
 **Oeuvre is not a demonstration, it is Software Evolution in motion.**
 
-[Section Under Development]
-
 It is a well known fact, often inconvenient, that in the long run the many of the projects become unmaintainable. New requirements come in, new capabilities are demanded due to changes in the market, the technology landscape becomes better, and the softwares is expected to accommodate these things without software rewrites.
 
 Oeuvre is a quest to find answers to whether the software can be constructed in such a way that it evolves with new requirements over time.
