@@ -402,7 +402,7 @@ Scenario: Member can update his Settings
 
 ```
 
-#### API Design
+## API Design
 
 <!---Table Begin-->
 
