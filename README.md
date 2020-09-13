@@ -164,14 +164,16 @@ Key to a good architecture is getting requirements right. Requirement is where e
 
 ## Technology Stack
 
+#### Discussion
 
 
-
-## Requirement Analysis
-
+#### Expectation
 
 
-## Analysis and Design
+#### Selection
+
+
+## Requirement Analysis and Design
 
 
 ### Event Stroming Boards
