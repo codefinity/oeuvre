@@ -602,6 +602,19 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ##### Books
 - [Building Evolutionary Architectures: Support Constant Change](https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant/dp/1491986360)
 
+#### Domain Driven Design
+
+##### Templates
+
+[ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
+
+##### Books
+
+- [Implementing Domain-Driven Design](https://www.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/)
+- [Patterns, Principles, and Practices of Domain-Driven Design](https://www.oreilly.com/library/view/patterns-principles-and/9781118714706/)
+- [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
+- [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
+
 
 #### Event Storming References
 
@@ -628,33 +641,33 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 - [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY)
 - [Julie LERMAN: Mapping DDD Domain Models with EF Core 2.1 @ Update Conference Prague 2018](https://www.youtube.com/watch?v=Z62cbp61Bb8)
 
-##### BDD
+#### BDD
 
+##### Articles
 - [SpecFlow - Getting Started](https://specflow.org/getting-started/)
 
+##### Books
 
-##### Event Stroming 
+
+- [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
+
+
+#### Event Stroming 
 
 - [Whirlpool-of-Events](https://github.com/codefinity/whirlpool-of-events)
 
-##### Code Coverage
+#### Code Coverage
 
 - [Measuring .NET Core Test Coverage with Coverlet](https://www.tonyranieri.com/blog/2019/07/31/Measuring-.NET-Core-Test-Coverage-with-Coverlet/)
 - [Use code coverage for unit testing](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-code-coverage?tabs=windows)
 
-##### Architecture Decision Log
+#### Architecture Decision Log
 
 - [joelparkerhenderson/architecture_decision_record](https://github.com/joelparkerhenderson/architecture_decision_record)
 - [DOCUMENTING ARCHITECTURE DECISIONS](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
 
 
-#### Books
 
-- [Implementing Domain-Driven Design](https://www.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/)
-- [Patterns, Principles, and Practices of Domain-Driven Design](https://www.oreilly.com/library/view/patterns-principles-and/9781118714706/)
-- [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
-- [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
-- [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
 ## Issue Resolutions and Workarounds
 
