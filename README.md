@@ -178,11 +178,36 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 
 
+## Analysis and Design
 
 
-### Features
+### Event Stroming Boards
 
-#### IdentityAccess Module
+
+##### Big Picture Event-Storming 
+
+![](design/EventStorming-IdentityAccess-BigPictureEventStorming.png)
+
+##### Design Level  Event-Storming 
+
+![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
+
+##### Arranged Design Level  Event-Storming 
+
+![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
+
+
+#### Ubiquitous Language
+
+```text
+Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
+		as a user unless they verify their EMail through the link sent in his EMail.
+
+User : 		One who has registered and verified his EMail. 
+
+```
+
+#### Feature Extraction
 
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
@@ -364,33 +389,6 @@ Scenario: Member can update his Settings
 ```
 
 
-## Analysis and Design
-
-### Ubiquitous Language
-
-```text
-Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
-		as a user unless they verify their EMail through the link sent in his EMail.
-
-User : 		One who has registered and verified his EMail. 
-
-```
-
-### Event Stroming Boards
-
-#### IdentityAccess Module
-
-##### Big Picture Event-Storming 
-
-![](design/EventStorming-IdentityAccess-BigPictureEventStorming.png)
-
-##### Design Level  Event-Storming 
-
-![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
-
-##### Arranged Design Level  Event-Storming 
-
-![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
 ##### Event Storming - Component Map
 
