@@ -74,6 +74,8 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 ### How Evolution Works
 
+### How To Make Principles Of Evolution Work for Architecture
+
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
 
