@@ -71,11 +71,15 @@ It is a well known fact, often inconvenient, that in the long run the many of th
 
 Oeuvre is a quest to find answers to whether the software can be constructed in such a way that it evolves with new requirements over time.
 
-### The Architectral Quanta
-
 ### How Evolution Works
 
 ### How To Make Principles Of Evolution Work for Architecture
+
+### The Architectral Quanta
+
+### Fitness Function
+
+
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
@@ -87,6 +91,8 @@ https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-mic
 ### Requirement is the King
 
 Key to a good architecture is getting requirements right. Requirement is where everything starts from.
+
+
 
 ### Fitness Functions Used
 
