@@ -174,7 +174,7 @@ Designing optimal AQ enables faster evolution cycles.
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
 
-
+### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
 
 
