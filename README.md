@@ -75,6 +75,15 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 ### How To Make Principles Of Evolution Work for Architecture
 
+> Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
+
+> Building software systems that evolve means controlling as many unknown factors as possible.
+
+> Don’t build architecture for the sake of architecture—you are trying to solve a problem.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+
 #### Requirement is the King
 
 > "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." 
@@ -82,6 +91,8 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 Key to a good architecture is getting requirements right. Requirement is where everything starts from.
+
+Software must be modelled around business not technology or layers.
 
 
 #### Single Responsibility Principle
@@ -101,6 +112,33 @@ https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-mic
 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
+Fitness function is a term borowed from Genetic Algorithm Design. In a Genetic Algorithm small incremental changes are done to the software and after every generational change the output is assessed to see how close it is to the exact solution. This assessment is done by a function called the fitness function.
+
+The architecture should ge guided by fitness functions. It also helps us take informed decisions during tradeofs.
+
+Fitness functions must be identified as early as possible to help the solution evolve.
+
+Fitness functions need to be constantly reviewed
+
+
+
+> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+
+#### Guided Evolution
+
+> An evolutionary architecture supports guided, incremental change across multiple dimensions.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+
+
+Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
+
+
+
 #### Dimentions of Evolution
 
 <!--pg10-->
@@ -111,16 +149,25 @@ https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-mic
 
 Evolutionary change is permanent and from within, on the other hand Adaptatation is force fitting a solution to a problem. There can be limits to adaptation. There might come come a time when the system is just not able to adapt to change, whereas the evolution changes the system from inside out.
 
-#### Guided Evolution
+
 
 
 #### The Architectral Quanta
 
 
+> "Many business concepts semantically bind parts of the system together, creating functional cohesion. To successfully evolve software, developers must consider all the coupling points that could break." 
+
+> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass."
+
+> Quantum size determines the lower bound of the incremental change possible within an architecture.
+
+> The quantum size of an architecture largely determines how easy it will be for developers to make evolutionary changes. Large quanta like monoliths and ESB SOA are difficult to evolve because of the coordination required for each change. More decoupled architectures like broker event-driven and microservices offer many more avenues for easy evolution.
+> The structural constraints on evolving architecture depend on how well developers have handled coupling and functional cohesion. Evolution is easier if developers have created a modular component system with well-defined integration points. For example, if developers build a monolith, but are diligent about good modularity and component isolation, that architecture will offer more opportunities to evolve because the size of the architectural quantum is smaller due to decoupling.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
-
-
+Designing optimal AQ enables faster evolution cycles.
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
@@ -489,6 +536,10 @@ Write Module Integration Unit Tests
 #### Application Process Fitness
 
 Write Application Integration Test
+
+#### Application Boundaries Fitness
+
+Write ArchUnit to check if boundaries dont cross over each other.
 
 #### Non Functional Fitness
 
