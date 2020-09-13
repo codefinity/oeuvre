@@ -216,7 +216,7 @@ User : 		One who has registered and verified his EMail.
 
 
 
-#### Feature Files Extraction
+## Feature Files Creation
 
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
