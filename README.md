@@ -176,6 +176,10 @@ Designing optimal AQ enables faster evolution cycles.
 
 ### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
+- Every change hits the domain first and forces the things to change from inside out.
+- Design is not DB Design Driven
+- Encourages Modularity
+- 
 
 
 ### Evolution In Action
