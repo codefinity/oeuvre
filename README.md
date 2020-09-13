@@ -184,6 +184,7 @@ Designing optimal AQ enables faster evolution cycles.
 - Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective.
 - Encourages Modularity
 - Optimal Architectural Quanta
+- Business Logic can be tested without dependencies.
 
 
 ### Evolution In Action
