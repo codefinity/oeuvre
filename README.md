@@ -179,24 +179,24 @@ Key to a good architecture is getting requirements right. Requirement is where e
 ### Event Stroming Boards
 
 
-##### Big Picture Event-Storming 
+#### Big Picture Event-Storming 
 
 ![](design/EventStorming-IdentityAccess-BigPictureEventStorming.png)
 
-##### Design Level  Event-Storming 
+#### Design Level  Event-Storming 
 
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
 
 
-##### Boundary Analysis
+#### Boundary Analysis
 
 
-##### Process Discovery
+#### Process Discovery
 
 
-##### Ubiquitous Language Discovery
+#### Ubiquitous Language Discovery
 
-###### Identity Access
+##### Identity Access
 
 ```text
 Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
