@@ -413,11 +413,23 @@ Scenario: Member can update his Settings
 
 ## Creating Fitness Functions
 
-#### Test Driven Design Methodology
+Test Driven Design will be followed
 
-1. Write Domain Unit Tests
-2. Write Module Integration Unit Tests
-3. Write Application Integration Test
+#### Architecture/Structural Integrity Fitness
+
+Arch Unit Tests
+
+#### Domain Fitness
+
+Write Domain Unit Tests
+
+#### BoundedContext/Module Fitness
+
+Write Module Integration Unit Tests
+
+#### Application Process Fitness
+
+Write Application Integration Test
 
 
 ## Development
