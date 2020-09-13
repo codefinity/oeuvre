@@ -160,9 +160,17 @@ Key to a good architecture is getting requirements right. Requirement is where e
 
 ## Requirement Discussion
 
+### Functional Requirements
 
 
 
+
+### Non-Functional Expectations
+
+- Should be scalable to microservices.
+
+
+### How Does The Architecture Address Non-Functional Expectations
 
 
 
@@ -440,6 +448,10 @@ Write Module Integration Unit Tests
 #### Application Process Fitness
 
 Write Application Integration Test
+
+#### Non Functional Fitness
+
+Write Non Functional Tests
 
 
 ## Development
