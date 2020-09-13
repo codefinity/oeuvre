@@ -153,10 +153,7 @@ Key to a good architecture is getting requirements right. Requirement is where e
 
 #### Code Coverage
 
-## Testing and Code Coverage
 
-All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
-Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 ## Requirement Discussion
 
@@ -449,6 +446,12 @@ Scenario: Member can update his Settings
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
+## Testing and Code Coverage
+
+All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
+Instructions for running tests and code coverage can be found [here](TESTS.md).
+
+## Continuous Integration and Deployment (CI/CD)
 
 
 ## Inspiration
