@@ -75,55 +75,52 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 ### How To Make Principles Of Evolution Work for Architecture
 
-### The Architectral Quanta
+#### The Architectral Quanta
 
-### Fitness Function
+#### Fitness Function
 
 
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
 
-### Importance of Boundaries
+#### Importance of Boundaries
 
 https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
 
-### Requirement is the King
+#### Requirement is the King
 
 Key to a good architecture is getting requirements right. Requirement is where everything starts from.
 
 
+### Evolution In Action
 
-### Fitness Functions Used
+#### Fitness Functions Used
 
-#### Arch Unit
-
-
-#### BDD
+##### Arch Unit
 
 
-#### Integration Tests
+##### BDD
 
 
-### Quantas Used In This Architecture
-
-#### Command
+##### Integration Tests
 
 
-#### Query
+#### Quantas Used In This Architecture
+
+##### Command
 
 
-#### Domain Events
+##### Query
 
 
-#### Aggregates
+##### Domain Events
 
 
-#### Modules/Bonded Contexts - Deployment Quantas
+##### Aggregates
 
 
-
-
+##### Modules/Bonded Contexts - Deployment Quantas
 
 
 
