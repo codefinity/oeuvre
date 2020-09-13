@@ -21,25 +21,44 @@ This project is in design and analysis phase. Please feel free to go through the
 
 ## Table of Contents
 
-[1. A Need for a Project Like Oeuvre](#A-Need-for-a-Project-Like-Oeuvre)
+[1. Introducing Oeuvre](#Introducing-Oeuvre)
 
-[2. Introducing Oeuvre](#Introducing-Oeuvre)
+[2. Setup Instructions](#Setup-Instructions)
 
-[3. Setup Instructions](#Setup-Instructions)
+[3. A Need for a Project Like Oeuvre](#A-Need-for-a-Project-Like-Oeuvre)
 
 [4. Development Methodologies](#Development-Methodologies)
 
 [5. Testing and Code Coverage](#Testing-and-Code-Coverage)
 
-[6. Features](#Features)
+[6. Requirement Discussion](#Requirement-Discussion)
 
-[7. Analysis and Design](#Analysis-and-Design)
+[7. Preliminary Bounded-Context Analysis](#Preliminary-Bounded-Context-Analysis)
 
-[8. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
+[8. Technology Stack](#Technology-Stack)
 
-[9. Inspiration](#Inspiration)
+[9. Requirement Analysis](#Requirement-Analysis)
 
-[10. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
+[10. Features](#Features)
+
+[11. Analysis and Design](#Analysis-and-Design)
+
+[12. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
+
+[13. Inspiration](#Inspiration)
+
+[14. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
+
+## Introducing Oeuvre
+
+Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
+At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. This project will also demonstrate how quickly and efficiently DDD aligns to the changes in business.
+
+The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
+
+## Setup Instructions
+
+SetUp instructions for this project can be found [here](SETUP.md).
 
 ## A Need for a Project Like Oeuvre
 
@@ -56,6 +75,8 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 [How Evolution Works]
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
+
+
 
 
 ### Requirement is the King
@@ -90,17 +111,10 @@ Key to a good architecture is getting requirements right. Requirement is where e
 #### Modules/Bonded Contexts - Deployment Quantas
 
 
-## Introducing Oeuvre
-
-Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
-At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. This project will also demonstrate how quickly and efficiently DDD aligns to the changes in business.
-
-The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
 
 
-## Setup Instructions
 
-SetUp instructions for this project can be found [here](SETUP.md).
+
 
 ## Development Methodologies
 
@@ -148,14 +162,14 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 
 
-## Preliminary Boundary Analysis
+## Preliminary Bounded-Context Analysis
 
 
 
 
 
 
-
+## Technology Stack
 
 
 
