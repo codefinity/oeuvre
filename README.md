@@ -21,6 +21,8 @@ This project is in design and analysis phase. Please feel free to go through the
 
 ## Table of Contents
 
+[TOC might not work - Sections under constant re-arrangement]
+
 [1. Introducing Oeuvre](#Introducing-Oeuvre)
 
 [2. Setup Instructions](#Setup-Instructions)
