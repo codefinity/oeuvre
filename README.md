@@ -215,6 +215,11 @@ User : 		One who has registered and verified his EMail.
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
 
+##### Miro - Section to be removed later
+
+- [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
+- [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
+- [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
 ## Feature Files Creation
 
@@ -447,12 +452,6 @@ Write Application Integration Test
 <!---Table End-->
 
 
-
-##### Miro
-
-- [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
-- [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
-- [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
 ## Testing and Code Coverage
 
