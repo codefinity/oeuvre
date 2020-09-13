@@ -207,10 +207,10 @@ User : 		One who has registered and verified his EMail.
 ```
 
 
-##### Example Mapping
+#### Example Mapping
 
 
-##### Arranged Design Level  Event-Storming 
+#### Arranged Design Level  Event-Storming 
 
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
