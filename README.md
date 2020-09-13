@@ -75,6 +75,13 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 ### How To Make Principles Of Evolution Work for Architecture
 
+#### Requirement is the King
+
+> "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." - Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+Key to a good architecture is getting requirements right. Requirement is where everything starts from.
+
+
 #### Single Responsibility Principle
 
 #### Importance of Boundaries
@@ -94,9 +101,6 @@ https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-mic
 
 
 
-#### Requirement is the King
-
-Key to a good architecture is getting requirements right. Requirement is where everything starts from.
 
 
 ### Evolution In Action
