@@ -192,12 +192,11 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming.png)
 
-##### Arranged Design Level  Event-Storming 
 
-![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
+##### Process Discovery
 
 
-#### Ubiquitous Language
+#### Ubiquitous Language Discovery
 
 ```text
 Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
@@ -207,7 +206,17 @@ User : 		One who has registered and verified his EMail.
 
 ```
 
-#### Feature Extraction
+
+##### Example Mapping
+
+
+##### Arranged Design Level  Event-Storming 
+
+![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
+
+
+
+#### Feature Files Extraction
 
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
