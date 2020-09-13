@@ -35,8 +35,6 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [6. Requirement Discussion](#Requirement-Discussion)
 
-[7. Preliminary Bounded-Context Analysis](#Preliminary-Bounded-Context-Analysis)
-
 [8. Technology Stack](#Technology-Stack)
 
 [9. Requirement Analysis](#Requirement-Analysis)
@@ -158,10 +156,6 @@ Key to a good architecture is getting requirements right. Requirement is where e
 ## Requirement Discussion
 
 
-
-
-
-## Preliminary Bounded-Context Analysis
 
 
 
