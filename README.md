@@ -397,6 +397,20 @@ Scenario: Member can update his Settings
 
 ```
 
+#### API Design
+
+<!---Table Begin-->
+
+|Feature					|URL											|Method						|Request JSON																																																							|Response JSON					|Success Code					|Failure Code
+|:--						|:---											|:---						|:---																																																									|:---							|:---							|:---
+|**Register**				|http://localhost:5000/identityaccess/register	|POST						|{TenantId" : "47d60457-5a80-4c83-96b6-890a5e5e4d22", "FirstName" : "Mary", "LastName" : "Carpenter", "Password" : "topoftheworld", "MobileNoCountryCode" : "+1", "MobileNumber" : "4387790052", "EMail" : "Mary@TheCarpenters.com" }	|								|200							|400											
+|**Confirm Registration**	|												|							|																																																										|								|								|
+
+
+
+<!---Table End-->
+
+
 ## Creating Fitness Functions
 
 #### Test Driven Design Methodology
@@ -420,18 +434,7 @@ Scenario: Member can update his Settings
 
 <!---Table End-->
 
-#### API Definitions
 
-<!---Table Begin-->
-
-|Feature					|URL											|Method						|Request JSON																																																							|Response JSON					|Success Code					|Failure Code
-|:--						|:---											|:---						|:---																																																									|:---							|:---							|:---
-|**Register**				|http://localhost:5000/identityaccess/register	|POST						|{TenantId" : "47d60457-5a80-4c83-96b6-890a5e5e4d22", "FirstName" : "Mary", "LastName" : "Carpenter", "Password" : "topoftheworld", "MobileNoCountryCode" : "+1", "MobileNumber" : "4387790052", "EMail" : "Mary@TheCarpenters.com" }	|								|200							|400											
-|**Confirm Registration**	|												|							|																																																										|								|								|
-
-
-
-<!---Table End-->
 
 ##### Miro
 
