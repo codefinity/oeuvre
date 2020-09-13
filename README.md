@@ -70,14 +70,16 @@ It is a well known fact, often inconvenient, that in the long run the many of th
 
 Oeuvre is a quest to find answers to whether the software can be constructed in such a way that it evolves with new requirements over time.
 
-[Architectral Quanta]
+### The Architectral Quanta
 
-[How Evolution Works]
+### How Evolution Works
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
 
+### Importance of Boundaries
 
+https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
 
 ### Requirement is the King
 
@@ -463,6 +465,31 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 ## Inspiration
 
+#### Special Thanks
+
+- [kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+
+#### Evolutionary Architectures
+
+##### Talks
+- [Talks](http://evolutionaryarchitecture.com/talks.html)
+- [Evolutionary Architecture with Patrick Kua](https://www.youtube.com/watch?v=7e6Ww8b2hzQ)
+- [Manchester Geek Nights - Principles and Techniques of Evolutionary Architecture with Dr. Rebecca Parsons](https://www.youtube.com/watch?v=ZIsgHs0w44Y)
+- [Principles of Evolutionary Architecture - Rebecca Parsons](https://www.youtube.com/watch?v=T1kwuP_JWrk)
+- [Microservices & Evolutionary Architecture - Rebecca Parsons](https://www.youtube.com/watch?v=WhHtVUlJNA0)
+- [The Evolution of Evolutionary Architecture - Rebecca Parsons](https://www.youtube.com/watch?v=dgxr4nEjaFw)
+- [Voxxed Days Vienna - Evolutionary Software Architectures - Neal Ford](https://www.youtube.com/watch?v=CglSFhwbI3s)
+- [SATURN2016 - Evolutionary Architecture with Patrick Kua](https://www.youtube.com/watch?v=XSrLU4TOoxA)
+- [SDDConf 2016 - Keynote on Evolutionary Architectures](https://vimeo.com/user28557683/review/169995132/8468bd9321)
+
+##### Articles
+- [scottwd9/building-evolutionary-architectures.md](https://gist.github.com/scottwd9/ada88f963aac95893e1eba10d4ad8f6d)
+
+
+##### Books
+- [Building Evolutionary Architectures: Support Constant Change](https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant/dp/1491986360)
+
+
 #### Event Storming References
 
 - [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
@@ -470,9 +497,6 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 /
 eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
 
-#### Special Thanks
-
-- [kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 
 #### Worthy Clones 
 
