@@ -382,6 +382,7 @@ Settings :
 
 #### Example Mapping
 
+![](design/EventStorming-IdentityAccess-ExampleMapping.png)
 
 #### Arranged Design Level  Event-Storming 
 
