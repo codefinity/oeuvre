@@ -590,17 +590,19 @@ Feature: ForgotPasswordRequest
 	In order to login again
 	I want to be able to reset my password
 
-Scenario: Send reset password link when the EMail provided is correct
+Scenario: When the Email Id Provided is correct
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide my Correct EMail-Id
+	And a user with that EMail exists in Oeuvre
 	Then I should get the Password Reset Link in my email
 
-Scenario: Do not Send reset password link when the EMail provided is in-correct
+Scenario: When the Email Id Provided is correct
 	Given I am a regestered Member
-	And For reseting my password I am asked my EMail-Id at the time of registration
-	When I provide my InCorrect EMail-Id
-	Then No Email should be sent
+	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
+	When I provide an InCorrect EMail-Id
+	And a user with that EMail does not exists in Oeuvre
+	Then password reset EMail should not be sent
 
 ```
 
