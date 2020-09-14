@@ -109,6 +109,8 @@ It is through these trial and errors, eligant designs emerge.
 
 - Environmental changes influnce design
 
+- Real world entities do not have a persistance database. The Entity itself is information, hence persistance design should be a side effect of the application design.
+
 > Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
 
 > Building software systems that evolve means controlling as many unknown factors as possible.
