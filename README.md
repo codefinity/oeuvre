@@ -354,6 +354,7 @@ Designing optimal AQ enables faster evolution cycles.
 
 #### Boundary Analysis
 
+## Bounded Context Design (Modules)
 
 ### Identity Access - Module
 
