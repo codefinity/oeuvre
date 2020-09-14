@@ -77,7 +77,7 @@ In this playground of evolution, the force that induces the design is our enviro
 
 Environmental changes also affect.
 
-The change happens at a single level, that is the genetic level and then manifests itself into the physical features of the species.
+The change happens at a single level, that is the genetic level and then manifests itself into the physical features of the species. The Genetic Code determines the external features of the species.
 
 It is through these trial and errors, eligant designs emerge.
 
@@ -90,6 +90,10 @@ It is through these trial and errors, eligant designs emerge.
 #### Lessons worth learning from real world evolution.
 
 - Trial and errors cannot be avoided to arrive at the design
+
+- Business logic is the genetic code and should be at the core
+
+- Requirements are the environment.
 
 - Paradoxes will always be there
 
