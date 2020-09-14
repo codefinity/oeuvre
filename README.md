@@ -69,9 +69,23 @@ It is a well known fact, often inconvenient, that in the long run the many of th
 
 Oeuvre is a quest to find answers to whether the software can be constructed in such a way that it evolves with new requirements over time.
 
-### How Real World Evolution Works
+## How Real World Evolution Works
 
-### How To Make Principles Of Evolution Work for Architecture
+There is no intentional design in the real world evolution. Organized compexities are built out of primeval simplicity. Structure and the functions of system emerge bit by bit without resort to a goal of any kind. The process is mindless. 
+
+In this playground of evolution, the force that induces the design is our environment. The species design themselves through random mutations to increase their chances for survival. Random mutations that favor the survival of species in that environment get propogated to the next generation, continuouing the same process again.
+
+The change happens at a genetic level and then manifests itself into the physical features of the species.
+
+It is through these trial and errors eligant designs emerge.
+
+
+![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
+
+
+## How To Make Principles Of Evolution Work for Architecture
+
+
 
 > Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
 
@@ -81,6 +95,19 @@ Oeuvre is a quest to find answers to whether the software can be constructed in 
 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
+> The Galls Law states that, “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.”
+
+- Lessons worth learning from real evolution.
+
+- Hit and trial required
+
+- Paradoxes will always be there
+
+- Framework must allow experimentation
+
+- Incremental Design is the way
+
+- The change must happen at one fundemental level and then transform the outer layers.
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
@@ -98,6 +125,8 @@ Software must be modelled around business not technology or layers.
 
 
 #### Single Responsibility Principle
+
+This is the backbone of every elegant design.
 
 #### Importance of Boundaries
 
