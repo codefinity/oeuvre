@@ -355,6 +355,8 @@ Designing optimal AQ enables faster evolution cycles.
 #### Boundary Analysis
 
 
+### Identity Access - Module
+
 #### Process Discovery
 
 ![](design/EventStorming-IdentityAccess-ProcessMapping.png)
@@ -363,7 +365,7 @@ Designing optimal AQ enables faster evolution cycles.
 
 ![](design/EventStorming-IdentityAcess-UbiquitousLanguageDiscovery.png)
 
-##### Identity Access
+
 
 ```text
 Registrant : 		One who has just registred to Oeuvre Portal through registration page, but will not qualify 
@@ -389,6 +391,9 @@ Settings :
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
 
+### Content Creation - Module
+
+
 ##### Miro - Section to be removed later
 
 - [Big Picture Event Sorming](https://miro.com/app/board/o9J_knjMlGU=/)
@@ -396,6 +401,8 @@ Settings :
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
 ## Feature Files Creation
+
+### Identity Access - Module
 
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
