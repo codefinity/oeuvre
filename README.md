@@ -357,6 +357,7 @@ Designing optimal AQ enables faster evolution cycles.
 
 #### Process Discovery
 
+![](design/EventStorming-IdentityAccess-ProcessMapping.png)
 
 #### Ubiquitous Language Discovery
 
