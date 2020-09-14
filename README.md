@@ -392,7 +392,7 @@ Settings :
 ![](design/EventStorming-IdentityAccess-DesignLevelEventStorming-Arranged.png)
 
 
-### Content Creation - Module
+### Content Creation
 
 
 ##### Miro - Section to be removed later
@@ -403,7 +403,7 @@ Settings :
 
 ## Feature Files Creation
 
-### Identity Access - Module
+### Identity Access
 
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
@@ -584,7 +584,14 @@ Scenario: Member can update his Settings
 
 ```
 
+### Content Creation
+
+
+
+
 ## API Design
+
+### Identity Access
 
 <!---Table Begin-->
 
@@ -596,6 +603,9 @@ Scenario: Member can update his Settings
 
 
 <!---Table End-->
+
+
+### Content Creation
 
 
 ## Creating Fitness Functions
