@@ -75,9 +75,11 @@ There is no intentional design in the real world evolution. Organized compexitie
 
 In this playground of evolution, the force that induces the design is our environment. The species design themselves through random mutations to increase their chances for survival. Random mutations that favor the survival of species in that environment get propogated to the next generation, continuouing the same process again.
 
-The change happens at a genetic level and then manifests itself into the physical features of the species.
+Environmental changes also affect.
 
-It is through these trial and errors eligant designs emerge.
+The change happens at a single level, that is the genetic level and then manifests itself into the physical features of the species.
+
+It is through these trial and errors, eligant designs emerge.
 
 
 ![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
@@ -85,7 +87,23 @@ It is through these trial and errors eligant designs emerge.
 
 ## How To Make Principles Of Evolution Work for Architecture
 
+#### Lessons worth learning from real world evolution.
 
+- Trial and errors cannot be avoided to arrive at the design
+
+- Paradoxes will always be there
+
+- Framework must allow for experimentation
+
+- Incremental Design is the way
+
+- The change must happen at one fundemental level and then transform the outer layers.
+
+- Designs tend towards perfection but can still not be perfect.
+
+- There needs to be a Unit of Evolution
+
+- Environmental changes influnce design
 
 > Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
 
@@ -97,17 +115,7 @@ It is through these trial and errors eligant designs emerge.
 
 > The Galls Law states that, “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.”
 
-- Lessons worth learning from real evolution.
 
-- Hit and trial required
-
-- Paradoxes will always be there
-
-- Framework must allow experimentation
-
-- Incremental Design is the way
-
-- The change must happen at one fundemental level and then transform the outer layers.
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
