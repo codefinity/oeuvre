@@ -136,6 +136,9 @@ Fitness functions need to be constantly reviewed
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
+Real world evolution is a random process. We will be implementing guided evolution through trial and error.
+
+
 
 Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
 
