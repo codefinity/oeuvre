@@ -480,12 +480,29 @@ Scenario: New Member register using Google
 
 Feature: Email Verification
 
-Scenario: Email verification from the link sent in the EMail
+Scenario: Registrant Clicks on EMail Verification Link
 
 	Given I have registered on Oeuvre portal
 	And I have received an EMail verification link in my EMail
+	And There is no other user having my EMail Id on Oeuvre
 	When I click on the EMail verification link
-	Then my EMail should be verified by the Oeuvre portal
+	Then I should become a User of Oeuvre Portal
+	
+Scenario: Registrant clicks on verification EMail more than once
+
+	Given I have registered on Oeuvre portal
+	And I have received an EMail verification link in my EMail
+	And I have Already clicked the EMail verification link
+	When I click on the EMail verification link again
+	Then Nothing should happen
+	
+Scenario: Registrant clicks on verification EMail after the Expiration Period
+
+	Given I have registered on Oeuvre portal
+	And I have received an EMail verification link in my EMail
+	And My Email Verification link has Expired
+	When I click on the EMail verification link
+	Then I should not become the user of Oeuvre
 
 ```
 
@@ -494,23 +511,37 @@ Scenario: Email verification from the link sent in the EMail
 
 Feature: Authentication
 
-Scenario: Authentication with valid credentials should allow logging in
+Scenario: Logging-In with valid credentials
 	Given I am logged out
+	And I am a User of Oeuvre Portal
+	And I am an Active User
 	When I try to authenticate using valid
-		|email				| password    |
+		|email			| password    |
 		|email@gmail.com	| Passw0rd123 |
 	Then I should be authenticated
 
-Scenario: Authentication with in-valid credentials should not allow logging in
+Scenario: Logging-In with in-valid credentials
 	Given I am logged out
+	And I am a User of Oeuvre Portal
+	And I am an Active User
 	When I try to authenticate using in-valid
-		|email				| password    |
+		|email			| password    |
 		|email@gmail.com	| Passw0rd123 |
 	Then I should not be authenticated
+	
+Scenario: Logging-In with valid credentials when User is NOT Active
+	Given I am logged out
+	And I am a User of Oeuvre Portal
+	And I am NOT an Active User
+	When I try to authenticate using valid
+		|email			| password    |
+		|email@gmail.com	| Passw0rd123 |
+	Then I should not be authenticated	
 
-Scenario: Authentication should not be allowed if the User has not verified his EMail using the link sent to him in the EMail 
+Scenario: Logging-In with valid credentials when the Registrant has not verified his EMail Id
 	Given I am logged out
 	And I have Registered on the Oeuvre Portal
+	And I have Not verified my EMail Id
 	When I try to authenticate using valid
 		|email				| password    |
 		|email@gmail.com	| Passw0rd123 |
