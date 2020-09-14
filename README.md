@@ -236,6 +236,7 @@ Designing optimal AQ enables faster evolution cycles.
 - Encourages Modularity
 - Optimal Architectural Quanta
 - Business Logic can be tested without dependencies.
+- Database creation is the side effect of the design.
 
 
 ### Evolution In Action
