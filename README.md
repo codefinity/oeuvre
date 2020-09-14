@@ -416,16 +416,41 @@ Feature: Registration
 Scenario: New Registrant registers using an EMail Id that does not belong to any Oeuvre user
 
 	Given I have not registered at Oeuvre 
-	And there is no other user registered with my EMailId "Mary@TheCarpenters.com"
+	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
 
-Scenario: New Registrant registers with an EMail Id that belongs to an existing Oeuvre User
 
-	Given That a User with my EMail Id "Mary@TheCarpenters.com" already exists
+Scenario: Registrant registers more than once/while his email is pending verification
+
+	Given I have already registered at Oeuvre 
+	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
+	When I register using the following valid details
+		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
+		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
+	Then I should be a Registrant on Oeuvre
+	And I should receive a registration EMail containing an email verification link account
+
+
+Scenario: Registrant registers after his EMail Verification Link Expires
+
+	Given I had registered at Oeuvre
+	And I did not confirm my Registration
+	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
+	When I register using the following valid details
+		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
+		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
+	Then I should be a Registrant on Oeuvre
+	And I should receive a registration EMail containing an email verification link account
+
+
+Scenario: Registrant registers with already existing User's EMail Id
+
+	Given That I register at Oeuvre 
+	And a User with my EMail Id "Mary@TheCarpenters.com" already exists
 	When I register with the following details
 		| TenantId				| FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		| 47d60457-5a80-4c83-96b6-890a5e5e4d22	| Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
@@ -433,7 +458,8 @@ Scenario: New Registrant registers with an EMail Id that belongs to an existing 
 	And I should not receive a registration mail containing the email verification link
 
 
-#Not Complete - Working On Them
+
+#-----Not Complete - Working On Them-----
 Scenario: New Member register using Facebook
 
 	Given I am not a User of Oeuvre 
