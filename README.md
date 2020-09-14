@@ -361,13 +361,21 @@ Designing optimal AQ enables faster evolution cycles.
 
 #### Ubiquitous Language Discovery
 
+![](design/EventStorming-IdentityAcess-UbiquitousLanguageDiscovery.png)
+
 ##### Identity Access
 
 ```text
-Registrant : 	One who has just registred to Oeuvre Portal through registration page, but will not qualify 
-		as a user unless they verify their EMail through the link sent in his EMail.
+Registrant : 		One who has just registred to Oeuvre Portal through registration page, but will not qualify 
+			as a user unless they verify their EMail through the link sent in his EMail.
 
-User : 		One who has registered and verified his EMail. 
+User : 			One who has registered and verified his EMail.
+
+EMail Verification :
+
+Profile :
+
+Settings :
 
 ```
 
