@@ -89,34 +89,41 @@ It is through these trial and errors, eligant designs emerge.
 
 #### Lessons worth learning from real world evolution
 
-> The Galls Law states that, “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.”
+> “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
 1. Iteration cannot be avoided to arrive at the design
 
-It's difficult to to arrive at a optimal design without indulging in a bit or trial on error. It's cheaper to do trial and errors on the drawing board first before inplementing them. Afer implementing, some iterations will be required.
+It's difficult to to arrive at a optimal design without indulging in a bit or trial on error. It's cheaper to do trial and errors on the drawing board first before inplementing them. Afer implementing, some more iterations might be required.
 
 2. Business logic is the genetic code and should be at the core
 
+The business logic must influence the design. It must be at a single place so that it can be comprehended as a whole and in a logical manner. 
+
+3. Requirements are the environment that influences the design
+
+The business logic must change to meet the requirements.
+
+4. Paradoxical nature of designs cannot be avoided
+
+There will always be times when you get one part of the design right, the other part somehow does not fit. Sometimes compromises have to be made till the designs are perfected over time.
+
+5. Framework and Application structure must allow for experimentation
+
+As menitoned, design is an iterative process, a rigid application structure will not allow for rearranging and experementation. This will hurt the evolution of the Architecture.
+
+6. Incremental Design is the way
 
 
 
-3. Requirements are the environment.
+7. The change must happen at one fundemental level and then transform the outer layers.
 
-4. Paradoxes will always be there
+8. Designs tend towards perfection but can still not be perfect.
 
-- Framework must allow for experimentation
+9. There needs to be a Unit of Evolution
 
-- Incremental Design is the way
+10. Environmental changes influnce design
 
-- The change must happen at one fundemental level and then transform the outer layers.
-
-- Designs tend towards perfection but can still not be perfect.
-
-- There needs to be a Unit of Evolution
-
-- Environmental changes influnce design
-
-- Real world entities do not have a persistance database. The Entity itself is information, hence persistance design should be a side effect of the application design.
+11. Real world entities do not have a persistance database. The Entity itself is information, hence persistance design should be a side effect of the application design.
 
 > Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
 
