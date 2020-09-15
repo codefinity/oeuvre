@@ -496,8 +496,10 @@ Scenario: New Member register using Google
 ##### [EmailVerification.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/EmailVerification.feature)
 ```gherkin
 
+#FRC
 Feature: Registration Confirmation
 
+#FRC-S1
 Scenario: Registrant Clicks on EMail Verification Link
 
 	Given I have registered on Oeuvre portal
@@ -505,7 +507,8 @@ Scenario: Registrant Clicks on EMail Verification Link
 	And There is no other user having my EMail Id on Oeuvre
 	When I click on the EMail verification link
 	Then I should become a User of Oeuvre Portal
-	
+
+#FRC-S2
 Scenario: Registrant clicks on verification EMail more than once
 
 	Given I have registered on Oeuvre portal
@@ -514,6 +517,7 @@ Scenario: Registrant clicks on verification EMail more than once
 	When I click on the EMail verification link again
 	Then Nothing should happen
 	
+#FRC-S3	
 Scenario: Registrant clicks on verification EMail after the Expiration Period
 
 	Given I have registered on Oeuvre portal
