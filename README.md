@@ -431,6 +431,7 @@ Scenario: New Registrant registers using an EMail Id that does not belong to any
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
 #FREG-S2
 Scenario: Registrant registers more than once/while his email is pending verification
@@ -442,6 +443,7 @@ Scenario: Registrant registers more than once/while his email is pending verific
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
 #FREG-S3
 Scenario: Registrant registers after his EMail Verification Link Expires
@@ -454,6 +456,7 @@ Scenario: Registrant registers after his EMail Verification Link Expires
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
 #FREG-S4
 Scenario: Registrant registers with already existing User's EMail Id
