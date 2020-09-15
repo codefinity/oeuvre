@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using Xunit;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Demo
+namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
 {
     public class DemoFixtureTest : TestBase, IClassFixture<DemoFixture>
     {

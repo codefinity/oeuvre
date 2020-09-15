@@ -3,26 +3,22 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Demo
+namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
 {
-
-    public class DemoFixture : IDisposable
+    public class DemoCollectionFixture : IDisposable
     {
-        public DemoFixture()
+        public DemoCollectionFixture()
         {
-
             // ... initialize data in the test database ...
             //Runs before all the tests in DemoFixtureTest
-            Debug.WriteLine("DemoFixtureTest Fixture Constructor Ran");
+            Debug.WriteLine("DemoCollectionFixture Constructor Ran");
         }
 
         public void Dispose()
         {
-
-
             // ... clean up test data from the database ...
             //Runs after all the tests in DemoFixtureTest
-            Debug.WriteLine("DemoFixtureTest Fixture Dispose Ran");
+            Debug.WriteLine("DemoCollectionFixture Dispose Ran");
         }
 
     }
