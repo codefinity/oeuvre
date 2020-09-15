@@ -103,7 +103,7 @@ The business logic must influence the design. It must be at a single place so th
 
 The business logic must change to meet the requirements. Environmental changes influnce design.
 
-**4. Persistance Design is Not the Unit of Application Design
+**4. Persistance Design is Not the Unit of Application Design**
 
 Real world entities do not have a persistance database. In the real world the Entity itself is information, hence database design should be a side effect of the application design.
 
