@@ -496,7 +496,7 @@ Scenario: New Member register using Google
 ##### [EmailVerification.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/EmailVerification.feature)
 ```gherkin
 
-Feature: Email Verification
+Feature: Registration Confirmation
 
 Scenario: Registrant Clicks on EMail Verification Link
 
