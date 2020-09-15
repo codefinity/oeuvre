@@ -126,24 +126,13 @@ Successful designs evolve from designs that were already successfully working. I
 Design is something that is always happening, therefore the attitude of perfectionism must be avoided, at the same time the process of evolution must continue. 
 
 
-
-> Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
-
-> Building software systems that evolve means controlling as many unknown factors as possible.
+### Requirement is the King
 
 > Don’t build architecture for the sake of architecture—you are trying to solve a problem.
 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-
-
-
-
-
-
-
-
-#### Requirement is the King
+> Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
 
 > "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." 
 
@@ -154,16 +143,16 @@ Key to a good architecture is getting requirements right. Requirement is where e
 Software must be modelled around business not technology or layers.
 
 
-#### Single Responsibility Principle
+### Single Responsibility Principle
 
 This is the backbone of every elegant design.
 
-#### Importance of Boundaries
+### Importance of Boundaries
 
 https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
 
 
-#### Fitness Function
+### Fitness Function
 
 >"A fitness function is an objective function used to summarize how close a prospective design solution is to achieving the set aims. In evolutionary computing, the fitness function determines whether an algorithm has improved over time. In other words, as each variant of an algorithm is generated, the fitness functions determine how “fit” each variant is based on how the designer of the algorithm defined “fit.”"
 
@@ -188,36 +177,6 @@ Fitness functions need to be constantly reviewed
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
-#### Guided Evolution
-
-> An evolutionary architecture supports guided, incremental change across multiple dimensions.
-
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
-
-
-Real world evolution is a random process. We will be implementing guided evolution through trial and error.
-
-
-
-Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
-
-![](design/images/ExplanationDiagrams-EAProcess.png)
-
-
-
-#### Dimentions of Evolution
-
-<!--pg10-->
-
-#### Evolutionary Over Adaptation
-
-<!--pg14-->
-
-Evolutionary change is permanent and from within, on the other hand Adaptatation is force fitting a solution to a problem. There can be limits to adaptation. There might come come a time when the system is just not able to adapt to change, whereas the evolution changes the system from inside out.
-
-
-
-
 #### The Architectral Quanta
 
 
@@ -237,15 +196,45 @@ Designing optimal AQ enables faster evolution cycles.
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
+#### Dimentions of Evolution
 
-### Reasons For Selection of Domain Driven Design(DDD) Architecture 
+<!--pg10-->
 
-#### Why Classical N-Layered Architecture Fails to Evolve?
+#### Evolutionary Over Adaptation
+
+<!--pg14-->
+
+Evolutionary change is permanent and from within, on the other hand Adaptatation is force fitting a solution to a problem. There can be limits to adaptation. There might come come a time when the system is just not able to adapt to change, whereas the evolution changes the system from inside out.
+
+
+## Guided Evolution
+
+> Building software systems that evolve means controlling as many unknown factors as possible.
+
+> An evolutionary architecture supports guided, incremental change across multiple dimensions.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+
+Real world evolution is a random process. We will be implementing guided evolution through trial and error.
+
+
+
+Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
+
+![](design/images/ExplanationDiagrams-EAProcess.png)
+
+
+## Reasons For Selection of Domain Driven Design(DDD) Architecture 
+
+### Why Classical N-Layered Architecture Fails to Evolve?
 
 <!-- pg69 -->
 
 
-#### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
+
+
+### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
 > "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
 > ~ Vaughn Vernon, IDDD
@@ -259,34 +248,34 @@ Designing optimal AQ enables faster evolution cycles.
 - Database creation is the side effect of the design.
 
 
-### Evolution In Action
+## Evolution In Action
 
-#### Fitness Functions Used
+### Fitness Functions Used
 
-##### Arch Unit
-
-
-##### BDD
+#### Arch Unit
 
 
-##### Integration Tests
+#### BDD
 
 
-#### Quantas Used In This Architecture
-
-##### Command
+#### Integration Tests
 
 
-##### Query
+### Quantas Used In This Architecture
+
+#### Command
 
 
-##### Domain Events
+#### Query
 
 
-##### Aggregates
+#### Domain Events
 
 
-##### Modules/Bonded Contexts - Deployment Quantas
+#### Aggregates
+
+
+#### Modules/Bonded Contexts - Deployment Quantas
 
 
 
