@@ -89,7 +89,7 @@ It is through these trial and errors, eligant designs emerge.
 
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
-#### Lessons worth learning from real world evolution
+### Lessons worth learning from real world evolution
 
 **1. Iteration cannot be avoided to arrive at the design**
 
