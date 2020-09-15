@@ -761,10 +761,10 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ### Domain Driven Design
 
 ##### Repositories 
-[VaughnVernon/IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
+- [VaughnVernon/IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 
 ##### Templates
-[ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
+- [ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
 
 ##### Books
 - [Implementing Domain-Driven Design](https://www.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/)
@@ -779,7 +779,7 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 
 ##### Articles
-[All You Might Really Need is a Monolith Disguised as Microservices](https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f)
+- [All You Might Really Need is a Monolith Disguised as Microservices](https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f)
 
 
 ### Event Storming
@@ -794,13 +794,13 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 - [EventStorming; Core concepts, glossary and legend](https://baasie.com/2020/07/16/eventstorming-core-concepts-glossary-and-legend/)
 
 ##### Books
--[Introducing EventStorming](https://leanpub.com/introducing_eventstorming)
+- [Introducing EventStorming](https://leanpub.com/introducing_eventstorming)
 
 
 ### BDD
 
 ##### References
--[Gherkin Reference](https://cucumber.io/docs/gherkin/reference/)
+- [Gherkin Reference](https://cucumber.io/docs/gherkin/reference/)
 
 ##### Articles
 - [SpecFlow - Getting Started](https://specflow.org/getting-started/)
