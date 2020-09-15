@@ -13,7 +13,7 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 {
     //#FRC
-    public class RegistrationConfirmation_Tests : TestBase
+    public class ConfirmRegistration_Tests : TestBase
     {
 
         //#FRC-S1

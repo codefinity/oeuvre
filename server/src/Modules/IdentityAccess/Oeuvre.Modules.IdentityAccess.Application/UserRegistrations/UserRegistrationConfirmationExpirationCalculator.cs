@@ -10,9 +10,11 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations
     {
         private readonly string expirationTimePeriodInDays;
 
-        public UserRegistrationConfirmationExpirationCalculator(IConfiguration configuration)
+        public UserRegistrationConfirmationExpirationCalculator(
+            //IConfiguration configuration
+            )
         {
-            expirationTimePeriodInDays = configuration["IdentityAccess:DomainRules:ConfirmRegistrationExpirationPeriodInDays"];
+            expirationTimePeriodInDays = "2"; //configuration["IdentityAccess:DomainRules:ConfirmRegistrationExpirationPeriodInDays"];
         }
 
         public DateTime Calculate(DateTime registrationDate)

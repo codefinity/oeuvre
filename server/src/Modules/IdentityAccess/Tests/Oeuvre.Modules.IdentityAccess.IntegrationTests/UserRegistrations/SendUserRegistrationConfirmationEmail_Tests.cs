@@ -10,7 +10,7 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 {
     [Collection("IdentityAccessIntegrationTestCollection")]
-    public class SendUserRegistrationConfirmationEmailTests : TestBase
+    public class SendUserRegistrationConfirmationEmail_Tests : TestBase
     {
         [Fact]
         public async Task SendUserRegistrationConfirmationEmail_Test()

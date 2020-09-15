@@ -48,7 +48,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
         public void Dispose()
         {
             //Clean-up
-            TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
+            //TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
 
         }
 
