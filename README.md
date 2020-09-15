@@ -85,11 +85,9 @@ It is through these trial and errors, eligant designs emerge.
 ![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
 
 
-## How To Make Principles Of Evolution Work for Architecture
+## Lessons worth learning from real world evolution
 
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
-
-### Lessons worth learning from real world evolution
 
 **1. Iteration cannot be avoided to arrive at the design**
 
@@ -125,6 +123,8 @@ Successful designs evolve from designs that were already successfully working. I
 
 Design is something that is always happening, therefore the attitude of perfectionism must be avoided, at the same time the process of evolution must continue. 
 
+
+## How To Make Principles Of Evolution Work for Architecture
 
 ### Requirement is the King
 
