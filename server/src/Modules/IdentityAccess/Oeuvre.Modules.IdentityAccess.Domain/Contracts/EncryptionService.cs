@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.Contracts
 {
-    public interface EncryptionService
+    public interface IEncryptionService
     {
-        public string encryptedValue(string plainTextValye);
+        public string EncryptedValue(string plainTextValye);
 
     }
 }

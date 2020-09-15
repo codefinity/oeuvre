@@ -15,12 +15,12 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.DomainServices
     public class AuthenticationService
     {
 
-        private EncryptionService encryptionService;
+        private IEncryptionService encryptionService;
         private ITenantRepository tenantRepository;
         private IUserRepository userRepository;
 
         public AuthenticationService(
-                        EncryptionService encryptionService,
+                        IEncryptionService encryptionService,
                         ITenantRepository tenantRepository,
                         IUserRepository userRepository)
         {
@@ -38,7 +38,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.DomainServices
             //if(tenant != null && tenant.IsActive)
             //{
 
-                String encryptedPassword = encryptionService.encryptedValue(password);
+                String encryptedPassword = encryptionService.EncryptedValue(password);
 
                 //User user = userRepository.GetByIdAsync()
 
