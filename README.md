@@ -87,43 +87,45 @@ It is through these trial and errors, eligant designs emerge.
 
 ## How To Make Principles Of Evolution Work for Architecture
 
-#### Lessons worth learning from real world evolution
-
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
-1. Iteration cannot be avoided to arrive at the design
+#### Lessons worth learning from real world evolution
+
+**1. Iteration cannot be avoided to arrive at the design**
 
 It's difficult to to arrive at a optimal design without indulging in a bit or trial on error. It's cheaper to do trial and errors on the drawing board first before inplementing them. Afer implementing, some more iterations might be required.
 
-2. Business logic is the genetic code and should be at the core
+**2. Business logic is the genetic code and should be at the core**
 
-The business logic must influence the design. It must be at a single place so that it can be comprehended as a whole and in a logical manner. 
+The business logic must influence the design. It must be at a single place so that it can be comprehended as a whole and in a logical manner. The change must happen at one fundemental level and then transform the outer layers. There needs to be a Unit of Evolution and the business logic is a good Unit.
 
-3. Requirements are the environment that influences the design
+**3. Requirements are the environment that influences the design**
 
-The business logic must change to meet the requirements.
+The business logic must change to meet the requirements. Environmental changes influnce design.
 
-4. Paradoxical nature of designs cannot be avoided
+**4. Persistance Design is Not the Unit of Application Design
+
+Real world entities do not have a persistance database. In the real world the Entity itself is information, hence database design should be a side effect of the application design.
+
+Software entities require a persistance mechanism because there is a need for them to be reconstuted at system reboot. Real world entities cannot be rebooted or switched off. They themselves are persistence.
+
+**5. Paradoxical nature of designs cannot be avoided**
 
 There will always be times when you get one part of the design right, the other part somehow does not fit. Sometimes compromises have to be made till the designs are perfected over time.
 
-5. Framework and Application structure must allow for experimentation
+**6. Framework and Application structure must allow for experimentation**
 
 As menitoned, design is an iterative process, a rigid application structure will not allow for rearranging and experementation. This will hurt the evolution of the Architecture.
 
-6. Incremental Design is the way
+**7. Incremental Design is the way**
+
+Successful designs evolve from designs that were already successfully working. It becomes an imperative that you must get the design right before the next step of the evolution.
+
+**8. Designs tend towards perfection but can still not be perfect**
+
+Design is something that is always happening, therefore the attitude of perfectionism must be avoided, at the same time the process of evolution must continue. 
 
 
-
-7. The change must happen at one fundemental level and then transform the outer layers.
-
-8. Designs tend towards perfection but can still not be perfect.
-
-9. There needs to be a Unit of Evolution
-
-10. Environmental changes influnce design
-
-11. Real world entities do not have a persistance database. The Entity itself is information, hence persistance design should be a side effect of the application design.
 
 > Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
 
