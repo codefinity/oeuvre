@@ -53,7 +53,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.mobileNumber = mobileNumber;
             this.eMailId = eMailId;
 
-            registrationDate = DateTime.UtcNow;
+            registrationDate = SystemClock.Now;
 
             //this.status = 1;
             status = UserRegistrationStatus.WaitingForConfirmation;
@@ -100,12 +100,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                                      this.password);
         }
 
-        public void Confirm()
+        public void Confirm(IUserRegistrationConfirmationExpirationCalculator expirationCalculator)
         {
-            this.CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(status));
-            this.CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(status));
+            CheckRule(new UserRegistrationCannotBeConfirmedMoreThanOnceRule(status));
+            CheckRule(new UserRegistrationCannotBeConfirmedAfterExpirationRule(expirationCalculator, registrationDate));
 
-            //this.fullName = new FullName("X", "Y");
             this.status = UserRegistrationStatus.Confirmed;
             this.confirmedDate = DateTime.UtcNow;
 

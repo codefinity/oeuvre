@@ -11,6 +11,10 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain
             builder.RegisterType<UsersCounter>()
                             .As<IUsersCounter>()
                             .InstancePerLifetimeScope();
+
+            builder.RegisterType<UserRegistrationConfirmationExpirationCalculator>()
+                            .As<IUserRegistrationConfirmationExpirationCalculator>()
+                            .InstancePerLifetimeScope();
         }
     }
 }

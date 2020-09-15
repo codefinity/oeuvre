@@ -1,18 +1,29 @@
 ﻿
 using Domania.Domain;
+using System;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules
 {
     public class UserRegistrationCannotBeConfirmedAfterExpirationRule : IBusinessRule
     {
-        private readonly UserRegistrationStatus _actualRegistrationStatus;
-
-        internal UserRegistrationCannotBeConfirmedAfterExpirationRule(UserRegistrationStatus actualRegistrationStatus)
+        private readonly IUserRegistrationConfirmationExpirationCalculator expirationCalculator;
+        private readonly DateTime registrationDate;
+        internal UserRegistrationCannotBeConfirmedAfterExpirationRule(
+                                IUserRegistrationConfirmationExpirationCalculator expirationCalculator,
+                                DateTime registrationDate)
         {
-            this._actualRegistrationStatus = actualRegistrationStatus;
+            this.expirationCalculator = expirationCalculator;
+            this.registrationDate = registrationDate;
         }
 
-        public bool IsBroken() => _actualRegistrationStatus == UserRegistrationStatus.Expired;
+        public bool IsBroken()
+        {
+            DateTime expirationDate = expirationCalculator.Calculate(registrationDate);
+
+            bool isBroken = SystemClock.Now > expirationDate;
+
+            return isBroken;
+        }
 
         public string Message => "User Registration cannot be confirmed because it is expired";
     }

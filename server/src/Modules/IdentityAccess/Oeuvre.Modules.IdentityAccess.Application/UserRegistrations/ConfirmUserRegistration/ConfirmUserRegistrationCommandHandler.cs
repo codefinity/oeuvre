@@ -9,10 +9,12 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUse
     internal class ConfirmUserRegistrationCommandHandler : ICommandHandler<ConfirmUserRegistrationCommand>
     {
         private readonly IUserRegistrationRepository userRegistrationRepository;
-
-        public ConfirmUserRegistrationCommandHandler(IUserRegistrationRepository userRegistrationRepository)
+        private readonly IUserRegistrationConfirmationExpirationCalculator expirationCounter;
+        public ConfirmUserRegistrationCommandHandler(IUserRegistrationRepository userRegistrationRepository,
+                                                        IUserRegistrationConfirmationExpirationCalculator expirationCounter)
         {
             this.userRegistrationRepository = userRegistrationRepository;
+            this.expirationCounter = expirationCounter;
         }
 
         public async Task<Unit> Handle(ConfirmUserRegistrationCommand request, CancellationToken cancellationToken)
@@ -20,7 +22,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUse
             var userRegistration =
                 await userRegistrationRepository.GetByIdAsync(new UserRegistrationId(request.UserRegistrationId));
 
-            userRegistration.Confirm();
+            userRegistration.Confirm(expirationCounter);
 
             await userRegistrationRepository.AddAsync(userRegistration);
 
