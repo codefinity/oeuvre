@@ -769,6 +769,12 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 - [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
 - [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
 
+#### Modular Monoliths
+
+##### Articles
+
+[All You Might Really Need is a Monolith Disguised as Microservices](https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f)
+
 
 #### Event Storming
 
