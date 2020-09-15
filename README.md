@@ -177,7 +177,7 @@ Fitness functions need to be constantly reviewed
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
-#### The Architectral Quanta
+### The Architectral Quanta
 
 
 > "Many business concepts semantically bind parts of the system together, creating functional cohesion. To successfully evolve software, developers must consider all the coupling points that could break." 
@@ -196,11 +196,11 @@ Designing optimal AQ enables faster evolution cycles.
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
 
-#### Dimentions of Evolution
+### Dimentions of Evolution
 
 <!--pg10-->
 
-#### Evolutionary Over Adaptation
+### Evolutionary Over Adaptation
 
 <!--pg14-->
 
