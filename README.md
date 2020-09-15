@@ -770,12 +770,22 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 - [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
 
 
-#### Event Storming References
+#### Event Storming
+
+##### Repositories
 
 - [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
-- [ddd-crew
-/
-eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
+- [ddd-crew/eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
+- [Whirlpool-of-Events](https://github.com/codefinity/whirlpool-of-events)
+
+##### Articles
+
+- [Event Storming and Spring with a Splash of DDD](https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd)
+- [EventStorming; Core concepts, glossary and legend](https://baasie.com/2020/07/16/eventstorming-core-concepts-glossary-and-legend/)
+
+##### Books
+
+-[Introducing EventStorming](https://leanpub.com/introducing_eventstorming)
 
 
 #### Worthy Clones 
@@ -802,13 +812,9 @@ eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-gl
 
 ##### Books
 
-
 - [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
 
-#### Event Stroming 
-
-- [Whirlpool-of-Events](https://github.com/codefinity/whirlpool-of-events)
 
 #### Code Coverage
 
