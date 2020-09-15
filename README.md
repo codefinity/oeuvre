@@ -418,8 +418,10 @@ Settings :
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
 
+#FREG
 Feature: Registration
 
+#FREG-S1
 Scenario: New Registrant registers using an EMail Id that does not belong to any Oeuvre user
 
 	Given I have not registered at Oeuvre 
@@ -429,8 +431,9 @@ Scenario: New Registrant registers using an EMail Id that does not belong to any
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
-
+#FREG-S2
 Scenario: Registrant registers more than once/while his email is pending verification
 
 	Given I have already registered at Oeuvre 
@@ -440,8 +443,9 @@ Scenario: Registrant registers more than once/while his email is pending verific
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
-
+#FREG-S3
 Scenario: Registrant registers after his EMail Verification Link Expires
 
 	Given I had registered at Oeuvre
@@ -452,8 +456,9 @@ Scenario: Registrant registers after his EMail Verification Link Expires
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
-
+#FREG-S4
 Scenario: Registrant registers with already existing User's EMail Id
 
 	Given That I register at Oeuvre 
@@ -467,12 +472,18 @@ Scenario: Registrant registers with already existing User's EMail Id
 
 
 #-----Not Complete - Working On Them-----
+
+#FREGSOCIAL
+Feature: Social Media Registration
+
+#FREGSOCIAL-F1
 Scenario: New Member register using Facebook
 
 	Given I am not a User of Oeuvre 
 	When I choose to register through my Facebook account
 	Then a new account will be created for me 2
 
+#FREGSOCIAL-F2
 Scenario: New Member register using Google
 
 	Given I am not a User of Oeuvre
@@ -485,8 +496,10 @@ Scenario: New Member register using Google
 ##### [EmailVerification.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/EmailVerification.feature)
 ```gherkin
 
-Feature: Email Verification
+#FRC
+Feature: Registration Confirmation
 
+#FRC-S1
 Scenario: Registrant Clicks on EMail Verification Link
 
 	Given I have registered on Oeuvre portal
@@ -494,7 +507,8 @@ Scenario: Registrant Clicks on EMail Verification Link
 	And There is no other user having my EMail Id on Oeuvre
 	When I click on the EMail verification link
 	Then I should become a User of Oeuvre Portal
-	
+
+#FRC-S2
 Scenario: Registrant clicks on verification EMail more than once
 
 	Given I have registered on Oeuvre portal
@@ -503,6 +517,7 @@ Scenario: Registrant clicks on verification EMail more than once
 	When I click on the EMail verification link again
 	Then Nothing should happen
 	
+#FRC-S3	
 Scenario: Registrant clicks on verification EMail after the Expiration Period
 
 	Given I have registered on Oeuvre portal
@@ -732,11 +747,12 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 ## Inspiration
 
-#### Special Thanks
-
+### Special Thanks
 - [kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 
-#### Evolutionary Architectures
+
+### Evolutionary Architectures
+
 
 ##### Talks
 - [Talks](http://evolutionaryarchitecture.com/talks.html)
@@ -756,71 +772,80 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ##### Books
 - [Building Evolutionary Architectures: Support Constant Change](https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant/dp/1491986360)
 
-#### Domain Driven Design
+
+### Domain Driven Design
+
+##### Repositories 
+- [VaughnVernon/IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
 
 ##### Templates
-
-[ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
+- [ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
 
 ##### Books
-
 - [Implementing Domain-Driven Design](https://www.oreilly.com/library/view/implementing-domain-driven-design/9780133039900/)
 - [Patterns, Principles, and Practices of Domain-Driven Design](https://www.oreilly.com/library/view/patterns-principles-and/9781118714706/)
 - [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.oreilly.com/library/view/domain-driven-design-tackling/0321125215/)
 - [Hands-On Domain-Driven Design with .NET Core](https://www.packtpub.com/in/application-development/hands-domain-driven-design-net-core)
 
-
-#### Event Storming References
-
-- [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
-- [ddd-crew
-/
-eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
-
-
-#### Worthy Clones 
-
-- [ddd-by-examples/library](https://github.com/ddd-by-examples/library)
-
-#### Interesting Reads
-
-- [Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
-- [Avoid In-Memory Databases for Tests](https://jimmybogard.com/avoid-in-memory-databases-for-tests/)
+##### Videos
 - [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY&feature=emb_title)
-- [DeactivateUser](https://udidahan.com/2009/09/01/dont-delete-just-dont/)
-- [Avoid Soft Deletes](https://ayende.com/blog/4157/avoid-soft-deletes)
 
-#### Insightful Videos
+### Modular Monoliths
 
-- [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY)
-- [Julie LERMAN: Mapping DDD Domain Models with EF Core 2.1 @ Update Conference Prague 2018](https://www.youtube.com/watch?v=Z62cbp61Bb8)
 
-#### BDD
+##### Articles
+- [All You Might Really Need is a Monolith Disguised as Microservices](https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f)
+
+
+### Event Storming
+
+##### Repositories
+- [mariuszgil/awesome-eventstorming](https://github.com/mariuszgil/awesome-eventstorming)
+- [ddd-crew/eventstorming-glossary-cheat-sheet](https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet)
+- [Whirlpool-of-Events](https://github.com/codefinity/whirlpool-of-events)
+
+##### Articles
+- [Event Storming and Spring with a Splash of DDD](https://spring.io/blog/2018/04/11/event-storming-and-spring-with-a-splash-of-ddd)
+- [EventStorming; Core concepts, glossary and legend](https://baasie.com/2020/07/16/eventstorming-core-concepts-glossary-and-legend/)
+
+##### Books
+- [Introducing EventStorming](https://leanpub.com/introducing_eventstorming)
+
+
+### BDD
+
+##### References
+- [Gherkin Reference](https://cucumber.io/docs/gherkin/reference/)
 
 ##### Articles
 - [SpecFlow - Getting Started](https://specflow.org/getting-started/)
 
 ##### Books
-
-
 - [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
 
-#### Event Stroming 
-
-- [Whirlpool-of-Events](https://github.com/codefinity/whirlpool-of-events)
-
-#### Code Coverage
-
+### Code Coverage
 - [Measuring .NET Core Test Coverage with Coverlet](https://www.tonyranieri.com/blog/2019/07/31/Measuring-.NET-Core-Test-Coverage-with-Coverlet/)
 - [Use code coverage for unit testing](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-code-coverage?tabs=windows)
 
-#### Architecture Decision Log
-
+### Architecture Decision Log
 - [joelparkerhenderson/architecture_decision_record](https://github.com/joelparkerhenderson/architecture_decision_record)
 - [DOCUMENTING ARCHITECTURE DECISIONS](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
 
+<!--General Links-->
 
+### Worthy Clones 
+- [ddd-by-examples/library](https://github.com/ddd-by-examples/library)
+
+### Interesting Reads
+- [Simple Domain Events with EFCore and MediatR](https://cfrenzel.com/domain-events-efcore-mediatr/)
+- [Avoid In-Memory Databases for Tests](https://jimmybogard.com/avoid-in-memory-databases-for-tests/)
+- [DeactivateUser](https://udidahan.com/2009/09/01/dont-delete-just-dont/)
+- [Avoid Soft Deletes](https://ayende.com/blog/4157/avoid-soft-deletes)
+
+### Insightful Videos
+- [Julie Lerman talks about DDD and EF Core 3](https://www.youtube.com/watch?v=9XeazTD5AwY)
+- [Julie LERMAN: Mapping DDD Domain Models with EF Core 2.1 @ Update Conference Prague 2018](https://www.youtube.com/watch?v=Z62cbp61Bb8)
 
 
 ## Issue Resolutions and Workarounds
