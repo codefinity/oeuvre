@@ -87,15 +87,22 @@ It is through these trial and errors, eligant designs emerge.
 
 ## How To Make Principles Of Evolution Work for Architecture
 
-#### Lessons worth learning from real world evolution.
+#### Lessons worth learning from real world evolution
 
-- Trial and errors cannot be avoided to arrive at the design
+> The Galls Law states that, “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.”
 
-- Business logic is the genetic code and should be at the core
+1. Iteration cannot be avoided to arrive at the design
 
-- Requirements are the environment.
+It's difficult to to arrive at a optimal design without indulging in a bit or trial on error. It's cheaper to do trial and errors on the drawing board first before inplementing them. Afer implementing, some iterations will be required.
 
-- Paradoxes will always be there
+2. Business logic is the genetic code and should be at the core
+
+
+
+
+3. Requirements are the environment.
+
+4. Paradoxes will always be there
 
 - Framework must allow for experimentation
 
@@ -119,7 +126,7 @@ It is through these trial and errors, eligant designs emerge.
 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> The Galls Law states that, “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.”
+
 
 
 
