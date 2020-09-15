@@ -10,7 +10,7 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 {
     //#FREG
-    public class UserRegistrationTests : TestBase
+    public class UserRegistration_Tests : TestBase
     {
 
         //#FREG-S1

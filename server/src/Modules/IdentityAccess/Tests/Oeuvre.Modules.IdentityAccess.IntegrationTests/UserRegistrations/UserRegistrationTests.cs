@@ -8,10 +8,12 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 {
+    //#FREG
     [Collection("IdentityAccessIntegrationTestCollection")]
     public class UserRegistrationTests : TestBase
     {
-        [Fact]
+        //FREG-S1
+        [Fact(DisplayName="FREG - S1")]
         public async Task RegisterNewUserCommand_Test()
         {
             RegisterNewUserCommand registerNewUserCommand = new RegisterNewUserCommand(

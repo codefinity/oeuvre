@@ -13,8 +13,9 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 {
     //#FRC
-    public class RegistrationConfirmation : TestBase
+    public class RegistrationConfirmation_Tests : TestBase
     {
+
         //#FRC-S1
         [Fact]
         public void GIVEN_RegistrantConfirmsRegistrationWhenWaitingForConfirmation_THEN_ConfirmationShouldBeSuccessful()
@@ -22,7 +23,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
             //Given
             var usersCounter = new Mock<IUsersCounter>().Object;
 
-            var registrationExpirationCalculator = new Mock<IUserRegistrationConfirmationExpirationCalculator>().Object;
+            var registrationExpirationCalculator = new Mock<IUserRegistrationConfirmationExpirationCalculator>();
+
+            DateTime registrationDate = DateTime.Now;
+            registrationExpirationCalculator.Setup(e => e.Calculate(It.IsAny<DateTime>()))
+                                                .Returns(registrationDate.AddDays(2));
 
             var registration = Registration.RegisterNewUser(
                                  new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
@@ -35,7 +40,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                   usersCounter);
 
             //When
-            registration.Confirm(registrationExpirationCalculator);
+            registration.Confirm(registrationExpirationCalculator.Object);
 
             //Then
             var userRegistrationConfirmedDomainEvent = AssertPublishedDomainEvent<UserRegistrationConfirmedDomainEvent>(registration);
@@ -52,8 +57,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
             //Given
             var usersCounter = new Mock<IUsersCounter>().Object;
 
-            var registrationExpirationCalculator = new Mock<IUserRegistrationConfirmationExpirationCalculator>().Object;
+            var registrationExpirationCalculator = new Mock<IUserRegistrationConfirmationExpirationCalculator>();
 
+            DateTime registrationDate = DateTime.Now;
+            registrationExpirationCalculator.Setup(e => e.Calculate(It.IsAny<DateTime>()))
+                                                .Returns(registrationDate.AddDays(2));
 
             var registration = Registration.RegisterNewUser(
                                  new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
@@ -67,10 +75,10 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 
             //When
             //Calling first time
-            registration.Confirm(registrationExpirationCalculator);
+            registration.Confirm(registrationExpirationCalculator.Object);
 
             //Calling Second time and receiving the exception
-            var exception = Record.Exception(() => registration.Confirm(registrationExpirationCalculator));
+            var exception = Record.Exception(() => registration.Confirm(registrationExpirationCalculator.Object));
 
             //Then
             BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
@@ -82,7 +90,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
         }
 
         //#FRC-S3
-        [Fact]
+        [Fact(Skip ="Skipped due to SystemClock concurrency issues")]
         public void GIVEN_RegistrantConfirmsRegistrationAfterExpirationPeriod_THEN_UserRegistrationCannotBeConfirmedAfterTimeExpiration_ShouldBeBroken()
         {
             //Given
@@ -91,11 +99,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
             var registrationExpirationCalculator = new Mock<IUserRegistrationConfirmationExpirationCalculator>();
 
             DateTime registrationDate = DateTime.Now;
-
             registrationExpirationCalculator.Setup(e => e.Calculate(It.IsAny<DateTime>()))
                                                 .Returns(registrationDate.AddDays(2));
-
-
 
 
             var registration = Registration.RegisterNewUser(
@@ -111,7 +116,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 
             //When
             //Set System clock two days ahead
-            //SystemClock.Set(registrationDate.AddDays(2).AddMinutes(1));
+            SystemClock.Set(registrationDate.AddDays(2).AddMinutes(1));
 
             var exception = Record.Exception(() => registration.Confirm(registrationExpirationCalculator.Object));
 
@@ -122,62 +127,6 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 
             Assert.IsType<BusinessRuleValidationException>(exception);
 
-        }
-
-        //Internal Tests
-        [Fact]
-        public void CreateUser_WhenRegistrationIsConfirmed_IsSuccessful()
-        {
-            var usersCounter = new Mock<IUsersCounter>().Object;
-
-            var registrationExpirationCalculator = new Mock<IUserRegistrationConfirmationExpirationCalculator>().Object;
-
-
-            var registration = Registration.RegisterNewUser(
-                                 new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
-                                 "Manfred",
-                                 "Mann",
-                                 "doWaDiddy",
-                                 "+44",
-                                 "4525856425",
-                                 "Manfred@ManfredMann.com",
-                                  usersCounter);
-
-            registration.Confirm(registrationExpirationCalculator);
-
-            var user = registration.CreateUser();
-
-            var userCreatedDomainEvent = AssertPublishedDomainEvent<UserCreatedDomainEvent>(user);
-
-            Assert.Equal(user.Id.Value, registration.Id.Value);
-            Assert.Equal(userCreatedDomainEvent.UserId.Value, registration.Id.Value);
-
-        }
-
-        [Fact]
-        public void UserCreation_WhenRegistrationIsNotConfirmed_IsNotPossible()
-        {
-            var usersCounter = new Mock<IUsersCounter>();
-
-            var registration = Registration.RegisterNewUser(
-                                 new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
-                                 "Manfred",
-                                 "Mann",
-                                 "doWaDiddy",
-                                 "+44",
-                                 "4525856425",
-                                 "Manfred@ManfredMann.com",
-                                  usersCounter.Object);
-
-            // Act
-            var exception = Record.Exception(() => registration.CreateUser());
-
-            //Assert
-            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
-
-            Assert.IsType<UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule>(exc.BrokenRule);
-
-            Assert.IsType<BusinessRuleValidationException>(exception);
 
         }
 

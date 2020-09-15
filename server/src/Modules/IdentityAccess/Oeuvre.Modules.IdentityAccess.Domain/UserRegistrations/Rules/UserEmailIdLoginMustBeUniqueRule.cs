@@ -15,7 +15,14 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules
             this.eMailId = eMailId;
         }
 
-        public bool IsBroken() => usersCounter.CountUsersWithLogin(eMailId) > 0;
+        public bool IsBroken()
+        {
+            int userCount = usersCounter.CountUsersWithLogin(eMailId);
+
+            bool isUserCountGreaterThanZero = userCount > 0;
+
+            return isUserCountGreaterThanZero;
+        }
 
         public string Message => "User Login Email Id must be unique";
     }

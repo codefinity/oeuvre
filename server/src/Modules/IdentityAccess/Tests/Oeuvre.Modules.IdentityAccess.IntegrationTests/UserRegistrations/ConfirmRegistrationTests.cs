@@ -13,7 +13,7 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 {
     [Collection("IdentityAccessIntegrationTestCollection")]
-    public class ConfirmUserRegistrationTests: TestBase
+    public class ConfirmRegistrationTests: TestBase
     {
         [Fact]
         public async Task ConfirmUserRegistration_Test()
