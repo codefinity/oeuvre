@@ -418,8 +418,10 @@ Settings :
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
 ```gherkin
 
+#FREG
 Feature: Registration
 
+#FREG-S1
 Scenario: New Registrant registers using an EMail Id that does not belong to any Oeuvre user
 
 	Given I have not registered at Oeuvre 
@@ -430,7 +432,7 @@ Scenario: New Registrant registers using an EMail Id that does not belong to any
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
 
-
+#FREG-S2
 Scenario: Registrant registers more than once/while his email is pending verification
 
 	Given I have already registered at Oeuvre 
@@ -441,7 +443,7 @@ Scenario: Registrant registers more than once/while his email is pending verific
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
 
-
+#FREG-S3
 Scenario: Registrant registers after his EMail Verification Link Expires
 
 	Given I had registered at Oeuvre
@@ -453,7 +455,7 @@ Scenario: Registrant registers after his EMail Verification Link Expires
 	Then I should be a Registrant on Oeuvre
 	And I should receive a registration EMail containing an email verification link account
 
-
+#FREG-S4
 Scenario: Registrant registers with already existing User's EMail Id
 
 	Given That I register at Oeuvre 
@@ -467,12 +469,18 @@ Scenario: Registrant registers with already existing User's EMail Id
 
 
 #-----Not Complete - Working On Them-----
+
+#FREGSOCIAL
+Feature: Social Media Registration
+
+#FREGSOCIAL-F1
 Scenario: New Member register using Facebook
 
 	Given I am not a User of Oeuvre 
 	When I choose to register through my Facebook account
 	Then a new account will be created for me 2
 
+#FREGSOCIAL-F2
 Scenario: New Member register using Google
 
 	Given I am not a User of Oeuvre
