@@ -123,7 +123,7 @@ It is through these trial and errors, eligant designs emerge.
 
 
 
-![](design/images/ExplanationDiagrams-EAProcess.png)
+
 
 
 
@@ -184,6 +184,8 @@ Real world evolution is a random process. We will be implementing guided evoluti
 
 
 Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
+
+![](design/images/ExplanationDiagrams-EAProcess.png)
 
 
 
