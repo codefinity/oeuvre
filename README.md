@@ -274,10 +274,11 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 #### Aggregates
 
+Automic Unit of persistance
 
-#### Modules/Bonded Contexts - Deployment Quantas
+#### Modules/Bonded Contexts
 
-
+Deployment Quantas
 
 ## Development Methodologies
 
