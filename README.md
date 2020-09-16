@@ -434,7 +434,7 @@ Scenario: New Registrant registers using an EMail Id that does not belong to any
 	And my User confirmation should be pending
 
 #FREG-S2
-Scenario: Registrant registers more than once/while his email is pending verification
+Scenario: Registrant registers more than once with Unique EMail Id / while his email is pending verification
 
 	Given I have already registered at Oeuvre 
 	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
@@ -442,7 +442,7 @@ Scenario: Registrant registers more than once/while his email is pending verific
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should be a Registrant on Oeuvre
-	And I should receive a registration EMail containing an email verification link account
+	And I should again receive a registration EMail containing an email verification link account
 	And my User confirmation should be pending
 
 #FREG-S3
