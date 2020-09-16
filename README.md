@@ -111,19 +111,19 @@ Software entities require a persistance mechanism because there is a need for th
 
 Evolution has created system with system within systems, with one fundemental property - each system or the unit of the system does one thing and one thing perfectly. This allows the parts of the system evolve independently.
 
-**5. Paradoxical nature of designs cannot be avoided**
+**6. Paradoxical nature of designs cannot be avoided**
 
 There will always be times when you get one part of the design right, the other part somehow does not fit. Sometimes compromises have to be made till the designs are perfected over time.
 
-**6. Framework and Application structure must allow for experimentation**
+**7. Framework and Application structure must allow for experimentation**
 
 As menitoned, design is an iterative process, a rigid application structure will not allow for rearranging and experementation. This will hurt the evolution of the Architecture.
 
-**7. Incremental Design is the way**
+**8. Incremental Design is the way**
 
 Successful designs evolve from designs that were already successfully working. It becomes an imperative that you must get the design right before the next step of the evolution.
 
-**8. Designs tend towards perfection but can still not be perfect**
+**9. Designs tend towards perfection but can still not be perfect**
 
 Design is something that is always happening, therefore the attitude of perfectionism must be avoided, at the same time the process of evolution must continue. 
 
@@ -138,16 +138,14 @@ Design is something that is always happening, therefore the attitude of perfecti
 
 > "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-Design should be guided by the requirement. Key to a good architecture is getting requirements right. Requirement is where everything starts from. Requirement is the unit of change of architecture.
+Design should be guided by the requirement. Key to a good architecture is getting requirements right. Requirement is where everything starts from. Requirement is the unit of change of architecture. If the requirement instead of religning the architecture is seen as changing a few lines of code in the layers, then probably the architecture is built around technical concerns and layers. 
 
-If the requirement instead of religning the architecture is seen as changing a few lines of code in the layers, then probably the architecture is built around technical concerns and layers. 
-
-Software must be modelled around business not technology or layers.
+Software must be modelled around business and not technology or layers.
 
 
 ### Single Responsibility Principle
 
-This is the backbone of every elegant design.
+To have a better Evolutionary maneuverability of the architecture its important that each subsystem be designed in such a way that it performs only one function and performs it pretty well. This applies for both **Architectural** as well as **Business Component**.  
 
 ### Importance of Boundaries
 
@@ -265,22 +263,19 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 ### Quantas Used In This Architecture
 
-#### Command
+#### Structural Quanta
+##### Command
+##### Query
+##### Domain Events
 
+#### Business Quanta
+##### Aggregates
 
-#### Query
+Automic Unit of Business Logic
 
+#### Deployment Quanta Used
+##### Modules/Bonded Contexts
 
-#### Domain Events
-
-
-#### Aggregates
-
-Automic Unit of persistance
-
-#### Modules/Bonded Contexts
-
-Deployment Quantas
 
 ## Development Methodologies
 
