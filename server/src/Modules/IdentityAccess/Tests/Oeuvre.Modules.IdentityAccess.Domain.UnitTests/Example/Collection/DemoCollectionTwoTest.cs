@@ -7,7 +7,7 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Collection
 {
     [Collection("DemoCollection")]
-    public class DemoCollectionTwoTest: TestBase
+    public class DemoCollectionTwoTest: DemoTestBase
     {
         //https://xunit.net/docs/shared-context
 

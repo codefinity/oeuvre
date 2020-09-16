@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
 {
-    public class TestBase
+    public class DemoTestBase
     {
-        public TestBase()
+        public DemoTestBase()
         {
             Debug.WriteLine("TestBase Constructor Ran");
         }

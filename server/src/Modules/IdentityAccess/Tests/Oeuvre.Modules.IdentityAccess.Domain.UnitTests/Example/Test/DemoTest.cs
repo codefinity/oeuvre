@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Test
 {
-    public class DemoTest : TestBase, IDisposable
+    public class DemoTest : DemoTestBase, IDisposable
     {
         //https://xunit.net/docs/shared-context
         public DemoTest()

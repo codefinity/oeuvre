@@ -8,7 +8,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Collection.Coll
 {
 
     [Collection("DemoCollectionAsync")]
-    public class DemoCollectionAsyncOneTest: TestBase
+    public class DemoCollectionAsyncOneTest: DemoTestBase
     {
         //https://xunit.net/docs/shared-context
 

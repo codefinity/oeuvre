@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Fixture
 {
-    public class DemoFixtureTest : TestBase, IClassFixture<DemoFixture>
+    public class DemoFixtureTest : DemoTestBase, IClassFixture<DemoFixture>
     {
         //https://xunit.net/docs/shared-context
 

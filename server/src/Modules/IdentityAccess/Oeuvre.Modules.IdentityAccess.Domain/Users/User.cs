@@ -71,7 +71,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
             this.roles.Add(UserRole.Member);
             //this.roles.Add(UserRole.User);
 
-            this.AddDomainEvent(new UserCreatedDomainEvent(this.Id, 
+            AddDomainEvent(new UserCreatedDomainEvent(this.Id, 
                                                             this.tenantId, 
                                                             this.fullName.FirstName,
                                                             this.fullName.LastName,
@@ -91,11 +91,17 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
         public void Deactivate()
         {
             isActive = false;
+
+            AddDomainEvent(new UserDeActivated(this.Id,
+                                                this.tenantId));
         }
 
         public void Activate()
         {
             isActive = true;
+
+            AddDomainEvent(new UserActivated(this.Id,
+                                                this.tenantId));
         }
     }
 }

@@ -7,7 +7,7 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Collection.CollectionAsync
 {
     [Collection("DemoCollectionAsync")]
-    public class DemoCollectionAsyncTwoTest: TestBase
+    public class DemoCollectionAsyncTwoTest: DemoTestBase
     {
         //https://xunit.net/docs/shared-context
         private DemoCollectionAsyncFixture fixture;
