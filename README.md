@@ -107,6 +107,10 @@ Real world entities do not have a persistance database. In the real world the En
 
 Software entities require a persistance mechanism because there is a need for them to be reconstuted at system reboot. Real world entities cannot be rebooted or switched off. They themselves are persistence.
 
+**5. Single Responsibility is the Universal Rule**
+
+Evolution has created system with system within systems, with one fundemental property - each system or the unit of the system does one thing and one thing perfectly. This allows the parts of the system evolve independently.
+
 **5. Paradoxical nature of designs cannot be avoided**
 
 There will always be times when you get one part of the design right, the other part somehow does not fit. Sometimes compromises have to be made till the designs are perfected over time.
@@ -128,9 +132,9 @@ Design is something that is always happening, therefore the attitude of perfecti
 
 ### Requirement is the King
 
-> Don’t build architecture for the sake of architecture—you are trying to solve a problem. ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+> "Don’t build architecture for the sake of architecture—you are trying to solve a problem." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined. ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+> "Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 > "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
