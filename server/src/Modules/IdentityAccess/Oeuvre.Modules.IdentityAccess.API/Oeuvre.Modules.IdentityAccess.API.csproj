@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>

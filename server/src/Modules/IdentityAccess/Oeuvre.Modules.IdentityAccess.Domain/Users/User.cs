@@ -43,11 +43,11 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
                                                             string eMailId,
                                                             string password)
         {
-            return new User(userRegistrationId, 
-                                tenantId, 
+            return new User(userRegistrationId,
+                                tenantId,
                                 new FullName(firstName, lastName),
                                 new MobileNumber(countryCode, mobileNumber),
-                                eMailId, 
+                                eMailId,
                                 password);
         }
 
@@ -88,7 +88,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
 
         }
 
-        public void Deactivate()
+        public void DeActivate()
         {
             isActive = false;
 

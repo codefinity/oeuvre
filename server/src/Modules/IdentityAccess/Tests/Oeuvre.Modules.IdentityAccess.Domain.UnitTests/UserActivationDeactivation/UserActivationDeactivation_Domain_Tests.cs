@@ -36,7 +36,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserActivationDeactivat
 
             var user = registration.CreateUser();
 
-            user.Deactivate();
+            user.DeActivate();
 
             var userDeactivatedDomainEvent = AssertPublishedDomainEvent<UserDeActivated>(user);
 

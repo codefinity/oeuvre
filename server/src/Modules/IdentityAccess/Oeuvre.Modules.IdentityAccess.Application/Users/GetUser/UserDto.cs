@@ -12,6 +12,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser
         public string CountryCode { get; set; }
         public string MobileNo { get; set; }
         public string EMail { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }

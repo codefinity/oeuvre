@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Application.Users.DeactivateUser
 {
-    public class DeActivateUserCommand : CommandBase<Guid>
+    public class ActivateUserCommand : CommandBase<Guid>
     {
-        public DeActivateUserCommand(Guid userId)
+        public ActivateUserCommand(Guid userId)
         {
             this.UserId = userId;
         }

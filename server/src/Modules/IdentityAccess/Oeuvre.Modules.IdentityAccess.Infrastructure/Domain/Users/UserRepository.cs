@@ -47,7 +47,7 @@ namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Domain.Users
                 //identityAccessContext.Entry(user);
                 //identityAccessContext.
 
-                identityAccessContext.SaveChanges();
+                await identityAccessContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {

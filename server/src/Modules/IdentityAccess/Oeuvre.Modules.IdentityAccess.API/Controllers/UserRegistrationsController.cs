@@ -105,13 +105,5 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
             return Ok();
         }
 
-        [AllowAnonymous]
-        [HttpPatch("/identityaccess/user/deactivate")]
-        public async Task<IActionResult> DeactivateUser(Guid userId)
-        {
-            await identityAccessModule.ExecuteCommandAsync(new DeactivateUserCommand(userId));
-
-            return Ok();
-        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Domaina.CQRS;
 using Domaina.CQRS.Command;
-using Oeuvre.Modules.IdentityAccess.Application.Users.DeactivateUser;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;
@@ -8,23 +7,23 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.Users.AactivateUser
+namespace Oeuvre.Modules.IdentityAccess.Application.Users.DeactivateUser
 {
-    public class DeActivateUserCommandHandler : ICommandHandler<DeActivateUserCommand, Guid>
+    public class ActivateUserCommandHandler : ICommandHandler<ActivateUserCommand, Guid>
     {
 
         private readonly IUserRepository userRepository;
 
-        public DeActivateUserCommandHandler(IUserRepository userRepository)
+        public ActivateUserCommandHandler(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
         }
 
-        public async Task<Guid> Handle(DeActivateUserCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(ActivateUserCommand request, CancellationToken cancellationToken)
         {
             var user = await userRepository.GetByIdAsync(new UserId(request.UserId));
 
-            user.DeActivate();
+            user.Activate();
 
             await userRepository.UpdateAsync(user);
 

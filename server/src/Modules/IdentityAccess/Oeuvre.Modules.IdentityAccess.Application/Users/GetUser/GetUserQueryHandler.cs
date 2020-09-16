@@ -26,7 +26,8 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser
                                "[CountryCode], " +
                                "[MobileNo], " +
                                "[EMail], " +
-                               "[Password] " +
+                               "[Password], " +
+                               "[IsActive] " +
                                "FROM [identityaccess].[Users] AS [User] " +
                                "WHERE Id = @UserId";
             
