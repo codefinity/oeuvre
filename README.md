@@ -149,7 +149,36 @@ To have a better Evolutionary maneuverability of the architecture its important 
 
 ### Importance of Boundaries
 
-https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f
+In my article [All You Might Really Need is a Monolith Disguised as Microservices](https://medium.com/swlh/all-you-might-really-need-is-a-monolith-disguised-as-microservices-4b099da3fa8f) I have talked in detail why boundaries help the Architectue Evolve.
+
+##### Boundaries Provide Resilience
+
+Take a huge stone (Aka a Monolith) and drop it from the top of a building on a hard surface on the ground. Repeat the same with a loosely packed bag of pebbles (Aka Microservices). Which is more likely to survive the fall without breaking? Software systems are constantly under stress of Changing Market Behavior, Changing Customer Behavior, Weather (read AWS region outages), Business Course Corrections, Leadership Changes, Technology Changes ect…..
+
+We must design systems to survive stress, otherwise they become extinct.
+
+It just takes a single Black Swan event to completely dissamate the poorly designed monolith, whereas a system designed with proper boundaries has better resistance to Black Swans.
+
+##### Boundaries Makes Systems Antifragile
+
+In his groundbreaking book “Antifragile”, Nassim Nicholas Taleb describes Antifragile systems as systems that become stronger when subjected to stress. For systems to grow under stress, some amount of instability is required. Boundaries provide that right amount of instability. We tend to make systems more and more stable and that backfires.
+To put it interestingly, we must design a system like a Swiss government — Modular, bottom-up, with some amount of instability. Here is how Nassim Nicholas Taleb describes the swiss government.
+
+###### Boundaries Allows You to Make Small Errors
+
+>“Things break on a small scale all the time, in order to avoid large-scale generalized catastrophes.” ~ Nassim Nicholas Taleb, Antifragile
+
+Nature loves small errors. They are the basis of evolution. Errors help the system evolve without causing the errors to affect the other boundaries. A part of the system might not work for some time, but the system as a whole will keep functioning. When the error is identified and fixed, the system becomes stronger than before.
+Boundaries give room for trial and error. It is through some amount of chaos, strong systems are born.
+Small Means Focused
+
+I must confess that even after developing software for so many years, when I look at a system as one big thing, I get intimidated. Boundaries allow you to focus on parts without worrying about the whole, hence improving quality of work.
+
+##### Boundaries Ensures Emergent Design
+
+>“It is not the strongest of the species that survive, but rather, that which is most adaptable to change.” — A quote often attributed to Darwin’s Ideas.
+
+I cannot stress this enough — Architecting is a continuous activity. Software design is something that develops over time. Nature also draws boundaries in systems to help them evolve as a whole. Boundaries help components take separate evolutionary trajectories without stepping on each other and at the same time efficiently collaborate with each other.
 
 
 ### Fitness Function
