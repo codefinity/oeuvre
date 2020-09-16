@@ -164,7 +164,7 @@ It just takes a single Black Swan event to completely dissamate the poorly desig
 In his groundbreaking book “Antifragile”, Nassim Nicholas Taleb describes Antifragile systems as systems that become stronger when subjected to stress. For systems to grow under stress, some amount of instability is required. Boundaries provide that right amount of instability. We tend to make systems more and more stable and that backfires.
 To put it interestingly, we must design a system like a Swiss government — Modular, bottom-up, with some amount of instability. Here is how Nassim Nicholas Taleb describes the swiss government.
 
-###### Boundaries Allows You to Make Small Errors
+##### Boundaries Allows You to Make Small Errors
 
 >“Things break on a small scale all the time, in order to avoid large-scale generalized catastrophes.” ~ Nassim Nicholas Taleb, Antifragile
 
