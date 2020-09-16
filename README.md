@@ -253,6 +253,12 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
+## Danngers of Overuse of Concepts
+
+If you have a hammer, everything looks like a nail.
+
+Concepts should fit together and be optimal. 
+
 
 ## Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
