@@ -47,21 +47,26 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
         public override int SaveChanges()
         {
-            ApplyFixForUpdatingOwnedEntities();
+            ApplyFixForUpdatingOwnedEntities().GetAwaiter().GetResult(); ;
 
-            ApplyPreSaveActions().GetAwaiter().GetResult();
+            ApplyAfterSaveActions().GetAwaiter().GetResult();
+
             return base.SaveChanges();
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            ApplyFixForUpdatingOwnedEntities();
+            await ApplyFixForUpdatingOwnedEntities();
 
-            await ApplyPreSaveActions();
-            return await base.SaveChangesAsync(cancellationToken);
+            int result = await base.SaveChangesAsync(cancellationToken);
+
+            //Apply try catch here so that domain events are sent after successful save.
+            await ApplyAfterSaveActions();
+
+            return result;
         }
 
-        private async Task ApplyPreSaveActions()
+        private async Task ApplyAfterSaveActions()
         {
             await DispatchDomainEvents();
         }
@@ -102,7 +107,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
 
         }
 
-        public void ApplyFixForUpdatingOwnedEntities()
+        public Task ApplyFixForUpdatingOwnedEntities()
         {
             var ownedEntities = ChangeTracker.Entries<ValueObject>().Where(x => x.State == EntityState.Added 
                                                                                 || x.State == EntityState.Deleted
@@ -150,6 +155,8 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
                     }
                 }
             }
+
+            return Task.CompletedTask;
 
         }
 

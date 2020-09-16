@@ -23,6 +23,10 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.CreateUser
         //because the integration test gave an error due to async/await issues
         //TesName - Patch_Confirm_User_Registration_Valid_Success()
         //Removed Async - Need to develop better stratergy for Integrating Testing
+        //Business rule: 
+        //this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
+        //Not working because of this
+        //Find Solution
         public Task Handle(DomainEventNotification<UserRegistrationConfirmedDomainEvent> notification, CancellationToken cancellationToken)
         {
              identityAccessModule.ExecuteCommandAsync(new CreateUserCommand(Guid.NewGuid(), notification.DomainEvent.UserRegistrationId));

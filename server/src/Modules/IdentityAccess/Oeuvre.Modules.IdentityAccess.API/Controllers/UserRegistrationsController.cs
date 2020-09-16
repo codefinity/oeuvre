@@ -23,7 +23,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         private readonly ILogger logger;
 
         public UserRegistrationsController(IIdentityAccessModule identityAccessModule
-                                                    ,ILogger logger
+                                                    , ILogger logger
                                                     )
         {
             this.identityAccessModule = identityAccessModule;
@@ -35,7 +35,7 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPost("/identityaccess/register")]
         public async Task<IActionResult> RegisterNewUser(RegisterNewUserRequest request)
         {
-            logger.Information("===== Begin Request - Register New User =====\n " 
+            logger.Information("===== Begin Request - Register New User =====\n "
                                     + JsonConvert.SerializeObject(request, Formatting.Indented));
 
             try
@@ -62,9 +62,16 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
         [HttpPatch("/identityaccess/{registrantId}/confirm")]
         public async Task<IActionResult> ConfirmRegistration(Guid registrantId)
         {
-            await identityAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
+            try
+            {
+                await identityAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrantId));
 
-            return Ok();
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("/identityaccess/registrants")]
