@@ -99,7 +99,7 @@ The business logic must influence the design. It must be at a single place so th
 
 **3. Requirements are the environment that influences the design**
 
-The business logic must change to meet the requirements. Environmental changes influnce design.
+Design depends on and is guided by the environment, hence there is a very close link between the design and the requirement. The business logic must change to meet the requirements. Environmental changes influnce design.
 
 **4. Persistance Design is Not the Unit of Application Design**
 
@@ -128,17 +128,15 @@ Design is something that is always happening, therefore the attitude of perfecti
 
 ### Requirement is the King
 
-> Don’t build architecture for the sake of architecture—you are trying to solve a problem.
+> Don’t build architecture for the sake of architecture—you are trying to solve a problem. ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+> Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined. ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined.
+> "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." 
+Design should be guided by the requirement. Key to a good architecture is getting requirements right. Requirement is where everything starts from. Requirement is the unit of change of architecture.
 
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
-
-Key to a good architecture is getting requirements right. Requirement is where everything starts from.
+If the requirement instead of religning the architecture is seen as changing a few lines of code in the layers, then probably the architecture is built around technical concerns and layers. 
 
 Software must be modelled around business not technology or layers.
 
