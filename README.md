@@ -309,6 +309,10 @@ Unit of Communication within the domain
 
 Unit of communication between Bounded Contexts / Modules
 
+##### Integration Services
+
+Unit of getting information from other bounded contexts
+
 #### Business Quanta
 
 ##### Aggregates
