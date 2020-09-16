@@ -40,7 +40,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [9. Requirement Analysis](#Requirement-Analysis)
 
-[10. Features](#Features)
+[10. Feature Files Creation](#Feature-Files-Creation)
 
 [11. Analysis and Design](#Analysis-and-Design)
 
