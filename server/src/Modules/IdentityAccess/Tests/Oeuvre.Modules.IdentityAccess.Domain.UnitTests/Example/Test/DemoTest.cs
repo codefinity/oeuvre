@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using Xunit;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
+namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Test
 {
     public class DemoTest : TestBase, IDisposable
     {

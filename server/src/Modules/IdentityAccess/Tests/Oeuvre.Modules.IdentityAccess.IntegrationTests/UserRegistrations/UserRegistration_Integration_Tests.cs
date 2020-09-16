@@ -1,6 +1,8 @@
-﻿using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
+﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.GetUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
+using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations.Rules;
 using Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork;
 using System;
 using System.Data.SqlClient;
@@ -10,9 +12,16 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 {
     //#FREG
-    [Collection("IdentityAccessIntegrationTestCollection")]
+    [Collection("IdentityAcessIntegrationTestCollection")]
     public class UserRegistration_Integration_Tests : TestBase
     {
+        private IdentityAcessIntegrationTestFixture fixture;
+
+        public UserRegistration_Integration_Tests(IdentityAcessIntegrationTestFixture fixture)
+        {
+            this.fixture = fixture;
+        }
+
         //FREG-S1
         [Fact]
         public async void GIVEN_UserRegistersWithUniqueEMailId_THEN_RegistrationShouldBeSuccessful()
@@ -124,7 +133,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                         "withorwithoutyou",
                                         "+1",
                                         "1294561062",
-                                        "Bono4@U2.com");
+                                        "Bono5@U2.com");
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -140,12 +149,20 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                         "withorwithoutyou",
                                         "+1",
                                         "1294561062",
-                                        "Bono4@U2.com");
+                                        "Bono5@U2.com");
 
 
-            //var registrationId2 = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand2);
 
+            var exception = await Record.ExceptionAsync(() => IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand2));
+
+            //Then
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserEmailIdLoginMustBeUniqueRule>(exc.BrokenRule);
+
+            Assert.IsType<BusinessRuleValidationException>(exception);
 
         }
+
     }
 }

@@ -8,6 +8,8 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
 {
@@ -19,7 +21,6 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
 
         public TestBase()
         {
-
 
             EmailSender = new Mock<IEmailSender>();
 
@@ -33,5 +34,6 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
 
             IdentityAccessModule = new IdentityAccessModule();
         }
+
     }
 }

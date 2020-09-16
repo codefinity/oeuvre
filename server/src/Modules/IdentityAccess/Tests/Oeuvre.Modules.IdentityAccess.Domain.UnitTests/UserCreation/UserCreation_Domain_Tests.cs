@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
+namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserCreation
 {
-    public class UserCreation_Tests : TestBase
+    public class UserCreation_Domain_Tests : TestBase
     {
 
         //Internal Tests

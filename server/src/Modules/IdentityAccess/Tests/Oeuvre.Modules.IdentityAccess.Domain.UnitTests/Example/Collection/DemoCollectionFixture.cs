@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
+namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Collection
 {
     public class DemoCollectionFixture : IDisposable
     {

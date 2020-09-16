@@ -48,19 +48,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork
         public void Dispose()
         {
             //Clean-up
-            //TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
+            TestDBInitializationHelpers.DropTablesAndViewsAndSchema();
 
         }
-
-        //protected async Task<T> GetLastOutboxMessage<T>()
-        //    where T : class, INotification
-        //{
-        //    using (var connection = new SqlConnection(ConnectionString))
-        //    {
-        //        var messages = await OutboxMessagesHelper.GetOutboxMessages(connection);
-
-        //        return OutboxMessagesHelper.Deserialize<T>(messages.Last());
-        //    }
-        //}
     }
 }

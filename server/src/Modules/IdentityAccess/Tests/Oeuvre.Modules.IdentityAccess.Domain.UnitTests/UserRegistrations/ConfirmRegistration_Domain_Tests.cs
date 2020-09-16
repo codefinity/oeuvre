@@ -13,9 +13,8 @@ using Xunit;
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 {
     //#FRC
-    public class ConfirmRegistration_Tests : TestBase
+    public class ConfirmRegistration_Domain_Tests : TestBase
     {
-
         //#FRC-S1
         [Fact]
         public void GIVEN_RegistrantConfirmsRegistrationWhenWaitingForConfirmation_THEN_ConfirmationShouldBeSuccessful()

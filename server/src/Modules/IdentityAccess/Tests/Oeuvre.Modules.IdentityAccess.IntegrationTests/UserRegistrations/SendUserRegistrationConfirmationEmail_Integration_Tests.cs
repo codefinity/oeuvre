@@ -9,9 +9,16 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 {
-    [Collection("IdentityAccessIntegrationTestCollection")]
+    [Collection("IdentityAcessIntegrationTestCollection")]
     public class SendUserRegistrationConfirmationEmail_Integration_Tests : TestBase
     {
+        private IdentityAcessIntegrationTestFixture fixture;
+
+        public SendUserRegistrationConfirmationEmail_Integration_Tests(IdentityAcessIntegrationTestFixture fixture)
+        {
+            this.fixture = fixture;
+        }
+
         [Fact]
         public async Task SendUserRegistrationConfirmationEmail_Test()
         {

@@ -10,10 +10,17 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.Users
 {
-    [Collection("IdentityAccessIntegrationTestCollection")]
-    public class CreateUserTests : TestBase
+    [Collection("IdentityAcessIntegrationTestCollection")]
+    public class CreateUser_Tests : TestBase
     {
-        [Fact]
+        private IdentityAcessIntegrationTestFixture identityAcessIntegrationTestFixture;
+
+        public CreateUser_Tests(IdentityAcessIntegrationTestFixture identityAcessIntegrationTestFixture)
+        {
+            this.identityAcessIntegrationTestFixture = identityAcessIntegrationTestFixture;
+        }
+
+        [Fact(Skip ="Do Later")]
         public async Task CreateUser_Test()
         {
 

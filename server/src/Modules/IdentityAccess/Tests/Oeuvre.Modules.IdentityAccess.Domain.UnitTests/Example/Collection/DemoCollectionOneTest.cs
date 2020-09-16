@@ -4,20 +4,21 @@ using System.Diagnostics;
 using System.Text;
 using Xunit;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
+namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example.Collection
 {
+
     [Collection("DemoCollection")]
-    public class DemoCollectionTwoTest: TestBase
+    public class DemoCollectionOneTest: TestBase
     {
         //https://xunit.net/docs/shared-context
 
         private DemoCollectionFixture fixture;
 
-        public DemoCollectionTwoTest(DemoCollectionFixture fixture)
+        public DemoCollectionOneTest(DemoCollectionFixture fixture)
         {
             this.fixture = fixture;
 
-            Debug.WriteLine("DemoCollectionTwoTest Constructor Ran");
+            Debug.WriteLine("DemoCollectionOneTest Constructor Ran");
         }
 
 
@@ -27,7 +28,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
 
 
 
-            Debug.WriteLine("DemoCollectionTwoTest Test_One Ran");
+            Debug.WriteLine("DemoCollectionOneTest Test_One Ran");
 
             Assert.True(true);
         }
@@ -38,7 +39,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.Example
 
 
 
-            Debug.WriteLine("DemoCollectionTwoTest Test_One Ran");
+            Debug.WriteLine("DemoCollectionOneTest Test_One Ran");
 
             Assert.True(true);
         }
