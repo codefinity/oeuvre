@@ -294,17 +294,32 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 #### Structural Quanta
 ##### Command
+
+Unit of communication of a task Internal or External nternal tasks enter into the Domain through Commands.
+
 ##### Query
+
+Unit of Retrieving Information.
+
 ##### Domain Events
 
+Unit of Communication within the domain
+
+##### Integration Events
+
+Unit of communication between Bounded Contexts / Modules
+
 #### Business Quanta
+
 ##### Aggregates
 
-Automic Unit of Business Logic
+Automic Unit of Business Logic / The change of business requirement
 
 #### Deployment Quanta Used
+
 ##### Modules/Bonded Contexts
 
+Unit of Deployment
 
 ## Development Methodologies
 
@@ -337,6 +352,9 @@ Automic Unit of Business Logic
 
 
 #### Continuous Integration and Deployment (CI/CD)
+
+
+#### 12-Factor Apps
 
 
 #### Code Coverage
