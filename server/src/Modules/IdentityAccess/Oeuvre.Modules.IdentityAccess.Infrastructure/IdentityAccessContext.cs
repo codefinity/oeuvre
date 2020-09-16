@@ -49,9 +49,12 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
         {
             ApplyFixForUpdatingOwnedEntities().GetAwaiter().GetResult(); ;
 
-            ApplyAfterSaveActions().GetAwaiter().GetResult();
+            int result = base.SaveChanges();
 
-            return base.SaveChanges();
+            //Apply try catch here so that domain events are sent after successful save.
+            DispatchDomainEvents().GetAwaiter().GetResult();
+
+            return result;
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
@@ -61,14 +64,9 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
             int result = await base.SaveChangesAsync(cancellationToken);
 
             //Apply try catch here so that domain events are sent after successful save.
-            await ApplyAfterSaveActions();
+            await DispatchDomainEvents();
 
             return result;
-        }
-
-        private async Task ApplyAfterSaveActions()
-        {
-            await DispatchDomainEvents();
         }
 
         /// <summary>

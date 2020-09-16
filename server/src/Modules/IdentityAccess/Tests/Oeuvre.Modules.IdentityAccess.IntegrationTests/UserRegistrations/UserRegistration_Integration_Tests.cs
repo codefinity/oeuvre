@@ -42,7 +42,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 
         //FREG-S2
         [Fact]
-        public async void GIVEN_UserRegistersMoreThanOnceWithUniqueEMailId_THEN_RegistrationShouldBeSuccessful()
+        public async void GIVEN_UserRegistersMoreThanOnceWithSameUniqueEMailId_THEN_RegistrationShouldBeSuccessful()
         {
 
             RegisterNewUserCommand registerNewUserCommand = new RegisterNewUserCommand(
@@ -59,17 +59,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 
             var userRegistration = await IdentityAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(registrationId));
 
-            RegisterNewUserCommand registerNewUserCommand2 = new RegisterNewUserCommand(
-                            "47d60457-5a80-4c83-96b6-890a5e5e4d22",
-                            "Bono",
-                            "Hewson",
-                            "withorwithoutyou",
-                            "+1",
-                            "1294561062",
-                            "Bono2@U2.com");
-
-
-            var registrationId2 = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand2);
+            //Same Data
+            var registrationId2 = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
 
             var userRegistration2 = await IdentityAccessModule.ExecuteQueryAsync(new GetUserRegistrationQuery(registrationId2));
 
@@ -82,11 +73,11 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
             //Assert.Equals(userRegistration.TenantId, registerNewUserCommand.TenantId);
 
 
-            Assert.Equal(userRegistration2.Email, registerNewUserCommand2.Email);
-            Assert.Equal(userRegistration2.FirstName, registerNewUserCommand2.FirstName);
-            Assert.Equal(userRegistration2.LastName, registerNewUserCommand2.LastName);
-            Assert.Equal(userRegistration2.CountryCode, registerNewUserCommand2.MobileNoCountryCode);
-            Assert.Equal(userRegistration2.MobileNo, registerNewUserCommand2.MobileNumber);
+            Assert.Equal(userRegistration2.Email, registerNewUserCommand.Email);
+            Assert.Equal(userRegistration2.FirstName, registerNewUserCommand.FirstName);
+            Assert.Equal(userRegistration2.LastName, registerNewUserCommand.LastName);
+            Assert.Equal(userRegistration2.CountryCode, registerNewUserCommand.MobileNoCountryCode);
+            Assert.Equal(userRegistration2.MobileNo, registerNewUserCommand.MobileNumber);
             //Assert.Equals(userRegistration.TenantId, registerNewUserCommand.TenantId);
 
 
