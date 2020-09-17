@@ -498,10 +498,10 @@ Feature: <Feature Name>
 
 #<FeatureNameCode>-<SceneraoNumber>
 Scenario: <Feature Scenerao>
-	Given  <#BusinessRule-1>
+	Given <#BusinessRule-1>
 	And <#BusinessRule-2>
 	When <#Command>
-	Then <#DominEvents> <#InternalCommands>
+	Then <#DominEvents> <#Policies> <#InternalCommands>
 
 ```
 
