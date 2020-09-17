@@ -745,7 +745,7 @@ Scenario: Password reset requested by an Active User with Wrong EMail Id
 #FFPR-S4
 Scenario: Password reset requested by an InActive User with Wrong EMail Id
 	Given I am a regestered User
-	And I am an Active User
+	And I am an InActive User
 	When For reseting my password I enter EMail-Id I had given at the time of registration
 	Then I should NOT get the Email with Password Reset Link
 
