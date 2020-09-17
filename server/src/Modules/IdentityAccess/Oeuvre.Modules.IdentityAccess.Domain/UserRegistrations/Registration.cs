@@ -87,7 +87,6 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
         public User CreateUser()
         {
 
-            //Not Working - Check This
             this.CheckRule(new UserCannotBeCreatedWhenRegistrationIsNotConfirmedRule(status));
 
             return User.CreateFromUserRegistration(this.Id,

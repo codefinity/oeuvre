@@ -9,6 +9,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests
     {
         public PasswordResetRequestId(Guid value) : base(value)
         {
+
+
         }
     }
 }

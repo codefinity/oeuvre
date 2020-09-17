@@ -1,4 +1,5 @@
 ﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests;
 using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users.Events;
@@ -76,6 +77,14 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
                                                             this.fullName.FirstName,
                                                             this.fullName.LastName,
                                                             this.eMailId));
+        }
+
+        public PasswordResetRequest RequestPasswordReset(string eMailId)
+        {
+            //Rules
+
+            return PasswordResetRequest.CreateFromUser(Id);
+
         }
 
         public void AddRole(string role)
