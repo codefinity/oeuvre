@@ -8,16 +8,16 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser
 {
     internal class GetUserQueryHandler : IQueryHandler<GetUserQuery, UserDto>
     {
-        private readonly ISqlConnectionFactory _sqlConnectionFactory;
+        private readonly ISqlConnectionFactory sqlConnectionFactory;
 
         public GetUserQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _sqlConnectionFactory = sqlConnectionFactory;
+            this.sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<UserDto> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var connection = _sqlConnectionFactory.GetOpenConnection();
+            var connection = sqlConnectionFactory.GetOpenConnection();
 
             const string sql = "SELECT " +
                                "[Id], " +
@@ -28,7 +28,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.GetUser
                                "[EMail], " +
                                "[Password], " +
                                "[IsActive] " +
-                               "FROM [identityaccess].[Users] AS [User] " +
+                               "FROM [identityaccess].[v_Users] AS [User] " +
                                "WHERE Id = @UserId";
             
             return await connection.QuerySingleAsync<UserDto>(sql, new

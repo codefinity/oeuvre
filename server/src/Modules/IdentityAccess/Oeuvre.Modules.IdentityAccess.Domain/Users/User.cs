@@ -3,6 +3,7 @@ using Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests;
 using Oeuvre.Modules.IdentityAccess.Domain.Tenants;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 using Oeuvre.Modules.IdentityAccess.Domain.Users.Events;
+using Oeuvre.Modules.IdentityAccess.Domain.Users.Rules;
 using System;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
@@ -79,9 +80,12 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
                                                             this.eMailId));
         }
 
-        public PasswordResetRequest RequestPasswordReset(string eMailId)
+        public PasswordResetRequest RequestPasswordReset(string eMailId, IUserFinder userFinder)
         {
             //Rules
+            CheckRule(new UserLoginEMailIdMustExistRule(userFinder, eMailId));
+            CheckRule(new UserMustBeActiveRule(isActive));
+
 
             return PasswordResetRequest.CreateFromUser(Id);
 

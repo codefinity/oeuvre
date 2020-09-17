@@ -73,3 +73,13 @@ CREATE TABLE [identityaccess].[Permissions] (
     [Description] VARCHAR (255) NULL,
     CONSTRAINT [PK_identityaccess_Permissions_Code] PRIMARY KEY CLUSTERED ([Code] ASC)
 );
+
+PRINT N'Creating [identityaccess].[PasswordResetRequests]...';
+
+CREATE TABLE [identityaccess].[PasswordResetRequests] (
+    [Id]                UNIQUEIDENTIFIER       NOT NULL,
+    [UserId]            UNIQUEIDENTIFIER       NOT NULL,
+    [RequestedOn]       DATETIME               NOT NULL,
+    [Status]            VARCHAR (50)           NOT NULL,
+    CONSTRAINT [PK_identityaccess_PasswordResetRequests_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
+);

@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
 {
-    public class PasswordResetRequestsRepository : ITenantRepository
+    public class PasswordResetRequestsRepository : IPasswordResetRequestRepository
     {
         private readonly IdentityAccessContext identityAccessContext;
 
@@ -16,17 +17,17 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
             this.identityAccessContext = identityAccessContext;
         }
 
-        public async Task AddAsync(Tenant tenant)
+        public async Task AddAsync(PasswordResetRequest passwordResetRequest)
         {
             //string state = identityAccessContext.Entry(user).State.ToString();
 
-            await identityAccessContext.Tenants.AddAsync(tenant);
+            await identityAccessContext.PasswordResetRequest.AddAsync(passwordResetRequest);
 
             try
             {
                 //string state1 = identityAccessContext.Entry(user).State.ToString();
                 //identityAccessContext.Entry(user).State = EntityState.Modified;
-                string state2 = identityAccessContext.Entry(tenant).State.ToString();
+                string state2 = identityAccessContext.Entry(passwordResetRequest).State.ToString();
 
                 identityAccessContext.SaveChanges();
             }
@@ -36,13 +37,13 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
             }
         }
 
-        public async Task UpdateAsync(Tenant tenant)
+        public async Task UpdateAsync(PasswordResetRequest passwordResetRequest)
         {
-            await identityAccessContext.Tenants.AddAsync(tenant);
+            await identityAccessContext.PasswordResetRequest.AddAsync(passwordResetRequest);
 
             try
             {
-                identityAccessContext.Entry(tenant).State = EntityState.Modified;
+                identityAccessContext.Entry(passwordResetRequest).State = EntityState.Modified;
 
                 //identityAccessContext.Entry(user);
                 //identityAccessContext.
@@ -55,10 +56,10 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
             }
         }
 
-        public async Task<Tenant> GetByIdAsync(TenantId tenantId)
+        public async Task<PasswordResetRequest> GetByIdAsync(PasswordResetRequestId passwordResetRequestId)
         {
 
-            return await identityAccessContext.Tenants.FirstOrDefaultAsync(x => x.Id == tenantId);
+            return await identityAccessContext.PasswordResetRequest.FirstOrDefaultAsync(x => x.Id == passwordResetRequestId);
 
         }
 
