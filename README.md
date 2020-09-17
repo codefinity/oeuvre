@@ -667,14 +667,14 @@ Feature: ForgotPasswordRequest
 	In order to login again
 	I want to be able to reset my password
 
-Scenario: When the Email Id Provided is correct
+Scenario: Password reset requested with Valid EMail Id
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide my Correct EMail-Id
 	And a user with that EMail exists in Oeuvre
 	Then I should get the Password Reset Link in my email
 
-Scenario: When the Email Id Provided is correct
+Scenario: Password reset requested with InCorrrect EMail Id
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide an InCorrect EMail-Id
@@ -689,12 +689,18 @@ Scenario: When the Email Id Provided is correct
 
 Feature: ResetPassword
 
-Scenario: Reset password on clicking the link in the Reset password EMail sent and supplying the new password and retype password
+Scenario: Reseting the password using the Link sent in the EMail
 	Given that I have received the reset password EMail with the reset link
 	When I click on the link
 	And supply the new password
 	And the retype password
 	Then my password should be reset to the new password
+
+
+Scenario: Reseting the password when the link in the EMail has Expired
+	Given that I have received the reset password EMail with the reset link
+	When I click on the link which is Expired
+	Then I should not be able to reset my password
 
 ```
 
