@@ -500,8 +500,9 @@ Feature: <Feature Name>
 Scenario: <Feature Scenerao>
 	Given <#BusinessRule-1>
 	And <#BusinessRule-2>
-	When <#Command>
-	Then <#DominEvents> <#Policies> <#InternalCommands>
+	When <#Command> -- No ANDs for this expected
+	Then <#DominEvent-1> <#Policy-1> <#InternalCommand-1>
+	And <#DominEvents-2> <#Policy-2> <#InternalCommand-2>
 
 ```
 
