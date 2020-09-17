@@ -253,7 +253,7 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
-## Danngers of Overuse of Concepts
+## Dangers of Overuse of Concepts
 
 If you have a hammer, everything looks like a nail.
 
@@ -370,6 +370,26 @@ Unit of Deployment
 #### Code Coverage
 
 ## Development Process
+
+#### Domain and Infrastructure
+
+1. Design the Domain Structure in accordance with the Feature in the feaure files.
+
+2. Write **Domain Unit Tests** in accordance with the Feature in the feaure files.
+
+3. Write the behaviour of the Domain so that the Domain Unit Tests pass.
+
+#### Module Integration
+
+4. Modify the Database Scripts as per the changes in the Domain Above.
+
+5. Write **Module Integration Tests** in accordance with the Feature in the feaure files.
+
+6. Write the behaviour of the application so that the Unit Tests pass.
+
+
+#### Application Integration
+
 
 ## Requirement Discussion
 
