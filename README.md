@@ -692,6 +692,8 @@ Scenario: Admin can Activate a User who is DeActivated
 ##### [ForgotPasswordRequest.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/ForgotPasswordRequest.feature)
 ```gherkin
 
+@TODO: Refactor this into tables to transform this to SpecFolw Tests
+
 #FFPR
 Feature: ForgotPasswordRequest
 	As a Member who has forgotten his Oeuvre password
@@ -699,18 +701,35 @@ Feature: ForgotPasswordRequest
 	I want to be able to reset my password
 
 #FFPR-S1
-Scenario: Password reset requested with Correct EMail Id
-	Given I am a regestered Member
-	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
-	When I provide my Correct EMail-Id
-	Then I should get the Password Reset Link in my email
+Scenario: Password reset requested by an Active User with Correct EMail Id
+	Given I am a regestered User #BusinessRule-1
+	And I am an Active User #BusinessRule-2
+	When For reseting my password I enter EMail-Id I had given at the time of registration
+	Then I should get the Email with Password Reset Link #DomainEvent #Command
+	
+	
+#FFPR-S2
+Scenario: Password reset requested by an InActive User with Correct EMail Id
+	Given I am a regestered User
+	And I am an InActive User
+	When For reseting my password I enter EMail-Id I had given at the time of registration
+	Then I should NOT get the Email with Password Reset Link
+	
 
-#FFPR-S1
-Scenario: Password reset requested with Wrong EMail Id
-	Given I am a regestered Member
-	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
-	When I provide an InCorrect EMail-Id
-	Then password reset EMail should not be sent
+#FFPR-S3
+Scenario: Password reset requested by an Active User with Wrong EMail Id
+	Given I am a regestered User
+	And I am an Active User
+	When For reseting my password I enter EMail-Id I had given at the time of registration
+	Then I should NOT get the Email with Password Reset Link
+	
+	
+#FFPR-S4
+Scenario: Password reset requested by an InActive User with Wrong EMail Id
+	Given I am a regestered User
+	And I am an Active User
+	When For reseting my password I enter EMail-Id I had given at the time of registration
+	Then I should NOT get the Email with Password Reset Link
 
 ```
 
