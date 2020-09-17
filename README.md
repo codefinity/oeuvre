@@ -488,6 +488,23 @@ Settings :
 
 ## Feature Files Creation
 
+#### Template
+
+```gherkin
+
+#<FeatureNameCode>
+Feature: <Feature Name>
+	 <Feature Description>
+
+#<FeatureNameCode>-<SceneraoNumber>
+Scenario: <Feature Scenerao>
+	Given  <#BusinessRule-1>
+	And <#BusinessRule-2>
+	When <#Command>
+	Then <#DominEvents> <#InternalCommands>
+
+```
+
 ### Identity Access
 
 ##### [Registration.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Registration.feature)
