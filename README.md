@@ -679,19 +679,17 @@ Feature: ForgotPasswordRequest
 	I want to be able to reset my password
 
 #FFPR-S1
-Scenario: Password reset requested with Valid EMail Id
+Scenario: Password reset requested with Correct EMail Id
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide my Correct EMail-Id
-	And a user with that EMail exists in Oeuvre
 	Then I should get the Password Reset Link in my email
 
 #FFPR-S1
-Scenario: Password reset requested with InCorrrect EMail Id
+Scenario: Password reset requested with Wrong EMail Id
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide an InCorrect EMail-Id
-	And a user with that EMail does not exists in Oeuvre
 	Then password reset EMail should not be sent
 
 ```
