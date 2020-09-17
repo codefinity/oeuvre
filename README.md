@@ -722,8 +722,8 @@ Feature: ForgotPasswordRequest
 Scenario: Password reset requested by an Active User with Correct EMail Id
 	Given I am a regestered User #BusinessRule-1
 	And I am an Active User #BusinessRule-2
-	When For reseting my password I enter EMail-Id I had given at the time of registration
-	Then I should get the Email with Password Reset Link #DomainEvent #Command
+	When For reseting my password I enter EMail-Id I had given at the time of registration #Command
+	Then I should get the Email with Password Reset Link #DomainEvent #Policy #Command
 	
 	
 #FFPR-S2
