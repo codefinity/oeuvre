@@ -253,6 +253,12 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
+## Danngers of Overuse of Concepts
+
+If you have a hammer, everything looks like a nail.
+
+Concepts should fit together and be optimal. 
+
 
 ## Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
@@ -580,8 +586,10 @@ Scenario: Registrant clicks on verification EMail after the Expiration Period
 ##### [Authentication.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/Authentication.feature)
 ```gherkin
 
+#FAUTH
 Feature: Authentication
 
+#FAUTH-S1
 Scenario: Logging-In with valid credentials
 	Given I am logged out
 	And I am a User of Oeuvre Portal
@@ -591,6 +599,7 @@ Scenario: Logging-In with valid credentials
 		|email@gmail.com	| Passw0rd123 |
 	Then I should be authenticated
 
+#FAUTH-S2
 Scenario: Logging-In with in-valid credentials
 	Given I am logged out
 	And I am a User of Oeuvre Portal
@@ -600,6 +609,7 @@ Scenario: Logging-In with in-valid credentials
 		|email@gmail.com	| Passw0rd123 |
 	Then I should not be authenticated
 	
+#FAUTH-S3	
 Scenario: Logging-In with valid credentials when User is NOT Active
 	Given I am logged out
 	And I am a User of Oeuvre Portal
@@ -609,6 +619,7 @@ Scenario: Logging-In with valid credentials when User is NOT Active
 		|email@gmail.com	| Passw0rd123 |
 	Then I should not be authenticated	
 
+#FAUTH-S4
 Scenario: Logging-In with valid credentials when the Registrant has not verified his EMail Id
 	Given I am logged out
 	And I have Registered on the Oeuvre Portal
@@ -624,13 +635,16 @@ Scenario: Logging-In with valid credentials when the Registrant has not verified
 
 ```gherkin
 
+#FUD
 Feature: DeActivate A User
 
+#FUD-S1
 Scenario: Admin can DeActivate a User
 	Given I an Admin of Oeuvre Portal
 	When I DeActivate a User
 	Then that user should not be allowed to login
 
+#FUD-S2
 Scenario: Admin can DeActivate a User while the user is Logged-In
 	Given I an Admin of Oeuvre Portal
 	When I DeActivate a User who is already Logged-In
@@ -643,8 +657,10 @@ Scenario: Admin can DeActivate a User while the user is Logged-In
 
 ```gherkin
 
+#FUA
 Feature: Admin can Activate A DeActivated User
 
+#FUA-S1
 Scenario: Admin can Activate a User who is DeActivated
 	Given I am the Admin of Oeuvre Portal
 	And a User is DeActivated
@@ -656,19 +672,22 @@ Scenario: Admin can Activate a User who is DeActivated
 ##### [ForgotPasswordRequest.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/ForgotPasswordRequest.feature)
 ```gherkin
 
+#FFPR
 Feature: ForgotPasswordRequest
 	As a Member who has forgotten his Oeuvre password
 	In order to login again
 	I want to be able to reset my password
 
-Scenario: When the Email Id Provided is correct
+#FFPR-S1
+Scenario: Password reset requested with Valid EMail Id
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide my Correct EMail-Id
 	And a user with that EMail exists in Oeuvre
 	Then I should get the Password Reset Link in my email
 
-Scenario: When the Email Id Provided is correct
+#FFPR-S1
+Scenario: Password reset requested with InCorrrect EMail Id
 	Given I am a regestered Member
 	And For reseting my password I am asked my EMail-Id I had provided at the time of registration
 	When I provide an InCorrect EMail-Id
@@ -681,22 +700,32 @@ Scenario: When the Email Id Provided is correct
 
 ```gherkin
 
+#FRP
 Feature: ResetPassword
 
-Scenario: Reset password on clicking the link in the Reset password EMail sent and supplying the new password and retype password
+#FRP-S1
+Scenario: Reseting the password using the Link sent in the EMail
 	Given that I have received the reset password EMail with the reset link
 	When I click on the link
 	And supply the new password
 	And the retype password
 	Then my password should be reset to the new password
 
+#FRP-S2
+Scenario: Reseting the password when the link in the EMail has Expired
+	Given that I have received the reset password EMail with the reset link
+	When I click on the link which is Expired
+	Then I should not be able to reset my password
+
 ```
 
 ##### [UserProfile.feature](https://github.com/codefinity/oeuvre/blob/master/server/src/Specifications/Features/Functional/IdentityAccess/Oeuvre.Specs.IdentityAccess/Features/UserProfile.feature)
 ```gherkin
 
+#FUP
 Feature: UserProfile
 
+#FUP-S1
 Scenario: Member can Update the User Profile
 	Given I am a Registered User
 	When I try to update my User Profile
@@ -708,8 +737,10 @@ Scenario: Member can Update the User Profile
 
 ```gherkin
 
+#FUS
 Feature: UserSettings
 
+#FUS-S1
 Scenario: Member can update his Settings
 	Given I am a Registered User
 	When I try to update my Settings
