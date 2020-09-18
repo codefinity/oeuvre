@@ -41,15 +41,23 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests
             return new PasswordResetRequest(eMailId, finder);
         }
 
-        public void SendNewPassword(string newPassword, 
-            IPasswordResetExpirationCalculator calculator, 
-            IUserFinder finder)
+        public void InitiatePasswordReset(IPasswordResetExpirationCalculator calculator)
+        {
+            CheckRule(new PasswordCannotBeResetAfterRequestExpirationRule(calculator, requestedOn));
+            CheckRule(new PasswordCannotBeResetMoreThanOnceRule(status));
+
+            status = PasswordRequestStatus.Initiated;
+        }
+
+        public void SendNewPassword(string newPassword,
+                IPasswordResetExpirationCalculator calculator,
+                IUserFinder finder)
         {
             CheckRule(new UserMustBeActiveRule(eMailId, finder));
             CheckRule(new PasswordCannotBeResetMoreThanOnceRule(status));
             CheckRule(new PasswordCannotBeResetAfterRequestExpirationRule(calculator, requestedOn));
 
-            status = PasswordRequestStatus.NewPasswordReveived;
+            status = PasswordRequestStatus.NewPasswordReceived;
 
             AddDomainEvent(new NewPasswordReceivedDomainEvent(eMailId, newPassword));
         }

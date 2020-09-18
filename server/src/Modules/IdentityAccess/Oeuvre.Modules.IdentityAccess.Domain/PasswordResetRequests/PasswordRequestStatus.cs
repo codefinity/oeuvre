@@ -8,7 +8,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests
     public class PasswordRequestStatus : ValueObject
     {
         public static PasswordRequestStatus ResetPending => new PasswordRequestStatus(nameof(ResetPending));
-        public static PasswordRequestStatus NewPasswordReveived => new PasswordRequestStatus(nameof(NewPasswordReveived));
+        public static PasswordRequestStatus Initiated => new PasswordRequestStatus(nameof(Initiated));
+        public static PasswordRequestStatus NewPasswordReceived => new PasswordRequestStatus(nameof(NewPasswordReceived));
 
         public string Value { get; }
 
