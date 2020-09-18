@@ -11,8 +11,10 @@ using Xunit;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 {
+    //#FRP
     public class PasswordReset_Domain_Tests : TestBase
     {
+        //#FRP-S1
         [Fact]
         public void GIVEN_MyPasswordRequestHasNotExpired_WHEN_ISendMyPassword_THEN_MyPasswordShouldBeReset()
         {
@@ -48,6 +50,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
         }
 
+        //#FRP-S2
         [Fact]
         public void GIVEN_MyPasswordRequestHasExpired_WHEN_IInitiateThePasswordReset_THEN_IShouldNotBeAllowedToResetThePassword()
         {
@@ -80,6 +83,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
         }
 
+        //#FRP-S3
         [Fact]
         public void GIVEN_IHaveAlreadyUserTheRequestToResetMyPassword_WHEN_IInitiateThePasswordReset_THEN_IShouldNotBeAllowedToResetThePassword()
         {
