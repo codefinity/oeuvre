@@ -9,11 +9,11 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
 {
-    public class PasswordResetRequestsEntityTypeConfiguration : IEntityTypeConfiguration<Tenant>
+    public class PasswordResetRequestsEntityTypeConfiguration : IEntityTypeConfiguration<PasswordResetRequest>
     {
-        public void Configure(EntityTypeBuilder<Tenant> builder)
+        public void Configure(EntityTypeBuilder<PasswordResetRequest> builder)
         {
-            builder.ToTable("PasswordRequests", "identityaccess");
+            builder.ToTable("PasswordResetRequests", "identityaccess");
 
             builder.HasKey(x => x.Id);
 
@@ -21,10 +21,10 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
 
             builder.OwnsOne<PasswordRequestStatus>("status", b =>
             {
-                b.Property(x => x.Value).HasColumnName("StatusCode");
+                b.Property(x => x.Value).HasColumnName("Status");
             });
 
-            builder.Property<string>("requestedOn").HasColumnName("RequestedOn");
+            builder.Property<DateTime>("requestedOn").HasColumnName("RequestedOn");
 
         }
 

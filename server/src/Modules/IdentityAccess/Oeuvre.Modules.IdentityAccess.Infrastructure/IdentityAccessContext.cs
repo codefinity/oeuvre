@@ -28,7 +28,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<Registration> UserRegistrations { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<PasswordResetRequest> PasswordResetRequest { get; set; }
+        public DbSet<PasswordResetRequest> PasswordResetRequests { get; set; }
 
         private readonly ILoggerFactory loggerFactory;
         public IdentityAccessContext(DbContextOptions options
@@ -45,6 +45,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure
             modelBuilder.ApplyConfiguration(new TenantEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserRegistrationEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new PasswordResetRequestsEntityTypeConfiguration());
         }
 
         public override int SaveChanges()

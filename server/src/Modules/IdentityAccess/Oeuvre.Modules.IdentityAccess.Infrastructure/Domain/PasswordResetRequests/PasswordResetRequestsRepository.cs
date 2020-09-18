@@ -21,7 +21,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
         {
             //string state = identityAccessContext.Entry(user).State.ToString();
 
-            await identityAccessContext.PasswordResetRequest.AddAsync(passwordResetRequest);
+            await identityAccessContext.PasswordResetRequests.AddAsync(passwordResetRequest);
 
             try
             {
@@ -29,7 +29,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
                 //identityAccessContext.Entry(user).State = EntityState.Modified;
                 string state2 = identityAccessContext.Entry(passwordResetRequest).State.ToString();
 
-                identityAccessContext.SaveChanges();
+                await identityAccessContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
 
         public async Task UpdateAsync(PasswordResetRequest passwordResetRequest)
         {
-            await identityAccessContext.PasswordResetRequest.AddAsync(passwordResetRequest);
+            await identityAccessContext.PasswordResetRequests.AddAsync(passwordResetRequest);
 
             try
             {
@@ -59,7 +59,7 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
         public async Task<PasswordResetRequest> GetByIdAsync(PasswordResetRequestId passwordResetRequestId)
         {
 
-            return await identityAccessContext.PasswordResetRequest.FirstOrDefaultAsync(x => x.Id == passwordResetRequestId);
+            return await identityAccessContext.PasswordResetRequests.FirstOrDefaultAsync(x => x.Id == passwordResetRequestId);
 
         }
 

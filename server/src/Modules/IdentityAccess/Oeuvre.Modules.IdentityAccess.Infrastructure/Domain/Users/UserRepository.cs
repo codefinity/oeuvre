@@ -62,5 +62,12 @@ namespace CompanyName.MyMeetings.Modules.UserAccess.Infrastructure.Domain.Users
             return await identityAccessContext.Users.FirstOrDefaultAsync(x => x.Id == userId);
 
         }
+
+        public async Task<User> GetByEMailIdAsync(string eMailId)
+        {
+            return await identityAccessContext.Users
+                .FromSqlRaw("SELECT * FROM [identityaccess].[Users] WHERE EMail = '" + eMailId + "'")
+                .FirstOrDefaultAsync();
+        }
     }
 }

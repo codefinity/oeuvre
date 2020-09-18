@@ -12,5 +12,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.Users
         Task UpdateAsync(User user);
 
         Task<User> GetByIdAsync(UserId userId);
+
+        Task<User> GetByEMailIdAsync(string eMailId);
     }
 }

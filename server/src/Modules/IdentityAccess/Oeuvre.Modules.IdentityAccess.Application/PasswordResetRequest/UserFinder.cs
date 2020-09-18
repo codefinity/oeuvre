@@ -17,20 +17,27 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest
             this.sqlConnectionFactory = sqlConnectionFactory;
         }
 
-        public int FindUser(string eMailId)
+        public (bool UserExists, bool Active) FindUser(string eMailId)
         {
             var connection = sqlConnectionFactory.GetOpenConnection();
 
             const string sql = "SELECT " +
                                "COUNT(*) " +
                                "FROM [identityaccess].[v_Users] AS [User] " +
-                               "WHERE [EMail] = @eMailId";
+                               "WHERE [EMail] = @eMailId AND IsActive = true";
 
-            return connection.QuerySingle<int>(sql,
+            int result = connection.QuerySingle<int>(sql,
                 new
                 {
                     eMailId
                 });
+
+            bool exists = result == 1;
+
+            bool active = result == 1;
+
+            return (exists, active);
+
         }
     }
 }

@@ -3,25 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Domain.Users.Rules
+namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.Rules
 {
-
     public class UserLoginEMailIdMustExistRule : IBusinessRule
     {
         private readonly IUserFinder userFinder;
         private readonly string eMailId;
 
-        internal UserLoginEMailIdMustExistRule(IUserFinder userFinder, string eMailId)
+        internal UserLoginEMailIdMustExistRule(string eMailId, IUserFinder userFinder)
         {
-            this.userFinder = userFinder;
             this.eMailId = eMailId;
+            this.userFinder = userFinder;
         }
 
         public bool IsBroken()
         {
-            int userCount = userFinder.FindUser(eMailId);
-
-            bool userFoundBroken = userCount == 1;
+            bool userFoundBroken = userFinder.FindUser(eMailId).UserExists;
 
             return !userFoundBroken;
         }

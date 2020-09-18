@@ -15,24 +15,26 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.SendPas
 
         private readonly IPasswordResetRequestRepository passwordResetRequestRepository;
         private readonly IUserRepository userRepository;
-        private readonly IUserFinder userFinder;
         private readonly ILogger logger;
 
         public ResetPasswordRequestCommandHandler(IPasswordResetRequestRepository passwordResetRequestRepository
                                         ,IUserRepository userRepository
-                                        ,IUserFinder userFinder
                                         ,ILogger logger)
         {
             this.passwordResetRequestRepository = passwordResetRequestRepository;
             this.userRepository = userRepository;
-            this.userFinder = userFinder;
             this.logger = logger;
         }
 
         public async Task<Guid> Handle(ResetPasswordRequestCommand request, CancellationToken cancellationToken)
         {
-            logger.Information("Command - Register New User");
+            //var user = await userRepository.GetByEMailIdAsync(request.EMailId);
 
+            //var resetPasswordRequest = user.CreateRequestPasswordReset();
+
+            //await passwordResetRequestRepository.AddAsync(resetPasswordRequest);
+
+            //return resetPasswordRequest.Id.Value;
 
             return new Guid();
         }

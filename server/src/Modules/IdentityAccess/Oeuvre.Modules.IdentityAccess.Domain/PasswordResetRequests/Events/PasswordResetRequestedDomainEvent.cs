@@ -6,15 +6,14 @@ using System.Text;
 
 namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.Events
 {
-    public class PasswordResetRequested : DomainEventBase
+    public class PasswordResetRequestedDomainEvent : DomainEventBase
     {
-        public PasswordResetRequested(UserId userId)
+        public PasswordResetRequestedDomainEvent(string eMailId)
         {
-            UserId = userId;
+            EMailId = eMailId;
         }
 
-        public UserId UserId { get; }
-
+        public string EMailId { get; }
 
     }
 }
