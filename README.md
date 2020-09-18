@@ -759,18 +759,27 @@ Scenario: Password reset requested by an InActive User with Wrong EMail Id
 Feature: ResetPassword
 
 #FRP-S1
-Scenario: Reseting the password using the Link sent in the EMail
+Scenario: Reseting the password after forgot password request
 	Given that I have received the reset password EMail with the reset link
-	When I click on the link
-	And supply the new password
-	And the retype password
+	And the password reset link is not expired
+	And I click on the link 
+	When supply the new password along with comfirm password
 	Then my password should be reset to the new password
 
 #FRP-S2
 Scenario: Reseting the password when the link in the EMail has Expired
 	Given that I have received the reset password EMail with the reset link
+	And the password reset link is expired
 	When I click on the link which is Expired
-	Then I should not be able to reset my password
+	Then I should not be allowed to reset the password
+	
+#FRP-S3
+Scenario: Reseting the password again using the same EMail Link
+	Given that I have received the reset password EMail with the reset link
+	And the password reset link is not expired
+	And I have already used that link to reset my password
+	When I click on the link to reset my password
+	Then I should not be allowed to reset the password
 
 ```
 
