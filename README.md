@@ -111,28 +111,32 @@ Software entities require a persistance mechanism because there is a need for th
 
 Evolution has created system with system within systems, with one fundemental property - each system or the unit of the system does one thing and one thing perfectly. This allows the parts of the system evolve independently.
 
-**6. Paradoxical nature of designs cannot be avoided**
+**6. Evolution has a trejectory**
+
+"It fell to the floor, an exquisite thing, a small thing that could upset balances and knock down a line of small dominoes and then big dominoes and then gigantic dominoes, all down the years across Time. Eckels' mind whirled. It couldn't change things. Killing one butterfly couldn't be that important! Could it?" ~ Ray Bradbury, A Sound of Thunder
+
+**7. Paradoxical nature of designs cannot be avoided**
 
 There will always be times when you get one part of the design right, the other part somehow does not fit. Sometimes compromises have to be made till the designs are perfected over time.
 
-**7. Framework and Application structure must allow for experimentation**
+**8. Framework and Application structure must allow for experimentation**
 
 As menitoned, design is an iterative process, a rigid application structure will not allow for rearranging and experementation. This will hurt the evolution of the Architecture.
 
-**8. Incremental Design is the way**
+**9. Incremental Design is the way**
 
 Successful designs evolve from designs that were already successfully working. It becomes an imperative that you must get the design right before the next step of the evolution.
 
-**9. Designs tend towards perfection but can still not be perfect**
+**10. Designs tend towards perfection but can still not be perfect**
 
 Design is something that is always happening, therefore the attitude of perfectionism must be avoided, at the same time the process of evolution must continue. 
 
-**10. The relation between the environment and the species is causal**
+**11. The relation between the environment and the species is causal**
 
 Environment influences the species and sometimes the Species incluences the environment it lives in.
 
 
-## How To Make Principles Of Evolution Work for Architecture**
+## How To Make Principles Of Evolution Work for Architecture
 
 >"Even in the world of make-believe there have to be rules. The parts have to be consistent and belong together." ~ Daniel Keyes, Flowers for Algernon
 
@@ -228,6 +232,10 @@ Fitness functions need to be constantly reviewed to ensure the integrity of the 
 Designing optimal AQ enables faster evolution cycles.
 
 [Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
+
+### Gettint the Evolutionary Trejectory Right
+
+Depends on the vison and prediction.
 
 ### Dimentions of Evolution
 
