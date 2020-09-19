@@ -201,7 +201,7 @@ Earlier the Fitness Functions are identified, the better they will help the Arci
 
 Like evolution, Architecture is a game of tradeoffs. Fitness Functions will help the architect to take informed decissions on what to trade for what in the architecture, till an optimal solution is found later.
 
-Fitness functions need to be constantly reviewed to ensure the integrity of the whole architecture and to access if the Architecture is following the optimal evolutionary trejectory.
+Fitness functions need to be constantly reviewed to ensure the integrity of the whole architecture and to access if the Architecture is following the optimal evolutionary trejectory. They provide a check for Architectural degradation.
 
 
 ### The Architectral Quanta
