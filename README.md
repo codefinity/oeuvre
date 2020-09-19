@@ -132,7 +132,9 @@ Design is something that is always happening, therefore the attitude of perfecti
 Environment influences the species and sometimes the Species incluences the environment it lives in.
 
 
-## How To Make Principles Of Evolution Work for Architecture
+## How To Make Principles Of Evolution Work for Architecture**
+
+>"Even in the world of make-believe there have to be rules. The parts have to be consistent and belong together." ~ Daniel Keyes, Flowers for Algernon
 
 ### Requirement is the King
 
