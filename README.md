@@ -201,7 +201,7 @@ Technology gets better over time and it can have the following effects of the Ar
 
 1. The Requirement remains the same, but the Architecture must adopt the new technology.
 
-2. Requirement changes to take advantage of the new technology.
+2. Requirement changes to take advantage of the new technology. Technology can also influence the requirements.
 
 Earlier the Fitness Functions are identified, the better they will help the Arcitecture to evolve.
 
