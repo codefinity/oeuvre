@@ -127,6 +127,10 @@ Successful designs evolve from designs that were already successfully working. I
 
 Design is something that is always happening, therefore the attitude of perfectionism must be avoided, at the same time the process of evolution must continue. 
 
+**10. The relation between the environment and the species is causal
+
+Environment influences the species and sometimes the Species incluences the environment it lives in.
+
 
 ## How To Make Principles Of Evolution Work for Architecture
 
