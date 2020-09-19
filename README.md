@@ -183,27 +183,25 @@ I cannot stress this enough — Architecting is a continuous activity. Software 
 
 ### Fitness Function
 
->"A fitness function is an objective function used to summarize how close a prospective design solution is to achieving the set aims. In evolutionary computing, the fitness function determines whether an algorithm has improved over time. In other words, as each variant of an algorithm is generated, the fitness functions determine how “fit” each variant is based on how the designer of the algorithm defined “fit.”"
-
->"We have a similar goal in evolutionary architecture—as architecture evolves, we need mechanisms to evaluate how changes impact the important characteristics of the architecture and prevent degradation of those characteristics over time. The fitness function metaphor encompasses a variety of mechanisms we employ to ensure architecture doesn’t change in undesirable ways, including metrics, tests, and other verifi cation tools. When an architect identifies an architectural characteristic they want to protect as things evolve, they define one or more fitness functions to protect that feature."
-
 >"The fitness function drives architectural decision making, guiding the architecture while allowing the changes needed to support changing business and technology environments."
 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-Fitness function is a term borowed from Genetic Algorithm Design. In a Genetic Algorithm small incremental changes are done to the software and after every generational change the output is assessed to see how close it is to the exact solution. This assessment is done by a function called the fitness function.
+Fitness function is a term borowed from Genetic Algorithm Design. In a Genetic Algorithm small incremental changes are done to the algorithm and after every generational change the output is assessed to see how close it is to the exact solution. This assessment is done by a function called the fitness function. The fithess function forces or guides the code to become better over time. Fitness function selects the varants of algorithm that provide solutions closer to exact solution.
 
-The architecture should ge guided by fitness functions. It also helps us take informed decisions during tradeofs.
+The architecture should ge guided by fitness functions. Fitness Functions are the environment inside which the architecture should evolve. When a requirement changes, first the fitness function changes and indicates to the Architecture that it must evolve to the next stage. All the fitness functions collectively evaluste of the evolution was successful.
 
-Fitness functions must be identified as early as possible to help the solution evolve.
+Technology gets better over time and it can have the following effects of the Architecture. Fitness Function helps the architecture to evolve to accomodiate these changes because the Architecture is working to satisfy those Fithess Function. 
 
-Fitness functions need to be constantly reviewed
+1. The Requirement remains the same, but the Architecture must adopt the new technology.
 
+2. Requirement changes to take advantage of the new technology.
 
+Earlier the Fitness Functions are identified, the better they will help the Arcitecture to evolve.
 
-> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior.
+Like evolution, Architecture is a game of tradeoffs. Fitness Functions will help the architect to take informed decissions on what to trade for what in the architecture, till an optimal solution is found later.
 
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+Fitness functions need to be constantly reviewed to ensure the integrity of the whole architecture and to access if the Architecture is following the optimal evolutionary trejectory.
 
 
 ### The Architectral Quanta
@@ -241,6 +239,10 @@ Evolutionary change is permanent and from within, on the other hand Adaptatation
 > Building software systems that evolve means controlling as many unknown factors as possible.
 
 > An evolutionary architecture supports guided, incremental change across multiple dimensions.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior.
 
 > ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
