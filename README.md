@@ -1,3 +1,5 @@
+**NOTE: The Documentation is in progress and there might be grammatical or spelling errors. In case of any factual errors, please use the [Issues](https://github.com/codefinity/oeuvre/issues) section to log them.**
+
 # Oeuvre
 
 **The Theater Of Evolutionary Architecture**
@@ -115,6 +117,8 @@ Evolution has created system with system within systems, with one fundemental pr
 
 "It fell to the floor, an exquisite thing, a small thing that could upset balances and knock down a line of small dominoes and then big dominoes and then gigantic dominoes, all down the years across Time. Eckels' mind whirled. It couldn't change things. Killing one butterfly couldn't be that important! Could it?" ~ Ray Bradbury, A Sound of Thunder
 
+The next stages of design will depend upon the current stage of the design.
+
 **7. Paradoxical nature of designs cannot be avoided**
 
 There will always be times when you get one part of the design right, the other part somehow does not fit. Sometimes compromises have to be made till the designs are perfected over time.
@@ -144,13 +148,15 @@ Environment influences the species and sometimes the Species incluences the envi
 
 > "Don’t build architecture for the sake of architecture—you are trying to solve a problem." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> "Software architectures aren’t created in a vacuum—they always reflect the ecosystem in which they were defined." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+Design should be guided by the requirement. Key to a good architecture is getting requirements right. Requirement is where everything starts from. Requirement is the unit of change of architecture. 
 
-> "... the craft of software architecture manifests in the ability of architects to analyze business and domain requirementsalong with other important factors to find a solution that balances all concerns optimally." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+Requirements will influence all dimentions of the architecture. Requirements are the environment in which the Architecture should thrive. When the requirement changes, the Architecture must evolve to catchup with the change.
 
-Design should be guided by the requirement. Key to a good architecture is getting requirements right. Requirement is where everything starts from. Requirement is the unit of change of architecture. If the requirement instead of religning the architecture is seen as changing a few lines of code in the layers, then probably the architecture is built around technical concerns and layers. 
+Architect's ability for creating a design depends on his ability to analyze the business requirement and understanding the business domain. Architects have to balance the business and the technical concerns. 
 
-Software must be modelled around business and not technology or layers.
+If the requirement instead of religning the architecture is seen as changing a few lines of code in the layers, then probably the architecture is built around technical concerns and layers. 
+
+Software must be modelled around business and domain knowledge, and not technology or layers.
 
 
 ### Single Responsibility Principle
