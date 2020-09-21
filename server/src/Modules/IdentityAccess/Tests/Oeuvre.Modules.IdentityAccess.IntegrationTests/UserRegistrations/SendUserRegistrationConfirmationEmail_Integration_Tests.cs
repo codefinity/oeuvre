@@ -37,7 +37,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                 content);
 
 
-            EmailSender.Object.SendEmail(email);
+            await EmailSender.Object.SendEmail(email);
 
             EmailSender.Verify(m => m.SendEmail(email), Times.Once());
 

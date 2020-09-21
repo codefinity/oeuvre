@@ -1,7 +1,10 @@
-﻿using Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.GetPasswordResetRequests;
+﻿using Domania.Domain;
+using Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.GetPasswordResetRequests;
 using Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.RequestPassswordReset;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.ConfirmUserRegistration;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNewUser;
+using Oeuvre.Modules.IdentityAccess.Application.Users.DeactivateUser;
+using Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.Rules;
 using Oeuvre.Modules.IdentityAccess.Infrastructure;
 using Oeuvre.Modules.IdentityAccess.IntegrationTests.SeedWork;
 using System;
@@ -27,10 +30,11 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
         public async void GIVEN_UserRequestsForPasswordReset_WHEN_UserProvidesValidEMailId_UserShouldGetAPasswordResetEMail()
         {
 
-            var userData = new {
+            var userData = new
+            {
                 TenentId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
                 FirstName = "FN",
-                LastName= "LN",
+                LastName = "LN",
                 Password = "pass",
                 CountryCode = "+1",
                 MobileNo = "1234567",
@@ -54,9 +58,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
 
 
             //When
-            var passwordResetRequestCommand = new ResetPasswordRequestCommand(registerNewUserCommand.Email);
-
-            var resetRequestId = await IdentityAccessModule.ExecuteCommandAsync(passwordResetRequestCommand);
+            var resetRequestId = await IdentityAccessModule.ExecuteCommandAsync(
+                                        new ResetPasswordRequestCommand(registerNewUserCommand.Email));
 
             //Then
             var passwordResetRequestQuery = await IdentityAccessModule.ExecuteQueryAsync(new GetPasswordResetRequestQuery(resetRequestId));
@@ -67,14 +70,144 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
         }
 
 
+        //#FFPR-S2
         [Fact]
-        public async void GIVEN_UserRequestsForPasswordReset_WHEN_UserRrovidesWrongEMailId_UserShouldNOTGetAPasswordResetEMail()
+        public async void GIVEN_UserRequestsForPasswordResetANDIsInActive_WHEN_UserRrovidesCorrectEMailId_UserShouldNOTGetAPasswordResetEMail()
         {
+            var userData = new
+            {
+                TenentId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                FirstName = "FN",
+                LastName = "LN",
+                Password = "pass",
+                CountryCode = "+1",
+                MobileNo = "1234567",
+                EMail = "e3@mail.com"
+            };
+
+            //Given
+            RegisterNewUserCommand registerNewUserCommand = new RegisterNewUserCommand(
+                                                                userData.TenentId,
+                                                                userData.FirstName,
+                                                                userData.LastName,
+                                                                userData.Password,
+                                                                userData.CountryCode,
+                                                                userData.MobileNo,
+                                                                userData.EMail);
 
 
+            var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
+
+            await IdentityAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrationId));
+
+            //DeActivate User
+            await IdentityAccessModule.ExecuteCommandAsync(new DeActivateUserCommand(registrationId));
 
 
+            //When
+            var exception = await Record.ExceptionAsync(() =>
+                                        IdentityAccessModule.ExecuteCommandAsync(
+                                            new ResetPasswordRequestCommand(registerNewUserCommand.Email)));
+
+            //Then
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserMustBeActiveRule>(exc.BrokenRule);
+            Assert.IsType<BusinessRuleValidationException>(exception);
         }
 
+        //#FFPR-S3
+        [Fact]
+        public async void GIVEN_UserRequestsForPasswordReset_WHEN_UserProvidesWrongEMailId_UserShouldGetAPasswordResetEMail()
+        {
+
+            var userData = new
+            {
+                TenentId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                FirstName = "FN",
+                LastName = "LN",
+                Password = "pass",
+                CountryCode = "+1",
+                MobileNo = "1234567",
+                EMail = "e2@mail.com"
+            };
+
+            var wrongEmailId = "e3212@mail.com";
+
+            //Given
+            RegisterNewUserCommand registerNewUserCommand = new RegisterNewUserCommand(
+                                                                userData.TenentId,
+                                                                userData.FirstName,
+                                                                userData.LastName,
+                                                                userData.Password,
+                                                                userData.CountryCode,
+                                                                userData.MobileNo,
+                                                                userData.EMail);
+
+
+            var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
+
+            await IdentityAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrationId));
+
+            //When
+            var exception = await Record.ExceptionAsync(() =>
+                                        IdentityAccessModule.ExecuteCommandAsync(
+                                        new ResetPasswordRequestCommand(wrongEmailId)));
+
+            //Then
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserLoginEMailIdMustExistRule>(exc.BrokenRule);
+            Assert.IsType<BusinessRuleValidationException>(exception);
+        }
+
+
+        //#FFPR-S4
+        [Fact]
+        public async void GIVEN_UserRequestsForPasswordReset_WHEN_UserIsInActiveANDProvidesWrongEMailId_UserShouldGetAPasswordResetEMail()
+        {
+            var userData = new
+            {
+                TenentId = "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                FirstName = "FN",
+                LastName = "LN",
+                Password = "pass",
+                CountryCode = "+1",
+                MobileNo = "1234567",
+                EMail = "e2@mail.com"
+            };
+
+            var wrongEmailId = "e3212@mail.com";
+
+            //Given
+            RegisterNewUserCommand registerNewUserCommand = new RegisterNewUserCommand(
+                                                                userData.TenentId,
+                                                                userData.FirstName,
+                                                                userData.LastName,
+                                                                userData.Password,
+                                                                userData.CountryCode,
+                                                                userData.MobileNo,
+                                                                userData.EMail);
+
+
+            var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
+
+            await IdentityAccessModule.ExecuteCommandAsync(new ConfirmUserRegistrationCommand(registrationId));
+
+            //DeActivate User
+            await IdentityAccessModule.ExecuteCommandAsync(new DeActivateUserCommand(registrationId));
+
+            //When
+            var exception = await Record.ExceptionAsync(() =>
+                                        IdentityAccessModule.ExecuteCommandAsync(
+                                        new ResetPasswordRequestCommand(wrongEmailId)));
+
+            //Then
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserLoginEMailIdMustExistRule>(exc.BrokenRule);
+            Assert.IsType<BusinessRuleValidationException>(exception);
+        }
     }
+
 }

@@ -21,20 +21,32 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests
         {
             var connection = sqlConnectionFactory.GetOpenConnection();
 
-            const string sql = "SELECT " +
+            const string sqlUserExists = "SELECT " +
                                "COUNT(*) " +
                                "FROM [identityaccess].[v_Users] AS [User] " +
-                               "WHERE [EMail] = @eMailId AND [IsActive] = 'true'";
+                               "WHERE [EMail] = @eMailId";
 
-            int result = connection.QuerySingle<int>(sql,
+            int resultUserExists = connection.QuerySingle<int>(sqlUserExists,
                 new
                 {
                     eMailId
                 });
 
-            bool exists = result == 1;
 
-            bool active = result == 1;
+            const string sqlUserActive = "SELECT " +
+                   "COUNT(*) " +
+                   "FROM [identityaccess].[v_Users] AS [User] " +
+                   "WHERE [EMail] = @eMailId AND [IsActive] = 'true'";
+
+            int resultUserActive = connection.QuerySingle<int>(sqlUserActive,
+                new
+                {
+                    eMailId
+                });
+
+            bool exists = resultUserExists == 1;
+
+            bool active = resultUserActive == 1;
 
             return (exists, active);
 
