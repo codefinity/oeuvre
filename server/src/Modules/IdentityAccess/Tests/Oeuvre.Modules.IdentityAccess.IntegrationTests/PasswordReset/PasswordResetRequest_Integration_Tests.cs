@@ -24,7 +24,7 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
 
         //#FFPR-S1
         [Fact]
-        public async void GIVEN_UserRequestsForPasswordReset_WHEN_UserRrovidesValidEMailId_UserShouldGetAPasswordResetEMail()
+        public async void GIVEN_UserRequestsForPasswordReset_WHEN_UserProvidesValidEMailId_UserShouldGetAPasswordResetEMail()
         {
 
             var userData = new {

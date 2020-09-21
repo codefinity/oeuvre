@@ -1,7 +1,9 @@
-﻿namespace Domaina.Infrastructure.EMails
+﻿using System.Threading.Tasks;
+
+namespace Domaina.Infrastructure.EMails
 {
     public interface IEmailSender
     {
-        void SendEmail(EmailMessage message);
+        Task SendEmail(EmailMessage message);
     }
 }

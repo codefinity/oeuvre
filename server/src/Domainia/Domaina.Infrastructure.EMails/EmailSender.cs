@@ -18,7 +18,7 @@ namespace Domaina.Infrastructure.EMails
             this.logger = logger;
             this.configuration = configuration;
         }
-        public async void SendEmail(EmailMessage message)
+        public Task SendEmail(EmailMessage message)
         {
             logger.Information(
                 "Email sent. From: {From}, To: {To}, Subject: {Subject}, Content: {Content}.",
@@ -47,11 +47,13 @@ namespace Domaina.Infrastructure.EMails
                                         message.Content,
                                         null);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
 
                 throw;
             }
+
+            return Task.CompletedTask;
 
         }
     }

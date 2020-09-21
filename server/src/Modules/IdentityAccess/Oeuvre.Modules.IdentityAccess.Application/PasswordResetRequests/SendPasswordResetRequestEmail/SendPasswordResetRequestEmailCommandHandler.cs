@@ -25,7 +25,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.SendPa
 
         public Task<Unit> Handle(SendPasswordResetRequestEmailCommand command, CancellationToken cancellationToken)
         {
-            logger.Information("Command - Send pssword reset link in the EMail");
+            logger.Information("Command - Send password reset link in the EMail");
 
             var emailMessage = new EmailMessage(
                 command.Email,
