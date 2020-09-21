@@ -1,5 +1,7 @@
 ﻿using Autofac;
+using Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests;
 using Oeuvre.Modules.IdentityAccess.Application.UserRegistrations;
+using Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests;
 using Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations;
 
 namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain
@@ -12,8 +14,16 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Configuration.Domain
                             .As<IUsersCounter>()
                             .InstancePerLifetimeScope();
 
+            builder.RegisterType<UserFinder>()
+                            .As<IUserFinder>()
+                            .InstancePerLifetimeScope();
+
             builder.RegisterType<UserRegistrationConfirmationExpirationCalculator>()
                             .As<IUserRegistrationConfirmationExpirationCalculator>()
+                            .InstancePerLifetimeScope();
+
+            builder.RegisterType<PasswordResetExpirationCalculator>()
+                            .As<IPasswordResetExpirationCalculator>()
                             .InstancePerLifetimeScope();
         }
     }

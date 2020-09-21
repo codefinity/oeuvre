@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.GetPasswordResetRequests
+namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.GetPasswordResetRequests
 {
     public class GetPasswordResetRequestQuery : QueryBase<PasswordResetRequestDto>
     {

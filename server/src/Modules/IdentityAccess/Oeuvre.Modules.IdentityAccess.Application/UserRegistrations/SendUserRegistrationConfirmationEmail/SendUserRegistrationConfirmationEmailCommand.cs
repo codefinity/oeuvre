@@ -7,7 +7,6 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.SendUserRe
 {
     public class SendUserRegistrationConfirmationEmailCommand : InternalCommandBase
     {
-        [JsonConstructor]
         public SendUserRegistrationConfirmationEmailCommand(Guid id, UserRegistrationId userRegistrationId, string email)
         : base(id)
         {

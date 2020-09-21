@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest
+namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests
 {
     public class UserFinder : IUserFinder
     {
@@ -24,7 +24,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest
             const string sql = "SELECT " +
                                "COUNT(*) " +
                                "FROM [identityaccess].[v_Users] AS [User] " +
-                               "WHERE [EMail] = @eMailId AND IsActive = true";
+                               "WHERE [EMail] = @eMailId AND [IsActive] = 'true'";
 
             int result = connection.QuerySingle<int>(sql,
                 new

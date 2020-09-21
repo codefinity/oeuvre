@@ -31,7 +31,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
                                     .Returns((userEmailExists, userActive));
 
             //When
-            var passwordResetRequest = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object);
+            var passwordResetRequest = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object);
 
             var passwordResetRequestedDomainEvent = AssertPublishedDomainEvent<PasswordResetRequestedDomainEvent>(passwordResetRequest);
 
@@ -60,7 +60,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             PasswordResetRequest passwordResetRequest = null;
             
             var exception = Record.Exception(() => passwordResetRequest 
-                                = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object));
+                                = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object));
 
 
             //Then
@@ -89,7 +89,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             PasswordResetRequest passwordResetRequest = null;
 
             var exception = Record.Exception(() => passwordResetRequest
-                                = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object));
+                                = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object));
 
 
             //Then
@@ -117,7 +117,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             PasswordResetRequest passwordResetRequest = null;
 
             var exception = Record.Exception(() => passwordResetRequest
-                                = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object));
+                                = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object));
 
 
             //Then

@@ -17,12 +17,12 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.Tenants
 
             builder.HasKey(x => x.Id);
 
-            builder.Property<UserId>("userId").HasColumnName("UserId");
-
             builder.OwnsOne<PasswordRequestStatus>("status", b =>
             {
                 b.Property(x => x.Value).HasColumnName("Status");
             });
+
+            builder.Property<string>("eMailId").HasColumnName("EMail");
 
             builder.Property<DateTime>("requestedOn").HasColumnName("RequestedOn");
 

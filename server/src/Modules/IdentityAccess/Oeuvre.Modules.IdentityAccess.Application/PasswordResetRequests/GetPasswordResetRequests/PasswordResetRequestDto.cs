@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.GetPasswordResetRequests
+namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.GetPasswordResetRequests
 {
     public class PasswordResetRequestDto
     {
         public Guid Id { get; set; }
 
-        public Guid UserId  { get; set; }
+        public string EMail  { get; set; }
 
         public DateTime RequestedOn { get; set; }
 

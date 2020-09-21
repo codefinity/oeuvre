@@ -78,7 +78,7 @@ PRINT N'Creating [identityaccess].[PasswordResetRequests]...';
 
 CREATE TABLE [identityaccess].[PasswordResetRequests] (
     [Id]                UNIQUEIDENTIFIER    NOT NULL,
-    [EMail]             NVARCHAR            NOT NULL,
+    [EMail]             NVARCHAR (255)       NOT NULL,
     [RequestedOn]       DATETIME            NOT NULL,
     [Status]            VARCHAR (50)        NOT NULL,
     CONSTRAINT [PK_identityaccess_PasswordResetRequests_Id] PRIMARY KEY CLUSTERED ([Id] ASC)

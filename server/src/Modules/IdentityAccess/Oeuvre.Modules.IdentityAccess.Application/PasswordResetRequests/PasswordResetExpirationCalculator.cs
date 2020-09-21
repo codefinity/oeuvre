@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest
+namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests
 {
     public class PasswordResetExpirationCalculator : IPasswordResetExpirationCalculator
     {

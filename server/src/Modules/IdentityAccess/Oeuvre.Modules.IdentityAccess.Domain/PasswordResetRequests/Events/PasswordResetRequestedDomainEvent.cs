@@ -8,12 +8,16 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests.Events
 {
     public class PasswordResetRequestedDomainEvent : DomainEventBase
     {
-        public PasswordResetRequestedDomainEvent(string eMailId)
+        public PasswordResetRequestedDomainEvent(PasswordResetRequestId passwordResetRequestId, 
+            string eMailId)
         {
             EMailId = eMailId;
+            PasswordResetRequestId = passwordResetRequestId;
         }
 
         public string EMailId { get; }
+
+        public PasswordResetRequestId PasswordResetRequestId { get; private set; }
 
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.GetPasswordResetRequests
+namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.GetPasswordResetRequests
 {
     public class GetPasswordResetRequestQueryHandler : IQueryHandler<GetPasswordResetRequestQuery, PasswordResetRequestDto>
     {
@@ -23,7 +23,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.GetPass
 
 
             const string sql = "SELECT [Id], " +
-                                        "[UserId], " +
+                                        "[EMail], " +
                                         "[RequestedOn], " +
                                         "[Status] " +
                                         "FROM [identityaccess].[PasswordResetRequests] " +
@@ -35,7 +35,5 @@ namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.GetPass
                     query.PasswordResetRequestId
                 });
         }
-
-
     }
 }

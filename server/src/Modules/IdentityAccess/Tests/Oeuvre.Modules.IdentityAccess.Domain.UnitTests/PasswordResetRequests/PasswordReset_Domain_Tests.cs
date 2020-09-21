@@ -35,7 +35,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             userFinder.Setup(e => e.FindUser(email))
                                     .Returns((userEmailExists, userActive));
 
-            var passwordResetRequest = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object);
+            var passwordResetRequest = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object);
 
             passwordResetRequest.InitiatePasswordReset(expirationCalculator.Object);
 
@@ -70,7 +70,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             userFinder.Setup(e => e.FindUser(email))
                                     .Returns((userEmailExists, userActive));
 
-            var passwordResetRequest = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object);
+            var passwordResetRequest = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object);
 
 
             //Take the clock forward
@@ -107,7 +107,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             userFinder.Setup(e => e.FindUser(email))
                                     .Returns((userEmailExists, userActive));
 
-            var passwordResetRequest = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object);
+            var passwordResetRequest = PasswordResetRequest.CreatePasswordResetRequest(email, userFinder.Object);
 
             //Password reset initiated one time
             passwordResetRequest.InitiatePasswordReset(expirationCalculator.Object);

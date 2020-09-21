@@ -33,10 +33,10 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.PasswordResetRequests
             this.requestedOn = SystemClock.Now;
             this.status = PasswordRequestStatus.ResetPending;
 
-            AddDomainEvent(new PasswordResetRequestedDomainEvent(eMailId));
+            AddDomainEvent(new PasswordResetRequestedDomainEvent(Id, eMailId));
         }
 
-        public static PasswordResetRequest RequestPasswordReset(string eMailId, IUserFinder finder)
+        public static PasswordResetRequest CreatePasswordResetRequest(string eMailId, IUserFinder finder)
         {
             return new PasswordResetRequest(eMailId, finder);
         }

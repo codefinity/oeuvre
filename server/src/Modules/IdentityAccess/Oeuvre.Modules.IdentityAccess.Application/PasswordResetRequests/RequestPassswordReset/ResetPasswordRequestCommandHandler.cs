@@ -8,35 +8,33 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequest.SendPasswordResetRequest
+namespace Oeuvre.Modules.IdentityAccess.Application.PasswordResetRequests.RequestPassswordReset
 {
     public class ResetPasswordRequestCommandHandler : ICommandHandler<ResetPasswordRequestCommand, Guid>
     {
 
         private readonly IPasswordResetRequestRepository passwordResetRequestRepository;
-        private readonly IUserRepository userRepository;
+        private readonly IUserFinder userFinder;
         private readonly ILogger logger;
 
         public ResetPasswordRequestCommandHandler(IPasswordResetRequestRepository passwordResetRequestRepository
-                                        ,IUserRepository userRepository
-                                        ,ILogger logger)
+                                                    ,IUserFinder userFinder
+                                                    ,ILogger logger)
         {
             this.passwordResetRequestRepository = passwordResetRequestRepository;
-            this.userRepository = userRepository;
+            this.userFinder = userFinder;
             this.logger = logger;
         }
 
         public async Task<Guid> Handle(ResetPasswordRequestCommand request, CancellationToken cancellationToken)
         {
-            //var user = await userRepository.GetByEMailIdAsync(request.EMailId);
 
-            //var resetPasswordRequest = user.CreateRequestPasswordReset();
+            PasswordResetRequest resetRequest = PasswordResetRequest.CreatePasswordResetRequest(request.EMailId, userFinder);
 
-            //await passwordResetRequestRepository.AddAsync(resetPasswordRequest);
+            await passwordResetRequestRepository.AddAsync(resetRequest);
 
-            //return resetPasswordRequest.Id.Value;
+            return resetRequest.Id.Value;
 
-            return new Guid();
         }
     }
 }
