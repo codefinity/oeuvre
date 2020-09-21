@@ -42,9 +42,9 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             //When
             passwordResetRequest.SendNewPassword(newPassword, expirationCalculator.Object, userFinder.Object);
 
+            //Then
             var passwordReceivedDomainEvent = AssertPublishedDomainEvent<NewPasswordReceivedDomainEvent>(passwordResetRequest);
 
-            //Then
             Assert.Equal(passwordReceivedDomainEvent.NewPassword, newPassword);
             Assert.Equal(PasswordRequestStatus.NewPasswordReceived, passwordResetRequest.GetProperty("status"));
 
@@ -52,7 +52,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
         //#FRP-S2
         [Fact]
-        public void GIVEN_MyPasswordRequestHasExpired_WHEN_IInitiateThePasswordReset_THEN_IShouldNotBeAllowedToResetThePassword()
+        public void GIVEN_MyPasswordRequestHasTimeExpired_WHEN_IInitiateThePasswordReset_THEN_IShouldNotBeAllowedToResetThePassword()
         {
             //Given
             var userFinder = new Mock<IUserFinder>();
@@ -62,16 +62,19 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
             var expirationCalculator = new Mock<IPasswordResetExpirationCalculator>();
 
-            DateTime registrationDate = DateTime.Now;
+            DateTime passwordResetRequestDate = DateTime.Now;
 
             expirationCalculator.Setup(e => e.Calculate(It.IsAny<DateTime>()))
-                                                .Returns(registrationDate.AddDays(1));
+                                                .Returns(passwordResetRequestDate.AddDays(2));
 
             userFinder.Setup(e => e.FindUser(email))
                                     .Returns((userEmailExists, userActive));
 
             var passwordResetRequest = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object);
 
+
+            //Take the clock forward
+            SystemClock.Set(passwordResetRequestDate.AddDays(2).AddMinutes(1));
 
             //When
             var exception = Record.Exception(() => passwordResetRequest.InitiatePasswordReset(expirationCalculator.Object));
@@ -85,13 +88,14 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
         //#FRP-S3
         [Fact]
-        public void GIVEN_IHaveAlreadyUserTheRequestToResetMyPassword_WHEN_IInitiateThePasswordReset_THEN_IShouldNotBeAllowedToResetThePassword()
+        public void GIVEN_IHaveAlreadyUsedTheRequestToResetMyPassword_WHEN_IInitiateThePasswordReset_THEN_IShouldNotBeAllowedToResetThePassword()
         {
             //Given
             var userFinder = new Mock<IUserFinder>();
             var email = "valid@email.com";
             var userEmailExists = true;
             var userActive = true;
+            var newPassword = "newpassword";
 
             var expirationCalculator = new Mock<IPasswordResetExpirationCalculator>();
 
@@ -105,6 +109,10 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
             var passwordResetRequest = PasswordResetRequest.RequestPasswordReset(email, userFinder.Object);
 
+            //Password reset initiated one time
+            passwordResetRequest.InitiatePasswordReset(expirationCalculator.Object);
+
+            passwordResetRequest.SendNewPassword(newPassword, expirationCalculator.Object, userFinder.Object);
 
             //When
             var exception = Record.Exception(() => passwordResetRequest.InitiatePasswordReset(expirationCalculator.Object));
@@ -115,5 +123,6 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
             Assert.IsType<PasswordCannotBeResetMoreThanOnceRule>(exc.BrokenRule);
 
         }
+    
     }
 }

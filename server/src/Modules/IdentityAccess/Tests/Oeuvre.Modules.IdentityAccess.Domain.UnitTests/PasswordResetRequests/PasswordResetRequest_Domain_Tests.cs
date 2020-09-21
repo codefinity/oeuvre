@@ -41,7 +41,6 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.PasswordResetRequests
 
         }
 
-
         //#FFPR-S2
         [Fact]
         public void GIVEN_ValidEMailIdANDInActiveUser_WHEN_PasswordRestsRequested_THEN_ForgotPasswordRequestShouldNOTBeCreated()
