@@ -222,24 +222,21 @@ Fitness functions need to be constantly reviewed to ensure the integrity of the 
 
 ### The Architectral Quanta
 
+>"Quantum size determines the lower bound of the incremental change possible within an architecture." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> "Many business concepts semantically bind parts of the system together, creating functional cohesion. To successfully evolve software, developers must consider all the coupling points that could break." 
+In the physical word the Quantam is defined as a measure of the smallest amount of something — usually energy — that something can possess. Or, it can also be a smallest amount of action that can cause significant change.
 
-> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass."
+In bilolgy the evolutionary changes begin at the genetic level. The origin point is the genetic suquence in the DNA. Small change in the sequence can lead to drastic changes in the species.
 
-> Quantum size determines the lower bound of the incremental change possible within an architecture.
+The sign of good design of a good Quanta is, the change must begin at one place and ripple through the other layers forcing them to re-align. Can also be called as the origin point of change.
 
-> The quantum size of an architecture largely determines how easy it will be for developers to make evolutionary changes. Large quanta like monoliths and ESB SOA are difficult to evolve because of the coordination required for each change. More decoupled architectures like broker event-driven and microservices offer many more avenues for easy evolution.
-> The structural constraints on evolving architecture depend on how well developers have handled coupling and functional cohesion. Evolution is easier if developers have created a modular component system with well-defined integration points. For example, if developers build a monolith, but are diligent about good modularity and component isolation, that architecture will offer more opportunities to evolve because the size of the architectural quantum is smaller due to decoupling.
+Designing the architecture around quanta can give Architects immense evolutionary power over the their acrhitecture. Lesser the quantam size of the architecture, easier it is for the developers to make evolutionary changes. Single responsibility principle plays an important part over here.
 
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+Designing well-defined integration points play an important role here because the quantas can evolve independently and the change can be communicated to other Quantas via signals through integration points.
 
+Designing optimal Architectral Quanta and Integration Points enables faster evolution cycles.
 
-Designing optimal AQ enables faster evolution cycles.
-
-[Diagram to apply evolution to code - Gherkin - Fitness Function - Domain Change - Test]
-
-### Gettint the Evolutionary Trejectory Right
+### Getting the Evolutionary Trejectory Right
 
 Depends on the vison and prediction.
 
@@ -285,6 +282,8 @@ Concepts should fit together and be optimal.
 ## Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
 ### Why Classical N-Layered Architecture Fails to Evolve?
+
+> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass."
 
 <!-- pg69 -->
 
