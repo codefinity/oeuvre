@@ -248,7 +248,7 @@ So, how do we get the Evolutionary Trejectory right? There are no right answers 
 
 <!--pg10-->
 
-Untill now, we have only talked about one dimention of evolution, that is Business Requirements. For obvious resons, this is the most important dimention because the software exists for business.
+Untill now, we have only talked about one dimention of evolution, that is **Business Requirements**. For obvious resons, this is the most important dimention because the software exists for business.
 
 Our software has to live in a technology landscape that is ever changing. The OS gets better each year, the virtuilization technology improves, better secure protocols are introduced, frameworks get version improvememts, libraries have changed implementations, and more technologies battle it out in the market and some emerge as clear winners.
 
