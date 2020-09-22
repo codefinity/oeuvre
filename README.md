@@ -244,11 +244,11 @@ In chaos theory, This phenemenon is also knwn as the Butterly Effect - The sensi
 
 So, how do we get the Evolutionary Trejectory right? There are no right answers to that. It depends on the Architects knowledge, vision and some capabilities of predection. Architects just need to trust themselves and focus on the present and avoid an attitude of perfectionism, but at the same time if the need arises they should be wiling to go back and re-design, re-model or re-arrange things.
 
-### Dimentions of Evolution
+### Dimensions of Evolution
 
 <!--pg10-->
 
-Untill now, we have only talked about one dimention of evolution, that is **Business Requirements**. For obvious resons, this is the most important dimention because the software exists for business.
+Untill now, we have only talked about one dimension of evolution, that is **Business Requirements**. For obvious resons, this is the most important dimension because the software exists for business.
 
 Our software has to live in a technology landscape that is ever changing. The OS gets better each year, the virtuilization technology improves, better secure protocols are introduced, frameworks get version improvememts, libraries have changed implementations, and more technologies battle it out in the market and some emerge as clear winners.
 
