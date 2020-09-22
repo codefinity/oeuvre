@@ -250,7 +250,7 @@ So, how do we get the Evolutionary Trejectory right? There are no right answers 
 
 Untill now, we have only talked about one dimension of evolution, that is **Business Requirements**. For obvious resons, this is the most important dimension because the software exists for business.
 
-Our software has to live in a technology landscape that is ever changing. The OS gets better each year, the virtuilization technology improves, better secure protocols are introduced, frameworks get version improvememts, libraries have changed implementations, and more technologies battle it out in the market and some emerge as clear winners.
+Our software has to live in a technology landscape that is ever changing. The OS gets better each year, the virtuilization technology improves, better secure protocols are introduced, frameworks get version improvememts, libraries have changed implementations, more appealing web and mobile UI technologies appear, and more technologies battle it out in the market and some emerge as clear winners.
 
 This puts pressure on your software to implement them, otherwise your software is left behind and becomes legacy.
 
