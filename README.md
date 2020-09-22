@@ -280,6 +280,8 @@ Whenever a fitness finction changes, our architectute is guided to evolve to a l
 
 If you have a hammer, everything looks like a nail.
 
+Once we like a concept we tend to use it for every situation, while ignoring the other useful concepts that would fit better in a particular situation.
+
 Concepts should fit together and be optimal. 
 
 
