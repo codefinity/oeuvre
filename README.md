@@ -242,7 +242,7 @@ Designing optimal Architectral Quanta and Integration Points enables faster evol
   
 In chaos theory, This phenemenon is also knwn as the Butterly Effect - The sensitive dependence on initial conditions in which a small change in one state of a deterministic nonlinear system can result in large differences in a later state.
 
-So, how do we get the Evolutionary Trejectory right? There are no right answers to that. It depends on the Architects knowledge, vision and some capabilities of predection. Architects just need to trust themselves and focus on the present and avoid an attitude of perfectionism, but at the same time if the need arises they should be wiling to go back and re-design or re-arrange things.
+So, how do we get the Evolutionary Trejectory right? There are no right answers to that. It depends on the Architects knowledge, vision and some capabilities of predection. Architects just need to trust themselves and focus on the present and avoid an attitude of perfectionism, but at the same time if the need arises they should be wiling to go back and re-design, re-model or re-arrange things.
 
 ### Dimentions of Evolution
 
