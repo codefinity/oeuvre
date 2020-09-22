@@ -115,8 +115,6 @@ Evolution has created system with system within systems, with one fundemental pr
 
 **6. Evolution has a trejectory**
 
-"It fell to the floor, an exquisite thing, a small thing that could upset balances and knock down a line of small dominoes and then big dominoes and then gigantic dominoes, all down the years across Time. Eckels' mind whirled. It couldn't change things. Killing one butterfly couldn't be that important! Could it?" ~ Ray Bradbury, A Sound of Thunder
-
 The next stages of design will depend upon the current stage of the design.
 
 **7. Paradoxical nature of designs cannot be avoided**
@@ -237,6 +235,8 @@ Designing well-defined integration points play an important role here because th
 Designing optimal Architectral Quanta and Integration Points enables faster evolution cycles.
 
 ### Getting the Evolutionary Trejectory Right
+
+>"It fell to the floor, an exquisite thing, a small thing that could upset balances and knock down a line of small dominoes and then big dominoes and then gigantic dominoes, all down the years across Time. Eckels' mind whirled. It couldn't change things. Killing one butterfly couldn't be that important! Could it?" ~ Ray Bradbury, A Sound of Thunder
 
 Depends on the vison and prediction.
 
