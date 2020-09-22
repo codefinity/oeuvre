@@ -354,6 +354,9 @@ Concepts should fit together and be optimal.
 #### Hexagonal Architecture
 
 
+#### SOLID Principles
+
+
 #### Code Coverage
 
 
