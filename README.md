@@ -315,6 +315,47 @@ Concepts should fit together and be optimal.
 - Business Logic can be tested without dependencies.
 - Database creation is the side effect of the design.
 
+## Development Methodologies
+
+#### Architecture Decision Logs
+
+[Michael Nygard's template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
+
+#### Event Storming
+
+
+#### Behaviour Driven Development
+
+
+#### Test Driven Development
+
+
+#### Modular Monolith
+
+
+#### Domain Driven Design
+
+
+#### Command Query Responsibility Segregation (CQRS)
+
+
+#### Event Driven Architecture
+
+
+#### The Reactive Manifesto
+
+
+#### Continuous Integration and Deployment (CI/CD)
+
+
+#### 12-Factor Apps
+
+
+#### Hexagonal Architecture
+
+
+#### Code Coverage
+
 
 ## Evolution In Action
 
@@ -376,46 +417,7 @@ Unit of Deployment
 ### Test Architecture
 
 
-## Development Methodologies
 
-#### Architecture Decision Logs
-
-[Michael Nygard's template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
-
-#### Event Storming
-
-
-#### Behaviour Driven Development
-
-
-#### Test Driven Development
-
-
-#### Modular Monolith
-
-
-#### Domain Driven Design
-
-
-#### Command Query Responsibility Segregation (CQRS)
-
-
-#### Event Driven Architecture
-
-
-#### The Reactive Manifesto
-
-
-#### Continuous Integration and Deployment (CI/CD)
-
-
-#### 12-Factor Apps
-
-
-#### Hexagonal Architecture
-
-
-#### Code Coverage
 
 ## Development Process
 
