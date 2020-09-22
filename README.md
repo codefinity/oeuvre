@@ -412,6 +412,9 @@ Unit of Deployment
 #### 12-Factor Apps
 
 
+#### Hexagonal Architecture
+
+
 #### Code Coverage
 
 ## Development Process
