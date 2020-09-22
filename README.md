@@ -238,7 +238,11 @@ Designing optimal Architectral Quanta and Integration Points enables faster evol
 
 >"It fell to the floor, an exquisite thing, a small thing that could upset balances and knock down a line of small dominoes and then big dominoes and then gigantic dominoes, all down the years across Time. Eckels' mind whirled. It couldn't change things. Killing one butterfly couldn't be that important! Could it?" ~ Ray Bradbury, A Sound of Thunder
 
-Depends on the vison and prediction.
+ In Ray Bradbury's Short Story, [A Sound of Thunder](https://en.wikipedia.org/wiki/A_Sound_of_Thunder) A hunter named Eckels travels 66 million years back in time and steps on and crushes a Butterfly which apparently caused a rift in the evolutionary timeline. Upon returning to 2055, Eckels notices subtle changes: English words are now spelled and spoken strangely, people behave differently, and Eckels discovers that Deutscher has won the election instead of Keith. The mere incident of just stepping on a butterfly alters the history.
+  
+In chaos theory, This phenemenon is also knwn as the Butterly Effect - The sensitive dependence on initial conditions in which a small change in one state of a deterministic nonlinear system can result in large differences in a later state.
+
+So, how do we get the Evolutionary Trejectory right? There are no right answers to that. It depends on the Architects knowledge, vision and some capabilities of predection. Architects just need to trust themselves and focus on the present and avoid an attitude of perfectionism, but at the same time if the need arises they should be wiling to go back and re-design or re-arrange things.
 
 ### Dimentions of Evolution
 
