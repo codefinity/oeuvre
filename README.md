@@ -246,13 +246,23 @@ So, how do we get the Evolutionary Trejectory right? There are no right answers 
 
 ### Dimensions of Evolution
 
-<!--pg10-->
-
 Untill now, we have only talked about one dimension of evolution, that is **Business Requirements**. For obvious resons, this is the most important dimension because the software exists for business.
 
 Our software has to live in a technology landscape that is ever changing. The OS gets better each year, the virtuilization technology improves, better secure protocols are introduced, frameworks get version improvememts, libraries have changed implementations, more appealing web and mobile UI technologies appear, and more technologies battle it out in the market and some emerge as clear winners.
 
 This puts pressure on your software to implement them, otherwise your software is left behind and becomes legacy.
+
+In the book [Building Evolutionary Architectures: Support Constant Change](https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant/dp/1491986360) the authors have identified dimensions like - Auditability, Data, Security, Performance, Legality, and Scalability.
+
+Each Application might have its own dimensions of evolution, like Oeuvre might want following extra dimensions
+
+1. Reportability - Ease of creating reports.
+2. Monitoribility - Ease of monitoring the faults in the system.
+
+Well defined Fitness functions will guide the application to evolve in multiple dimensions. 
+
+[Image]
+
 
 ### Evolutionary Over Adaptation
 
