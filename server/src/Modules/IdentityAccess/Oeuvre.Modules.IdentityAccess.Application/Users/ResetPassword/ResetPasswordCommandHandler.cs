@@ -1,4 +1,5 @@
 ﻿using Domaina.CQRS.Command;
+using Oeuvre.Modules.IdentityAccess.Application.Authentication;
 using Oeuvre.Modules.IdentityAccess.Domain.Users;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,9 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Users.ResetPassword
         {
             var user = await userRepository.GetByEMailIdAsync(request.EMailId);
 
-            user.ResetPassword(request.NewPassword);
+            string hashedPassword = PasswordManager.HashPassword(request.NewPassword);
+
+            user.ResetPassword(hashedPassword);
 
             await userRepository.AddAsync(user);
 

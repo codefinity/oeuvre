@@ -30,12 +30,12 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
         {
             logger.Information("Command - Register New User");
 
-            string password = PasswordManager.HashPassword(request.Password);
+            string hashedPassword = PasswordManager.HashPassword(request.Password);
 
             var userRegistration = Registration.RegisterNewUser(new Guid(request.TenantId),
                                                                     request.FirstName,
                                                                     request.LastName,
-                                                                    password,
+                                                                    hashedPassword,
                                                                     request.MobileNoCountryCode,
                                                                     request.MobileNumber,
                                                                     request.Email,
