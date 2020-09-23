@@ -289,7 +289,7 @@ Finding solutions that make the system Evolve rather that Adapt is benificial in
 
 Real world evolution is a random process. We will be implementing guided evolution through trial and error.
 
-
+Here the Architects need to play the Hand of Evolution
 
 Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
 
