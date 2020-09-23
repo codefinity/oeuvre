@@ -264,11 +264,13 @@ Well defined Fitness functions will guide the application to evolve in multiple 
 [Image]
 
 
-### Evolutionary Over Adaptation
+### Evolution Over Adaptation
 
 <!--pg14-->
 
 Evolutionary change is permanent and from within, on the other hand Adaptatation is force fitting a solution to a problem. There can be limits to adaptation. There might come come a time when the system is just not able to adapt to change, whereas the evolution changes the system from inside out.
+
+Giving clutches to instead of fixing the leg.
 
 
 ## Guided Evolution
