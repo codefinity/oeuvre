@@ -266,12 +266,13 @@ Well defined Fitness functions will guide the application to evolve in multiple 
 
 ### Evolution Over Adaptation
 
-<!--pg14-->
+>"We prefer the word evolutionary over adaptable because we are interested in architectures that undergo fundamental evolutionary change, not ones that have been patched and adapted into increasingly incomprehensible accidental complexity." ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+
+Human bodies are home to number of micro-organisms, some of which might have been harmful to us at some point in our evolution. We have evolved to tolerate them or to live with them symbyotically. There are many micro-organisms that are harmful to us, so we have created Anti-biotics for them. Administering anti-biotics is a form of adaptation and it has its limits. Sooner or later the mrico-organisms will develop tolerance to it.
 
 Evolutionary change is permanent and from within, on the other hand Adaptatation is force fitting a solution to a problem. There can be limits to adaptation. There might come come a time when the system is just not able to adapt to change, whereas the evolution changes the system from inside out.
 
-Giving clutches to instead of fixing the leg.
-
+Finding solutions that make the system Evolve rather that Adapt is benificial in the long run.
 
 ## Guided Evolution
 
