@@ -261,7 +261,7 @@ Each Application might have its own dimensions of evolution, like Oeuvre might w
 
 Well defined Fitness functions will guide the application to evolve in multiple dimensions. 
 
-[Image]
+![](design/images/ExplanationDiagrams-DimensionsOfEvolution.png)
 
 
 ### Evolution Over Adaptation
