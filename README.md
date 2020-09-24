@@ -294,11 +294,11 @@ When the business requirement changes, the domain takes the first hit. Now the d
 
 When the Domain test passes, the functionality of the feature belonging to that module can be tested as a whole, which includes:
 
-1. Whether the Module is receiving the right input
+1. Whether the Module is receiving the right input.
 
-2. Whether the data is persisting in the Database
+2. Whether the data is persisting in the Database.
 
-3. Whether the Events are being transmitted to the other Modules
+3. Whether the Events are being transmitted to the other Modules.
 
 4. Wether the Module is sending data correctly outside the application, my means of E-Mails, Webhooks, or GRPC.
 
@@ -306,8 +306,16 @@ When the Domain test passes, the functionality of the feature belonging to that 
 
 6. Wether the Module gives correct output.
 
-![](design/images/ExplanationDiagrams-EAProcess.png)
+##### 3. Functional Tests
 
+These tests are at the edge of the application and will test the following:
+
+1. API input and output communication.
+
+2. Wether the modules are coordinating together to satisfy the feature of the application.
+
+
+![](design/images/ExplanationDiagrams-EAProcess.png)
 
 
 ## Dangers of Overuse of Concepts
