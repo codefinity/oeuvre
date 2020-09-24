@@ -340,11 +340,11 @@ This mostly one time activity. Once the rules of the game are set, it generally 
 
 ## Dangers of Overuse of Concepts
 
-If you have a hammer, everything looks like a nail.
+>"I remember seeing an elaborate and complicated automatic washing machine for automobiles that did a beautiful job of washing them. But it could do only that, and everything else that got into its clutches was treated as if it were an automobile to be washed. **I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.**" ~Abraham Maslow, *The Psychology of Science*
 
-Once we like a concept we tend to use it for every situation, while ignoring the other useful concepts that would fit better in a particular situation.
+Once we like a concept we tend to use it for every situation, while ignoring the other useful concepts that would fit better in a particular situation. While evolving the application you will use well established techniques, and you will also device few of your own. But, before using a concept it is always wiser to stop and question yourself whether or not the technique is sutable by comparing it with other techniques available. Sometimes playing the blind game cannot be avioded, but taking an informed decision will help.
 
-Concepts should fit together and be optimal. 
+Concepts should fit together in an optimal manner, or to put in a different way, the design should aim for conceptual integrity. 
 
 
 ## Reasons For Selection of Domain Driven Design(DDD) Architecture 
