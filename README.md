@@ -284,7 +284,9 @@ Real world evolution is a random process and it depends largely on ariving on th
 
 Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. For better evolvability, as discussed earlier, when the fitness function changes, the change in the architecture must begin at one place, which I call the origin point, and the changes should ripple outward. The origin point is the domain that contains the business logic. 
 
-#### These are the Fitness Functions your Application will have to satisfy to evolve:
+#### Business Requirements Fitness Functions 
+
+These are the Fitness Functions your Application will have to satisfy to evolve to serve the Business Requirements:
 
 ##### 1. Domain Tests
 
@@ -313,6 +315,24 @@ These tests are at the edge of the application and will test the following:
 1. API input and output communication.
 
 2. Wether the modules are coordinating together to satisfy the feature of the application.
+
+
+#### Non-Functional Fitness Functions
+
+Non-Functional functions will help the Applcation to evolve in multiple dimentions like:
+
+1. Performance
+2. Security
+3. Disaster Recovery
+4. Privacy
+
+ect...
+
+The list will have pretty significant items as the application grows
+
+#### Architectural Fitness Functions
+
+This mostly one time activity. Once the rules of the game are set, it generally stays the same. These fitness functions will make sure that the structural integrity of the applications are maintained. It will check if for the wrong references between projects. It will most inportantly check if the modules of the application are correctly isolated. This is exteremely important if the architecture wants to make the next leap into microservices. 
 
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
