@@ -361,7 +361,12 @@ Concepts should fit together in an optimal manner, or to put in a different way,
 ##### Architecture is Built Around Technology and not Business Requirement
 
 
-##### 
+##### Cross-Component Communication is Dificult to Control
+
+
+##### Modularity is at the Layer Level
+
+
 
 
 
