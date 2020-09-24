@@ -282,7 +282,7 @@ Real world evolution is a random process and it depends largely on ariving on th
 
 <!-- Real world evolution has no plan. Here some planning would be essential because the Architects are taking the responsibility for evolution-->
 
-Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
+Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. For better evolvability, as discussed earlier, when the fitness function changes, the change in the architecture must begin at one place, which I call the origin point, and the changes should ripple outward. The origin point is the domain that contains the business logic. 
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
