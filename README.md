@@ -351,9 +351,17 @@ Concepts should fit together in an optimal manner, or to put in a different way,
 
 ### Why Classical N-Layered Architecture Fails to Evolve?
 
-> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass."
+> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass." ~Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 <!-- pg69 -->
+
+##### The Origin of Design is the Database
+
+
+##### Architecture is Built Around Technology and not Business Requirement
+
+
+##### 
 
 
 
@@ -370,6 +378,12 @@ Concepts should fit together in an optimal manner, or to put in a different way,
 - Optimal Architectural Quanta
 - Business Logic can be tested without dependencies.
 - Database creation is the side effect of the design.
+
+### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
+
+
+## Reporting
+
 
 ## The Hexagonal Architecture
 
