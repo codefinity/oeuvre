@@ -276,15 +276,7 @@ Finding solutions that make the system Evolve rather that Adapt is benificial in
 
 ## Guided Evolution
 
-> Building software systems that evolve means controlling as many unknown factors as possible.
-
-> An evolutionary architecture supports guided, incremental change across multiple dimensions.
-
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
-
-> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior.
-
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior. ~Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 
 Real world evolution is a random process. We will be implementing guided evolution through trial and error.
@@ -294,6 +286,12 @@ Here the Architects need to play the Hand of Evolution
 Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
+
+> Building software systems that evolve means controlling as many unknown factors as possible.
+
+> An evolutionary architecture supports guided, incremental change across multiple dimensions.
+
+> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 ## Dangers of Overuse of Concepts
 
