@@ -371,6 +371,8 @@ Concepts should fit together in an optimal manner, or to put in a different way,
 - Business Logic can be tested without dependencies.
 - Database creation is the side effect of the design.
 
+## The Hexagonal Architecture
+
 ## Development Methodologies
 
 #### Architecture Decision Logs
