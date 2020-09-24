@@ -261,6 +261,29 @@ Each Application might have its own dimensions of evolution, like Oeuvre might w
 
 Well defined Fitness functions will guide the application to evolve in multiple dimensions. 
 
+#### These are the Fitness Functions your Application will have to satisfy to evolve:
+
+##### 1. Domain Tests
+
+When the business requirement changes, the domain takes the first hit. Now the domain must evolve to satisfy the new Domain fitnes test.
+
+##### 2. Module Integration Tests
+
+When the Domain test passes, the functionality of the feature belonging to that module can be tested as a whole, which includes:
+
+1. Whether the Module is receiving the right input
+
+2. Whether the data is persisting in the Database
+
+3. Whether the Events are being transmitted to the other Modules
+
+4. Wether the Module is sending data correctly outside the application, my means of E-Mails, Webhooks, or GRPC.
+
+5. Wether the Module is receiving correct data from outside the Application.
+
+6. Wether the Module gives correct output.
+
+
 ![](design/images/ExplanationDiagrams-DimensionsOfEvolution.png)
 
 
