@@ -142,6 +142,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{
 		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-seed-data.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-seed-data.sql
 		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-test-data.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-add-test-data.sql
 		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-db-tables.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-db-tables.sql
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-schema.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-schema.sql
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-views.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-create-views.sql
+		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-drop-db-tables-and-views-and-schema.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-drop-db-tables-and-views-and-schema.sql
 		Modules\ContentCreation\DBScripts\oeuvre-contentcreation-drop-db-tables.sql = Modules\ContentCreation\DBScripts\oeuvre-contentcreation-drop-db-tables.sql
 	EndProjectSection
 EndProject
@@ -151,7 +154,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domaina.Infrastructure.EMai
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{21355DF9-CD37-476B-B6E3-04C5305262D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oeuvre.Modules.Reporting", "Modules\Reporting\Oeuvre.Modules.Reporting\Oeuvre.Modules.Reporting.csproj", "{FBC69211-40BB-4AFC-8DDF-3492BC4B13F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oeuvre.Modules.Reporting", "Modules\Reporting\Oeuvre.Modules.Reporting\Oeuvre.Modules.Reporting.csproj", "{FBC69211-40BB-4AFC-8DDF-3492BC4B13F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{5611E4FE-621B-4246-8008-F17BF9DF2013}"
 	ProjectSection(SolutionItems) = preProject

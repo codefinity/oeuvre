@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Domaina.Application;
 using Oeuvre.Modules.ContentCreation.API.Controllers;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Authentication;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.DataAccess;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.InMemoryEventBus;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration.Logging;
@@ -71,6 +72,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure.Configuration
             containerBuilder.RegisterModule(new InMemoryEventsBusModule());
             containerBuilder.RegisterModule(new MediatorModule());
             containerBuilder.RegisterModule(new ContentCreationCQRSModule());
+            containerBuilder.RegisterModule(new AuthenticationModule());
 
 
             //containerBuilder.RegisterModule(new ProcessingModule());

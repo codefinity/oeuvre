@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Oeuvre.Modules.ContentCreation.Domain.Articles;
 using Oeuvre.Modules.ContentCreation.Domain.Collaborators;
+using Oeuvre.Modules.ContentCreation.Domain.Members;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Configuration;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Articles;
 using Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Collaborators;
+using Oeuvre.Modules.ContentCreation.Infrastructure.Domain.Members;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure
 
         public DbSet<Article> Articles { get; set; }
         public DbSet<Collaborator> Collaborators { get; set; }
+        public DbSet<Member> Members { get; set; }
 
         private readonly ILoggerFactory loggerFactory;
         public ContentCreationContext(DbContextOptions options
@@ -40,27 +43,32 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure
         {
             modelBuilder.ApplyConfiguration(new ArticleEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CollaboratorEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new MemberEntityTypeConfiguration());
+
         }
 
         public override int SaveChanges()
         {
-            ApplyFixForUpdatingOwnedEntities();
+            ApplyFixForUpdatingOwnedEntities().GetAwaiter().GetResult(); ;
 
-            ApplyPreSaveActions().GetAwaiter().GetResult();
-            return base.SaveChanges();
+            int result = base.SaveChanges();
+
+            //Apply try catch here so that domain events are sent after successful save.
+            DispatchDomainEvents().GetAwaiter().GetResult();
+
+            return result;
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            ApplyFixForUpdatingOwnedEntities();
+            await ApplyFixForUpdatingOwnedEntities();
 
-            await ApplyPreSaveActions();
-            return await base.SaveChangesAsync(cancellationToken);
-        }
+            int result = await base.SaveChangesAsync(cancellationToken);
 
-        private async Task ApplyPreSaveActions()
-        {
+            //Apply try catch here so that domain events are sent after successful save.
             await DispatchDomainEvents();
+
+            return result;
         }
 
         /// <summary>
@@ -99,7 +107,7 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure
 
         }
 
-        public void ApplyFixForUpdatingOwnedEntities()
+        public Task ApplyFixForUpdatingOwnedEntities()
         {
             var ownedEntities = ChangeTracker.Entries<ValueObject>().Where(x => x.State == EntityState.Added
                                                                                 || x.State == EntityState.Deleted
@@ -147,6 +155,8 @@ namespace Oeuvre.Modules.ContentCreation.Infrastructure
                     }
                 }
             }
+
+            return Task.CompletedTask;
 
         }
 

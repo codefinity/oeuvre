@@ -1,17 +1,18 @@
---USE [oeuvre]
---GO
+PRINT N'Creating Table [contentcreation].[Members]...';
 
-PRINT N'Creating [contentcreation]...';
+CREATE TABLE [contentcreation].[Members]
+(
+    [Id]            UNIQUEIDENTIFIER    NOT NULL,
+    [TenantId]      UNIQUEIDENTIFIER    NOT NULL,
+    [EMailId]       NVARCHAR(255)       NOT NULL,
+    [FirstName]     NVARCHAR(255)       NOT NULL,
+    [LastName]      NVARCHAR(255)       NOT NULL,
+    CONSTRAINT [PK_contentcreation_Members_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
+)
 
-GO
-CREATE SCHEMA [contentcreation]
-    AUTHORIZATION [dbo];
-
-GO
 
 PRINT N'Creating Table [contentcreation].[Articles]...';
 
-GO
 
 CREATE TABLE [contentcreation].[Articles]
 (
@@ -21,12 +22,9 @@ CREATE TABLE [contentcreation].[Articles]
     [Body]          NVARCHAR (255)      NOT NULL,
     CONSTRAINT [PK_contentcreation_Articles_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
 )
-GO
 
 
 PRINT N'Creating Table [contentcreation].[Collaborators]...';
-
-GO
 
 CREATE TABLE [contentcreation].[Collaborators]
 (
@@ -37,5 +35,4 @@ CREATE TABLE [contentcreation].[Collaborators]
     [CreatedDate]   DATETIME            NOT NULL,
     CONSTRAINT [PK_contentcreation_Collaborators_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
 )
-GO
 

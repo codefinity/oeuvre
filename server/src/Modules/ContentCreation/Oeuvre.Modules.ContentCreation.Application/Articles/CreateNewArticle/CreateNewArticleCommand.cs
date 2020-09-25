@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Oeuvre.Modules.ContentCreation.Application.CreateNewArticle
+namespace Oeuvre.Modules.ContentCreation.Application.Articles.CreateNewArticle
 {
     public class CreateNewArticleCommand : CommandBase<Guid>
     {

@@ -1,5 +1,7 @@
-﻿using Domaina.CQRS.Command;
+﻿using CompanyName.MyMeetings.Modules.Meetings.Domain.Members;
+using Domaina.CQRS.Command;
 using Oeuvre.Modules.ContentCreation.Domain.Articles;
+using Oeuvre.Modules.ContentCreation.Domain.Domain.Members;
 using Oeuvre.Modules.IdentityAccess.IntegrationServices;
 using Serilog;
 using System;
@@ -8,18 +10,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Oeuvre.Modules.ContentCreation.Application.CreateNewArticle
+namespace Oeuvre.Modules.ContentCreation.Application.Articles.CreateNewArticle
 {
     public class CreateNewArticleCommandHandler : ICommandHandler<CreateNewArticleCommand, Guid>
     {
         private readonly IArticleRepository articleRepository;
+        private readonly IMemberContext memberContext;
         private readonly ILogger logger;
 
         public CreateNewArticleCommandHandler(IArticleRepository articleRepository
                                                 ,ILogger logger
-                                                )
+                                                ,IMemberContext memberContext)
         {
             this.articleRepository = articleRepository;
+            this.memberContext = memberContext;
             this.logger = logger;
         }
 
@@ -29,6 +33,9 @@ namespace Oeuvre.Modules.ContentCreation.Application.CreateNewArticle
 
             var permissions = await new GetUserPermissionsIntegrationService()
                                             .GetPermissions(Guid.Parse("a7d9b254-0eb7-4b0c-8b82-b0919bfb5e3a"));
+
+
+            MemberId id = memberContext.MemberId;
 
 
 
