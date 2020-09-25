@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Domaina.Application;
@@ -28,7 +29,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.Authorization
         {
 
             
-            if (executionContextAccessor.UserId == null)
+            if (executionContextAccessor.UserId == Guid.Empty)
             {
                 context.Fail();
                 return;

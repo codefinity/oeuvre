@@ -28,11 +28,20 @@ namespace Oeuvre
                         .Value != null)
 
                 {
-                    return Guid.Parse(httpContextAccessor.HttpContext.User.Claims.Single(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value);
+
+                    string userId = httpContextAccessor.HttpContext.User.Claims.Single(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+
+                    return Guid.Parse(userId);
 
                 }
+                else
+                {
+                    return Guid.Empty;
+                }
+
 
                 throw new ApplicationException("User context is not available");
+
             }
         }
 
