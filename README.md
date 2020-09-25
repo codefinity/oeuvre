@@ -276,41 +276,97 @@ Finding solutions that make the system Evolve rather that Adapt is benificial in
 
 ## Guided Evolution
 
-> Building software systems that evolve means controlling as many unknown factors as possible.
+> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior. ~Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
-> An evolutionary architecture supports guided, incremental change across multiple dimensions.
+Real world evolution is a random process and it depends largely on ariving on the right design through trial and error, therefore it is an exteremely long process. The good news here is that when an Architect plays the hand of evolution the process can be controlled, but you cannot ruleout indulging in some trial and error. Architects will have to take the responsibility of controlling as many unknown factors as possible to guide the architecture, through incremental changes, across multiple dimensions to arrive at an optimal design.
 
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+<!-- Real world evolution has no plan. Here some planning would be essential because the Architects are taking the responsibility for evolution-->
 
-> Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior.
+Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. For better evolvability, as discussed earlier, when the fitness function changes, the change in the architecture must begin at one place, which I call the origin point, and the changes should ripple outward. The origin point is the domain that contains the business logic. 
 
-> ~ Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
+#### Business Requirements Fitness Functions 
+
+These are the Fitness Functions your Application will have to satisfy to evolve to serve the Business Requirements:
+
+##### 1. Domain Tests
+
+When the business requirement changes, the domain takes the first hit. Now the domain must evolve to satisfy the new Domain fitnes test.
+
+##### 2. Module Integration Tests
+
+When the Domain test passes, the functionality of the feature belonging to that module can be tested as a whole, which includes:
+
+1. Whether the Module is receiving the right input.
+
+2. Whether the data is persisting in the Database.
+
+3. Whether the Events are being transmitted to the other Modules.
+
+4. Wether the Module is sending data correctly outside the application, my means of E-Mails, Webhooks, or GRPC.
+
+5. Wether the Module is receiving correct data from outside the Application.
+
+6. Wether the Module gives correct output.
+
+##### 3. Functional Tests
+
+These tests are at the edge of the application and will test the following:
+
+1. API input and output communication.
+
+2. Wether the modules are coordinating together to satisfy the feature of the application.
 
 
-Real world evolution is a random process. We will be implementing guided evolution through trial and error.
+#### Non-Functional Fitness Functions
 
-Here the Architects need to play the Hand of Evolution
+Non-Functional functions will help the Applcation to evolve in multiple dimentions like:
 
-Whenever a fitness finction changes, our architectute is guided to evolve to a level where it passes the fitness function. In DDD its generaly the changes in the Domain Layer.
+1. Performance
+2. Security
+3. Disaster Recovery
+4. Privacy
+
+ect...
+
+The list will have pretty significant items as the application grows
+
+#### Architectural Fitness Functions
+
+This mostly one time activity. Once the rules of the game are set, it generally stays the same. These fitness functions will make sure that the structural integrity of the applications are maintained. It will check if for the wrong references between projects. It will most inportantly check if the modules of the application are correctly isolated. This is exteremely important if the architecture wants to make the next leap into microservices. 
+
 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
+
 ## Dangers of Overuse of Concepts
 
-If you have a hammer, everything looks like a nail.
+>"I remember seeing an elaborate and complicated automatic washing machine for automobiles that did a beautiful job of washing them. But it could do only that, and everything else that got into its clutches was treated as if it were an automobile to be washed. **I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.**" ~Abraham Maslow, *The Psychology of Science*
 
-Once we like a concept we tend to use it for every situation, while ignoring the other useful concepts that would fit better in a particular situation.
+Once we like a concept we tend to use it for every situation, while ignoring the other useful concepts that would fit better in a particular situation. While evolving the application you will use well established techniques, and you will also device few of your own. But, before using a concept it is always wiser to stop and question yourself whether or not the technique is sutable by comparing it with other techniques available. Sometimes playing the blind game cannot be avioded, but taking an informed decision will help.
 
-Concepts should fit together and be optimal. 
+Concepts should fit together in an optimal manner, or to put in a different way, the design should aim for conceptual integrity. 
 
 
 ## Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
 ### Why Classical N-Layered Architecture Fails to Evolve?
 
-> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass."
+> "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass." ~Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 <!-- pg69 -->
+
+##### The Origin of Design is the Database
+
+
+##### Architecture is Built Around Technology and not Business Requirement
+
+
+##### Cross-Component Communication is Dificult to Control
+
+
+##### Modularity is at the Layer Level
+
+
 
 
 
@@ -327,6 +383,14 @@ Concepts should fit together and be optimal.
 - Optimal Architectural Quanta
 - Business Logic can be tested without dependencies.
 - Database creation is the side effect of the design.
+
+### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
+
+
+## Reporting
+
+
+## The Hexagonal Architecture
 
 ## Development Methodologies
 
