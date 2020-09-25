@@ -376,23 +376,25 @@ There is nothing that stops any component from the Business Layer to call any co
 > "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
 > ~ Vaughn Vernon, IDDD
 
-
-**1. Every change hits the Domain first and forces the things to change from inside out. Evoles rather than adapts**
-
-
-**2. Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective**
+**1. Things are Designed at a Linguistic Level**
 
 
-**3. Encourages Modularity**
+**2. Every change hits the Domain first and forces the things to change from inside out. Evoles rather than adapts**
 
 
-**4. Optimal Architectural Quanta**
+**3. Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective**
 
 
-**5. Business Logic can be tested without dependencies**
+**4. Encourages Modularity**
 
 
-**6. Database creation is the side effect of the design**
+**5. Optimal Architectural Quanta**
+
+
+**6. Business Logic can be tested without dependencies**
+
+
+**7. Database creation is the side effect of the design**
 
 
 ### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
