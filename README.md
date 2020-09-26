@@ -349,45 +349,63 @@ Concepts should fit together in an optimal manner, or to put in a different way,
 
 ## Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
-### Why Classical N-Layered Architecture Fails to Evolve?
+### Why Classical 3-Layered Architecture Fails to Evolve?
 
 > "As defined in physics, the quantum is the minimum amount of any physical entity involved in an interaction. An architectural quantum is an independently deployable component with high functional cohesion, which includes all the structural elements required for the system to function properly. In a monolithic architecture, the quantum is the entire application; everything is highly coupled and therefore developers must deploy it en mass." ~Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
 <!-- pg69 -->
 
-##### The Origin of Design is the Database
+**1. The Origin of Design is the Database**
 
+As discussed earlier, there is something un-natural about designing the behaviour of the application through its persistance. Database design should be the side-effect of application design and not vice versa.
 
-##### Architecture is Built Around Technology and not Business Requirement
+**2. Architecture is Built Around Technology and not Business Requirement**
 
+The terms "Data Layer", "Business Layer" and "UI Layer", themselves have no mention of the functionality of the application. A 3-Tier architecture is just an architecture built to satisfy the need for seperation without any concern for modularization and evolution.
 
-##### Cross-Component Communication is Dificult to Control
+**3 Modularity is at the Layer Level**
 
+Each layer is an Archeterical quanta, so huge that they becomes too stubbotn to evolve. 
 
-##### Modularity is at the Layer Level
+**4. Cross-Component Communication is Dificult to Control**
 
-
-
-
-
+There is nothing that stops any component from the Business Layer to call any component of Data Layer, or any component of Data Layer to access any table from the Database and so on. It becomes a Big Ball Of Mud at a layered level.
 
 ### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
 > "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
 > ~ Vaughn Vernon, IDDD
 
+**1. Things are Designed at a Linguistic Level**
 
-- Every change hits the domain first and forces the things to change from inside out. Evoles rather than adapts.
-- Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective.
-- Encourages Modularity
-- Optimal Architectural Quanta
-- Business Logic can be tested without dependencies.
-- Database creation is the side effect of the design.
+
+**2. Every change hits the Domain first and forces the things to change from inside out. Evoles rather than adapts**
+
+
+**3. Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective**
+
+
+**4. Encourages Modularity**
+
+
+**5. Optimal Architectural Quanta**
+
+
+**6. Business Logic can be tested without dependencies**
+
+
+**7. Database creation is the side effect of the design**
+
 
 ### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
 
+It's understood that Domain Driven Design requires programmers to climb a steep learning curve, and after that, a lot of practice to truly understand the concepts. A middle path can be taken, where the concepts of classical 3-tier and modular monoliths can be combined. The Business Layer along with Data Layer can be considered as a domain. There is no garuantee that cross communication between components avoided, but they will be contained within the module. 
 
 ## Reporting
+
+Creating reports using complex SQL Join queries is not the best way to create reports. The queries become slow over time and require constant DB tuning. Using LINQ queries for reporting is an overkill. Never do it!
+
+Reports need to be created when the data enters the system. The listeners must listen to the data and construct the reports.
 
 
 ## The Hexagonal Architecture
