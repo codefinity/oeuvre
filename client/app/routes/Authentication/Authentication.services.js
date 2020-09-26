@@ -3,7 +3,8 @@ import qs from 'qs';
 
 export const authenticationServices = {
     login,
-    signOut
+    signOut,
+    register
 }
 
 
@@ -32,6 +33,32 @@ async function login(emailId, password) {
       localStorage.setItem('token', response.data.access_token);
 
       return response;
+}
+
+async function register(tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, acceptTerms) {
+
+  const data = {
+      tenantId: tenantId,
+      emailId: emailId,
+      firstName: firstName,
+      lastName: lastName,
+      countryCode: countryCode,
+      mobileNumber: mobileNumber,
+      password: password,
+      acceptTerms: acceptTerms
+    };
+  
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+  
+    const response = await axios.post(
+      'http://localhost:5000/identityaccess/register',
+      data,
+      headers
+    )
+
+    return response;
 }
 
 async function signOut() {

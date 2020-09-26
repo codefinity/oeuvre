@@ -6,9 +6,10 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Password { get; set; }
-        public string MobileNoCountryCode { get; set; }
+        public string CountryCode { get; set; }
         public string MobileNumber { get; set; }
-        public string EMail { get; set; }
+        public string EMailId { get; set; }
+        public bool AcceptTerms { get; set; }
 
     }
 }

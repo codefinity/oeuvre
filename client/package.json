@@ -1,7 +1,7 @@
 {
-  "name": "airframe-dashboard",
+  "name": "oeuvre",
   "version": "0.1.0",
-  "description": "Seed project for flexible light React/Bootstrap 4 dashboards.",
+  "description": "Oeuvre React Client",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",

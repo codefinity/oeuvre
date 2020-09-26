@@ -12,7 +12,7 @@ export const authenticate = (emailId, password) => async dispatch =>
 
       //const response = 
       
-      authenticationServices.login(emailId,password)
+      authenticationServices.login(emailId, password)
           .then(function (response) {
 
             console.log("The Response");
@@ -45,6 +45,36 @@ export const authenticate = (emailId, password) => async dispatch =>
   function request(emailId) { return { type: authentiationActionTypes.AUTHENTICATE_REQUEST, payload: emailId } }
   function success(data) { return { type: authentiationActionTypes.AUTHENTICATE_SUCCESS, payload: data } }
   function failure(error) { return { type: authentiationActionTypes.AUTHENTICATE_FAILURE, payload: error } }
+};
+
+export const register = (tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, acceptTerms) => async dispatch => 
+{
+
+  console.log("Registering");
+
+  dispatch(request({ emailId }));
+
+      authenticationServices.register(tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, acceptTerms)
+          .then(function (response) {
+
+            console.log("The Response");
+            console.log(response);
+            dispatch(success(response.data));
+            //history.push('/');
+          
+          })
+          .catch(function (error) {
+
+            console.log("The Error");
+            console.log(error);
+            dispatch(failure(error));
+          
+          });
+
+  function request(emailId) { return { type: authentiationActionTypes.AUTHENTICATE_REQUEST, payload: emailId } }
+  function success(data) { return { type: authentiationActionTypes.AUTHENTICATE_SUCCESS, payload: data } }
+  function failure(error) { return { type: authentiationActionTypes.AUTHENTICATE_FAILURE, payload: error } }
+
 };
 
 export const signOut = () => async dispatch => {
