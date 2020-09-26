@@ -667,6 +667,7 @@ Scenario: New Registrant registers using an EMail Id that does not belong to any
 
 	Given I have not registered at Oeuvre 
 	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
+	And I have Accepted the Terms and Conditions
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
@@ -679,6 +680,7 @@ Scenario: Registrant registers more than once with Unique EMail Id / while his e
 
 	Given I have already registered at Oeuvre 
 	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
+	And I have Accepted the Terms and Conditions
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
@@ -691,6 +693,7 @@ Scenario: Registrant registers after his EMail Verification Link Expires
 
 	Given I had registered at Oeuvre
 	And I did not confirm my Registration
+	And I have Accepted the Terms and Conditions
 	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
 	When I register using the following valid details
 		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
@@ -704,12 +707,25 @@ Scenario: Registrant registers with already existing User's EMail Id
 
 	Given That I register at Oeuvre 
 	And a User with my EMail Id "Mary@TheCarpenters.com" already exists
+	And I have Accepted the Terms and Conditions
 	When I register with the following details
 		| TenantId				| FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
 		| 47d60457-5a80-4c83-96b6-890a5e5e4d22	| Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
 	Then I should not be able to register
 	And I should not receive a registration mail containing the email verification link
 
+#FREG-S5
+Scenario: New Registrant registers without accepting the Terms and Conditions
+
+	Given I have not registered at Oeuvre 
+	And there is no other User registered with my EMailId "Mary@TheCarpenters.com"
+	And I have NOT Accepted the Terms and Conditions
+	When I register using the following valid details
+		|TenantId				|FirstName			|LastName		|EMail					|Password		|MobileNoCountryCode	|MobileNumber	|
+		|47d60457-5a80-4c83-96b6-890a5e5e4d22	|Mary				|Carpenter		|Mary@TheCarpenters.com	|topoftheworld	|+1						|4387790052		|
+	Then I should be a Registrant on Oeuvre
+	And I should receive a registration EMail containing an email verification link account
+	And my User confirmation should be pending
 
 
 #-----Not Complete - Working On Them-----
