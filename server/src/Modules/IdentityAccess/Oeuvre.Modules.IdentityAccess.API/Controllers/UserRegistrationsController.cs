@@ -47,7 +47,8 @@ namespace Oeuvre.Modules.IdentityAccess.API.Controller
                                                                         request.Password,
                                                                         request.CountryCode,
                                                                         request.MobileNumber,
-                                                                        request.EMailId));
+                                                                        request.EMailId,
+                                                                        request.TermsAndConditionsAccepted));
 
                 return Ok();
             }

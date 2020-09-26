@@ -45,7 +45,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
                                                                 userData.Password,
                                                                 userData.CountryCode,
                                                                 userData.MobileNo,
-                                                                userData.EMail);
+                                                                userData.EMail,
+                                                                true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -98,7 +99,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
                                                                 userData.Password,
                                                                 userData.CountryCode,
                                                                 userData.MobileNo,
-                                                                userData.EMail);
+                                                                userData.EMail,
+                                                                true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -151,7 +153,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.PasswordReset
                                                                 userData.Password,
                                                                 userData.CountryCode,
                                                                 userData.MobileNo,
-                                                                userData.EMail);
+                                                                userData.EMail,
+                                                                true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);

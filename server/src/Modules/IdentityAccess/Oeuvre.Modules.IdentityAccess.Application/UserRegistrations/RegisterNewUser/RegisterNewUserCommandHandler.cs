@@ -39,6 +39,7 @@ namespace Oeuvre.Modules.IdentityAccess.Application.UserRegistrations.RegisterNe
                                                                     request.MobileNoCountryCode,
                                                                     request.MobileNumber,
                                                                     request.Email,
+                                                                    request.TermsAndConditionsAccepted,
                                                                     usersCounter);
 
             await userRegistrationRepository.AddAsync(userRegistration);

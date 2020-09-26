@@ -36,6 +36,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                  "+44",
                                  "4525856425",
                                  "Manfred@ManfredMann.com",
+                                 true,
                                   usersCounter);
 
             //When
@@ -70,6 +71,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                  "+44",
                                  "4525856425",
                                  "Manfred@ManfredMann.com",
+                                 true,
                                   usersCounter);
 
             //When
@@ -110,6 +112,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                  "+44",
                                  "4525856425",
                                  "Manfred@ManfredMann.com",
+                                 true,
                                   usersCounter);
 
 

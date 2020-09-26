@@ -47,14 +47,14 @@ export const authenticate = (emailId, password) => async dispatch =>
   function failure(error) { return { type: authentiationActionTypes.AUTHENTICATE_FAILURE, payload: error } }
 };
 
-export const register = (tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, acceptTerms) => async dispatch => 
+export const register = (tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, termsAndConditionsAccepted) => async dispatch => 
 {
 
   console.log("Registering");
 
   dispatch(request({ emailId }));
 
-      authenticationServices.register(tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, acceptTerms)
+      authenticationServices.register(tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, termsAndConditionsAccepted)
           .then(function (response) {
 
             console.log("The Response");

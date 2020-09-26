@@ -31,7 +31,7 @@ class Register extends React.Component {
         countryCode:'',
         mobileNumber:'',
         password: '',
-        acceptTerms: false,
+        termsAndConditionsAccepted: false,
         submitted: false
     };
 
@@ -50,7 +50,7 @@ class Register extends React.Component {
                             this.state.countryCode, 
                             this.state.mobileNumber, 
                             this.state.password,
-                            this.state.acceptTerms);
+                            this.state.termsAndConditionsAccepted);
 
     }
 
@@ -129,9 +129,8 @@ class Register extends React.Component {
                     <FormGroup>
                         <CustomInput type="checkbox" id="acceptTerms" 
                                         label="Accept Terms and Privacy Policy" inline 
-                                        value={this.state.acceptTerms}
-                                        
-                                        onChange={(e)=> {this.setState({acceptTerms: e.target.checked});}} />
+                                        value={this.state.termsAndConditionsAccepted}
+                                        onChange={(e)=> {this.setState({termsAndConditionsAccepted: e.target.checked});}} />
                     </FormGroup>
                     <ThemeConsumer>
                     {

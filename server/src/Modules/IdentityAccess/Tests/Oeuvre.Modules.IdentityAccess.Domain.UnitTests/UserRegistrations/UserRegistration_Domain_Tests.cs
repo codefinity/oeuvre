@@ -31,6 +31,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                               "+1",
                                               "4387790052",
                                               "Mary@TheCarpenters.com",
+                                              true,
                                                usersCounter.Object);
 
             //Then
@@ -59,6 +60,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                               "+1",
                                               "4387790052",
                                               "Mary@TheCarpenters.com",
+                                              true,
                                                usersCounter.Object);
 
             //Then
@@ -87,6 +89,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                               "+1",
                                               "4387790052",
                                               "Mary@TheCarpenters.com",
+                                              true,
                                                usersCounter.Object);
 
             //Then
@@ -114,6 +117,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
                                                      "+44",
                                                      "4525856425",
                                                      "Manfred@ManfredMann.com",
+                                                     true,
                                                       usersCounter.Object));
 
             
@@ -124,6 +128,35 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserRegistrations
 
             Assert.IsType<BusinessRuleValidationException>(exception);
 
+        }
+
+        //#FREG-S5
+        [Fact]
+        public void GIVEN_UserRegistersWithUniqueEMailIdANDDoesNotAcceptTermsAndConditions_THEN_RegistrationShouldNOTBeSuccessful()
+        {
+            //Given
+            var usersCounter = new Mock<IUsersCounter>();
+
+            usersCounter.Setup(e => e.CountUsersWithLogin("Mary@TheCarpenters.com")).Returns(0);
+
+            //When
+            var exception = Record.Exception(() => Registration.RegisterNewUser(
+                                                     new System.Guid("79530f73-8d20-48e7-bc15-c4d2679deb35"),
+                                                     "Manfred",
+                                                     "Mann",
+                                                     "doWaDiddy",
+                                                     "+44",
+                                                     "4525856425",
+                                                     "Manfred@ManfredMann.com",
+                                                     false,
+                                                      usersCounter.Object));
+
+            //Then
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserMustAcceptTermsAndConditions>(exc.BrokenRule);
+
+            Assert.IsType<BusinessRuleValidationException>(exception);
         }
 
     }

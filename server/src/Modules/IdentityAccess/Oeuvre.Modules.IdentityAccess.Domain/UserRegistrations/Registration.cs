@@ -29,6 +29,8 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
 
         private DateTime? confirmedDate;
 
+        private bool termsAndConditionsAccepted;
+
         private Registration()
         {
             // Only EF.
@@ -39,10 +41,13 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                 string password,
                                 MobileNumber mobileNumber,
                                 string eMailId,
+                                bool termsAndConditionsAccepted,
                                 IUsersCounter usersCounter)
         {
             //Rules
             Console.WriteLine("Business Rule Check - User EMail Id Must be Unique");
+
+            CheckRule(new UserMustAcceptTermsAndConditions(termsAndConditionsAccepted));
             CheckRule(new UserEmailIdLoginMustBeUniqueRule(usersCounter, eMailId));
 
             this.Id = new UserRegistrationId(Guid.NewGuid());
@@ -52,6 +57,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
             this.password = password;
             this.mobileNumber = mobileNumber;
             this.eMailId = eMailId;
+            this.termsAndConditionsAccepted = termsAndConditionsAccepted;
 
             registrationDate = SystemClock.Now;
 
@@ -74,6 +80,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                                      string mobileNoCountryCode,
                                                      string mobileNumber,
                                                      string emailId,
+                                                     bool termsAndConditionsAccepted,
                                                      IUsersCounter usersCounter)
         {
             return new Registration(new TenantId(tenantId),
@@ -81,6 +88,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UserRegistrations
                                         password,
                                         new MobileNumber(mobileNoCountryCode, mobileNumber),
                                         emailId,
+                                        termsAndConditionsAccepted,
                                         usersCounter);
         }
 

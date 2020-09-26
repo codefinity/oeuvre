@@ -35,6 +35,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserCreation
                                  "+44",
                                  "4525856425",
                                  "Manfred@ManfredMann.com",
+                                 true,
                                   usersCounter);
 
             registration.Confirm(registrationExpirationCalculator.Object);
@@ -61,6 +62,7 @@ namespace Oeuvre.Modules.IdentityAccess.Domain.UnitTests.UserCreation
                                  "+44",
                                  "4525856425",
                                  "Manfred@ManfredMann.com",
+                                 true,
                                   usersCounter.Object);
 
             // Act

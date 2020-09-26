@@ -35,7 +35,7 @@ async function login(emailId, password) {
       return response;
 }
 
-async function register(tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, acceptTerms) {
+async function register(tenantId, emailId, firstName, lastName, countryCode, mobileNumber, password, termsAndConditionsAccepted) {
 
   const data = {
       tenantId: tenantId,
@@ -45,7 +45,7 @@ async function register(tenantId, emailId, firstName, lastName, countryCode, mob
       countryCode: countryCode,
       mobileNumber: mobileNumber,
       password: password,
-      acceptTerms: acceptTerms
+      termsAndConditionsAccepted: termsAndConditionsAccepted
     };
   
     const headers = {

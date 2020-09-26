@@ -39,6 +39,8 @@ namespace Oeuvre.Modules.IdentityAccess.Infrastructure.Domain.UserRegistrations
                 {
                     b.Property(x => x.Value).HasColumnName("StatusCode");
                 });
+
+            builder.Property<bool>("termsAndConditionsAccepted").HasColumnName("TermsAndConditionsAccepted");
         }
     }
 }

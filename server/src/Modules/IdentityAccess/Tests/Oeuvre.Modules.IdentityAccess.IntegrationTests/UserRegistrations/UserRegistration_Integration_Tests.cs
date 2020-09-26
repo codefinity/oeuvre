@@ -33,7 +33,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                         "withorwithoutyou",
                                         "+1",
                                         "1294561062",
-                                        "Bono@U2.com");
+                                        "Bono@U2.com",
+                                        true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -61,7 +62,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                             "withorwithoutyou",
                             "+1",
                             "1294561062",
-                            "Bono2@U2.com");
+                            "Bono2@U2.com",
+                             true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -104,7 +106,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                             "withorwithoutyou",
                             "+1",
                             "1294561062",
-                            "Bono4@U2.com");
+                            "Bono4@U2.com",
+                            true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -133,7 +136,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                         "withorwithoutyou",
                                         "+1",
                                         "1294561062",
-                                        "Bono5@U2.com");
+                                        "Bono5@U2.com",
+                                        true);
 
 
             var registrationId = await IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand);
@@ -149,7 +153,8 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
                                         "withorwithoutyou",
                                         "+1",
                                         "1294561062",
-                                        "Bono5@U2.com");
+                                        "Bono5@U2.com",
+                                        true);
 
 
 
@@ -164,5 +169,30 @@ namespace Oeuvre.Modules.IdentityAccess.IntegrationTests.UserRegistrations
 
         }
 
+        //FREG-S5
+        [Fact]
+        public async void GIVEN_UserRegistersWithUniqueEMailIdANDDoesNOTAcceptTermsAndConditions_THEN_RegistrationShouldNOTBeSuccessful()
+        {
+            RegisterNewUserCommand registerNewUserCommand = new RegisterNewUserCommand(
+                                        "47d60457-5a80-4c83-96b6-890a5e5e4d22",
+                                        "Bono",
+                                        "Hewson",
+                                        "withorwithoutyou",
+                                        "+1",
+                                        "1294561062",
+                                        "Bono@U2.com",
+                                        false);
+
+
+            var exception = await Record.ExceptionAsync(() => IdentityAccessModule.ExecuteCommandAsync(registerNewUserCommand));
+
+            //Then
+            BusinessRuleValidationException exc = (BusinessRuleValidationException)exception;
+
+            Assert.IsType<UserMustAcceptTermsAndConditions>(exc.BrokenRule);
+
+            Assert.IsType<BusinessRuleValidationException>(exception);
+
+        }
     }
 }

@@ -9,7 +9,7 @@
         public string CountryCode { get; set; }
         public string MobileNumber { get; set; }
         public string EMailId { get; set; }
-        public bool AcceptTerms { get; set; }
+        public bool TermsAndConditionsAccepted { get; set; }
 
     }
 }

@@ -8,9 +8,9 @@ DROP TABLE IF EXISTS [contentcreation].[Articles];
 PRINT N'Droping [contentcreation].[Collaborators]...';
 DROP TABLE IF EXISTS [contentcreation].[Collaborators];
 
---PRINT N'Droping Views...';
---PRINT N'Droping View [contentcreation].[v_UserPermissions]...';
---DROP VIEW IF EXISTS [contentcreation].[v_UserPermissions]
+PRINT N'Droping Views...';
+PRINT N'Droping View [contentcreation].[v_UserPermissions]...';
+DROP VIEW IF EXISTS [contentcreation].[v_Members]
 
 
 PRINT N'Droping Schema...';

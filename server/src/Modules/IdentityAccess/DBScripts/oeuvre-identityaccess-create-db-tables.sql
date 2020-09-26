@@ -22,17 +22,18 @@ PRINT N'Creating [identityaccess].[Registrations]...';
 
 
 CREATE TABLE [identityaccess].[Registrations] (
-    [Id]                UNIQUEIDENTIFIER        NOT NULL,
-    [TenantId]          UNIQUEIDENTIFIER		NOT NULL,
-    [FirstName]         NVARCHAR (50)           NULL,
-    [LastName]          NVARCHAR (50)           NULL,
-    [CountryCode]       NVARCHAR (10)           NULL,
-    [MobileNo]          NVARCHAR (50)           NULL,
-    [EMail]             NVARCHAR (255)          NOT NULL,
-    [Password]          VARCHAR (255)           NOT NULL,
-    [StatusCode]        VARCHAR (50)            NOT NULL,
-    [RegistrationDate]  DATETIME                NOT NULL,
-    [ConfirmedDate]     DATETIME                NULL,
+    [Id]                            UNIQUEIDENTIFIER        NOT NULL,
+    [TenantId]                      UNIQUEIDENTIFIER		NOT NULL,
+    [FirstName]                     NVARCHAR (50)           NULL,
+    [LastName]                      NVARCHAR (50)           NULL,
+    [CountryCode]                   NVARCHAR (10)           NULL,
+    [MobileNo]                      NVARCHAR (50)           NULL,
+    [EMail]                         NVARCHAR (255)          NOT NULL,
+    [Password]                      VARCHAR (255)           NOT NULL,
+    [StatusCode]                    VARCHAR (50)            NOT NULL,
+    [RegistrationDate]              DATETIME                NOT NULL,
+    [ConfirmedDate]                 DATETIME                NULL,
+    [TermsAndConditionsAccepted]    BIT                     NOT NULL,
     CONSTRAINT [PK_identityaccess_Registrations_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
