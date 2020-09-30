@@ -26,44 +26,42 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [TOC might not work - Sections under constant re-arrangement]
 
-[1. Introducing Oeuvre](#Introducing-Oeuvre)
+[1. Introducing Oeuvre](#1-Introducing-Oeuvre)
 
-[2. Setup Instructions](#Setup-Instructions)
+[2. Setup Instructions](#2-Setup-Instructions)
 
-[3. A Need for a Project Like Oeuvre](#A-Need-for-a-Project-Like-Oeuvre)
+[3. A Need for a Project Like Oeuvre](#3-A-Need-for-a-Project-Like-Oeuvre)
 
-[4. Development Methodologies](#Development-Methodologies)
+[4. How Real World Evolution Works](#4-How-Real-World-Evolution-Works)
 
-[5. Testing and Code Coverage](#Testing-and-Code-Coverage)
+[5. Lessons worth learning from real world evolution](#5-Lessons-worth-learning-from-real-world-evolution)
 
-[6. Requirement Discussion](#Requirement-Discussion)
+[6. How To Make Principles Of Evolution Work for Architecture](#6-How-To-Make-Principles-Of-Evolution-Work-for-Architecture)
 
-[8. Technology Stack](#Technology-Stack)
+[7. Guided Evolution](#7-Guided-Evolution)
 
-[9. Requirement Analysis](#Requirement-Analysis)
+[8. Dangers of Overuse of Concepts](#8-Dangers-of-Overuse-of-Concepts)
 
-[10. Feature Files Creation](#Feature-Files-Creation)
+[9. Reasons For Selection of Domain Driven Design(DDD) Architecture ](#9-Reasons-For-Selection-of-Domain-Driven-Design(DDD)-Architecture)
 
-[11. Analysis and Design](#Analysis-and-Design)
+[10. Reporting](#10-Reporting)
 
-[12. Test Driven Design Methodology](#Test-Driven-Design-Methodology)
+[11. The Hexagonal Architecture](#11-The-Hexagonal-Architecture)
 
-[13. Inspiration](#Inspiration)
+[12. Development Methodologies](#12-Development Methodologies)
 
-[14. Issue Resolutions and Workarounds](#Issue-Resolutions-and-Workarounds)
-
-## Introducing Oeuvre
+## 1. Introducing Oeuvre
 
 Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
 At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. This project will show how quickly and efficiently DDD aligns to the changes in business.
 
 The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
 
-## Setup Instructions
+## 2. Setup Instructions
 
 SetUp instructions for this project can be found [here](SETUP.md).
 
-## A Need for a Project Like Oeuvre
+## 3. A Need for a Project Like Oeuvre
 
 **Oeuvre is not a demonstration, it is Software Evolution in motion.**
 
@@ -71,7 +69,7 @@ It is a well known fact, often inconvenient, that in the long run the many of th
 
 Oeuvre is a quest to find answers to whether the software can be constructed in such a way that it evolves with new requirements over time.
 
-## How Real World Evolution Works
+## 4. How Real World Evolution Works
 
 There is no intentional design in the real world evolution. Organized compexities are built out of primeval simplicity. Structure and the functions of system emerge bit by bit without resort to a goal of any kind. The process is mindless. 
 
@@ -87,7 +85,7 @@ It is through these trial and errors, eligant designs emerge.
 ![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
 
 
-## Lessons worth learning from real world evolution
+## 5. Lessons worth learning from real world evolution
 
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
@@ -138,7 +136,7 @@ Design is something that is always happening, therefore the attitude of perfecti
 Environment influences the species and sometimes the Species incluences the environment it lives in.
 
 
-## How To Make Principles Of Evolution Work for Architecture
+## 6. How To Make Principles Of Evolution Work for Architecture
 
 >"Even in the world of make-believe there have to be rules. The parts have to be consistent and belong together." ~ Daniel Keyes, Flowers for Algernon
 
@@ -274,7 +272,7 @@ Evolutionary change is permanent and from within, on the other hand Adaptatation
 
 Finding solutions that make the system Evolve rather that Adapt is benificial in the long run.
 
-## Guided Evolution
+## 7. Guided Evolution
 
 > Without guidance, evolutionary architecture becomes simply a reactionary architecture. Thus, a crucial early architectural decision for any system is to define important dimensions such as scalability, performance, security, data schemas, and so on. Conceptually, this allows architects to weigh the importance of a fitness function based on its importance to the system’s overall behavior. ~Building Evolutionary Architectures, Neal Ford, Rebecca Parsons, Patrick Kua
 
@@ -338,7 +336,7 @@ This mostly one time activity. Once the rules of the game are set, it generally 
 ![](design/images/ExplanationDiagrams-EAProcess.png)
 
 
-## Dangers of Overuse of Concepts
+## 8. Dangers of Overuse of Concepts
 
 >"I remember seeing an elaborate and complicated automatic washing machine for automobiles that did a beautiful job of washing them. But it could do only that, and everything else that got into its clutches was treated as if it were an automobile to be washed. **I suppose it is tempting, if the only tool you have is a hammer, to treat everything as if it were a nail.**" ~Abraham Maslow, *The Psychology of Science*
 
@@ -347,7 +345,7 @@ Once we like a concept we tend to use it for every situation, while ignoring the
 Concepts should fit together in an optimal manner, or to put in a different way, the design should aim for conceptual integrity. 
 
 
-## Reasons For Selection of Domain Driven Design(DDD) Architecture 
+## 9. Reasons For Selection of Domain Driven Design(DDD) Architecture 
 
 ### Why Classical 3-Layered Architecture Fails to Evolve?
 
@@ -401,16 +399,16 @@ There is nothing that stops any component from the Business Layer to call any co
 
 It's understood that Domain Driven Design requires programmers to climb a steep learning curve, and after that, a lot of practice to truly understand the concepts. A middle path can be taken, where the concepts of classical 3-tier and modular monoliths can be combined. The Business Layer along with Data Layer can be considered as a domain. There is no garuantee that cross communication between components avoided, but they will be contained within the module. 
 
-## Reporting
+## 10. Reporting
 
 Creating reports using complex SQL Join queries is not the best way to create reports. The queries become slow over time and require constant DB tuning. Using LINQ queries for reporting is an overkill. Never do it!
 
 Reports need to be created when the data enters the system. The listeners must listen to the data and construct the reports.
 
 
-## The Hexagonal Architecture
+## 11. The Hexagonal Architecture
 
-## Development Methodologies
+## 12. Development Methodologies
 
 #### Architecture Decision Logs
 
