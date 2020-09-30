@@ -357,6 +357,15 @@ Concepts should fit together in an optimal manner, or to put in a different way,
 
 As discussed earlier, there is something un-natural about designing the behaviour of the application through its persistance. Database design should be the side-effect of application design and not vice versa.
 
+When the application design is started with database design, it's difficult to envision the modularity at the database level. Therefore, the concepts from tables belonging to other domains/modules leak into Tables that are unrelated. For example, take this example, it might be a bit extereme but demonstrates the problem.
+
+
+
+
+
+
+
+
 **2. Architecture is Built Around Technology and not Business Requirement**
 
 The terms "Data Layer", "Business Layer" and "UI Layer", themselves have no mention of the functionality of the application. A 3-Tier architecture is just an architecture built to satisfy the need for seperation without any concern for modularization and evolution.
