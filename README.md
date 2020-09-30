@@ -24,7 +24,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 ## Table of Contents
 
-[TOC might not work - Sections under constant re-arrangement]
+[TOC Not complete - Plesase scroll down for more topics]
 
 [1. Introducing Oeuvre](#1-Introducing-Oeuvre)
 
@@ -453,7 +453,7 @@ Reports need to be created when the data enters the system. The listeners must l
 #### Code Coverage
 
 
-## Evolution In Action
+## 13. Evolution In Action
 
 ### Fitness Functions Used
 
@@ -515,7 +515,7 @@ Unit of Deployment
 
 
 
-## Development Process
+## 14. Development Process
 
 #### Domain and Infrastructure
 
@@ -537,7 +537,7 @@ Unit of Deployment
 #### Application Integration
 
 
-## Requirement Discussion
+## 15. Requirement Discussion
 
 ### Functional Requirements
 
@@ -556,7 +556,7 @@ Unit of Deployment
 
 
 
-## Technology Stack
+## 16. Technology Stack
 
 #### Discussion
 
@@ -567,7 +567,7 @@ Unit of Deployment
 #### Selection
 
 
-## Requirement Analysis and Design
+## 17. Requirement Analysis and Design
 
 
 ### Event Stroming Boards
@@ -584,7 +584,7 @@ Unit of Deployment
 
 #### Boundary Analysis
 
-## Bounded Context Design (Modules)
+## 18. Bounded Context Design (Modules)
 
 ### Identity Access - Module
 
@@ -632,7 +632,7 @@ Settings :
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-## Feature Files Creation
+## 19. Feature Files Creation
 
 #### Template
 
@@ -979,7 +979,7 @@ Scenario: Member can update his Settings
 
 
 
-## API Design
+## 20. API Design
 
 ### Identity Access
 
@@ -998,7 +998,7 @@ Scenario: Member can update his Settings
 ### Content Creation
 
 
-## Creating Fitness Functions
+## 21. Creating Fitness Functions
 
 Test Driven Design will be followed
 
@@ -1027,7 +1027,7 @@ Write ArchUnit to check if boundaries dont cross over each other.
 Write Non Functional Tests
 
 
-## Development
+## 22. Development
 
 #### Event Storming - Component Map
 
@@ -1043,15 +1043,15 @@ Write Non Functional Tests
 
 
 
-## Testing and Code Coverage
+## 23. Testing and Code Coverage
 
 All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
 Instructions for running tests and code coverage can be found [here](TESTS.md).
 
-## Continuous Integration and Deployment (CI/CD)
+## 24. Continuous Integration and Deployment (CI/CD)
 
 
-## Inspiration
+## 25. Inspiration
 
 ### Special Thanks
 - [kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
