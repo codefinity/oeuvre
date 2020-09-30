@@ -34,7 +34,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [4. How Real World Evolution Works](#4-How-Real-World-Evolution-Works)
 
-[5. Lessons worth learning from real world evolution](#5-Lessons-worth-learning-from-real-world-evolution)
+[5. Lessons Worth Learning From Real World Evolution](#5-Lessons-worth-learning-from-real-world-evolution)
 
 [6. How To Make Principles Of Evolution Work for Architecture](#6-How-To-Make-Principles-Of-Evolution-Work-for-Architecture)
 
@@ -42,7 +42,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [8. Dangers of Overuse of Concepts](#8-Dangers-of-Overuse-of-Concepts)
 
-[9. Reasons For Selection of Domain Driven Design(DDD) Architecture ](#9-Reasons-For-Selection-of-Domain-Driven-Design(DDD)-Architecture)
+[9. Reasons For Selection of Domain Driven Design(DDD) Architecture ](#9-Reasons-For-Selection-of-Domain-Driven-Design-DDD-Architecture)
 
 [10. Reporting](#10-Reporting)
 
@@ -85,7 +85,7 @@ It is through these trial and errors, eligant designs emerge.
 ![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
 
 
-## 5. Lessons worth learning from real world evolution
+## 5. 5. Lessons Worth Learning From Real World Evolution
 
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
