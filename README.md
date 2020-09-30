@@ -381,6 +381,8 @@ Each layer is an Archeterical quanta, so huge that they becomes too stubbotn to 
 
 There is nothing that stops any component from the Business Layer to call any component of Data Layer, or any component of Data Layer to access any table from the Database and so on. It becomes a Big Ball Of Mud at a layered level.
 
+![](design/images/ExplanationDiagrams-Problems-Of-Classical-3Tier-Architecture.png)
+
 ### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
 > "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
