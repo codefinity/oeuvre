@@ -359,22 +359,25 @@ As discussed earlier, there is something un-natural about designing the behaviou
 
 When the application design is started with database design, it's difficult to envision the modularity at the database level. Therefore, the concepts from tables belonging to other domains/modules leak into Tables that are unrelated. For example, take this example, it might be a bit extereme but demonstrates the problem.
 
+![](design/images/ExplanationDiagrams-3T-Architecture-Domains-Cross-Referencing.png)
 
+**2. Reading from Database is not Really Business Logic**
 
+Most of the time during read, the Business Layer simply relays the message of the DataLayer to the UI Layer. Having a Business Layer becomes a mere techonological formality during reads and serves no purpose and creates extra efforts for the develpers because the read operations in the Application exceed write operations.
 
+**3. ORMs are Viewed as Extensions Of Database**
 
+Without modilarity, the ORM entity structure becomes complex and that leads to performance issues because it loads data that are most of the times not required. Moreover, for the read operations developers use LINQ queries that can become complex. LINQ ultimately gets converted to Native SQL, and the Conversion from LINQ to SQL sometimes does not happen optimally, hence database reads have performance issues.
 
-
-
-**2. Architecture is Built Around Technology and not Business Requirement**
+**4. Architecture is Built Around Technology and not Business Requirement**
 
 The terms "Data Layer", "Business Layer" and "UI Layer", themselves have no mention of the functionality of the application. A 3-Tier architecture is just an architecture built to satisfy the need for seperation without any concern for modularization and evolution.
 
-**3 Modularity is at the Layer Level**
+**5. Modularity is at the Layer Level**
 
 Each layer is an Archeterical quanta, so huge that they becomes too stubbotn to evolve. 
 
-**4. Cross-Component Communication is Dificult to Control**
+**6. Cross-Component Communication is Dificult to Control**
 
 There is nothing that stops any component from the Business Layer to call any component of Data Layer, or any component of Data Layer to access any table from the Database and so on. It becomes a Big Ball Of Mud at a layered level.
 
