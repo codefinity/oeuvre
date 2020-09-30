@@ -42,7 +42,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [8. Dangers of Overuse of Concepts](#8-Dangers-of-Overuse-of-Concepts)
 
-[9. Reasons For Selection of Domain Driven Design(DDD) Architecture ](#9-Reasons-For-Selection-of-Domain-Driven-Design-DDD-Architecture)
+[9. Reasons for Selection of Domain Driven Design Architecture ](#9-Reasons-for-Selection-of-Domain-Driven-Design-Architecture)
 
 [10. Reporting](#10-Reporting)
 
@@ -345,7 +345,7 @@ Once we like a concept we tend to use it for every situation, while ignoring the
 Concepts should fit together in an optimal manner, or to put in a different way, the design should aim for conceptual integrity. 
 
 
-## 9. Reasons For Selection of Domain Driven Design(DDD) Architecture 
+## 9. Reasons for Selection of Domain Driven Design Architecture 
 
 ### Why Classical 3-Layered Architecture Fails to Evolve?
 
