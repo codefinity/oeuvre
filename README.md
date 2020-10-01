@@ -392,12 +392,22 @@ There is nothing that stops any component from the Business Layer to call any co
 
 > “The limits of my language mean the limits of my world.” — Ludwig Wittgenstein
 
-Language plays an important role in how we percieve the world. We define systems in terms of languages. 
+Language plays an important role in how we percieve the world. We define systems in terms of languages. More importantly, we define the software requirements in the unit of language. Software exists to solve real world problems, therefore there is a strong link between the code and the outside reality. But, our computer languages do not have strigent rules around designing the systems that reflect the outside entities and processess, therefore a programmer generally omits this facts and things in terms of programming concepts.
 
-**2. Every change hits the Domain first and forces the things to change from inside out. Evoles rather than adapts**
+All business software are simulations of real world processes. If the business reality is not aligned with the inner reality of the code, it creates an impedance — a resistance for change. Until and unless you devise a way to make your code a replica of the outside business, it will resist changes, because it does not understand the language of the outside world.
+
+The challenges here are not technical but structural and, more importantly, lingual.
+
+DDD has a concept called Ubiquitous Language which unifies the vocabulary of the Project across all the stages of development. This is a language that is used by the Business Analysts, Stakeholders, Testers, and Developers. More more importantly, this is the language in which the core of DDD will be designed, hence the code reflects the requirements of the application.
+
+**2. Every change hits the Domain first and forces the things to change from inside out** 
+
+Evoles rather than adapts
 
 
-**3. Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective**
+**3. Design is not DB Design Driven.** 
+
+Sets you free from thinking about Application Design from a Database perspective
 
 
 **4. Encourages Modularity**
