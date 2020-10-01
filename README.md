@@ -390,6 +390,9 @@ There is nothing that stops any component from the Business Layer to call any co
 
 **1. Things are Designed at a Linguistic Level**
 
+> “The limits of my language mean the limits of my world.” — Ludwig Wittgenstein
+
+Language plays an important role in how we percieve the world. We define systems in terms of languages. 
 
 **2. Every change hits the Domain first and forces the things to change from inside out. Evoles rather than adapts**
 
