@@ -34,7 +34,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [4. How Real World Evolution Works](#4-How-Real-World-Evolution-Works)
 
-[5. Lessons worth learning from real world evolution](#5-Lessons-worth-learning-from-real-world-evolution)
+[5. Lessons Worth Learning From Real World Evolution](#5-Lessons-worth-learning-from-real-world-evolution)
 
 [6. How To Make Principles Of Evolution Work for Architecture](#6-How-To-Make-Principles-Of-Evolution-Work-for-Architecture)
 
@@ -42,7 +42,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [8. Dangers of Overuse of Concepts](#8-Dangers-of-Overuse-of-Concepts)
 
-[9. Reasons For Selection of Domain Driven Design(DDD) Architecture ](#9-Reasons-For-Selection-of-Domain-Driven-Design(DDD)-Architecture)
+[9. Reasons for Selection of Domain Driven Design Architecture ](#9-Reasons-for-Selection-of-Domain-Driven-Design-Architecture)
 
 [10. Reporting](#10-Reporting)
 
@@ -85,7 +85,7 @@ It is through these trial and errors, eligant designs emerge.
 ![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
 
 
-## 5. Lessons worth learning from real world evolution
+## 5. 5. Lessons Worth Learning From Real World Evolution
 
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
@@ -345,7 +345,7 @@ Once we like a concept we tend to use it for every situation, while ignoring the
 Concepts should fit together in an optimal manner, or to put in a different way, the design should aim for conceptual integrity. 
 
 
-## 9. Reasons For Selection of Domain Driven Design(DDD) Architecture 
+## 9. Reasons for Selection of Domain Driven Design Architecture 
 
 ### Why Classical 3-Layered Architecture Fails to Evolve?
 
@@ -390,11 +390,24 @@ There is nothing that stops any component from the Business Layer to call any co
 
 **1. Things are Designed at a Linguistic Level**
 
+> “The limits of my language mean the limits of my world.” — Ludwig Wittgenstein
 
-**2. Every change hits the Domain first and forces the things to change from inside out. Evoles rather than adapts**
+Language plays an important role in how we percieve the world. We define systems in terms of languages. More importantly, we define the software requirements in the unit of language. Software exists to solve real world problems, therefore there is a strong link between the code and the outside reality. But, our computer languages do not have strigent rules around designing the systems that reflect the outside entities and processess, therefore a programmer generally omits this facts and things in terms of programming concepts.
+
+All business software are simulations of real world processes. If the business reality is not aligned with the inner reality of the code, it creates an impedance — a resistance for change. Until and unless you devise a way to make your code a replica of the outside business, it will resist changes, because it does not understand the language of the outside world.
+
+The challenges here are not technical but structural and, more importantly, lingual.
+
+DDD has a concept called Ubiquitous Language which unifies the vocabulary of the Project across all the stages of development. This is a language that is used by the Business Analysts, Stakeholders, Testers, and Developers. More more importantly, this is the language in which the core of DDD will be designed, hence the code reflects the requirements of the application.
+
+**2. Every change hits the Domain first and forces the things to change from inside out** 
+
+Evoles rather than adapts
 
 
-**3. Design is not DB Design Driven. Sets you free from thinking about Application Design from a Database perspective**
+**3. Design is not DB Design Driven.** 
+
+Sets you free from thinking about Application Design from a Database perspective
 
 
 **4. Encourages Modularity**
