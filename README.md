@@ -48,7 +48,7 @@ This project is in design and analysis phase. Please feel free to go through the
 
 [11. The Hexagonal Architecture](#11-The-Hexagonal-Architecture)
 
-[12. Development Methodologies](#12-Development-Methodologies)
+[12. Accidental Complexity](#12-Accidental-Complexity)
 
 ## 1. Introducing Oeuvre
 
@@ -437,7 +437,9 @@ Reports need to be created when the data enters the system. The listeners must l
 
 ## 11. The Hexagonal Architecture
 
-## 12. Development Methodologies
+## 12. Accidental Complexity
+
+## Development Methodologies
 
 #### Architecture Decision Logs
 
@@ -482,7 +484,7 @@ Reports need to be created when the data enters the system. The listeners must l
 #### Code Coverage
 
 
-## 13. Evolution In Action
+## Evolution In Action
 
 ### Fitness Functions Used
 
@@ -544,7 +546,7 @@ Unit of Deployment
 
 
 
-## 14. Development Process
+##  Development Process
 
 #### Domain and Infrastructure
 
@@ -566,7 +568,7 @@ Unit of Deployment
 #### Application Integration
 
 
-## 15. Requirement Discussion
+##  Requirement Discussion
 
 ### Functional Requirements
 
@@ -585,7 +587,7 @@ Unit of Deployment
 
 
 
-## 16. Technology Stack
+##  Technology Stack
 
 #### Discussion
 
@@ -596,7 +598,7 @@ Unit of Deployment
 #### Selection
 
 
-## 17. Requirement Analysis and Design
+##  Requirement Analysis and Design
 
 
 ### Event Stroming Boards
@@ -613,7 +615,7 @@ Unit of Deployment
 
 #### Boundary Analysis
 
-## 18. Bounded Context Design (Modules)
+##  Bounded Context Design (Modules)
 
 ### Identity Access - Module
 
@@ -661,7 +663,7 @@ Settings :
 - [Design Level Event Storming](https://miro.com/app/board/o9J_kniwpWE=/)
 - [More Design Level Event Storming](https://miro.com/app/board/o9J_knmsmnU=/)
 
-## 19. Feature Files Creation
+## Feature Files Creation
 
 #### Template
 
@@ -1008,7 +1010,7 @@ Scenario: Member can update his Settings
 
 
 
-## 20. API Design
+##  API Design
 
 ### Identity Access
 
@@ -1027,7 +1029,7 @@ Scenario: Member can update his Settings
 ### Content Creation
 
 
-## 21. Creating Fitness Functions
+##  Creating Fitness Functions
 
 Test Driven Design will be followed
 
@@ -1056,7 +1058,7 @@ Write ArchUnit to check if boundaries dont cross over each other.
 Write Non Functional Tests
 
 
-## 22. Development
+##  Development
 
 #### Event Storming - Component Map
 
@@ -1072,15 +1074,15 @@ Write Non Functional Tests
 
 
 
-## 23. Testing and Code Coverage
+## Testing and Code Coverage
 
 All **Integration Tests** are done on a separate database "oeuvre_integration_testing". All the tables and seed data are added before the test and removed after the tests. 
 Instructions for running tests and code coverage can be found [here](TESTS.md).
 
-## 24. Continuous Integration and Deployment (CI/CD)
+## Continuous Integration and Deployment (CI/CD)
 
 
-## 25. Inspiration
+## Inspiration
 
 ### Special Thanks
 - [kgrzybek/modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
