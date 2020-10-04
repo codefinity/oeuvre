@@ -404,6 +404,8 @@ DDD has a concept called Ubiquitous Language which unifies the vocabulary of the
 
 Evoles rather than adapts
 
+![](design/images/ExplanationDiagrams-CellMimicDDDModel.png)
+
 
 **3. Design is not DB Design Driven.** 
 
