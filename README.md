@@ -385,8 +385,6 @@ There is nothing that stops any component from the Business Layer to call any co
 
 ### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
-> "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
-> ~ Vaughn Vernon, IDDD
 
 **1. Things are Designed at a Linguistic Level**
 
@@ -411,9 +409,14 @@ DDD is designed to evoles from within, rather than adapt.
 ![](design/images/ExplanationDiagrams-CellMimicDDDModel.png)
 
 
-**3. Design is not DB Design Driven.** 
+**7. Database creation is the side effect of the design**
 
-Sets you free from thinking about Application Design from a Database perspective
+> "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
+> ~ Vaughn Vernon, IDDD
+
+Design is not DB Design Driven.
+
+Sets you free from thinking about Application Design from a Database perspective.
 
 
 **4. Encourages Modularity**
@@ -427,7 +430,7 @@ Sets you free from thinking about Application Design from a Database perspective
 **6. Business Logic can be tested without dependencies**
 
 
-**7. Database creation is the side effect of the design**
+
 
 
 ### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
