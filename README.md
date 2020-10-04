@@ -398,7 +398,7 @@ The challenges here are not technical but structural and, more importantly, ling
 
 DDD has a concept called Ubiquitous Language which unifies the vocabulary of the Project across all the stages of development. This is a language that is used by the Business Analysts, Stakeholders, Testers, and Developers. More more importantly, this is the language in which the core of DDD will be designed, hence the code reflects the requirements of the application.
 
-**2. Every change hits the Domain first and forces the things to change from inside out** 
+**2. Business requirement changes hit the Domain first and forces the things to change from inside out** 
 
 Whenever there is a change in the Requirements at a Business Level, the first that gets affected by the changes is the Domain. This is the origin point of the change because the Business Logic resides in the Domain. Once the domain is changed to accomodiate the business requirement, the underlying database can be adjusted and the outer layers, the Application and Infracture realign to support those changes.
 
