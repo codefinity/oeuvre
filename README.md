@@ -402,7 +402,11 @@ DDD has a concept called Ubiquitous Language which unifies the vocabulary of the
 
 **2. Every change hits the Domain first and forces the things to change from inside out** 
 
-Evoles rather than adapts
+Whenever there is a change in the Requirements at a Business Level, the first that gets affected by the changes is the Domain. This is the origin point of the change because the Business Logic resides in the Domain. Once the domain is changed to accomodiate the business requirement, the underlying database can be adjusted and the outer layers, the Application and Infracture realign to support those changes.
+
+This mimics the behaviour of the cell where the changes begins at the DNA level. 
+
+DDD is designed to evoles from within, rather than adapt.
 
 ![](design/images/ExplanationDiagrams-CellMimicDDDModel.png)
 
@@ -413,6 +417,8 @@ Sets you free from thinking about Application Design from a Database perspective
 
 
 **4. Encourages Modularity**
+
+[Bounded Context Diagram]
 
 
 **5. Optimal Architectural Quanta**
