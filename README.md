@@ -414,9 +414,9 @@ DDD is designed to evoles from within, rather than adapt.
 > "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
 > ~ Vaughn Vernon, IDDD
 
-Design is not DB Design Driven.
+The domain controls the behaviour of the application, because the business logic resides in the domain. When the behaviour of the application is expected to change due to requirement change, the changes are done in the Domain. According to changes in the domain, the pesristance disign is created. Application design is not Database Design Driven.
 
-Sets you free from thinking about Application Design from a Database perspective.
+This sets you free from thinking about Application Design from a Database perspective.
 
 
 **4. Encourages Modularity**
