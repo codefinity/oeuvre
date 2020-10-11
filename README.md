@@ -15,13 +15,6 @@
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
-## News
-
-- Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
-- Integration Tests Written.
-- IdentityAccess Module appears to be stable.
-- Documenting the process.
-
 ## Table of Contents
 
 [TOC Not complete - Plesase scroll down for more topics]
