@@ -15,13 +15,6 @@
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
-## News
-
-- Migration from Postgres to Sql Server in progress on branch evolution-one-migration-sqlserver. Merged to branch evolution-one.
-- Integration Tests Written.
-- IdentityAccess Module appears to be stable.
-- Documenting the process.
-
 ## Table of Contents
 
 [TOC Not complete - Plesase scroll down for more topics]
@@ -85,7 +78,7 @@ It is through these trial and errors, eligant designs emerge.
 ![](design/images/ExplanationDiagrams-RealWorldEvolution.png)
 
 
-## 5. 5. Lessons Worth Learning From Real World Evolution
+## 5. Lessons Worth Learning From Real World Evolution
 
 > “A complex system that works is invariably found to have evolved from a simple system that worked. The inverse proposition also appears to be true: A complex system designed from scratch never works and cannot be made to work. You have to start over, beginning with a working simple system.” ~Galls Law
 
@@ -385,8 +378,6 @@ There is nothing that stops any component from the Business Layer to call any co
 
 ### Why is Domain Driven Design(DDD) The Best Approach For Evolutionary Architecture?
 
-> "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
-> ~ Vaughn Vernon, IDDD
 
 **1. Things are Designed at a Linguistic Level**
 
@@ -400,7 +391,7 @@ The challenges here are not technical but structural and, more importantly, ling
 
 DDD has a concept called Ubiquitous Language which unifies the vocabulary of the Project across all the stages of development. This is a language that is used by the Business Analysts, Stakeholders, Testers, and Developers. More more importantly, this is the language in which the core of DDD will be designed, hence the code reflects the requirements of the application.
 
-**2. Every change hits the Domain first and forces the things to change from inside out** 
+**2. Business requirement changes hit the Domain first and forces the things to change from inside out** 
 
 Whenever there is a change in the Requirements at a Business Level, the first that gets affected by the changes is the Domain. This is the origin point of the change because the Business Logic resides in the Domain. Once the domain is changed to accomodiate the business requirement, the underlying database can be adjusted and the outer layers, the Application and Infracture realign to support those changes.
 
@@ -411,9 +402,14 @@ DDD is designed to evoles from within, rather than adapt.
 ![](design/images/ExplanationDiagrams-CellMimicDDDModel.png)
 
 
-**3. Design is not DB Design Driven.** 
+**7. Database creation is the side effect of the design**
 
-Sets you free from thinking about Application Design from a Database perspective
+> "DDD is not about structuring data in a normalized fashion. It is about modelling the Ubiquitous Language in a consistent Bounded Context" 
+> ~ Vaughn Vernon, IDDD
+
+The domain controls the behaviour of the application, because the business logic resides in the domain. When the behaviour of the application is expected to change due to requirement change, the changes are done in the Domain. According to changes in the domain, the pesristance disign is created. Application design is not Database Design Driven.
+
+This sets you free from thinking about Application Design from a Database perspective.
 
 
 **4. Encourages Modularity**
@@ -427,7 +423,7 @@ Sets you free from thinking about Application Design from a Database perspective
 **6. Business Logic can be tested without dependencies**
 
 
-**7. Database creation is the side effect of the design**
+
 
 
 ### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
