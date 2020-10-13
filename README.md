@@ -414,17 +414,18 @@ This sets you free from thinking about Application Design from a Database perspe
 
 **4. Encourages Modularity**
 
+Domain Driven Design has a concept of Bounded Context, which are the boundaries between which an application is divided. Each bounded context handles a particular concept within an application. The bounded contexts are loosely couples and pass information to each other using messages and receive messages using the API.
+
 [Bounded Context Diagram]
 
 
 **5. Optimal Architectural Quanta**
 
+Since the Domain Model is the heart of DDD and contains the business logic, the unit of change of the business logic is the Domain. All the changes to business logic start from the domain, making the Architectural Quanta centered, small and managable. 
 
 **6. Business Logic can be tested without dependencies**
 
-
-
-
+Unit Tests can be target at the Domain to test the integrity of the business logic even before other layers are written around it. This gives a sense that the application is moving in the right direction.
 
 ### Not Comfortable with Domain Driven Design(DDD)? - Take the Middle Path
 
