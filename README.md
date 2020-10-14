@@ -514,6 +514,43 @@ This application can be a modular monolith or a microservice.
 
 ## 13. No Silver Bullet
 
+In his paper [No Silver Bullet – Essence and Accident in Software Engineering](http://www.cs.unc.edu/techreports/86-020.pdf), Fred Brooks argues that
+
+> There is no single development, in either technology or management technique, which by itself promises even one order-of-magnitude improvement within a decade in productivity, in reliability, in simplicity.
+
+Developing a software in indeed a very complex task. There is alwats some new framework or management methodology that promises to make the job easier, but they have not had any dramatic impact on the speed and improvement of software development.
+
+The paragraph that immediately caught caught my attention was this. I want to present it as it is, because nobody could have expressed it better than the author himself.
+
+> Software is invisible and unvisualizable. Geometric abstractions are powerful tools. The floor plan of a building helps both architect and client evaluate spaces, traffic flows, and views. Contradictions become obvious, omissions can be caught. Scale drawings of mechanical parts and stick-figure models of molecules, although abstractions, serve the same purpose. A geometric reality is captured in a geometric abstraction.
+
+> The reality of software is not inherently embedded in space. Hence it has no ready geometric representation in the way that land has maps, silicon chips have diagrams, computers have connectivity schematics. As soon as we attempt to diagram software structure, we find it to constitute not one, but several, general directed graphs, superimposed one upon another. The several graphs may represent the flow of control, the flow of data, patterns of dependency, time sequence, name-space relationships. These are usually not even planar, much less hierarchical. Indeed, one of the ways of establishing conceptual control over such structure is to enforce link cutting until one or more of the graphs becomes hierarchical.
+
+> In spite of progress in restricting and simplifying the structures of software, they remain inherently unvisualizable, thus depriving the mind of some of its most powerful conceptual tools. This lack not only impedes the process of design within one mind, it severely hinders communication among minds.
+
+A good softwares is designed when a strong spatial sence is applied. Code needs to be seen as a geometric distribution. Diagrams can be powerful tools for desigining software. They give a sense of orientation to things that are ingerently invisible.
+
+Requirement gathering is also a complex task in Software development as the Author rightly points out
+
+> I would go a step further and assert that it is really impossible for clients, even those working with software engineers, to specify completely, precisely, and correctly the exact requirements of a modern software product before having built and tried some versions of the product they are specifying.
+
+> Much of present-day software acquisition procedures rests upon the assumption that one can specify a satisfactory system in advance, get bids for its construction, have it built, and install it. I think this assumption is fundamentally wrong, and that many software acquisition problems spring from that fallacy. Hence they cannot be fixed without fundamental revision, one that provides for iterative development and specification of prototypes and products.
+
+The requirement gathering also becomes a contunuous process involving the client. The logical integrity of the requirement gets continuously while the product is built.
+
+The Author then suggests that to deal with this problem, the software should be grown by incremental development. This is also the phisosophy [Galls Law](http://principles-wiki.net/principles:gall_s_law) echos. 
+
+> Growing software organically, adding more and more function to systems as they are run, used, and tested.
+
+**Our Purpose**
+
+1. Our purpose while developing Oeuvre is not to invent a Silver Bullet, because it is assured that there never will be a silver bullet.
+
+2. We will be growing the system in all the evolutionary directions incrementally.
+
+3. We will use the spatial dimention to develop and grow this software, because it will prove to be a powerful tool.
+
+
 ## 14. Development Methodologies
 
 #### Architecture Decision Logs
