@@ -440,9 +440,71 @@ Reports need to be created when the data enters the system. The listeners must l
 
 ## 11. The Hexagonal Architecture
 
->"Allow an application to equally be driven by users, programs, automated test or batch scripts, and to be developed and tested in isolation from its eventual run-time devices and databases."
+>"One of the great bugaboos of software applications over the years has been infiltration of business logic into the user interface code." ~Alistair Cockburn
 
->"As events arrive from the outside world at a port, a technology-specific adapter converts it into a usable procedure call or message and passes it to the application. The application is blissfully ignorant of the nature of the input device. When the application has something to send out, it sends it out through a port to an adapter, which creates the appropriate signals needed by the receiving technology (human or automated). The application has a semantically sound interaction with the adapters on all sides of it, without actually knowing the nature of the things on the other side of the adapters." ~Alistair Cockburn 
+Alistair Cockburn, in his seminal paper [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) talks about how in software development there has been a problem of business logic infiltrating into the UI layer. These causes the following problems:
+
+1. It becomes difficult to test the system with automated tests because the part of the business logic that needs to be tested is in the UI, for instance, a button click event.
+2. Other systems cannot utilize the functionality of the system because UI is becomes the only gateway to the system. 
+
+So, the application needs to be designed in such a way that it provides it provides the business functionality through an API that becomes the gateway to the application. This will enable us to
+
+1. Automate testing the application without the UI.
+2. Other applications can utilize the functionality of the application.
+3.Business logic can be kept out of the UI layer.
+
+What are Port and Adapters?
+
+**Ports**
+
+The Ports acts as a gateway through which communication takes place as an inbound or outbound port. An Inbound port is something like a service interface that exposes the core logic to the outside world. Ports are at the application boundary.
+
+**Adapters**
+
+The adapters act as an implementation of a port that handles user input and translate it into the language-specific call. It basically encapsulates the logic to interact with outer systems such as message queues, databases, etc. It also transforms the communication between external objects and core. Adapters implement a concrete protocol by which some external system or device can communicate with the application. An adapter translates between a specific technology and a technology free port. An adapter allows a technology  to interact with a port of the hexagon.
+ 
+In most of cases, REST controller act as a our primary adapter, providing endpoints accessing domain through port.
+
+The adapters can be classified into 2 types:
+
+**Inbound  Adapters:** They drive the application using the inbound port of an application. Examples of primary adapters could be WebViews or Rest Controllers.
+
+**Outpound Adapters:** They are the implementation of an outbound port that is driven by the application. Connection with messaging queues, databases, and external API calls are some of the examples of Secondary adapters.
+
+There can be more than one adapter for a single port. For instance if a port offering a business logic has to be accessed by a web application through REST and at the same is accessed by some other application through GRPC, then two adapters REST and GRPC van be created for a port.
+
+If another device wants to communicate with the application through other means, another adapter can be created. For example, an adapter can be created for listening to messages thrown by that application into the message queue.
+
+**Database – “the other side”**
+
+On the other side the application communicates with the database. The application needs to be designed in such a way that ff the database type is changed, the conversation across the API should not change. Then we have the following advantages:
+
+1. Persistence can be replaced with any kind of data store. Even flat files.
+2. APIs can be tested without the database using mocks.
+
+An outbound port is something like a repository interface that facilitates communication from application to persistence system. Here the application has an outbound port and adapter to access the data or to store the data. The application can employ multiple adapters for communication with different databases of persistence mechanisms. From the testing point of view it can have an adapter to mock the database.
+
+Application itself can communicating with the port of another application using an adapter provided by that application.
+
+**The sole motive of all this is to keep the Use Cases confined to the Application, which is the core of the Hexagonal Architecture. It also helps in testing the behaviour of the Application without any dependencies.**
+
+**DDD and Hexagonal Architecture**
+
+In DDD the Application of HA can be viewed as a combination of Domain and Application, while the infrastructure provides the ports to persistence and API provides the ports to UI. Each bounded context can be a separate hexagon. That is, the application can be divided into multiple hexagons that communicate with each other to complete one use case.
+This application can be a modular monolith or a microservice. 
+
+
+**Advantages**
+
+1. Since the application is divided into multiple hexagons, changes in one area of an application has no effect on the other areas of the application. The complexities are contained.
+2. Technical decisions for adding features can be visualized easily and implemented. 
+3. Debugging is easy as the developers can concentrate on the small area of the application at a time.
+4. Automated integration and unit tests become easy and controllable.
+5. Mocks can be easily integrated by creating mock Adapters
+6. Maintenance is easy because the application has well define inputs and outputs and is modular in nature with well defined separation of concern, and the business logic lies at the core. Adding feature to one Hexagon has minimum effect on the other.
+7. The things like UI and database become replaceable by creating specialized adapters.
+8. Accumulates low technical debt.
+
 
 ## 12. Accidental Complexity
 
