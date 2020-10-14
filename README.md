@@ -1217,6 +1217,13 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ##### Books
 - [Introducing EventStorming](https://leanpub.com/introducing_eventstorming)
 
+### Hexagonal Architecture
+
+- [Ready for changes with Hexagonal Architecture - Netflix Technology Blog](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749)
+- [Hexagonal architecture](https://alistair.cockburn.us/hexagonal-architecture/)
+- [Hexagonal Architecture with Java and Spring](https://reflectoring.io/spring-hexagonal/)
+- [Hexagonal Architecture in Java](https://www.geeksforgeeks.org/hexagonal-architecture-in-java/)
+- [Hexagonal Architecture: Introduction Part I](https://hackernoon.com/hexagonal-architecture-introduction-part-i-e51h36id)
 
 ### BDD
 
