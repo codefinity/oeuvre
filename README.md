@@ -49,6 +49,8 @@
 
 ## 1. Introducing Oeuvre
 
+**Oeuvre is not a demonstration, it is Software Evolution in motion.**
+
 Oeuvre is a social article publishing portal that enables users to write and publish and share their articles. 
 At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. This project will show how quickly and efficiently DDD aligns to the changes in business.
 
@@ -65,8 +67,6 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 SetUp instructions for this project can be found [here](SETUP.md).
 
 ## 4. A Need for a Project Like Oeuvre
-
-**Oeuvre is not a demonstration, it is Software Evolution in motion.**
 
 It is a well known fact, often inconvenient, that in the long run the many of the projects become unmaintainable. New requirements come in, new capabilities are demanded due to changes in the market, the technology landscape becomes better, and the softwares is expected to accommodate these things without software rewrites.
 
