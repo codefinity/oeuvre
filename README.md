@@ -67,7 +67,7 @@ Software does not exist in isolation. It is built to solve a acclerate proccesse
 
 Business itself exists in the market to server a purpose. It has has its stratergies for growth, and many times does its course corrections. The IT stratergy must align itself to the Business stratergy to provide the business its maneuverability. In the end the Technology must be aligned what the business needs and grow with it hand in hand. If they are not tuned to each other then an imbalance is likely to occur.
 
-There is no exact science to drive the technology with the Business Stratergy. It mostly depends on the position of the business and the Architects knowledge and skill. For instance, an extablished company just wanting to digitize their services might need a different stratergy than a stratup launching a product. A manufacturing company wanting to upgrade their legacy system to cloud might need a different stratergy than a a company wanting their products to be opened to a different market with different laws.
+There is no exact science to drive the technology with the Business Stratergy. It mostly depends on the current position of the business and the Architects knowledge and skill. For instance, an extablished company just wanting to digitize their services might need a different stratergy than a stratup launching a product. A manufacturing company wanting to upgrade their legacy system to cloud might need a different stratergy than a a company wanting their products to be opened to a different market with different laws.
 
 Technology can be the core of the business but it must be driven by Business.
 
