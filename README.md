@@ -61,9 +61,17 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 ![](https://raw.githubusercontent.com/codefinity/oeuvre/master/design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
 
 
-## 2. Stratergy and Technology Must Go Hand-In-Hand
+## 2. Business Stratergy and Technology Must Go Hand-In-Hand
 
-Software does not exist in isolation. It is built to solve a acclerate proccessess or solve problem in the market. Stratergy gives direction to technology. If technology is the muscle, stratergy is the mind.
+Software does not exist in isolation. It is built to solve a acclerate proccessess or solve problem in the market. Business Stratergy must gives direction to technology. If technology is the muscle, stratergy is the mind.
+
+Business itself exists in the market to server a purpose. It has has its stratergies for growth, and many times does its course corrections. The IT stratergy must align itself to the Business stratergy to provide the business its maneuverability. In the end the Technology must be aligned what the business needs and grow with it hand in hand.
+
+If one moves ahead of the other, then an imbalance is likely to occur.
+
+There is no exact science to drive the technology with the Business Stratergy. It mostly depends on the position of the business and the Architects knowledge and skill. For instance, an extablished company just wanting to digitize their services might need a different stratergy than a stratup launching a product. A manufacturing company wanting to upgrade their legacy system to cloud might need a different stratergy than a a company wanting their products to be opened to a different market with different laws.
+
+![](design/images/ExplanationDiagrams-ITStratergy.png)
 
 ## 3. Setup Instructions
 
