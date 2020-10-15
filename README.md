@@ -6,7 +6,7 @@
 
 # Oeuvre - The Theater Of Evolutionary Architecture
 
-![](design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
+
 
 ### Oeuvre
 /ˈəːvr(ə)/
@@ -55,6 +55,8 @@ At some level Oeuvre is an Experimental Test-Bed for Evolutionary Architecture. 
 The technology stack used is .Net, but the concept can be applied to all the programming language that supports OOPS.
 
 ## 2. The Master Plan
+
+![](design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
 
 ## 3. Setup Instructions
 
