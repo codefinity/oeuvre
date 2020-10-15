@@ -21,6 +21,8 @@
 
 [2. The Master Plan](#2-The-Master-Plan)
 
+[2. Stratergy and Technology Must Go Hand-In-Hand](#2-Stratergy-and-Technology-Must-Go-Hand-In-Hand)
+
 [3. Setup Instructions](#2-Setup-Instructions)
 
 [4. A Need for a Project Like Oeuvre](#3-A-Need-for-a-Project-Like-Oeuvre)
@@ -59,6 +61,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 ![](https://raw.githubusercontent.com/codefinity/oeuvre/master/design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
 
 
+## 2. Stratergy and Technology Must Go Hand-In-Hand
 
 ## 3. Setup Instructions
 
