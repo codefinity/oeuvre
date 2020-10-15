@@ -13,8 +13,6 @@
 
 **The Documentation is in progress and there might be grammatical or spelling errors. In case of any factual errors, please use the [Issues](https://github.com/codefinity/oeuvre/issues) section to log them.**
 
-
-
 ## Table of Contents
 
 [TOC Not complete - Plesase scroll down for more topics]
