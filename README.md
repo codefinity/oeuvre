@@ -56,7 +56,9 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ## 2. The Master Plan
 
-![](design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
+![](https://raw.githubusercontent.com/codefinity/oeuvre/master/design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
+
+
 
 ## 3. Setup Instructions
 
