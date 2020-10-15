@@ -74,6 +74,12 @@ Technology can be the core of the business but it must be driven by Business.
 
 ![](design/images/ExplanationDiagrams-ITStratergy.png)
 
+**Business Stratergy for Oeuvre**
+
+For Oeuvre we assume that it's being launched by a startup which is optimistic about its growth, and at the same time wants to experiment with its product in the market and needs the application to adjut to changes in short amount of time. At the same time the company wants to keep upgrading to latest technologies as better technologies come to the market.
+
+When the load increases on the application down the line, the company wants the product to evolve without the need for re-enginering.
+
 ## 3. Setup Instructions
 
 SetUp instructions for this project can be found [here](SETUP.md).
