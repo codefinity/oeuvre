@@ -63,6 +63,8 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ## 2. Stratergy and Technology Must Go Hand-In-Hand
 
+Software does not exist in isolation. It is built to solve a acclerate proccessess or solve problem in the market. Stratergy gives direction to technology. If technology is the muscle, stratergy is the mind.
+
 ## 3. Setup Instructions
 
 SetUp instructions for this project can be found [here](SETUP.md).
