@@ -69,7 +69,7 @@ Business itself exists in the market to server a purpose. It has has its strater
 
 There is no exact science to drive the technology with the Business Stratergy. It mostly depends on the position of the business and the Architects knowledge and skill. For instance, an extablished company just wanting to digitize their services might need a different stratergy than a stratup launching a product. A manufacturing company wanting to upgrade their legacy system to cloud might need a different stratergy than a a company wanting their products to be opened to a different market with different laws.
 
-Technology can be the core of the business nit it must be driven by Business.
+Technology can be the core of the business but it must be driven by Business.
 
 
 ![](design/images/ExplanationDiagrams-ITStratergy.png)
