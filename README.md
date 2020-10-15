@@ -1,19 +1,19 @@
-**NOTE:** 
-
-**This project is in design and analysis phase. Please feel free to go through the code and documentation and if you have any Questions or Suggestions, you can use the [Issues](https://github.com/codefinity/oeuvre/issues) tab.**
-
-**The Documentation is in progress and there might be grammatical or spelling errors. In case of any factual errors, please use the [Issues](https://github.com/codefinity/oeuvre/issues) section to log them.**
-
-# Oeuvre - The Theater Of Evolutionary Architecture
-
-
-
 ### Oeuvre
 /ˈəːvr(ə)/
 
 **Pronounced as:**  *uh·vruh* | **noun:** oeuvre; **plural noun**: oeuvres
 
 **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
+
+# Oeuvre - The Theater Of Evolutionary Architecture
+
+**NOTE:** 
+
+**This project is in design and analysis phase. Please feel free to go through the code and documentation and if you have any Questions or Suggestions, you can use the [Issues](https://github.com/codefinity/oeuvre/issues) tab.**
+
+**The Documentation is in progress and there might be grammatical or spelling errors. In case of any factual errors, please use the [Issues](https://github.com/codefinity/oeuvre/issues) section to log them.**
+
+
 
 ## Table of Contents
 
