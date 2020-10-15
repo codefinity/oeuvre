@@ -1,11 +1,9 @@
-![](https://raw.githubusercontent.com/codefinity/oeuvre/master/design/images/OeuvreDictionary21.png)
+### Oeuvre
+/ˈəːvr(ə)/
 
-<!-- ### Oeuvre -->
-<!-- /ˈəːvr(ə)/ -->
+**Pronounced as:**  *uh·vruh* | **noun:** oeuvre; **plural noun**: oeuvres
 
-<!-- **Pronounced as:**  *uh·vruh* | **noun:** oeuvre; **plural noun**: oeuvres -->
-
-<!-- **Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature. -->
+**Meaning:** The body of work of a painter, composer, or author. A work of art, music, or literature.
 
 # Oeuvre - The Theater Of Evolutionary Architecture
 
