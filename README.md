@@ -354,7 +354,7 @@ The list will have pretty significant items as the application grows
 This mostly one time activity. Once the rules of the game are set, it generally stays the same. These fitness functions will make sure that the structural integrity of the applications are maintained. It will check if for the wrong references between projects. It will most inportantly check if the modules of the application are correctly isolated. This is exteremely important if the architecture wants to make the next leap into microservices. 
 
 
-![](design/images/ExplanationDiagrams-EAProcess.png)
+![](https://raw.githubusercontent.com/codefinity/oeuvre/master/design/images/ExplanationDiagrams-EAProcess.png)
 
 
 ## 10. Dangers of Overuse of Concepts
