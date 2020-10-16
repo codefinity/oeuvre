@@ -60,6 +60,8 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ![](https://raw.githubusercontent.com/codefinity/oeuvre/master/design/images/ExplanationDiagrams-Oeuvre-Evolution.png)
 
+#### Evolution-One: Positioning for Evolution
+
 
 ## 3. Business Stratergy and Technology Must Go Hand-In-Hand
 
