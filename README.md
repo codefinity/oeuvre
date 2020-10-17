@@ -62,6 +62,43 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ### Evolution One — Positioning for Evolution
 
+**Dividing the application into most conducive Architectural Quanta**
+
+
+
+**Restricting the Business Logic at the Core**
+
+- DDD
+- Hexagonal Architecture
+- 
+
+**Modularity through Application Boundaries**
+
+
+**Modularity at the Database Level**
+
+
+**Diagramming the Application**
+
+- Architecture Diagrams
+
+- Process Flow using Event storming
+
+**Well defined use cases as the Unit of Feature Evolution**
+
+
+
+**Fitness functiona at right positions**
+
+
+
+**Communication through Messaging**
+
+
+
+**Monitoring for Failure**
+
+
 
 ## 3. Business Stratergy and Technology Must Go Hand-In-Hand
 
@@ -1303,6 +1340,13 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 ##### Books
 - [Writing Great Specifications](https://www.manning.com/books/writing-great-specifications)
 
+### The Reactive Manifesto
+
+- [The Reactive Manifesto](https://www.reactivemanifesto.org/)
+
+### The Twelve-Factor App
+
+- [The Twelve-Factor App](https://12factor.net/)
 
 ### Code Coverage
 - [Measuring .NET Core Test Coverage with Coverlet](https://www.tonyranieri.com/blog/2019/07/31/Measuring-.NET-Core-Test-Coverage-with-Coverlet/)
