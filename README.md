@@ -92,7 +92,7 @@ The feature evoltion of Oeuvre will be guided by BDD and the use cases defined b
 
 **7. Evolution will be guided by Fitness Function**
 
-
+The section [How To Make Principles Of Evolution Work for Architecture](#8-How-To-Make-Principles-Of-Evolution-Work-for-Architecture) explains the usefulness of Fitness functions for guiding through incremental evolution. The [Guided Evolution](#9-Guided-Evolution) describes the stratergy for applying fitness functions at right places in the architecture.
 
 **8. Communication through Messaging**
 
