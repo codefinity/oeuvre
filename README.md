@@ -64,7 +64,7 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 **1. Dividing the application into most conducive Architectural Quanta**
 
-
+The Architectural Quantas that we will be employing are discussed the section [Evolution In Action](EvolutionIn-Action).
 
 **2. Restricting the Business Logic at the Core**
 
