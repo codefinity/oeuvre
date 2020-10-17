@@ -7,15 +7,15 @@
 
 # Oeuvre - The Theater Of Evolutionary Architecture
 
-**NOTE:** 
+### NOTE 
 
 **This project is in design and analysis phase. Please feel free to go through the code and documentation and if you have any Questions or Suggestions, you can use the [Issues](https://github.com/codefinity/oeuvre/issues) tab.**
 
-**The Documentation is in progress and there might be grammatical or spelling errors. In case of any factual errors, please use the [Issues](https://github.com/codefinity/oeuvre/issues) section to log them.**
+**The Documentation is in progress. The author is working in write-now-and-edit-later mode, therefore please expect grammatical errors, spelling mistakes, and typos. In case of any factual errors, please report them using the [Issues](https://github.com/codefinity/oeuvre/issues) section.**
 
 ## Table of Contents
 
-[TOC Not complete - Plesase scroll down for more topics]
+**TOC is Incomplete - Plesase scroll down for more topics**
 
 [1. Introducing Oeuvre](#1-Introducing-Oeuvre)
 
@@ -64,31 +64,33 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 **1. Dividing the application into most conducive Architectural Quanta**
 
-The Architectural Quantas that we will be employing are discussed the section [Evolution In Action](EvolutionIn-Action).
+The Architectural Quantas that we will be employing are discussed the section [Evolution In Action](#EvolutionIn-Action).
 
 **2. Restricting the Business Logic at the Core**
 
-- DDD
-- Hexagonal Architecture
-- 
+We will be employing design philosophies like [Hexagonal - Prots and Adapters](#13-The-Hexagonal-Architecture) in combination with [Domain Driven Design](#11-Reasons-for-Selection-of-Domain-Driven-Design-Architecture) to make Business Logic the core of the Architecture from where everything else originates.
 
 **3. Modularity through Application Boundaries**
 
+The application will be designed using the modular monolith approach and each module will be isolated from each other and allowed to exchange information through integration services and in-memory messaging. This approach will help the application to evolve later to Microservices.
 
 **4. Modularity at the Database Level**
 
+Even though the application will use the same database, the tables of each modules will be isolated. This will help the application to scale to the microservices level.
 
 **5. Diagramming the Application**
 
-- Architecture Diagrams
+The section [No Silver Bullet](#14-No-Silver-Bullet) explains why diagrams give a sense of orientation to the design and is needed for software because is abstract and does not by nature have a geometry.
 
-- Process Flow using Event storming
+Oeuvre will be guided by duagrams from the very begining and evolutionary stratergies will be deviced first at the digrammatic level.
+
+The process flow of the application will be discovered and guided by Event Storming
 
 **6. Well defined use cases as the Unit of Feature Evolution**
 
+The feature evoltion of Oeuvre will be guided by BDD and the use cases defined by gherkin will reflect in the tests at various levels. 
 
-
-**7. Fitness functiona at right positions**
+**7. Evolution will be guided by Fitness Function**
 
 
 
