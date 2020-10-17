@@ -62,41 +62,41 @@ The technology stack used is .Net, but the concept can be applied to all the pro
 
 ### Evolution One — Positioning for Evolution
 
-**Dividing the application into most conducive Architectural Quanta**
+**1. Dividing the application into most conducive Architectural Quanta**
 
 
 
-**Restricting the Business Logic at the Core**
+**2. Restricting the Business Logic at the Core**
 
 - DDD
 - Hexagonal Architecture
 - 
 
-**Modularity through Application Boundaries**
+**3. Modularity through Application Boundaries**
 
 
-**Modularity at the Database Level**
+**4. Modularity at the Database Level**
 
 
-**Diagramming the Application**
+**5. Diagramming the Application**
 
 - Architecture Diagrams
 
 - Process Flow using Event storming
 
-**Well defined use cases as the Unit of Feature Evolution**
+**6. Well defined use cases as the Unit of Feature Evolution**
 
 
 
-**Fitness functiona at right positions**
+**7. Fitness functiona at right positions**
 
 
 
-**Communication through Messaging**
+**8. Communication through Messaging**
 
 
 
-**Monitoring for Failure**
+**9. Continuous Monitoring**
 
 
 
