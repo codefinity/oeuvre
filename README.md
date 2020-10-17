@@ -1298,6 +1298,7 @@ Instructions for running tests and code coverage can be found [here](TESTS.md).
 
 ##### Repositories 
 - [VaughnVernon/IDDD_Samples](https://github.com/VaughnVernon/IDDD_Samples)
+- [ddd-crew/ddd-starter-modelling-process](https://github.com/ddd-crew/ddd-starter-modelling-process)
 
 ##### Templates
 - [ddd-crew/bounded-context-canvas](https://github.com/ddd-crew/bounded-context-canvas)
