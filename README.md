@@ -651,6 +651,8 @@ The Author then suggests that to deal with this problem, the software should be 
 
 #### Command Query Responsibility Segregation (CQRS)
 
+A relational database is structured for write, but not read. When the volumes of data increase, the reads become very slow. Mostly only 20% of the time the application writes to the database, but 80% of the request to the database are read requests. Therefore, it does not make any sense to use a database that is meant writing, to read from it.
+
 
 #### Event Driven Architecture
 
