@@ -39,9 +39,9 @@
 
 [11. Reasons for Selection of Domain Driven Design Architecture ](#11-Reasons-for-Selection-of-Domain-Driven-Design-Architecture)
 
-[12. Reporting](#12-Reporting)
+[12. The Hexagonal Architecture](#13-The-Hexagonal-Architecture)
 
-[13. The Hexagonal Architecture](#13-The-Hexagonal-Architecture)
+[13. Reporting](#12-Reporting)
 
 [14. No Silver Bullet](#14-No-Silver-Bullet)
 
@@ -509,14 +509,8 @@ Unit Tests can be target at the Domain to test the integrity of the business log
 
 It's understood that Domain Driven Design requires programmers to climb a steep learning curve, and after that, a lot of practice to truly understand the concepts. A middle path can be taken, where the concepts of classical 3-tier and modular monoliths can be combined. The Business Layer along with Data Layer can be considered as a domain. There is no garuantee that cross communication between components avoided, but they will be contained within the module. 
 
-## 12. Reporting
 
-Creating reports using complex SQL Join queries is not the best way to create reports. The queries become slow over time and require constant DB tuning. Using LINQ queries for reporting is an overkill. Never do it!
-
-Reports need to be created when the data enters the system. The listeners must listen to the data and construct the reports.
-
-
-## 13. The Hexagonal Architecture
+## 12. The Hexagonal Architecture
 
 >"One of the great bugaboos of software applications over the years has been infiltration of business logic into the user interface code." ~Alistair Cockburn
 
@@ -587,6 +581,13 @@ This application can be a modular monolith or a microservice.
 7. The things like UI and database become replaceable by creating specialized adapters.
 8. Accumulates low technical debt.
 
+## 13. Reporting
+
+Creating reports using complex SQL Join queries is not the best way to create reports. The queries become slow over time and require constant DB tuning. Using LINQ queries for reporting is an overkill. Never do it!
+
+Reports need to be created when the data enters the system. The listeners must listen to the data and construct the reports.
+
+![](design/images/ExplanationDiagrams-Reporting.png)
 
 ## 14. No Silver Bullet
 
