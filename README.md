@@ -529,7 +529,7 @@ So, the application needs to be designed in such a way that it provides it provi
 
 1. Automate testing the application without the UI.
 2. Other applications can utilize the functionality of the application.
-3.Business logic can be kept out of the UI layer.
+3. Business logic can be kept out of the UI layer.
 
 What are Port and Adapters?
 
@@ -566,10 +566,14 @@ Application itself can communicating with the port of another application using 
 
 **The sole motive of all this is to keep the Use Cases confined to the Application, which is the core of the Hexagonal Architecture. It also helps in testing the behaviour of the Application without any dependencies.**
 
+![](design/images/ExplanationDiagrams-HexagonalArchitecture.png)
+
 **DDD and Hexagonal Architecture**
 
 In DDD the Application of HA can be viewed as a combination of Domain and Application, while the infrastructure provides the ports to persistence and API provides the ports to UI. Each bounded context can be a separate hexagon. That is, the application can be divided into multiple hexagons that communicate with each other to complete one use case.
 This application can be a modular monolith or a microservice. 
+
+![](design/images/ExplanationDiagrams-Hexagonal-DDD.png)
 
 
 **Advantages**
