@@ -632,6 +632,15 @@ The Author then suggests that to deal with this problem, the software should be 
 
 #### Architecture Decision Logs
 
+Software development is also a very decision driven craft. Suboptimal decisions sometimes give rise to unwanted outcomes or steer the project into an unknown direction. We always take architectural or technology decisions within a context and sometimes the team forgets the context as the time passes, or others do not see the context in which the decision was taken and it often gets mis-understood.
+
+Logging your Architecture Decisions works at two levels:
+
+1. By logging them you are taking a conscious present decision.
+2. It sets a context in which the decision was taken and can act as a reference for taking better decisions.
+
+Michael Nygard’s Architecture Decision Template is the popular template through which you can record your architectural decisions.
+
 [Michael Nygard's template](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) will be used to record Architectural Decisions. The logs can be found in this [folder](design/architecture-decision-logs). 
 
 #### Event Storming
