@@ -13,6 +13,10 @@
 
 **The Documentation is in progress. The author is working in write-now-and-edit-later mode, therefore please expect grammatical errors, spelling mistakes, and typos. In case of any factual errors, please report them using the [Issues](https://github.com/codefinity/oeuvre/issues) section.**
 
+### WANTED
+
+Programmers who can contribute to the project.
+
 ## Table of Contents
 
 **TOC is Incomplete - Plesase scroll down for more topics**
